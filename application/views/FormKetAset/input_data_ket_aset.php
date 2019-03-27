@@ -19,31 +19,43 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  
-  <!-- animate CSS
+ <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- owl.carousel CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-   
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
   <!-- wave CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
-
-  <!-- main CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+    <!-- mCustomScrollbar CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-  <!-- style CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-  <!-- responsive CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- main CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-
-  <!-- modernizr JS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
     ============================================ -->
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 
@@ -119,11 +131,20 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Buat Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
       </li>
+
+
+       <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Form Bantuan</span></a>
+      </li>
+
       <?php } } ?>
 
       <!-- Divider -->
@@ -171,7 +192,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Surat</h6>
+            <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
           </div>
         </div>
@@ -331,9 +352,9 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Form III. Keterangan Perumahan</h1><br>
+          <h1 class="h3 mb-2 text-gray-800">Form V. Kepemilikan Aset</h1><br>
         
-       <?php echo form_open('ListKeteranganPerumahan/create'); ?> 
+       <?php echo form_open('ListKepemilikanAset/create'); ?> 
         
         <?php echo validation_errors(); ?>
 
@@ -348,22 +369,20 @@
                <!--  <div class="card-header py-3"> -->
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Keterangan Perumahan</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Keterangan Kepemilikan Aset</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                       <div class="dropdown-header">Pilih Form:</div>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>Form 1</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPengesahan/create"); ?>'>Form 2</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 3</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEkonomi/create"); ?>'>Form 4</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 5</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKepemilikanAset/create"); ?>'>Form 5</a>
+                      <!-- <div class="dropdown-divider"></div> -->
+            <!--           <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
                   </div>
                 </div>

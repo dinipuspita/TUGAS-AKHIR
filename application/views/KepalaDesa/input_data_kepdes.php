@@ -397,6 +397,27 @@
                             </div>  
                         </div>
                       </div>
+                      <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="jabatan_mulai" name="jabatan_mulai" placeholder="Jabatan Mulai" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="jabatan_selesai" name="jabatan_selesai" placeholder="Jabatan Selesai" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <br>
                     <br>

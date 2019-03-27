@@ -1,6 +1,6 @@
 <?php
 // define('BASEPATH') OR exit ('No direct script access allowed');
-class ListKeteranganPerumahan extends CI_Controller {
+class listKepemilikanAset extends CI_Controller {
 	// public function __construct()
 	
 	// {
@@ -26,10 +26,10 @@ class ListKeteranganPerumahan extends CI_Controller {
 	// }
 	public function index()
 	{
-		$this->load->model('list_keteranganPerumahan');
-		$data["keterangan_perumahan"] = $this->list_keteranganPerumahan->getTampil();
-		$data['user'] = $this->list_keteranganPerumahan->getUser();
-		$this->load->view('FormBantuan/keterangan_perumahan', $data);	
+		$this->load->model('list_kepemilikanAset');
+		$data["kepemilikan_aset"] = $this->list_kepemilikanAset->getTampil();
+		$data['user'] = $this->kepemilikanAset->getUser();
+		$this->load->view('FormKetAset', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
 	{
@@ -55,19 +55,19 @@ class ListKeteranganPerumahan extends CI_Controller {
         $this->form_validation->set_rules('jenis_kloset', 'jenis_kloset', 'trim|required');
         $this->form_validation->set_rules('tempat_PAT', 'tempat_PAT', 'trim|required');
 
-		$this->load->model('list_keteranganPerumahan');
-		$data["keterangan_perumahan"] = $this->list_keteranganPerumahan->getTampilKetPerum();
-		$data['user'] = $this->list_keteranganPerumahan->getUser();
+		$this->load->model('list_KeteranganAset');
+		$data["keterangan_perumahan"] = $this->list_KeteranganAset->getTampilKetAset();
+		$data['user'] = $this->list_KeteranganAset->getUser();
 
 		$this->load->model('list_penduduk');
 		$data["penduduk"] = $this->list_penduduk->getTampilPendudukPerum();
 
 
 		if($this->form_validation->run() == FALSE) {
-			$this->load->view('FormBantuan/input_data_ket_perumahan',$data);
+			$this->load->view('FormKetAset/input_data_ket_aset',$data);
 		}
 		else{
-			$this->list_keteranganPerumahan->insertKetPerum();
+			$this->list_KeteranganAset->insertKetAset();
 			echo "<script> alert('Data Keterangan Perumahan Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
@@ -75,7 +75,7 @@ class ListKeteranganPerumahan extends CI_Controller {
 	// public function update($id)
 	// {
 	
-	// 	$this->load->model('list_keteranganPerumahan');
+	// 	$this->load->model('list_KeteranganAset');
 	// 	$this->form_validation->set_rules('status_penguasaan_bangunan', 'status_penguasaan_bangunan', 'trim|required');
 	// 	$this->form_validation->set_rules('status_lahan', 'status_lahan', 'trim|required');
 	// 	$this->form_validation->set_rules('luas_lantai', 'luas_lantai', 'trim|required');
@@ -112,8 +112,8 @@ class ListKeteranganPerumahan extends CI_Controller {
 	
 	public function delete($id)
 	{
-		$this->load->model('list_keteranganPerumahan');
-		$this->list_keteranganPerumahan->delete($id);
-		redirect('listKeteranganPerumahan','refresh');
+		$this->load->model('list_KeteranganAset');
+		$this->list_KeteranganAset->delete($id);
+		redirect('listKeteranganAset','refresh');
 	}
 }

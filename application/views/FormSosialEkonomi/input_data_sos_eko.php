@@ -122,7 +122,7 @@
         </div>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+        <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -131,10 +131,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Penerima Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Seleksi Penerima Surat</a>
-            <a class="collapse-item" href="utilities-color.html">Buat Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Laporan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
       </li>
@@ -355,7 +353,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Form IV. Keterangan Sosial Ekonomi</h1><br>
         
-       <?php echo form_open('ListPengenalantempat/create'); ?> 
+       <?php echo form_open('ListSosialEKonomi/create'); ?> 
         
         <?php echo validation_errors(); ?>
 
@@ -373,17 +371,15 @@
                   <h6 class="m-0 font-weight-bold text-primary">Keterangan Sosial Ekonomi</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                       <div class="dropdown-header">Pilih Form:</div>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>Form 1</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPengesahan/create"); ?>'>Form 2</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 3</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEKonomi/create"); ?>'>Form 4</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 5</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEkonomi/create"); ?>'>Form 4</a>
+                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKepemilikanAset/create"); ?>'>Form 5</a>
                     </div>
                   </div>
                 </div>
@@ -394,12 +390,12 @@
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
-                                 <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
+                                 <font color="red"><i><option value="">*Pilih Anggota Keluarga (NIK & Nama)</option></i></font>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="id_penduduk" class="form-control">
+                                    <select name="NIK" class="form-control">
                                         <option value="">-----Pilih-----</option>
                                             <?php foreach ($penduduk as $data ){ ?>
-                                            <option value="<?php echo $data['id_penduduk']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                            <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
                                          </option>
                                              <?php } ?>
                                     </select>
@@ -408,229 +404,82 @@
                             </div>
                             <br>
                              <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-support"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Nama Anggota Rumah Tangga</option></i></font>
-                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                            <br>
-                             <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-house"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Kabupaten/Kota</option></i></font>
-                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                          <br>
-                            <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*NIK</option></i></font>
-                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                        <br>
-                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
-                                 <font color="red"><i><option value="">*Hubungan dengan Kepala Rumah Tangga</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Kepala Rumah Tangga">1.Kepala Rumah Tangga</option>
-                                                <option value="2.Istri/Suami">2.Istri/Suami</option>
-                                                <option value="3.Menantu">3.Menantu</option>
-                                                <option value="4.Cucu">4.Cucu</option>
-                                                <option value="5.Orang Tua/Mertua">5.Orang Tua/Mertua</option>
-                                                <option value="6.Pembantu Ruta">6.Pembantu Ruta</option>
-                                            </optgroup>
-                                        </select>
+                                 <font color="red"><i><option value="">*Pilih Nomor Kartu Keluarga</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="NO_KK" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($penduduk as $data ){ ?>
+                                            <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NO_KK'] ?> 
+                                         </option>
+                                             <?php } ?>
+                                    </select>
                                     </div>
                                 </div>
                             </div>
                         <br>
-                        <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Nomor Urut Keluarga</option></i></font>
-                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
                        <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                  <font color="red"><i><option value="">*Hubungan dengan Kepala Keluarga</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="hub_kepala_keluarga">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="1.Kepala Rumah Tangga">1.Kepala Rumah Tangga</option>
                                                 <option value="2.Istri/Suami">2.Istri/Suami</option>
-                                                <option value="3.Menantu">3.Menantu</option>
-                                                <option value="4.Cucu">4.Cucu</option>
-                                                <option value="5.Orang Tua/Mertua">5.Orang Tua/Mertua</option>
-                                                <option value="6.Pembantu Ruta">6.Pembantu Ruta</option>
+                                                <option value="3.Anak">3.Anak</option>
+                                                <option value="4.Menantu">4.Menantu</option>
+                                                <option value="5.Cucu">5.Cucu</option>
+                                                <option value="6.Orang Tua/Mertua">6.Orang Tua/Mertua</option>
+                                                <option value="7.Pembantu Ruta">7.Pembantu Ruta</option>
                                             </optgroup>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         <br>
-                       <div class="row">
-                        <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">
-                        <div class="form-group">
-                          <font color="red">*Jenis Kelamin</font>
-                          <br>
-                          <input type="radio" value="Perempuan" checked="checked" id="jenis_kelamin" name="jenis_kelamin">Perempuan
-                          <input type="radio" value="Laki-laki" id="jenis_kelamin" name="jenis_kelamin">Laki-laki
-                          </div>
-                        </div>
-                      </div>
-                      <br>
-                        <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Umur (Tahun)</option></i></font>
-                                        <input type="number" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                        <br>
-                       <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Status Perkawinan</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Belum Kawin">1.Belum Kawin</option>
-                                                <option value="2.Kawin/NikahIstri/Suami">2.Istri/Suami</option>
-                                                <option value="3.Cerai Hidup">3.Cerai Hidup</option>
-                                                <option value="4.Cerai Mati">4.Cerai Mati</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Jika Kolom Status Perkawinan berkode 2/3 Kepemilikan Akta/ <p>Buku Nikah/ Akta Cerai </option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="0.Tidak">0.Tidak</option>
-                                                <option value="1.Ya, dapat Ditunjukan">1.Ya, dapat Ditunjukan</option>
-                                                <option value="2.Ya, Tidak Dapat Di tunjukan">2.Ya, Tidak Dapat Di tunjukan</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        <br>
-                       <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Tercantum dalam Kartu Keluarga (KK) di Rumah Tangga Ini</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Ya">1.Ya</option>
-                                                <option value="2.Tidak">2.Tidak</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Kepemilikan Kartu Identitas</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="0.Tidak">0.Tidak</option>
-                                                <option value="1.Ya, dapat Ditunjukan">1.Ya, dapat Ditunjukan</option>
-                                                <option value="2.Ya, Tidak Dapat Di tunjukan">2.Ya, Tidak Dapat Di tunjukan</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Status Kehamilan Untuk Wanita Usia 10-49 Tahun</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                  <option value="1.Ya">1.Ya</option>
-                                                <option value="2.Tidak">2.Tidak</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
                             <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                <font color="red"><i><option value="">*Jenis Cacat</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="jenis_cacat">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="0.Tidak Cacat">0.Tidak Cacat</option>
-                                                <option value="1.Tuna Daksa/Cacat Tubuh">1.Tuna Daksa/Cacat Tubuh</option>
-                                                <option value="2.Tuna Netra/Buta">2.Tuna Netra/Buta</option>
+                                                <option value="01.Tuna Daksa/Cacat Tubuh">01.Tuna Daksa/Cacat Tubuh</option>
+                                                <option value="02.Tuna Netra/Buta">02.Tuna Netra/Buta</option>
+                                                <option value="03.Tuna Rungu">03.Tuna Rungu</option>
+                                                <option value="04.Tuna Wicara">04.Tuna Wicara</option>
+                                                <option value="05.Tuna Rungu & Wicara">05.Tuna Rungu & Wicara</option>
+                                                <option value="06.Tuna Netra & Cacat Tubuh">06.Tuna Netra & Cacat Tubuh</option>
+                                                <option value="07.Tuna Netra, Rungu & Wicara">07.Tuna Netra, Rungu & Wicara</option>
+                                                <option value="08.Tuna Rungu, Wicara & Cacat Tubuh">08.Tuna Rungu, Wicara & Cacat Tubuh</option>
+                                                <option value="09.Tuna Rungu, Wicara, Netra & Cacat Tubuh">09.Tuna Rungu, Wicara, Netra & Cacat Tubuh</option>
+                                                <option value="10.Cacat Mental retradasi">10.Cacat Mental retradasi</option>
+                                                <option value="11.Mantan Penderita Gangguan Jiwa">11.Mantan Penderita Gangguan Jiwa</option>
+                                                <option value="12.Cacat Fisik & Mental">12.Cacat Fisik & Mental</option>
+
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                             <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                               <font color="red"><i><option value="">*Penyakit Kronis/Menahun</option></i></font>
+                                   <div class="bootstrap-select fm-cmp-mg">
+                                      <select class="form-control" name="penyakit_kronis">
+                                          <option value="">-----Pilih-----</option>
+                                                <option value="0.Tidak Ada">0.Tidak Ada</option>
+                                                <option value="1.Hipertensi ( Tekanan Darah Tinggi)">1.Hipertensi ( Tekanan Darah Tinggi)</option>
+                                                <option value="2.Rematik">2.Rematik</option>
                                                 <option value="3.Asma">3.Asma</option>
                                                 <option value="4.Masalah Jantung">4.Masalah Jantung</option>
                                                 <option value="5.Diabetes(Kencing Manis)">5.Diabetes(Kencing Manis)</option>
@@ -650,7 +499,7 @@
                                 </div>
                                <font color="red"><i><option value="">*Partisipasi Sekolah</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="partisipasi_sekolah">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="0.Tidak/Belum Pernah Sekolah">0.Tidak/Belum Pernah Sekolah</option>
                                                 <option value="1.Masih Sekolah">1.Masih Sekolah</option>
@@ -667,7 +516,7 @@
                                 </div>
                                <font color="red"><i><option value="">*Jenjang dan Jenis Pendidikan yang Pernah /Sedang diduduki</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="jenjang_pendidikan">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="01.SD/SDLB">01.SD/SDLB</option>
                                                 <option value="02.Paket A">02.Paket A</option>
@@ -694,7 +543,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Kelas Tertinggi yang Pernah/Sedang <p>diduduki(1,2,3,4,5,6,7,8)/Tamat</option></i></font>
-                                        <input type="number" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
+                                        <input type="number" class="form-control" id="kelas_tertinggi" name="kelas_tertinggi" placeholder="Kelas Tertinggi" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -707,7 +556,7 @@
                                 </div>
                                <font color="red"><i><option value="">*Ijazah Tertinggi yang dimilikin</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="ijazah_tertinggi">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="0.Tidak Punya Ijazah">0.Tidak Punya Ijazah</option>
                                                 <option value="1.SD/Sederajat">1.SD/Sederajat</option>
@@ -728,7 +577,42 @@
                                 </div>
                                <font color="red"><i><option value="">*Lapangan Usaha Dari Pekerjaan Utama</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
+                                      <select class="form-control" name="lapangan_usaha">
+                                          <option value="">-----Pilih-----</option>
+                                                <option value="1.Pertanian">1.Pertanian</option>
+                                                <option value="2.Holtikultura">2.Holtikultura</option>
+                                                <option value="3.Perkebunan">3.Perkebunan</option>
+                                                <option value="4.Perikanan Tangkap">3.Perikanan Tangkap</option>
+                                                <option value="5.Perikanan Budidaya">5.Perikanan Budidaya</option>
+                                                <option value="6Peternakan.">6Peternakan.</option>
+                                                <option value="7.Kehutanan & pertanian Lainya">7.Kehutanan & pertanian Lainya</option>
+                                                <option value="8.Pertambangan/Penggalian">8.Pertambangan/Penggalian</option>
+                                                <option value="9.Industri Pengolahan">9.Industri Pengolahan</option>
+                                                <option value="10.Listrik & Gas">10.Listrik & Gas</option>
+                                                <option value="11.Bangunan/Konstruksi">11.Bangunan/Konstruksi</option>
+                                                <option value="12.Perdagangan">12.Perdagangan</option>
+                                                <option value="13.Hotel & Rumah Makan">13.Hotel & Rumah Makan</option>
+                                                <option value="14.Trasnportasi & Pergudangan">14.Trasnportasi & Pergudangan</option>
+                                                <option value="15.Informasi & Komunikasi">15.Informasi & Komunikasi</option>
+                                                <option value="16.Keuangan & Asuransi">16.Keuangan & Asuransi</option>
+                                                <option value="17.Jasa Pendidikan">17.Jasa Pendidikan</option>
+                                                <option value="18.Jasa Kesehatan">18.Jasa Kesehatan</option>
+                                                <option value="19.Jasa Kemasyarakatan, Pemerintahan & Perseorangan">19.Jasa Kemasyarakatan, Pemerintahan & Perseorangan</option>
+                                                <option value="20.Pemulung">20.Pemulung</option>
+
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                               <font color="red"><i><option value="">*Status Kedudukan dalam Pekerjaan Utama</option></i></font>
+                                   <div class="bootstrap-select fm-cmp-mg">
+                                      <select class="form-control" name="status_kedudukan">
                                           <option value="">-----Pilih-----</option>
                                                 <option value="1.Berusaha Sendiri">1.Berusaha Sendiri</option>
                                                 <option value="2.Berusaha diBantu Buruh Tidak tetap/Tidak Dibayar">2.Berusaha diBantu Buruh Tidak tetap/Tidak Dibayar</option>
@@ -744,60 +628,12 @@
                             </div>
                             <br>
                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Status Kedudukan dalam Pekerjaan Utama</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="01.SD/SDLB">01.SD/SDLB</option>
-                                                <option value="02.Paket A">02.Paket A</option>
-                                                <option value="03.M.Ibtidaiyah">03.M.Ibtidaiyah</option>
-                                                <option value="04.SMP/SMPLB">04.SMP/SMPLB</option>
-                                                <option value="05.Paket B">05.Paket B</option>
-                                                <option value="06.M.Tsanawiyah">06.M.Tsanawiyah</option>
-                                                <option value="07.SMA/SMK/SMALB">07.SMA/SMK/SMALB</option>
-                                                <option value="08.Paket C">08.Paket C</option>
-                                                <option value="09.M.Aliyah">09.M.Aliyah</option>
-                                                <option value="10.Perguruan Tinggi">10.Perguruan Tinggi</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                               <font color="red"><i><option value="">*Keterangan Keberadaan Anggota Rumah Tangga</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="01.SD/SDLB">01.SD/SDLB</option>
-                                                <option value="02.Paket A">02.Paket A</option>
-                                                <option value="03.M.Ibtidaiyah">03.M.Ibtidaiyah</option>
-                                                <option value="04.SMP/SMPLB">04.SMP/SMPLB</option>
-                                                <option value="05.Paket B">05.Paket B</option>
-                                                <option value="06.M.Tsanawiyah">06.M.Tsanawiyah</option>
-                                                <option value="07.SMA/SMK/SMALB">07.SMA/SMK/SMALB</option>
-                                                <option value="08.Paket C">08.Paket C</option>
-                                                <option value="09.M.Aliyah">09.M.Aliyah</option>
-                                                <option value="10.Perguruan Tinggi">10.Perguruan Tinggi</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
                             <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">
                             <div class="form-group">
                             <font color="red">*KPS/KKS</font>
                             <br>
-                            <input type="radio" value="Ya" checked="checked" id="kks" name="kks">Ya
-                            <input type="radio" value="Tidak" id="kks" name="kks">Tidak
+                            <input type="radio" value="Ya" checked="checked" id="KKS" name="KKS">Ya
+                            <input type="radio" value="Tidak" id="KKS" name="KKS">Tidak
                            </div>
                          </div>
                         </div>
@@ -807,8 +643,8 @@
                             <div class="form-group">
                             <font color="red">*KIS/PBI JKN</font>
                             <br>
-                            <input type="radio" value="Ya" checked="checked" id="kis" name="kis">Ya
-                            <input type="radio" value="Tidak" id="kis" name="kis">Tidak
+                            <input type="radio" value="Ya" checked="checked" id="KIS" name="KIS">Ya
+                            <input type="radio" value="Tidak" id="KIS" name="KIS">Tidak
                            </div>
                          </div>
                         </div>
@@ -818,8 +654,8 @@
                             <div class="form-group">
                             <font color="red">*KIP/BSM</font>
                             <br>
-                            <input type="radio" value="Ya" checked="checked" id="kip" name="kip">Ya
-                            <input type="radio" value="Tidak" id="kip" name="kip">Tidak
+                            <input type="radio" value="Ya" checked="checked" id="KIP" name="KIP">Ya
+                            <input type="radio" value="Tidak" id="KIP" name="KIP">Tidak
                            </div>
                          </div>
                         </div>
@@ -829,8 +665,8 @@
                             <div class="form-group">
                             <font color="red">*Raskin/Rastra</font>
                             <br>
-                            <input type="radio" value="Ya" checked="checked" id="raskin" name="raskin">Ya
-                            <input type="radio" value="Tidak" id="raskin" name="raskin">Tidak
+                            <input type="radio" value="Ya" checked="checked" id="RASKIN" name="RASKIN">Ya
+                            <input type="radio" value="Tidak" id="RASKIN" name="RASKIN">Tidak
                            </div>
                          </div>
                         </div>

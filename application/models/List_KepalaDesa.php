@@ -5,7 +5,9 @@ class List_KepalaDesa extends CI_Model {
 	{
 		
 	$object = array('nama_kepala_desa' => $this->input->post('nama_kepala_desa'),
-					'id_desa' => $this->input->post('id_desa'));
+					'id_desa' => $this->input->post('id_desa'),
+				    'jabatan_mulai' => $this->input->post('jabatan_mulai'),
+				    'jabatan_selesai' => $this->input->post('jabatan_selesai'));
 		
 		$this->db->insert('kepala_desa', $object);
 	}
@@ -31,7 +33,9 @@ class List_KepalaDesa extends CI_Model {
 	public function updateById($id)
 	{	
 		$object = array('nama_kepala_desa' => $this->input->post('nama_kepala_desa'),
-						'id_desa' => $this->input->post('id_desa'));
+						'id_desa' => $this->input->post('id_desa'),
+				    	'jabatan_mulai' => $this->input->post('jabatan_mulai'),
+				    	'jabatan_selesai' => $this->input->post('jabatan_selesai'));
 
 		$this->db->where('id_kepala_desa', $id);
 		$this->db->update('kepala_desa', $object);

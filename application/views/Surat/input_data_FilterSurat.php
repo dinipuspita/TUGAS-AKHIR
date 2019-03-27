@@ -122,7 +122,7 @@
         </div>
       </li>
 
-     <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -133,10 +133,10 @@
             <h6 class="collapse-header">Surat</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Laporan</a>
           </div>
         </div>
       </li>
+
 
        <!-- Nav Item - Charts -->
       <li class="nav-item">
@@ -489,7 +489,7 @@
                             </div>
                                 </div>
                                 </div>
-                            </div>
+                          
                           <font color="red"><i>* Wajib diisi</i></font>
                         <center>
                             <br>

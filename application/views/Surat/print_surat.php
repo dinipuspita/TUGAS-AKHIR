@@ -74,52 +74,43 @@
 <head>
   <img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/>
 
-  <?php foreach ($surat as $key) { ?>
+
   <center><h4>PEMERINTAH KOTA BATU<br>
-          KECAMATAN JUNREJO</h4><h3>DESA <?php echo $key['nama_desa'] ?></h3>
+          KECAMATAN JUNREJO</h4><h3><?php echo $surat[0]['nama_desa']?></h3>
 <hr/>
 
           <u><b>SURAT KETERANGAN TIDAK MAMPU</b></u></center>
-             <center>Nomor:470/00<?php echo $key['id_surat'] ?>/422 310.2/2019
+             <center>Nomor:470/00<?php echo $surat[0]['id_surat']?>/422 310.2/2019
              <br>
              <br>
 
-Kepala Desa <?php echo $key['nama_desa'] ?> Kecamatan Junrejo Pemerintah Kota Batu menerangkan bahwa menerangkan bahwa<br></center>
+Kepala Desa <?php echo $surat[0]['nama_desa']?> Kecamatan Junrejo Pemerintah Kota Batu menerangkan bahwa menerangkan bahwa<br></center>
 
  <div class="column">
-  Nama                        :<?php echo $key['nama_penduduk'] ?><br>
-  Jenis Kelamin               :<?php echo $key['jenis_kelamin'] ?><br>
-  Tempat / Tanggal Lahir      :<?php echo $key['tempat_lahir'] ?>
-  /                            <?php echo $key['tanggal_lahir'] ?><br>
-  Agama                       :<?php echo $key['agama'] ?><br>
-  Pekerjaan                   :<?php echo $key['pekerjaan'] ?><br>
-  Status Perkawinan           :<?php echo $key['status'] ?><br>  
-  Kewarganegaraan             :<?php echo $key['kewarganegaraan'] ?><br>
-  Alamat                      :<?php echo $key['alamat'] ?>
-                                RT.<?php echo $key['RT'] ?>
-                                RW.<?php echo $key['RW'] ?><br>
-                                Desa <?php echo $key['nama_desa'] ?> Kecamatan Junrejo Kota Batu</div>
-<!--        <div class="column3">
 
-        Nama<br>                        
-        Jenis Kelamin<br>           
-        Tempat / Tanggal Lahir   
-        /<br>                          
-        Agama<br>                   
-        Pekerjaan<br>          
-        Status Perkawinan<br>          
-        Kewarganegaraan<br>       
-        Alamat<br></div>   -->
       
-                                  
+
+  Nama                        :<?php echo  $surat[0]['nama_penduduk'] ?><br>
+  Jenis Kelamin               :<?php echo  $surat[0]['jenis_kelamin'] ?><br>
+  Tempat / Tanggal Lahir      :<?php echo  $surat[0]['tempat_lahir'] ?>
+  /                            <?php echo  $surat[0]['tanggal_lahir'] ?><br>
+  Agama                       :<?php echo  $surat[0]['agama'] ?><br>
+  Pekerjaan                   :<?php echo  $surat[0]['pekerjaan'] ?><br>
+  Status Perkawinan           :<?php echo  $surat[0]['status'] ?><br>  
+  Kewarganegaraan             :<?php echo  $surat[0]['kewarganegaraan'] ?><br>
+  Alamat                      :<?php echo  $surat[0]['alamat'] ?>
+                                RT.<?php echo  $surat[0]['RT'] ?>
+                                RW.<?php echo  $surat[0]['RW'] ?><br>
+                                Desa <?php echo  $surat[0]['nama_desa'] ?> Kecamatan Junrejo Kota Batu   </div>
+                                
 
 <br>
 <br>
 <br>
 <!-- <div class="column0"> -->
-Adalah benar-benar penduduk Desa <?php echo $key['nama_desa'] ?> Kecamatan Junrejo<br>
-                1.Menerangkan Berdasarkan Surat Keterangan RT <?php echo $key['RT'] ?> RW <?php echo $key['RW'] ?> serta pernyataan yang bersangkutan <b>bahwa nama diatas tersebut benar-benar berasal dari keluarga tidak mampu</b><br>
-                2.<?php echo $key['keterangan'] ?><br><!-- </div> -->                        
+Adalah benar-benar penduduk Desa <?php echo $surat[0]['nama_desa']?> Kecamatan Junrejo<br>
+                1.Menerangkan Berdasarkan Surat Keterangan RT <?php echo $surat[0]['RT']?> RW <?php echo $surat[0]['RW']?> serta pernyataan yang bersangkutan <b>bahwa nama diatas tersebut benar-benar berasal dari keluarga tidak mampu</b><br>
+                2.<?php echo $surat[0]['keterangan']?><br><!-- </div> -->                        
 
 <br>
 <br>                                         
@@ -129,12 +120,14 @@ Demikian surat keterangan ini dibuat dengan sebenarnya dan agar dapat dipergunak
 <br>   
 
 <div class="column2">
-Batu,<?php echo $key['tanggal_surat'] ?><br>
-a.n <b>Desa <?php echo $key['nama_desa'] ?></b><br>
+Batu,<?php echo $surat[0]['tanggal_surat']?><br>
+a.n <b>Desa <?php echo $surat[0]['nama_desa']?></b><br>
 Kasi Kesra<br>
 
 <br>
-<b><?php echo $key['nama_kepala_desa'] ?></b>
+<br>
+<br>
+<b><?php echo $surat[0]['nama_kepala_desa']?></b>
 
 
 </div>
@@ -142,7 +135,6 @@ Kasi Kesra<br>
 </head>                 
 </tbody>
                                
-<?php  } ?>
 
 </body>
 

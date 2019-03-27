@@ -111,8 +111,7 @@
           </div>
         </div>
       </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
+  <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -332,69 +331,142 @@
 
         </nav>
         <!-- End of Topbar -->
-    
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
-
-          <br>
-          <a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-success">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
-
-           <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>"class="btn btn-info">Cetak Laporan <span class="glyphicon glyphicon-print"></a></span>
-          <br>
-          <br>
-
+          <h1 class="h3 mb-2 text-gray-800">Halaman Cetak Laporan</h1><br>
+        
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Kepala Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Cetak Laporan</h6>
             </div>
             <div class="card-body">
-                              <div class="table table-responsive">
-                                <table class="table" id="example">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>Tanggal Surat</th>
-                                            <th>Keterangan</th>
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no=1; ?>
-                                           <?php foreach ($surat as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td><?php echo $key['NIK'] ?></td>
-                                          <td><?php echo $key['nama_penduduk'] ?></td>
-                                          <td><?php echo $key['tanggal_surat'] ?></td>
-                                          <td><?php echo $key['keterangan'] ?></td>
-                                          <td>
-                                            <a href="<?php echo base_url('index.php/ListSurat/update/'.$key['id_surat'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
 
-                                            <a href="<?php echo base_url('index.php/ListSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+     <?php echo form_open_multipart('ListSurat/laporanSurat'); ?>
+        
+        <?php echo validation_errors(); ?>
+                  
+               
+                <!-- 
+                <?php foreach ($last as $key){
+                    $id = $key['id_surat']+1;                    
+                }
+                 ?>               
 
-                                       <!--      <a href="<?php echo base_url('index.php/listSurat/report/'.$key['NIK'])?>" class="btn btn-amber amber-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="right" title="Cetak Surat"><i class="notika-icon notika-down-arrow"></i></button></a>
- -->
-                                            <a href="<?php echo base_url('index.php/ListSurat/report/' .$key['NIK'])?>" class="btn btn-success">Print <span class="glyphicon glyphicon-print"></span></a>
-
-                                          </td>  
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                    </tbody>
-                                </table>
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="id_surat" name="id_surat" value="<?php echo $id ?>">
+                </div>
+                  
+    -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                            <h4>Cetak Laporan Penerima Surat</h4><br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
+                                 <font color="red"><i><option value="">*Pilih Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div> 
+                            <br>  
+<!--                             <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                             <font color="red"><i><option value="">*Pilih Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>   
+                            <br> -->
+                           <!--  <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                             <font color="red"><i><option value="">*Pilih Kepala Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_kepala_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($kepala_desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_kepala_desa; ?>"><?php echo $data->nama_kepala_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>   
+                            <br>
+                            <div class="row">                       
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <font color="red"><i><option value="">*Tanggal Surat</option></i></font> 
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                      <i class="notika-icon notika-calendar"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" placeholder="Tanggal Surat" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>  
+                       <div class="row">                     
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <font color="red"><i><option value="">*Keterangan Surat</option></i></font>   
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                      <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>   
+                    <br>
+                     <font color="red"><i>* Wajib diisi</i></font> -->
+               </div>
+          </div>
+      </div>
+    </div>
+                        <center>
+                            <br>
+                            <br>
+                             <center>
+                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
+                            <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
+                        </center>
+                    <br>
+                                 </div>
                               </div>
                             </div>
                           </div>
-                       </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+       
+    <?php echo form_close(); ?>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -473,7 +545,67 @@
    } );
    </script>    
     
-
+    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- wow JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
+    <!-- price-slider JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
+    <!-- owl.carousel JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
+    <!-- scrollUp JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
+    <!-- meanmenu JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
+    <!-- counterup JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
+    <!-- mCustomScrollbar JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sparkline JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
+    <!-- knob JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
+   <!--  Chat JS
+    ============================================ -->
+    <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
+    <!--  todo JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
+  <!--  wave JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
+    <!-- plugins JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
+    <!-- main JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
 </body>
 
 </html>

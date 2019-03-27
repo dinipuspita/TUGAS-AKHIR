@@ -131,13 +131,12 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Penerima Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Seleksi Penerima Surat</a>
-            <a class="collapse-item" href="utilities-color.html">Buat Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Laporan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
       </li>
+
 
        <!-- Nav Item - Charts -->
       <li class="nav-item">
@@ -375,15 +374,13 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                       <div class="dropdown-header">Pilih Form:</div>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>Form 1</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 2</a>
+                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPengesahan/create"); ?>'>Form 2</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 3</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEkonomi/create"); ?>'>Form 4</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 5</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKepemilikanAset/create"); ?>'>Form 5</a>
                     </div>
                   </div>
                 </div>
@@ -391,6 +388,20 @@
                         <div class="row">
                         <div class="basic-tb-hd">
                            <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
+
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Nama Petugas</option></i></font>
+                                        <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Nama Petugas" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -404,7 +415,6 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
                          <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -433,8 +443,11 @@
                                         </select>
                                     </div>
                                 </div>
-                                <br>
-                        <div class="row">
+                           
+                        
+                          </div>
+                        </div>
+                        <!-- <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
@@ -447,7 +460,7 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                             <br>
                             <br>
                             <br>

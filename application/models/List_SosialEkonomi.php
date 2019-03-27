@@ -4,29 +4,24 @@ class List_SosialEkonomi extends CI_Model {
 	public function insertSosEko()
 	{
 		
-	$object = array('id_penduduk' => $this->input->post('id_penduduk'),
-					'status_bangunan' => $this->input->post('status_bangunan'),
-					'status_lahan' => $this->input->post('status_lahan'), 
-					'luas_lantai' => $this->input->post('luas_lantai'), 
-					'jenis_lantai_terluas' => $this->input->post('jenis_lantai_terluas'),
-					'jenis_dinding_terluas' => $this->input->post('jenis_dinding_terluas'), 
-					'kondisi_dinding' => $this->input->post('kondisi_dinding'),
-					'jenis_atap' => $this->input->post('jenis_atap'),
-					'kondisi_atap' => $this->input->post('kondisi_atap'), 
-					'jumlah_kamar' => $this->input->post('jumlah_kamar'), 
-					'sumber_air_minum' => $this->input->post('sumber_air_minum'),
-					'kode_pelanggan_air' => $this->input->post('kode_pelanggan_air'),
-					'cara_memperoleh_air' => $this->input->post('cara_memperoleh_air'),
-					'sumber_penerangan' => $this->input->post('sumber_penerangan'),
-					'daya_terpasang' => $this->input->post('daya_terpasang'),
-					'id_pln' => $this->input->post('id_pln'),
-				    'bahan_bakar_memasak' => $this->input->post('bahan_bakar_memasak'),
-					'id_pelanggan_gas' => $this->input->post('id_pelanggan_gas'),
-					'fasilitas_bab' => $this->input->post('fasilitas_bab'),
-					'jenis_kloset' => $this->input->post('jenis_kloset'),
-					'tempat_PAT' => $this->input->post('tempat_PAT'));			
+	$object = array('NIK' => $this->input->post('NIK'),
+					'NO_KK' => $this->input->post('NO_KK'),
+					'jenis_cacat' => $this->input->post('jenis_cacat'),
+					'penyakit_kronis' => $this->input->post('penyakit_kronis'), 
+					'partisipasi_sekolah' => $this->input->post('partisipasi_sekolah'), 
+					'jenjang_pendidikan' => $this->input->post('jenjang_pendidikan'),
+					'hub_kepala_keluarga' => $this->input->post('hub_kepala_keluarga'), 
+					'ijazah_tertinggi' => $this->input->post('ijazah_tertinggi'),
+					'kelas_tertinggi' => $this->input->post('kelas_tertinggi'),
+					'lapangan_usaha' => $this->input->post('lapangan_usaha'), 
+					'status_kedudukan' => $this->input->post('status_kedudukan'), 
+					'KKS' => $this->input->post('KKS'),
+					'KIS' => $this->input->post('KIS'), 
+					'KIP' => $this->input->post('KIP'),
+					'RASKIN' => $this->input->post('RASKIN')
+					);			
 		
-		$this->db->insert('sosial_ekonomi', $object);
+		$this->db->insert('keterangan_sosial_ekonomi', $object);
 	}
 	// public function insertPenduduk()
 	// {

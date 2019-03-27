@@ -35,6 +35,8 @@ class ListKepalaDesa extends CI_Controller {
 	{
 		$this->load->model('list_KepalaDesa');
 		$this->form_validation->set_rules('nama_kepala_desa', 'nama_kepala_desa', 'trim|required');
+		$this->form_validation->set_rules('jabatan_mulai', 'jabatan_mulai', 'trim|required');
+		$this->form_validation->set_rules('jabatan_selesai', 'jabatan_selesai', 'trim|required');
 
 		$this->load->model('list_KepalaDesa');
 		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
@@ -58,6 +60,8 @@ class ListKepalaDesa extends CI_Controller {
 		$this->load->model('list_KepalaDesa');
 		$this->form_validation->set_rules('nama_kepala_desa', 'nama_kepala_desa', 'trim|required');
 		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');
+		$this->form_validation->set_rules('jabatan_mulai', 'jabatan_mulai', 'trim|required');
+		$this->form_validation->set_rules('jabatan_selesai', 'jabatan_selesai', 'trim|required');
 
 		$data['user'] = $this->list_KepalaDesa->getUser();
 

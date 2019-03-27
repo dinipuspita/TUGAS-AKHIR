@@ -23,4 +23,5 @@ class User extends CI_Model{
 		$query = $this->db->query("Select * from login");
 		return $query->result_array();
 	}
+	
 }

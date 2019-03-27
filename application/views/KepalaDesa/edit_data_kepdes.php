@@ -369,7 +369,7 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="namakepala__desa" name="nama_kepala_desa" placeholder="Nama Desa" value="<?php echo $kepala_desa[0]->nama_kepala_desa?>">
+                                        <input type="text" class="form-control" id="nama_kepala_desa" name="nama_kepala_desa" placeholder="Nama Desa" value="<?php echo $kepala_desa[0]->nama_kepala_desa?>">
                                     </div>
  
                                 </div>
@@ -379,7 +379,7 @@
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
                                         <select name="id_desa" class="form-control">
-                                        <option value="">Pilih Kepala Desa</option>
+                                        <option value="">Pilih Desa</option>
                                             <?php foreach ($desa as $data ){ ?>
                                             <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa ?>
                                          </option>
@@ -388,9 +388,30 @@
                               </div>
                             </div>  
                         </div>
-                                      
-                        <div>
-                      <div>
+                         <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="jabatan_mulai" name="jabatan_mulai" placeholder="Jabatan Mulai" value="<?php echo $kepala_desa[0]->jabatan_mulai?>">
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="jabatan_selesai" name="jabatan_selesai" placeholder="Jabatan Selesai" value="<?php echo $kepala_desa[0]->jabatan_selesai?>">
+                                    </div>
+                                 </div>
+                            </div>                   
+                        </div>
+                      </div>
+                      </div>
                             <br>
                                 <font color="red"><i>* Wajib diisi</i></font>
                             <br>

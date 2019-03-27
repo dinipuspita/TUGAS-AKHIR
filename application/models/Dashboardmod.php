@@ -17,7 +17,7 @@ class Dashboardmod extends CI_Model {
 	    return $query->row();
 	}
 	public function getBantuan(){
-	    $query = $this->db->query("SELECT COUNT(id_bantuan) FROM bantuan");
+	    $query = $this->db->query("SELECT COUNT(id_jenis_bantuan) FROM jenis_bantuan");
 	    return $query->row();
 	}
 	public function getUser()

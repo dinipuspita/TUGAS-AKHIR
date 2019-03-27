@@ -109,7 +109,7 @@
         </div>
       </li>
       
- <!-- Nav Item - Utilities Collapse Menu -->
+  <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -120,10 +120,10 @@
             <h6 class="collapse-header">Surat</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Laporan</a>
           </div>
         </div>
       </li>
+
        <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
@@ -347,12 +347,12 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
+          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kurang Mampu Kota Batu</h6>
             </div>
             <div class="card-body">
                              <div class="table table-responsive">                               

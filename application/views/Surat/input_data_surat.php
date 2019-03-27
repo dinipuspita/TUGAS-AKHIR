@@ -123,10 +123,10 @@
             <h6 class="collapse-header">Surat</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Laporan</a>
           </div>
         </div>
       </li>
+
        <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
@@ -384,7 +384,7 @@
                                 </div>
                             </div> 
                             <br>  
-                            <div class="row">
+<!--                             <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
@@ -400,7 +400,7 @@
                                     </div>
                                 </div>
                             </div>   
-                            <br>
+                            <br> -->
                             <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">

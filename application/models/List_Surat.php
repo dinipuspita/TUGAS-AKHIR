@@ -8,7 +8,7 @@ class List_Surat extends CI_Model {
 
 		$data = array('id_surat' => $this->input->post('id_surat'),
 					  'NIK' => $this->input->post('NIK'), 
-					  'id_desa' => $this->input->post('id_desa'), 
+					  // 'id_desa' => $this->input->post('id_desa'), 
 					  'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
 					  'keterangan' => $this->input->post('keterangan'),
 					  'tanggal_surat' => $tanggal_surat);				
@@ -82,7 +82,7 @@ class List_Surat extends CI_Model {
 	}
 	public function getTampilSurat()
 	{
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=a.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa ");
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa");
 		return $query->result_array();
 	}
 
@@ -104,6 +104,21 @@ class List_Surat extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
+	public function getReportSurat()
+	{
+	
+		$id_desa = $this->input->post('id_desa');
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
+		return $query->result_array();
+	}
+	// public function getReport()
+	// {
+	
+	// 	$id_desa = $this->input->post('id_desa');
+	// 	$query = $this->db->query("Select * from laporan AS a Join login AS b ON a.id_user=b.id_user join kecamatan as e on e.id_kecamatan=b.id_kecamatan join desa AS f ON f.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_laporan DESC LIMIT 1'");
+	// 	return $query->result_array();
+	// }
+
 
 }
 

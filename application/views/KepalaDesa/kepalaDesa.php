@@ -358,6 +358,8 @@
                                             <th>No</th>
                                             <th>Nama Kepala Desa</th>
                                             <th>Nama Desa</th>
+                                            <th>Jabatan Mulai</th>
+                                            <th>Jabatan Selesai</th>
                                             <th>Options</th>
                                         </tr>
                                     </thead>
@@ -369,6 +371,8 @@
                                           <td><?php echo $no ?></td>
                                           <td><?php echo $key['nama_kepala_desa'] ?></td>
                                           <td><?php echo $key['nama_desa'] ?></td>
+                                          <td><?php echo $key['jabatan_mulai'] ?></td>
+                                          <td><?php echo $key['jabatan_selesai'] ?></td>
                                           <td>
                                             <a href="<?php echo base_url('index.php/ListKepalaDesa/update/'.$key['id_kepala_desa'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
                                             <a href="<?php echo base_url('index.php/ListKepalaDesa/delete/' .$key['id_kepala_desa'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>

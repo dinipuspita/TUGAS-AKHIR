@@ -416,7 +416,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                     <!--    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
@@ -428,7 +428,7 @@
                                              <?php } ?>
                                     </select>
                               </div>
-                            </div>  
+                            </div>   -->
                         </div>
                          <br>
                          <font color="red"><i>* Wajib diisi</i></font>

@@ -390,386 +390,336 @@
                         <div class="basic-tb-hd">
                            <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
                                <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                  <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="id_penduduk" class="form-control">
+                                    <select name="NIK" class="form-control">
                                         <option value="">-----Pilih-----</option>
                                             <?php foreach ($penduduk as $data ){ ?>
-                                            <option value="<?php echo $data['id_penduduk']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                            <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
                                          </option>
                                              <?php } ?>
                                     </select>
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Status penguasaan bangunan tempat tinggal yang ditempati</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_bangunan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Milik Sendiri">1.Milik Sendiri</option>
-                                                <option value="2.Kontrak/Sewa">2.Kontrak/Sewa</option>
-                                                <option value="3.Bebas Sewa">3.Bebas Sewa</option>
-                                                <option value="3.Dinas">3.Dinas</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Status lahan tempat tinggal yang ditempati</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_lahan">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Milik Sendiri">1.Milik Sendiri</option>
-                                                <option value="2.Milik Orang Lain">2.Milik Orang Lain</option>
-                                                <option value="3.Tanah Negara">3.Tanah Negara</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
-                                    </div>
-                                      <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Luas Lantai / m3</option></i></font>
-                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
+                              <br>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Jenis Lantai Terluas</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="jenis_lantai_terluas">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="01.Marmer/Granit">01.Marmer/Granit</option>
-                                                <option value="02.Keramik">02.Keramik</option>
-                                                <option value="03.Parket/vinil/permadani">03.Parket/vinil/permadani</option>
-                                                <option value="04.Ubin/Tegel/Terasero">04.Ubin/Tegel/Terasero</option>
-                                                <option value="05.Kayu/Papan Kualitas Tinggi">05.Kayu/Papan Kualitas Tinggi</option>
-                                                <option value="06.Sementara/Bata Merah">06.Sementara/Bata Merah</option>
-                                                <option value="07.Bambu">07.Bambu</option>
-                                                <option value="08.Kayu/Papan Kualitas Rendah">08.Ubin/Tegel/Terasero</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Jenis Dinding Terluas</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="jenis_dinding_terluas">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Tembok">1.Tembok</option>
-                                                <option value="2.Plesteran/Anyaman Bambu/Kawat">2.Plesteran/Anyaman Bambu/Kawat</option>
-                                                <option value="3.Kayu">3.Kayu</option>
-                                                <option value="4.Anyaman Bambu">4.Anyaman Bambu</option>
-                                                <option value="5.Batang Kayu">5.Batang Kayu</option>
-                                                <option value="6.Bambu">6.Bambu</option>                                             
-  
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Jika berkode 1,2 atau 3, kondisi dinding</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="kondisi_dinding">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="1.Bagus/Kualitas Tinggi">1.Bagus/Kualitas Tinggi</option>
-                                                <option value="2.Jelek/Kualitas Rendah">2.Jelek/Kualitas Rendah</option>
-                                                <option value="3.Tidak Ada">3.Tidak Ada</option>               
-                                              </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Jenis Atap Terluas</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="jenis_atap">
-                                          <option value="">-----Pilih-----</option>
-                                                <option value="01.Beton/Genteng Beton">01.Beton/Genteng Beton</option>
-                                                <option value="02.Genteng Keramik">02.Genteng Keramik</option>
-                                                <option value="03.Genteng Metal">03.Genteng Metal</option>
-                                                <option value="04.Genteng Tanah Liat">04.Genteng Tanah Liat</option>
-                                                <option value="05.Asbes">05.Asbes</option>
-                                                <option value="06.Seng">06.Seng</option>     
-                                                <option value="07.Sirap">07.Sirap</option>
-                                                <option value="08.Bambu">08.Bambu</option>
-                                                <option value="09.Jerami/Ijuk/Daun-daunan/Rumbia">09.Jerami/Ijuk/Daun-daunan/Rumbia</option>                                           
-                                              </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Jika Berkode 1,2,3,4,5,6, atau 7 kondisi atap</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="kondisi_atap">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Bagus/Kualitas Tinggi">1.Bagus/Kualitas Tinggi</option>
-                                                 <option value="2.Jelek/Kualitas Rendah">2.Jelek/Kualitas Rendah</option>
-                                                 <option value="3.Tidak Ada">3.Tidak Ada</option>       
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                              <div class="row">
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah Kamar Tidur</option></i></font>
-                                        <input type="text" class="form-control" id="jumlah_kamar" name="jumlah_kamar" placeholder="Jumlah Kamar Tidur" required autofocus />
+                                        <font color="red"><i><option value="">*Jumlah Tabung Gas</option></i></font>
+                                        <input type="number" class="form-control" id="jml_tabung_gas" name="jml_tabung_gas" placeholder="Jumlah Tabung Gas" required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
                         </div>
-                          <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Sumber Air Minum</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="sumber_air_minum">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="01.Air Kemasan Bermerk">01.Air Kemasan Bermerk</option>
-                                                 <option value="02.Air Isi Ulang">02.Air Isi Ulang</option>                
-                                                 <option value="03.Leding Meteran">03.Leding Meteran</option>               
-                                                 <option value="04.Leding Eceran">04.Leding Eceran</option>   
-                                                 <option value="05.Sumur Bor/Pompa">05.Sumur Bor/Pompa</option>               
-                                                 <option value="06.Sumur Terlindung">06.Sumur Terlindung</option>  
-                                                 <option value="07.Sumur Tak Terlindung">07.Sumur Tak Terlindung</option>
-                                                 <option value="08.Mata Air Terlindung">08.Mata Air Terlindung</option>  
-                                                 <option value="09.Mata Air Tak Terlindung">09.Mata Air Tak Terlindung</option>
-                                                 <option value="10.Air Sungai/Danau/Waduk">10.Air Sungai/Danau/Waduk</option>
-                                                 <option value="11.Air Hujan">11.Air Hujan</option>
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             <br>
-                             <div class="row">
+                        <div class="row">
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jika berkode 3 tulis No. ID Pelanggan(PAM/PDAM/BPAM/.....*)</option></i></font>
-                                        <input type="text" class="form-control" id="kode_pelanggan_air" name="kode_pelanggan_air" placeholder="Jenis Leding Meteran-ID Pelanggan Air" required autofocus />
+                                        <font color="red"><i><option value="">*Jumlah AC</option></i></font>
+                                        <input type="number" class="form-control" id="jml_AC" name="jml_AC" placeholder="jml_AC" required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
                         </div>
-                          <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Cara Memperoleh Air</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="cara_memperoleh_air">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Membeli Eceran">1.Membeli Eceran</option>
-                                                 <option value="2.Langganan">2.Langganan</option>   
-                                                 <option value="3.Tidak Membeli">3.Tidak Membeli</option>               
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Sumber Penerangan Utama</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="sumber_penerangan">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Listrik PLN">1.Listrik PLN</option>
-                                                 <option value="2Listrik Non PLN">2Listrik Non PLN</option>                
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Jika Berkode 1, daya terpasang</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="daya_terpasang">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.450.watt">1.450.watt</option>
-                                                 <option value="2.900 watt">2.900 watt</option>                
-                                                 <option value="3.1.300 watt">3.1.300 watt</option>               
-                                                 <option value="4.2.200 watt">4.2.200 watt</option>   
-                                                 <option value="5.> 2.200 watt">5.> 2.200 watt</option>               
-                                                 <option value="6.Tanpa Meteran">6.Tanpa Meteran</option>  
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                              <div class="row">
+                        <br>
+                        <div class="row">
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jika berkode 1 tulis No. ID Pelanggan(ID PLN*)</option></i></font>
-                                        <input type="text" class="form-control" id="id_pln" name="id_pln" placeholder="ID PLN" required autofocus />
+                                        <font color="red"><i><option value="">*Jumlah pemanas air</option></i></font>
+                                        <input type="number" class="form-control" id="jml_pemanas_air" name="jml_pemanas_air" placeholder="jml_pemanas_air" required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
                         </div>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Bahan Bakar/Energi Utama untuk Memasak</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="bahan_bakar_memasak">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Listrik">1.Listrik</option>
-                                                 <option value="2.Gas > 3 kg">2.Gas > 3 kg</option>                
-                                                 <option value="3.Gas 3 kg">3.Gas 3 kg</option>               
-                                                 <option value="4.Gas Kota/Biogas">4.Gas Kota/Biogas</option>   
-                                                 <option value="5.Minyak Tanah">5.Minyak Tanah</option>               
-                                                 <option value="6.Briket">6.Sumur Terlindung</option>  
-                                                 <option value="7.Arang">7.Arang</option>
-                                                 <option value="8.Kayu Bakar">8.Kayu Bakar</option>  
-                                                 <option value="9.Tidak Memasak dirumah">9.Tidak Memasak dirumah</option>
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                             <div class="row">
+                        <br>
+                        <div class="row">
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jika berkode 4 tulis No. ID Pelanggan(PGN/Gas Kota/.....*)</option></i></font>
-                                        <input type="text" class="form-control" id="id_pelanggan_gas" name="id_pelanggan_gas" placeholder="Jenis Gas-ID Pelanggan" required autofocus />
+                                        <font color="red"><i><option value="">*Jumlah telepon rumah</option></i></font>
+                                        <input type="number" class="form-control" id="jml_telepon_rumah" name="jml_telepon_rumah" placeholder="jml_telepon_rumah" required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
                         </div>
-                             <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Penggunaan Fasilitas Tempat Buang Air Besar</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="fasilitas_bab">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Sendiri">1.Sendiri</option>
-                                                 <option value="2.Bersama">2.Bersama</option>                
-                                                 <option value="3.Umum">3.Umum</option>          
-                                                 <option value="4.Tidak Ada">4.Tidak Ada</option>   
-                                             </optgroup>
-                                        </select>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah televisi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_televisi" name="jml_televisi" placeholder="jml_televisi" required autofocus />
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                                <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Jenis Kloset</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="jenis_kloset">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Leher Angsa">1.Leher Angsa</option>
-                                                 <option value="2.Cemplung /Cubluk">2.Plengsengan</option>                
-                                                 <option value="3.Tidak Pakai">3.Tidak Pakai</option>               
-                                             </optgroup>
-                                        </select>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah emas</option></i></font>
+                                        <input type="number" class="form-control" id="jml_emas" name="jml_emas" placeholder="jml_emas" required autofocus />
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                                <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                            <font color="red"><i><option value="">*Tempat Pembuangan Akhir Tinja</option></i></font>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="tempat_PAT">
-                                          <option value="">-----Pilih-----</option>
-                                                 <option value="1.Tangki">1.Tangki</option>
-                                                 <option value="2.SPAL">2.SPAL</option>                
-                                                 <option value="3.Lubang Tanah">3.Lubang Tanah</option>               
-                                                 <option value="4.Kolam/Sawah/Sungai">4.Kolam/Sawah/Sungai</option>   
-                                                 <option value="5.Pantai/Tanah">5.Pantai/Tanah</option>               
-                                             </optgroup>
-                                        </select>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah komputer</option></i></font>
+                                        <input type="number" class="form-control" id="jml_komputer" name="jml_komputer" placeholder="jml_komputer" required autofocus />
                                     </div>
                                 </div>
                             </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah sepeda</option></i></font>
+                                        <input type="number" class="form-control" id="jml_sepeda" name="jml_sepeda" placeholder="jml_sepeda" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah sepeda motor</option></i></font>
+                                        <input type="number" class="form-control" id="jml_spdmotor" name="jml_spdmotor" placeholder="jml_spdmotor" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah mobil</option></i></font>
+                                        <input type="number" class="form-control" id="jml_mobil" name="jml_mobil" placeholder="jml_mobil" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah perahu</option></i></font>
+                                        <input type="number" class="form-control" id="jml_perahu" name="jml_perahu" placeholder="jml_perahu" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah motor tempel</option></i></font>
+                                        <input type="number" class="form-control" id="jml_motor_tempel" name="jml_motor_tempel" placeholder="jml_motor_tempel" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah perahu motor</option></i></font>
+                                        <input type="number" class="form-control" id="jml_perahumotor" name="jml_perahumotor" placeholder="Jumlah Perahu Motor" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah kapal</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kapal" name="jml_kapal" placeholder="jml_kapal" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah lahan</option></i></font>
+                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jml_lahan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah rumah lain</option></i></font>
+                                        <input type="number" class="form-control" id="jml_rumahlain" name="jml_rumahlain" placeholder="jml_rumahlain" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah sapi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_sapi" name="jml_sapi" placeholder="jml_sapi" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah kerbau</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kerbau" name="jml_kerbau" placeholder="jml_kerbau" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah kuda</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kuda" name="jml_kuda" placeholder="jml_kuda" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah babi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_babi" name="jml_babi" placeholder="jml_babi" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah kambing</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kambing" name="jml_kambing" placeholder="jml_kambing" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
                             <br>
                             <br>
                             <br>

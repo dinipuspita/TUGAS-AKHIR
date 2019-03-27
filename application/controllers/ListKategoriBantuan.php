@@ -49,7 +49,7 @@ class ListKategoriBantuan extends CI_Controller {
 		$this->load->model('list_KategoriBantuan');
 		$this->form_validation->set_rules('nama_kategori', 'nama_kategori', 'trim|required');
 
-		$this->load->model('ListKategoriBantuan');
+		$this->load->model('List_KategoriBantuan');
 		$data['kategori_bantuan'] = $this->ListKategoriBantuan->getKategoriBantuan($id);
 
 		if($this->form_validation->run() == FALSE) {

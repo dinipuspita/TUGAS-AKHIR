@@ -23,5 +23,13 @@ class User extends CI_Model{
 		$query = $this->db->query("Select * from login");
 		return $query->result_array();
 	}
+		public function getUser()
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$username = $session_data['username'];
+		$query = $this->db->query("SELECT * from login where username='$username'");
+		// var_dump($query);die();
+		return $query->result_array();
+	}
 	
 }

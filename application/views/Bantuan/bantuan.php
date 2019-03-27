@@ -1,324 +1,471 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bantuan Sosial|Data Bantuan</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-        ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/favicon.ico">
-    <!-- Google Fonts
-        ============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
-    <!-- font awesome CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/font-awesome.min.css">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+<!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.theme.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.transitions.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
     <!-- meanmenu CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/meanmenu/meanmenu.min.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
     <!-- animate CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animate.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animation/animation-custom.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
     <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/normalize.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+  <!-- wave CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
     <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- Notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/notika-custom-icon.css">
-    <!-- wave CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/wave/waves.min.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
     <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
     <!-- style CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/style.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
     <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    ============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+       
+        </div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+          <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
+      </a>
+    </div>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href='<?php echo base_url("index.php/Admin"); ?>'>
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '2') { ?> 
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Desa
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Penduduk</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Penduduk</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Surat</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Surat</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+          </div>
+        </div>
+      </li>
+
+       <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Form Bantuan</span></a>
+      </li>
+
+      <?php } } ?>
+
+      <!-- Divider -->
+      <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '1') { ?> 
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Dinas Sosial
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Desa</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Desa</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fas fa-fw fa-folder"></i>
+          <span>Kepala Desa</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Kepala Desa</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa"); ?>'">Data Kepala Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa/create"); ?>'>Tambah Kepala Desa</a>
+          </div>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Bantuan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
+          </div>
+        </div>
+      </li>
+    <?php } } ?>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+             <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
     
-   <div class="header-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="#"><img src="<?php echo base_url() ?>assets/img/logo/satu.png" alt="" width="50px" height="50px"/></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <div class="search-input">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </li>
-                                       
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top Area -->
-    <!-- Mobile Menu start -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-    <!-- Mobile Menu end -->
-    <!-- Main Menu area start-->
-    <div class="main-menu-area mg-tb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Surat</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-app"></i> Bantuan</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Desa</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Penduduk</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content custom-menu-content">
-                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                             <li><a href='<?php echo base_url("index.php/Admin"); ?>'>Dashboard</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="animations.html">Buat Surat</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-                                </li>
-                                <li><a href="bar-charts.html">Syarat & Ketentuan</a>
-                                </li>
-                                <li><a href="line-charts.html">Cek Penduduk</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
-                                </li>
-                                <li><a href='<?php echo base_url("index.php/ListKepalaDesa"); ?>'>Data Kepala Desa</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="form-elements.html">Form Elements</a>
-                                </li>
-                                <li><a href="form-components.html">Form Components</a>
-                                </li>
-                                <li><a href="form-examples.html">Form Examples</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
-                                </li>
-                                <li><a href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
-                                </li>
-                                <li><a href="typography.html">Cek Penduduk</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   <div class="breadcomb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-app"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Data Bantuan Sosial</h2>
-                                        <p>Data Bantuan Sosial untuk Masyarakat<span class="bread-ntd"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-      <div class="animation-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="modals-list mg-t-30">
-                        <div class="modals-single">
-                            <div class="modals-hd">
-                                <h2>Bantuan Sosial</h2>
-                                <p>Bantuan Sosial adalah bantuan yang ditujukan untuk Masyarakat kurang Mampu di Kota Batu </p>
-                            </div>
-                            <div class="modals-default-cl">
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalone">Lihat Bantuan</button>
-                                <div class="modal fade" id="myModalone" role="dialog">
-                                    <div class="modal-dialog modals-default">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <div class="modal-body">
-                                               <h2>Bantuan Sosial</h2>
-                                              <?php foreach ($bantuan as $key) {
-                                              ?>
-                                            <br>
-                                            <br>
-                                            <h2><?php echo $key['nama_bantuan'] ?></h2>
-                                                <?php echo $key['nama_kategori'] ?>
-                            
-                                            <?php  } ?>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="<?php echo base_url('index.php/listBantuan/create/')?>"class="btn btn-default"></i>Create</a>
-<!-- 
-                                             <a href="<?php echo base_url('index.php/listBantuan/create/')?>" class="btn ant-nk-st bounce-ac">Create</span></i></a> -->
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
 
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
+          <br>
+          <a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-success">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
+
+           <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>"class="btn btn-info">Cetak Laporan <span class="glyphicon glyphicon-print"></a></span>
+          <br>
+          <br>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Bantuan Sosial Untuk Masyarakat Kota Batu</h6>
+            </div>
+            <div class="card-body">
+                              <div class="table table-responsive">
+                                <table class="table" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Bantuan</th>
+                                            <th>Kategori Bantuan</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no=1; ?>
+                                           <?php foreach ($jenis_bantuan as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['nama_bantuan'] ?></td>
+                                          <td><?php echo $key['nama_kategori'] ?></td>
+                                          <td>
+                                            <a href="<?php echo base_url('index.php/ListBantuan/update/'.$key['id_jenis_bantuan'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
+
+                                            <a href="<?php echo base_url('index.php/ListBantuan/delete/' .$key['id_jenis_bantuan'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+
+                                                        </td>  
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                    </tbody>
+                                </table>
                                 </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                              </div>
+                            </div>
+                          </div>
+                       </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
         </div>
+      </footer>
+      <!-- End of Footer -->
+
     </div>
-    <br>
-    <br>
-    <br>
-    <!-- End Realtime sts area-->
-    <!-- Start Footer area-->
-    <div class="footer-copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="footer-copy-right">
-                        <p>Copyright © 2018 
-. Sistem Pelayanan Bantuan dan Pengajuan SKTM</a>.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
+        </div>
+      </div>
     </div>
-      <!-- End Footer area-->
-    <!-- jquery
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-    <!-- wow JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/wow.min.js"></script>
-    <!-- price-slider JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/flot/flot-active.js"></script>
-    <!-- knob JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/knob/knob-active.js"></script>
-    <!--  wave JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/wave/waves.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/wave/wave-active.js"></script>
-    <!--  animation JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/animation/animation-active.js"></script>
-    <!--  Chat JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/chat/jquery.chat.js"></script>
-    <!--  todo JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/todo/jquery.todo.js"></script>
-    <!-- plugins JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/plugins.js"></script>
-    <!-- main JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/main.js"></script>
-    <!-- tawk chat JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets/js/tawk-chat.js"></script>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="<?php echo base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="<?php echo base_url() ?>assets/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url() ?>assets/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
+
+
+   <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
+   <!-- Bootstrap Core JavaScript -->
+   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+   <!-- Menu Plugin JavaScript -->
+   <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
+   <!--slimscroll JavaScript -->
+   <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
+   <!--Wave Effects -->
+   <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
+   <!-- Custom Theme JavaScript -->
+   <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
+
+   <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+   <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
+   <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
+
+   <script type="text/javascript">
+   $(document).ready(function(){
+   $('#example').DataTable();
+   } );
+   </script>    
+    
+
 </body>
 
 </html>

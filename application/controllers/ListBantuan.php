@@ -26,17 +26,21 @@ class ListBantuan extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('list_Bantuan');
-		$data["bantuan"] = $this->list_Bantuan->getTampil();
+		$data["jenis_bantuan"] = $this->list_Bantuan->getTampil();
+		$data['user'] = $this->list_Bantuan->getUser();
 		$this->load->view('Bantuan/bantuan', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
 	{
 		$this->load->model('list_Bantuan');
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
-		$this->form_validation->set_rules('syarat', 'syarat', 'trim|required');
 
 		$this->load->model('list_KategoriBantuan');
 		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori();
+		$data['user'] = $this->list_Bantuan->getUser();
+
+		$this->load->model('list_bantuan');
+		$data["jenis_bantuan"] = $this->list_bantuan->getTampilBantuan();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Bantuan/input_data_bantuan',$data);
@@ -47,21 +51,47 @@ class ListBantuan extends CI_Controller {
 			</script>";
 		}
 	}
+	// public function update($id)
+	// {
+	
+	// 	$this->load->model('list_Bantuan');
+	// 	$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
+	// 	$this->form_validation->set_rules('id_kategori', 'fk_kategori', 'trim|required');
+
+	// 	$this->load->model('list_Bantuan');
+
+	// 	$data['user'] = $this->list_Bantuan->getUser();
+	// 	$data['jenis_bantuan'] = $this->list_Bantuan->getBantuan($id);
+
+		// $this->load->model('list_KategoriBantuan');
+		// $data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori();
+
+	// 	if($this->form_validation->run() == FALSE) {
+	// 		$this->load->view('Bantuan/edit_data_bantuan',$data);
+	// 	}else{
+	// 		$this->list_Bantuan->updateById($id);
+	// 		echo "<script> alert('Data Bantuan Berhasil Diupdate'); window.location.href='';
+	// 		</script>";
+	// 	}
+	// }
 	public function update($id)
 	{
 	
 		$this->load->model('list_Bantuan');
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
-		$this->form_validation->set_rules('syarat', 'syarat', 'trim|required');
 		$this->form_validation->set_rules('id_kategori', 'fk_kategori', 'trim|required');
 
-		$this->load->model('list_Bantuan');
-		$data['bantuan'] = $this->list_Bantuan->getBantuan($id);
+		$this->load->model('list_KategoriBantuan');
+		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori($id);
+		$data['user'] = $this->list_Bantuan->getUser();
+
+		$this->load->model('list_bantuan');
+		$data['jenis_bantuan'] = $this->list_Bantuan->getBantuan($id);
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Bantuan/edit_data_bantuan',$data);
 		}else{
-			$this->list_Bantuan->updateById($id);
+			$this->list_bantuan->updateById($id);
 			echo "<script> alert('Data Bantuan Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}
@@ -69,16 +99,16 @@ class ListBantuan extends CI_Controller {
 	
 	public function delete($id)
 	{
-		$this->load->model('list_Bantuan');
+		$this->load->model('list_bantuan');
 		$this->list_bantuan->delete($id);
-		redirect('listBantuan','refresh');
+		redirect('listbantuan','refresh');
 	}
 	public function detail($id)
 	{
 		// var_dump($data['bantuan']);
   //       die();  
 		$this->load->model('list_bantuan');
-		$data['bantuan'] = $this->list_bantuan->getTampilDetail($id);
+		$data['jenis_bantuan'] = $this->list_bantuan->getTampilDetail($id);
 		$this->load->view('Bantuan/detailBantuan', $data);	
 	}
 }

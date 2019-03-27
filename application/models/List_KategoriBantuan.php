@@ -37,4 +37,5 @@ class List_KategoriBantuan extends CI_Model {
 		$query = $this->db->query("Select * from kategori_bantuan");
 		return $query->result();
 	}
+	
 }

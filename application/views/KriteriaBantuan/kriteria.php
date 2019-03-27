@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,31 +19,43 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  
-  <!-- animate CSS
+ <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- owl.carousel CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-   
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
   <!-- wave CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
-
-  <!-- main CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+    <!-- mCustomScrollbar CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-  <!-- style CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-  <!-- responsive CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- main CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-
-  <!-- modernizr JS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
     ============================================ -->
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
   
 <body id="page-top">
@@ -105,6 +117,7 @@
             <h6 class="collapse-header">Penduduk</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
@@ -181,14 +194,14 @@
       </li>
   
 
-      <!-- Nav Item - Charts -->
+    <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Penduduk</span></a>
       </li>
 
-      <?php } } ?>
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -343,13 +356,13 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Data Kriteria Penerima Bantuan Sosial Masyarakat Kota Batu</h1>
+          <br>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Kepala Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Kriteria Penerima Bantuan Sosial Untuk Masyarakat Kota Batu</h6>
             </div>
             <div class="card-body">
                               <div class="table table-responsive">
@@ -357,27 +370,25 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Kepala Desa</th>
-                                            <th>Nama Desa</th>
-                                            <th>Jabatan Mulai</th>
-                                            <th>Jabatan Selesai</th>
+                                            <th>Isi Kriteria</th>
+                                            <th>Nama Bantuan</th>
                                             <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $no=1; ?>
-                                           <?php foreach ($kepala_desa as $key) {
+                                           <?php foreach ($kriteria_bantuan as $key) {
                                         ?>
                                         <tr>
                                           <td><?php echo $no ?></td>
-                                          <td><?php echo $key['nama_kepala_desa'] ?></td>
-                                          <td><?php echo $key['nama_desa'] ?></td>
-                                          <td><?php echo $key['jabatan_mulai'] ?></td>
-                                          <td><?php echo $key['jabatan_selesai'] ?></td>
+                                          <td><?php echo $key['isi_kriteria'] ?></td>
+                                          <td><?php echo $key['nama_bantuan'] ?></td>
                                           <td>
-                                            <a href="<?php echo base_url('index.php/ListKepalaDesa/update/'.$key['id_kepala_desa'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
-                                            <a href="<?php echo base_url('index.php/ListKepalaDesa/delete/' .$key['id_kepala_desa'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
-                                          </td>  
+                                            <a href="<?php echo base_url('index.php/ListKriteriaBantuan/update/'.$key['id_kriteria'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
+
+                                            <a href="<?php echo base_url('index.php/ListKriteriaBantuan/delete/' .$key['id_kriteria'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+
+                                                        </td>  
                                         </tr> 
                                       <?php $no++ ?>
                                       <?php } ?>

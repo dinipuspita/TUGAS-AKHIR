@@ -86,7 +86,7 @@ class ListSurat extends CI_Controller {
 		$this->list_Surat->delete($id);
 		redirect('ListSurat','refresh');
 	}
-		public function report($id)
+	public function report($id)
 	{
 		$this->load->model('list_surat');
 		$data["surat"] = $this->list_surat->getTampilSurat($id);
@@ -108,7 +108,7 @@ class ListSurat extends CI_Controller {
 			$this->load->model('list_surat');
 			$data["surat"] = $this->list_surat->getReportSurat();
 			if (empty($data['surat'])) {
-				echo "<script> alert('Maaf, Data Surat Kosong');</script>";
+				echo "<script> alert('Maaf, Data Surat di Desa Tersebut Kosong');</script>";
 				$this->load->view('Surat/view_laporan',$data);
 			} else {
 				$this->load->library('pdf');

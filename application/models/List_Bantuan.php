@@ -25,6 +25,7 @@ class List_Bantuan extends CI_Model {
 		$query= $this->db->get('jenis_bantuan');
 		return $query->result();
 	}
+	
 	public function updateById($id)
 	{	
 		$object = array('nama_bantuan' => $this->input->post('nama_bantuan'),

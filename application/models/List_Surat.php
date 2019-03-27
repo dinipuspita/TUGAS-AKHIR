@@ -82,7 +82,7 @@ class List_Surat extends CI_Model {
 	}
 	public function getTampilSurat($id)
 	{
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa");
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa where id_surat = $id");
 		return $query->result_array();
 	}
 

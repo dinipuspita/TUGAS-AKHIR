@@ -57,22 +57,31 @@
     ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
-
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+     <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '1') { ?> 
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+    <!-- Sidebar -->
+    <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '2') { ?> 
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
+    <br>
+
+         <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -106,8 +115,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
@@ -121,19 +131,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+            <a class="collapse-item" href="utilities-color.html">Data Surat</a>
+            <a class="collapse-item" href="utilities-border.html">Buat Surat</a>
           </div>
         </div>
       </li>
-
-       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
-
       <?php } } ?>
 
       <!-- Divider -->
@@ -155,9 +157,9 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
           </div>
         </div>
       </li>
@@ -183,10 +185,21 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
-          </div>
+            <a class="collapse-item" href="utilities-color.html">Tambah Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Kriteria Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>          </div>
         </div>
       </li>
-    <?php } } ?>
+
+    <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Penduduk</span></a>
+      </li>
+
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -213,6 +226,10 @@
             <i class="fa fa-bars"></i>
           </button>
 
+
+        <!--   <div align="right">
+            <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
+                                    <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -337,14 +354,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
-
-          <br>
-          <a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-success">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
-
-           <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>"class="btn btn-info">Cetak Laporan <span class="glyphicon glyphicon-print"></a></span>
-          <br>
+          <h1 class="h3 mb-2 text-gray-800">Data Bantuan Sosial Masyarakat Kota Batu</h1>
           <br>
 
           <!-- DataTales Example -->

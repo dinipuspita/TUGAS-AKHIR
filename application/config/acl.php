@@ -80,6 +80,10 @@ $acl = array(
 		'1' => true,
 		'2' => true,
 	),
+	'ListBantuan' => array(
+		'1' => true,
+		'2' => false,
+	),
 	'ListKeteranganPerumahan' => array(
 		'1' => true,
 		'2' => true,

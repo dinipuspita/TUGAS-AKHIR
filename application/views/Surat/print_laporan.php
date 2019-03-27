@@ -52,7 +52,7 @@
 
 <body>
 
-<center><h3>LAPORAN PENERIMA SURAT DESA <?php echo $surat[0]['nama_desa']?><br></h3></center>
+<center><h3>LAPORAN PENERIMA SURAT <?php echo $surat[0]['nama_desa']?><br></h3></center>
 <br>
 
    <div class="breadcomb-list">

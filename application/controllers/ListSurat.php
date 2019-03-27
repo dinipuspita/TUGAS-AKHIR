@@ -95,11 +95,11 @@ class ListSurat extends CI_Controller {
 	}
 	public function laporanSurat()
 	{
-		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');	
+		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');	
 	
 	
-		$this->load->model('list_Penduduk');
-		$data["penduduk"] = $this->list_desa->getTampilPenduduk($id);
+		$this->load->model('list_desa');
+		$data["desa"] = $this->list_desa->getTampilDesa();
 		$data['user'] = $this->list_desa->getUser();
 
 		if($this->form_validation->run() == FALSE) {

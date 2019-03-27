@@ -364,8 +364,6 @@
                                             <th>Jenis Kelamin</th>
                                             <th>Desa</th>
                                             <th>Alamat</th>    
-                                            <th>RT</th>
-                                            <th>RW</th>
                                             <th>Options</th>
                                     </thead>
                                     <tbody>
@@ -382,8 +380,6 @@
                                           <td><?php echo $key['jenis_kelamin'] ?></td>
                                           <td><?php echo $key['nama_desa'] ?></td>
                                           <td><?php echo $key['alamat'] ?></td>
-                                          <td><?php echo $key['RT'] ?></td>
-                                          <td><?php echo $key['RW'] ?></td>
                                           <td>
                                             <a href="<?php echo base_url('index.php/ListPenduduk/detail/'.$key['NIK'])?>" class="btn btn-warning">Detail <span class="glyphicon glyphicon-th-list"></span></a>
 
@@ -411,8 +407,6 @@
                                           <td><?php echo $key['jenis_kelamin'] ?></td>
                                           <td><?php echo $key['nama_desa'] ?></td>
                                           <td><?php echo $key['alamat'] ?></td>
-                                          <td><?php echo $key['RT'] ?></td>
-                                          <td><?php echo $key['RW'] ?></td>
                                           <td>
                                             <a href="<?php echo base_url('index.php/ListPenduduk/detail/'.$key['NIK'])?>" class="btn btn-warning">Detail <span class="glyphicon glyphicon-th-list"></span></a>
 

@@ -380,7 +380,7 @@
 
                                             <a href="<?php echo base_url('index.php/ListSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-                                            <a href="<?php echo base_url('index.php/ListSurat/report/' .$key['NIK'])?>" class="btn btn-success">Print <span class="glyphicon glyphicon-print"></span></a>
+                                            <a href="<?php echo base_url('index.php/ListSurat/report/' .$key['id_surat'])?>" class="btn btn-success">Print <span class="glyphicon glyphicon-print"></span></a>
 
                                           </td>  
                                         </tr> 

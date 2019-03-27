@@ -80,7 +80,7 @@ class List_Surat extends CI_Model {
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK");
 		return $query->result_array();
 	}
-	public function getTampilSurat()
+	public function getTampilSurat($id)
 	{
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa");
 		return $query->result_array();
@@ -107,7 +107,7 @@ class List_Surat extends CI_Model {
 	public function getReportSurat()
 	{
 	
-		$NIK = $this->input->post('NIK');
+		$id_desa = $this->input->post('id_desa');
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
 		return $query->result_array();
 	}

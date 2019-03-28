@@ -5,7 +5,7 @@ class List_Bantuan extends CI_Model {
 	{
 		
 	$object = array('nama_bantuan' => $this->input->post('nama_bantuan'),
-					'id_kategori' => $this->input->post('fk_kategori'));
+					'fk_kategori' => $this->input->post('fk_kategori'));
 		
 		$this->db->insert('jenis_bantuan', $object);
 	}

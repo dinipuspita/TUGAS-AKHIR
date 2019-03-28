@@ -57,7 +57,7 @@ class ListBantuan extends CI_Controller {
 	
 		$this->load->model('list_Bantuan');
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
-		$this->form_validation->set_rules('id_kategori', 'fk_kategori', 'trim|required');
+		$this->form_validation->set_rules('fk_kategori', 'fk_kategori', 'trim|required');
 
 		$this->load->model('list_bantuan');
 		$data['jenis_bantuan'] = $this->list_Bantuan->getBantuan($id);
@@ -65,7 +65,6 @@ class ListBantuan extends CI_Controller {
 		$this->load->model('list_KategoriBantuan');
 		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori($id);
 		$data['user'] = $this->list_Bantuan->getUser();
-
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Bantuan/edit_data_bantuan',$data);

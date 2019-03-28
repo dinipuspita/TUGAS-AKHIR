@@ -365,7 +365,8 @@
             <div class="card-body">
 
  <?php echo form_open('ListKriteriaBantuan/update/'.$this->uri->segment(3)); 
-        ?>                  
+        ?> 
+         <?php echo validation_errors(); ?>                 
    
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -387,7 +388,7 @@
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                        <select name="fk_bantuan" class="form-control">
+                                        <select name="fk_jenis_bantuan" class="form-control">
                                         <option value="">Pilih Nama Bantuan</option>
                                             <?php foreach ($jenis_bantuan as $data ){ ?>
                                             <option value="<?php echo $data->id_jenis_bantuan; ?>"><?php echo $data->nama_bantuan ?>

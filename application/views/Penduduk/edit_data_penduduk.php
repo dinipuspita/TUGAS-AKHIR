@@ -348,6 +348,7 @@
             <div class="card-body">
         <?php echo form_open('ListPenduduk/update/'.$this->uri->segment(3)); 
         ?>
+         <?php echo validation_errors(); ?> 
 
     
             <div class="row">
@@ -509,7 +510,17 @@
                         <div class="basic-tb-hd">
                             <h2>Data Tempat Tinggal</h2><br>
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]->alamat?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -519,7 +530,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>

@@ -23,10 +23,10 @@ class List_FilterSurat extends CI_Model {
 		$pendapatan=$this->input->post('pendapatan');
 
 
-		if($pendapatan / $jumlah_tanggungan <=600000 && $dokumen != "lengkap" && $lahan <2 && $statusBangunan = "miliksendiri"){
+		if($pendapatan / $jumlah_tanggungan <= 600000 && $dokumen == "lengkap" && $lahan <2 && $statusBangunan = "miliksendiri"){
 		// if ($this->input->post('tanggungan_keluarga')!= 'Lengkap') {	
 
-		echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); window.location.href='../ListSurat/create'; </script>";
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create'; </script>";
 		
 		}else{
 			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListSurat'; </script>";

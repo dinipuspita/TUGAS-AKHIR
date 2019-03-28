@@ -20,10 +20,10 @@ class List_KriteriaBantuan extends CI_Model {
 	public function updateById($id)
 	{	
 		$object = array('isi_kriteria' => $this->input->post('isi_kriteria'),
-						'id_bantuan' => $this->input->post('fk_bantuan'));
+						'id_jenis_bantuan' => $this->input->post('fk_jenis_bantuan'));
 
-		$this->db->where('id_jenis_bantuan',$id);
-		$this->db->update('jenis_bantuan', $object);
+		$this->db->where('id_kriteria',$id);
+		$this->db->update('kriteria_bantuan', $object);
 	}
 	public function getTampil()
 	{

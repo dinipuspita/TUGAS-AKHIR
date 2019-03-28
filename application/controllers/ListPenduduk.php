@@ -71,7 +71,7 @@ class ListPenduduk extends CI_Controller {
 	
 		$this->load->model('list_penduduk');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
-		$this->form_validation->set_rules('No_KK', 'No_KK', 'trim|required');
+		$this->form_validation->set_rules('NO_KK', 'NO_KK', 'trim|required');
 		$this->form_validation->set_rules('nama_penduduk', 'nama_penduduk', 'trim|required');
 		$this->form_validation->set_rules('tempat_lahir', 'tempat_lahir', 'trim|required');
 		$this->form_validation->set_rules('tanggal_lahir', 'tanggal_lahir', 'trim|required');

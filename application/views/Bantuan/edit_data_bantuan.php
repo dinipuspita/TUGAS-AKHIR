@@ -366,9 +366,8 @@
             </div>
             <div class="card-body">
 
- <?php echo form_open('ListBantuan/update/'.$this->uri->segment(3)); 
-        ?>                  
-   
+ <?php echo form_open('ListBantuan/update/'.$this->uri->segment(3)); ?>                  
+      <?php echo validation_errors(); ?>   
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">

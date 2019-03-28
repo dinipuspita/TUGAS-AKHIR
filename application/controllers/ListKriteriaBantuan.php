@@ -57,14 +57,14 @@ class ListKriteriaBantuan extends CI_Controller {
 	
 		$this->load->model('list_KategoriBantuan');
 		$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
-		$this->form_validation->set_rules('id_jenis_bantuan', 'fk_bantuan', 'trim|required');
+		$this->form_validation->set_rules('fk_jenis_bantuan', 'fk_jenis_bantuan', 'trim|required');
 
 		$this->load->model('list_KriteriaBantuan');
 		$data["kriteria_bantuan"] = $this->list_KriteriaBantuan->getTampilKriteria($id);
 		$data['user'] = $this->list_KriteriaBantuan->getUser();
 
 		$this->load->model('list_bantuan');
-		$data['jenis_bantuan'] = $this->list_bantuan->getBantuan($id);
+		$data['jenis_bantuan'] = $this->list_bantuan->getTampilBantuan($id);
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('KriteriaBantuan/edit_data_kriteria',$data);

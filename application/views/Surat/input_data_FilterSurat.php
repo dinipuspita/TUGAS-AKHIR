@@ -466,7 +466,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Luas Lahan</option></i></font>
+                                        <font color="red"><i><option value="">*Luas Lahan (Meter)</option></i></font>
                                         <input type="text" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="Luas Lahan" required autofocus />
                                     </div>
                                 </div>

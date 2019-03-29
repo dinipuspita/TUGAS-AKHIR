@@ -72,7 +72,7 @@ class List_Penduduk extends CI_Model {
 
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa");
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa");
 		return $query->result_array();
 	}
 

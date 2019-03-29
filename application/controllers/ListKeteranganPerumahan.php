@@ -29,7 +29,7 @@ class ListKeteranganPerumahan extends CI_Controller {
 		$this->load->model('list_keteranganPerumahan');
 		$data["keterangan_perumahan"] = $this->list_keteranganPerumahan->getTampil();
 		$data['user'] = $this->list_keteranganPerumahan->getUser();
-		$this->load->view('FormBantuan/keterangan_perumahan', $data);	
+		$this->load->view('FormKetPerum/keterangan_perumahan', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
 	{

@@ -50,17 +50,61 @@
                   <div class="text-center">
                     <b><h1 class="h3 text-gray-900 mb-4">Login</b></h1>
                   </div>
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+
+Password: <input type="password" value="FakePSW" id="myInput"><br><br>
+<input type="checkbox" onclick="myFunction()">Show Password
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+</body>
+</html>
+ -->
+
+
+
+
+
+
                   <form class="user">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter Username" required autofocus>
                         
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" required autofocus>
+                      <input type="password" class="form-control form-control-user" name="password" id="myInput" placeholder="Password" required autofocus>
                     </div>
                     <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                    <h1 class="h6 mb-2 text-gray-800">Show Password</h1>
+                      <div class="custom-control custom-checkbox small" input type="checkbox" onclick="myFunction()" class="custom-control-input" id="customCheck">
+                        
+                        <script>
+                    function myFunction() {
+                     var x = document.getElementById("myInput");
+                    if (x.type === "password") {
+                    x.type = "text";
+                     } else {
+                     x.type = "password";
+                     }
+                    }
+                   </script>
+
+
+
+
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>

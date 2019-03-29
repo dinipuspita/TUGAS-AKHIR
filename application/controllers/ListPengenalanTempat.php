@@ -28,7 +28,7 @@ class ListPengenalanTempat extends CI_Controller {
 	{
 		$this->load->model('list_pengenalanTempat');
 		$data["pengenalan_tempat"] = $this->list_pengenalanTempat->getTampil();
-		$data['user'] = $this->list_keteranganPerumahan->getUser();
+		$data['user'] = $this->list_keteranganTempat->getUser();
 		$this->load->view('FormPengenalanTempat/pengenalan_tempat');	
 	}
 	public function create()// sudah di isi di autoloard 
@@ -59,7 +59,7 @@ class ListPengenalanTempat extends CI_Controller {
 		}
 		else{
 			$this->list_pengenalanTempat->insertPengTempat();
-			echo "<script> alert('Data Keterangan Perumahan Berhasil Ditambahkan'); window.location.href='';
+			echo "<script> alert('Data Pengenalan Tempat Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
@@ -101,10 +101,10 @@ class ListPengenalanTempat extends CI_Controller {
 	// // 	}
 	// // }
 	
-	// public function delete($id)
-	// {
-	// 	$this->load->model('list_keteranganPerumahan');
-	// 	$this->list_keteranganPerumahan->delete($id);
-	// 	redirect('listKeteranganPerumahan','refresh');
-	// }
+	 public function delete($id)
+	 {
+	 	$this->load->model('list_keteranganTempat');
+	 	$this->list_keteranganTempat->delete($id);
+	 	redirect('list_keteranganTempat','refresh');
+	 }
 }

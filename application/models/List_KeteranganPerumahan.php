@@ -4,7 +4,7 @@ class List_KeteranganPerumahan extends CI_Model {
 	public function insertKetPerum()
 	{
 		
-	$object = array('id_penduduk' => $this->input->post('id_penduduk'),
+	$object = array('NIK' => $this->input->post('NIK'),
 					'status_bangunan' => $this->input->post('status_bangunan'),
 					'status_lahan' => $this->input->post('status_lahan'), 
 					'luas_lantai' => $this->input->post('luas_lantai'), 
@@ -31,8 +31,7 @@ class List_KeteranganPerumahan extends CI_Model {
 	public function insertPenduduk()
 	{
 		
-		$object = array('id_penduduk' => $this->input->post('id_penduduk'),
-						'NIK' => $this->input->post('NIK'), 
+		$object = array('NIK' => $this->input->post('NIK'), 
 						'NO_KK' => $this->input->post('NO_KK'), 
 						'nama_penduduk' => $this->input->post('nama_penduduk'), 
 						'tempat_lahir' => $this->input->post('tempat_lahir'),

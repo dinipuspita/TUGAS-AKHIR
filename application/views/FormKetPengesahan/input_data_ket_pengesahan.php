@@ -354,7 +354,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Form II. Keterangan Petugas dan Koresponden</h1><br>
         
-       <?php echo form_open('ListKeteranganPerumahan/create'); ?> 
+       <?php echo form_open('ListKeteranganPengesahan/create'); ?> 
         
         <?php echo validation_errors(); ?>
 
@@ -410,7 +410,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Tanggal Verivali</option></i></font>
-                                        <input type="date" class="form-control" id="tanggal-verivali" name="tanggal-verivali" placeholder="Tanggal Verivali" required autofocus />
+                                        <input type="date" class="form-control" id="tanggal_verivali" name="tanggal_verivali" placeholder="Tanggal Verivali" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -428,10 +428,27 @@
                                 </div>
                             </div>
                           </div>
+                           <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
-                                 <font color="red"><i><option value="">*Hasil Pemeriksann</option></i></font>
+                                 <font color="red"><i><option value="">*Hasil Verivali</option></i></font>
+                                   <div class="bootstrap-select fm-cmp-mg">
+                                      <select class="form-control" name="hasil_verivali">
+                                          <option value="">-----Pilih-----</option>
+                                                <option value="1.Selesai Verivali">1.Selesai Verivali</option>
+                                                <option value="2.Rumah Tangga Tidak Dtemukan">2.Rumah Tangga Tidak Dtemukan</option>
+                                                <option value="3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada<">3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada</option>
+                                                <option value="Bagian dari Rumah Tangga Sesuai Prelist">Bagian dari Rumah Tangga Sesuai Prelist</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                 <font color="red"><i><option value="">*Hasil Pemeriksan</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
                                       <select class="form-control" name="hasil_pemeriksaan">
                                           <option value="">-----Pilih-----</option>
@@ -443,7 +460,7 @@
                                         </select>
                                     </div>
                                 </div>
-                           
+                            -->
                         
                           </div>
                         </div>

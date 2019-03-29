@@ -386,9 +386,9 @@
                 </div>
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                           <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
+                            <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
                                <div class="row">
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                  <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
@@ -650,11 +650,11 @@
                                    <div class="bootstrap-select fm-cmp-mg">
                                       <select class="form-control" name="daya_terpasang">
                                           <option value="">-----Pilih-----</option>
-                                                 <option value="1.450.watt">1.450.watt</option>
-                                                 <option value="2.900 watt">2.900 watt</option>                
-                                                 <option value="3.1.300 watt">3.1.300 watt</option>               
-                                                 <option value="4.2.200 watt">4.2.200 watt</option>   
-                                                 <option value="5.> 2.200 watt">5.> 2.200 watt</option>               
+                                                 <option value="1. 450watt">1. 450watt</option>
+                                                 <option value="2. 900watt">2. 900watt</option>                
+                                                 <option value="3. 1.300watt">3. 1.300watt</option>               
+                                                 <option value="4. 2.200watt">4. 2.200watt</option>   
+                                                 <option value="5. 2.200watt">5. 2.200watt</option>               
                                                  <option value="6.Tanpa Meteran">6.Tanpa Meteran</option>  
                                             </optgroup>
                                         </select>

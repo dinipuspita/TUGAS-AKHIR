@@ -40,7 +40,7 @@ class ListKeteranganPengesahan extends CI_Controller {
 		$this->form_validation->set_rules('hasil_verivali', 'hasil_verivali', 'trim|required');
 
 		$this->load->model('list_keteranganPengesahan');
-		$data["keterangan_oengesahan"] = $this->list_keteranganPengesahan->getTampilKetPengesahan();
+		$data["keterangan_pengesahan"] = $this->list_keteranganPengesahan->getTampilKetPengesahan();
 		$data['user'] = $this->list_keteranganPengesahan->getUser();
 
 		$this->load->model('list_penduduk');
@@ -52,7 +52,7 @@ class ListKeteranganPengesahan extends CI_Controller {
 		}
 		else{
 			$this->list_keteranganPengesahan->insertKetPengesahan();
-			echo "<script> alert('Data Keterangan Perumahan Berhasil Ditambahkan'); window.location.href='';
+			echo "<script> alert('Data keterangan pengesahan Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
@@ -85,7 +85,7 @@ class ListKeteranganPengesahan extends CI_Controller {
 	// 	$this->load->model('list_keteranganPengesahan');
 	// 	$data['keterangan_perumahan'] = $this->list_keteranganPengesahan->getKetPerumahan($id);
 
-	// 	if($this->form_validation->run() == FALSE) {
+	// 	if($this->form_validation->run() == FALSE) 
 	// 		$this->load->view('KepalaDesa/edit_data_ket_perumahan',$data);
 	// 	}else{
 	// 		$this->list_keteranganPengesahan->updateById($id);

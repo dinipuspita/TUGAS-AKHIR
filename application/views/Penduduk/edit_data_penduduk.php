@@ -510,16 +510,6 @@
                         <div class="basic-tb-hd">
                             <h2>Data Tempat Tinggal</h2><br>
                         <div class="row">
-                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-house"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]->alamat?>">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">

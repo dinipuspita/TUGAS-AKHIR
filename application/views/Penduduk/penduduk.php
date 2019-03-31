@@ -351,8 +351,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p>
+          <!-- <h1 class="h3 mb-2 text-gray-800">Tables</h1> -->
+          <h3><p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a></p></h3>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">

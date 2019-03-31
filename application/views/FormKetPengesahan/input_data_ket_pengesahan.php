@@ -428,10 +428,36 @@
                                 </div>
                             </div>
                           </div>
-                           <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-calendar"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Hasil Verivali</option></i></font>
+                                         <div class="bootstrap-select fm-cmp-mg">
+                                      <select class="form-control" name="hasil_verivali">
+                                          <option value="">-----Pilih-----</option>
+                                                <option value="1.Selesai Verivali">1.Selesai Verivali</option>
+                                                <option value="2.Rumah Tangga Tidak Dtemukan">2.Rumah Tangga Tidak Dtemukan</option>
+                                                <option value="3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada<">3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada</option>
+                                                <option value="Bagian dari Rumah Tangga Sesuai Prelist">Bagian dari Rumah Tangga Sesuai Prelist</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
                                 </div>
+                            </div>
+
+<!-- 
+                           <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+                              <!--   <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10"> -->
+                                <!-- <div class="form-ic-cmp">
+                                 <i class="notika-icon notika-edit"></i>
+                                 </div>
+                                 <div class="nk-int-st">
                                  <font color="red"><i><option value="">*Hasil Verivali</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
                                       <select class="form-control" name="hasil_verivali">
@@ -444,7 +470,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
@@ -478,9 +504,9 @@
                             </div>
                           </div>
                         </div> -->
+                            <!-- <br>
                             <br>
-                            <br>
-                            <br>
+                            <br> -->
                             <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span>
                                 </button>

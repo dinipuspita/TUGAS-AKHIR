@@ -353,7 +353,9 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Form Filter Data Penerima Surat</h1><br>
+         <!--  <h1 class="h3 mb-2 text-gray-800">Form Filter Data Penerima Surat</h1><br> -->
+         <h3><p class="mb-4">Form Filter Data Penerima Surat Keterangan Tidak Mampu</p></h3>
+
         
        <?php echo form_open('ListFilterSurat/create'); ?> 
         

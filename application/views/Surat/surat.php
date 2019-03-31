@@ -337,10 +337,9 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
+         <!--  <h1 class="h3 mb-2 text-gray-800">Tables</h1> -->
+          <h3><p class="mb-4">Data Penduduk Yang Menerima Surat Keterangan Tidak Mampu</p></h3>
 
-          <br>
           <a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-success">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
 
            <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>"class="btn btn-info">Cetak Laporan <span class="glyphicon glyphicon-print"></a></span>

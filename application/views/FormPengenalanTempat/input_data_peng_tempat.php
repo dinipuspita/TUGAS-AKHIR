@@ -403,7 +403,198 @@
                                     </div>
                                 </div>
                             </div>
+                             <div class="form-element-list">
+                        <div class="row">
+                        <div class="basic-tb-hd">
+                           <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
 
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                    <font color="red"><i><option value="">*Provinsi</option></i></font>
+                                        <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="Provinsi" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+           <!--                 <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                            <h4>Data Penduduk</h4><br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div> -->
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Kabupaten</option></i></font>
+                                        <input type="text" class="form-control" id="kabupaten" name="kabupaten" placeholder="kabupaten" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Kecamatan</option></i></font>
+                                        <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="kecamatan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                         <i class="notika-icon notika-support"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Nama SLS</option></i></font>
+                                        <input type="text" class="form-control" id="nama_sls" name="nama_sls" placeholder="nama_sls" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Alamat</option></i></font>
+                                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="alamat" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*No Urut RT</option></i></font>
+                                        <input type="number" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="no_urut_rt" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                         <i class="notika-icon notika-support"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Nama KRT (Kepala Rumah Tangga)</option></i></font>
+                                        <input type="text" class="form-control" id="nama_krt" name="nama_krt" placeholder="nama_krt" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                           <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*jumlah ART (Anggota Rumah Tangga</option></i></font>
+                                        <input type="number" class="form-control" id="jumlah_ART" name="jumlah_ART" placeholder="jumlah_ART" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                         <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah Keluarga</option></i></font>
+                                        <input type="number" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="jumlah_keluarga" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                           <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Nomor KK Setiap ART (Anggota Rumah Tangga)</option></i></font>
+                                        <input type="text" class="form-control" id="no_kk_setiap_ART" name="no_kk_setiap_ART" placeholder="no_kk_setiap_ART" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                            <div class="row">
+                           <!--      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-calendar"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Tanggal Verivali</option></i></font>
+                                        <input type="date" class="form-control" id="tanggal_verivali" name="tanggal_verivali" placeholder="Tanggal Verivali" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div> -->
+                       <!--   <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-calendar"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Tanggal Pemeriksaan</option></i></font>
+                                        <input type="date" class="form-control" id="tanggal_pemeriksaan" name="tanggal_pemeriksaan" placeholder="Tanggal Pemeriksaan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                          </div> -->
+                          <!--  <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                 <font color="red"><i><option value="">*Hasil Verivali</option></i></font>
+                                   <div class="bootstrap-select fm-cmp-mg">
+                                      <select class="form-control" name="hasil_verivali">
+                                          <option value="">-----Pilih-----</option>
+                                                <option value="1.Selesai Verivali">1.Selesai Verivali</option>
+                                                <option value="2.Rumah Tangga Tidak Dtemukan">2.Rumah Tangga Tidak Dtemukan</option>
+                                                <option value="3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada<">3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada</option>
+                                                <option value="Bagian dari Rumah Tangga Sesuai Prelist">Bagian dari Rumah Tangga Sesuai Prelist</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+ -->
                                          <!--    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
@@ -414,7 +605,7 @@
                                     </div>
                                 </div>
                             </div> -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                           <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-flag"></i>
@@ -423,7 +614,7 @@
                                         <input type="text" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="No Urut RT" required autofocus />
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
@@ -436,7 +627,7 @@
                                         </select>
                                 </div>
                             </div> -->
-                        </div>
+                       <!--  </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
@@ -479,7 +670,7 @@
                                     </div>
                                 </div>
                             </div>
-
+ -->
 
                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
@@ -501,12 +692,12 @@
                         </div>
                       </div>
                     </div> -->
-                  </div>
+                 <!--  </div>
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
           </div>
       </div>
-
+ -->
             <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">

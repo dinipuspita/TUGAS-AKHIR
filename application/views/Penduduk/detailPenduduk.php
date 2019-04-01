@@ -359,16 +359,15 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Detail Penduduk</h1><br>
+         <!--  <h1 class="h3 mb-2 text-gray-800">Detail Penduduk</h1><br> -->
+         <h3><p class="mb-4">Data Detail Penduduk Kurang Mampu Kota Batu</a></p></h3>
         
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Detail Penduduk Kota Batu</h6>
             </div>
-            <div class="card-body">                        
-                <div class="basic-tb-hd">
-                            <div class="bsc-tbl-bdr">
+          <!-- s -->
                                 <table class="table table-bordered">
                                 <thead>
                                 <tr class="success">

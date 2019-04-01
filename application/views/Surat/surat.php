@@ -336,9 +336,6 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
- <!--          <h1 class="h3 mb-2 text-gray-800">Data Penduduk</h1>
-          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p> -->
  <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -367,7 +364,7 @@
             </div>
         </div>
     </div>
-    
+  
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">

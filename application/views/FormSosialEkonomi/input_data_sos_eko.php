@@ -670,9 +670,6 @@
                            </div>
                          </div>
                         </div>
-                            <br>
-                            <br>
-                            <br>
                             <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span>
                                 </button>

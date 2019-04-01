@@ -406,7 +406,31 @@
                                 </div>
                             </div>
                               <br>
-                        <div class="row">
+                              <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Jumlah Tabung Gas</option></i></font>
+                                        <input type="number" class="form-control" id="jml_tabung_gas" name="jml_tabung_gas" placeholder="Jumlah Tabung Gas" required autofocus />
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                            <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir (DD-MM-YYYY)" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+ -->
+                        <!-- <div class="row">
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -420,12 +444,12 @@
                             </div>
                           </div>
                         </div>
-                            <br>
+                            <br> -->
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah AC</option></i></font>
@@ -434,13 +458,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah pemanas air</option></i></font>
@@ -449,13 +471,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah telepon rumah</option></i></font>
@@ -464,13 +484,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah televisi</option></i></font>
@@ -479,13 +497,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah emas</option></i></font>
@@ -494,13 +510,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah komputer</option></i></font>
@@ -509,13 +523,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah sepeda</option></i></font>
@@ -524,13 +536,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah sepeda motor</option></i></font>
@@ -539,13 +549,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah mobil</option></i></font>
@@ -554,13 +562,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah perahu</option></i></font>
@@ -569,13 +575,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah motor tempel</option></i></font>
@@ -584,13 +588,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah perahu motor</option></i></font>
@@ -599,13 +601,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah kapal</option></i></font>
@@ -614,13 +614,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah lahan</option></i></font>
@@ -629,13 +627,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah rumah lain</option></i></font>
@@ -644,13 +640,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah sapi</option></i></font>
@@ -659,13 +653,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah kerbau</option></i></font>
@@ -674,13 +666,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah kuda</option></i></font>
@@ -689,13 +679,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah babi</option></i></font>
@@ -704,13 +692,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
                         <div class="row">
-                              <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
+                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah kambing</option></i></font>
@@ -720,9 +706,6 @@
                             </div>
                           </div>
                         </div>
-                            <br>
-                            <br>
-                            <br>
                             <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span>
                                 </button>

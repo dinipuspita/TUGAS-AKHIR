@@ -59,16 +59,16 @@ class ListSurat extends CI_Controller {
 			</script>";
 		}
 	}
+
 	public function update($id)
 	{
 	
-		$this->load->model('list_Surat');
-		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
 		$this->load->model('list_Surat');
-		$data['surat'] = $this->list_Surat->getSurat($id);
+		$data['surat'] = $this->list_Surat->getsurat($id);
+		$data['user'] = $this->list_Surat->getUser();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/edit_data_surat',$data);
@@ -78,7 +78,7 @@ class ListSurat extends CI_Controller {
 			</script>";
 		}
 	}
-	
+
 	public function delete($id)
 	{
 		$this->load->model('list_Surat');

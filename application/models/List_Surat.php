@@ -69,11 +69,12 @@ class List_Surat extends CI_Model {
 	}
 	public function updateById($id)
 	{	
-		$data = array('NIK' => $this->input->post('NIK'), 
-					  'tanggal_surat' => $this->input->post('tanggal_surat'));
+		$object = array('keterangan' => $this->input->post('keterangan'), 
+					  'tanggal_surat' => $this->input->post('tanggal_surat')
+					);
 
 		$this->db->where('id_surat', $id);
-		$this->db->update('surat', $object);
+		$this->db->update('surat',$object);
 	}
 	public function getTampil()
 	{

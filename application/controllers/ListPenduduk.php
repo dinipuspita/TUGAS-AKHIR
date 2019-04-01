@@ -29,7 +29,8 @@ class ListPenduduk extends CI_Controller {
 	{
 		$this->load->model('list_Penduduk');
 		$data["penduduk"] = $this->list_Penduduk->getTampil();
-		$data['user'] = $this->list_Penduduk->getUser();
+		$data['user'] = $this->list_Penduduk->getUser();		
+		// $data['pendudukByUser'] = $this->list_Penduduk->getPendudukByUser();
 		$this->load->view('Penduduk/penduduk', $data);	
 	}
 	public function create()// sudah di isi di autoloard 

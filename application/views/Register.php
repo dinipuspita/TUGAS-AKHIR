@@ -425,7 +425,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Password</option></i></font>
-                                        <input type="text" class="form-control" id="password" name="password" placeholder="Password" required autofocus />
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -440,7 +440,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Konfirmasi Password</option></i></font>
-                                        <input type="text" class="form-control" id="konfirmasi" name="konfirmasi" placeholder="Konfirmasi Password" required autofocus />
+                                        <input type="password" class="form-control" id="konfirmasi" name="konfirmasi" placeholder="Konfirmasi Password" required autofocus />
                                     </div>
                                 </div>
                             </div>

@@ -331,27 +331,50 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
-    
+          <!-- End of Topbar -->
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation</a>.</p>
-
-          <br>
-          <a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-success">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
-
-           <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>"class="btn btn-info">Cetak Laporan <span class="glyphicon glyphicon-print"></a></span>
-          <br>
-          <br>
-
+ <!--          <h1 class="h3 mb-2 text-gray-800">Data Penduduk</h1>
+          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p> -->
+ <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Data Penerima Surat</h2>
+                                        <p>Data Penerima Surat Masyarakat Kota Batu<span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Kepala Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
+               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
             </div>
+          </div>
             <div class="card-body">
                               <div class="table table-responsive">
                                 <table class="table" id="example">
@@ -469,7 +492,14 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>    
+   </script>   
+    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
     
 
 </body>

@@ -20,6 +20,10 @@ class Dashboardmod extends CI_Model {
 	    $query = $this->db->query("SELECT COUNT(id_jenis_bantuan) FROM jenis_bantuan");
 	    return $query->row();
 	}
+	public function getSurat(){
+	    $query = $this->db->query("SELECT COUNT(id_surat) FROM surat");
+	    return $query->row();
+	}
 	public function getUser()
 	{
 		$session_data = $this->session->userdata('logged_in');

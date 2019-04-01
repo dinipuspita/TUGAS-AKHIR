@@ -34,7 +34,6 @@ class ListSurat extends CI_Controller {
 	{
 	
 		$this->form_validation->set_rules('id_surat', 'id_surat', 'trim|required');
-		$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
 		$this->load->model('list_Surat');

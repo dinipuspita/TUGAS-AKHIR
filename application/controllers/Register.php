@@ -81,7 +81,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('no_telp', 'no_telp', 'trim|required');
 		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');
-		// $this->form_validation->set_rules('id_kecamatan', 'id_kecamatan', 'trim|required');
+	
 
 		
 		if ($this->form_validation->run() == FALSE) {

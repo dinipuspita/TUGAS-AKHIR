@@ -32,6 +32,7 @@ class Admin extends CI_Controller {
 		$data['jumlahpenduduk'] = $this->Dashboardmod->getPenduduk();
 		$data['jumlahdesa'] = $this->Dashboardmod->getDesa();
 		$data['jumlahbantuan'] = $this->Dashboardmod->getBantuan();
+		$data['jumlahsurat'] = $this->Dashboardmod->getSurat();
 		$data['user'] = $this->Dashboardmod->getUser();
 
 		$this->load->view('index',$data);
@@ -47,6 +48,10 @@ class Admin extends CI_Controller {
 	public function bantuan()
 	{
 		$this->load->view('bantuan');
+	}
+	public function surat()
+	{
+		$this->load->view('surat');
 	}
 	public function error()
 	{

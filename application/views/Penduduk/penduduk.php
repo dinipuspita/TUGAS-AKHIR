@@ -27,6 +27,7 @@
    
   <!-- wave CSS
     ============================================ -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
 
@@ -351,9 +352,36 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p>
-
+ <!--          <h1 class="h3 mb-2 text-gray-800">Data Penduduk</h1>
+          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p> -->
+ <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Data Penduduk</h2>
+                                        <p>Data Penduduk Kota Batu <span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -504,7 +532,15 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>    
+   </script>  
+
+    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>  
     
 
 </body>

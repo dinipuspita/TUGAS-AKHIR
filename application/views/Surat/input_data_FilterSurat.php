@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -55,9 +55,53 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
     ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- summernote CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
+    <!-- Range Slider CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+    <!-- mCustomScrollbar CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
+    <!-- wave CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <!-- main CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
 
 <body id="page-top">
 
@@ -347,18 +391,36 @@
 
         </nav>
 
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Form Filter Data Penerima Surat</h1><br>
+        <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Form Filter  Penerima Surat</h2>
+                                        <p>Filter Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <br>
         
        <?php echo form_open('ListFilterSurat/create'); ?> 
         
         <?php echo validation_errors(); ?>
 
+  <div class="container">
                           
              <div class="row">
 
@@ -387,25 +449,26 @@
                     </div> -->
                   </div>
                 </div>
+
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
                            <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
                                <div class="row">
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                   <font color="red"><i><option value="">*Pilih Penduduk</option>
                                 </div>
-                                 <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="NIK" class="form-control">
-                                        <option value="">-----Pilih-----</option>
-                                            <?php foreach ($penduduk as $data ){ ?>
-                                            <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
-                                         </option>
+                                    <select class="selectpicker" value="NIK" name="NIK" data-live-search="true">
+                                      <option value="">-----Pilih-----</option>
+                                        <?php foreach ($penduduk as $data ){ ?>
+                                          <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                </option>
                                              <?php } ?>
-                                    </select>
-                                    </div>
+                                </select>
                                 </div>
                             </div>
+                          </div>
                             <br>
                               <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -413,7 +476,7 @@
                                 </div>
                             <font color="red"><i><option value="">*Kelengkapan Dokumen (Surat Keterangan Rt/Rw, KTP, KK)</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="kelengkapan_dokumen">
+                                      <select class="selectpicker" name="kelengkapan_dokumen">
                                           <option value="">-----Pilih-----</option>
                                                  <option value="Lengkap">Lengkap</option>
                                                  <option value="Surat Keterangan Rt/Rw Tidak Ada">Surat Keterangan Rt/Rw Tidak Ada</option>                
@@ -431,7 +494,7 @@
                                 </div>
                         <font color="red"><i><option value="">*Status Bangunan</option></i></font>
                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="form-control" name="status_bangunan">
+                                      <select class="selectpicker" name="status_bangunan">
                                           <option value="">-----Pilih-----</option>
                                                  <option value="Milik Sendiri">Milik Sendiri</option>
                                                  <option value="Sewa">Sewa</option>                
@@ -467,7 +530,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Luas Lahan (Meter)</option></i></font>
-                                        <input type="text" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="Luas Lahan" required autofocus />
+                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="Luas Lahan" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -489,8 +552,8 @@
                             </div>
                                 </div>
                                 </div>
-                          
-                          <font color="red"><i>* Wajib diisi</i></font>
+                     <!--      
+                          <font color="red"><i>* Wajib diisi</i></font> -->
                         <center>
                             <br>
                             <br>
@@ -586,68 +649,19 @@
    $('#example').DataTable();
    } );
    </script>    
-    
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
+
+    <!-- datapicker JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- wow JS
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
-    <!-- price-slider JS
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
-    <!-- knob JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
-   <!--  Chat JS
-    ============================================ -->
-    <script src="js/chat/jquery.chat.js"></script>
-    <!--  wizard JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
-    <!--  todo JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
-  <!--  wave JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
-    <!-- plugins JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
-    <!-- main JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
+  
 </body>
 
 </html>

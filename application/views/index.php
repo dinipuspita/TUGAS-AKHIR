@@ -113,7 +113,7 @@
         </div>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+     <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -122,11 +122,12 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Surat</a>
-            <a class="collapse-item" href="utilities-border.html">Buat Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
       </li>
+
       
    <!-- Nav Item - Charts -->
       <li class="nav-item">
@@ -394,8 +395,8 @@
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h3>
-                                <?php foreach ($jumlahpenduduk as $penduduk) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $penduduk ?></span></li>
+                                <?php foreach ($jumlahsurat as $surat) { ?>
+                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $surat ?></span></li>
                                 <?php } ?></h3>
                             <p>Surat</p>
                         </div>

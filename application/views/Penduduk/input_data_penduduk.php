@@ -55,7 +55,52 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
     ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- summernote CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
+    <!-- Range Slider CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+    <!-- mCustomScrollbar CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
+    <!-- wave CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <!-- main CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 
@@ -332,31 +377,50 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
+
+          <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tambah Data Penduduk</h1><br>
-        
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kota Batu</h6>
+ <!--          <h1 class="h3 mb-2 text-gray-800">Data Penduduk</h1>
+          <p class="mb-4">Data Penduduk Kurang Mampu Kota Batu</a>.</p> -->
+ <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Tambah Data Penduduk</h2>
+                                        <p>Data Penduduk Kota Batu <span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
+        </div>
+    </div>
+  
 
       <?php echo form_open_multipart('ListPenduduk/create'); ?> 
         
       <?php echo validation_errors(); ?>
                   
-   
+   <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h4>Data Penduduk</h4><br>
+                            <h2>Data Penduduk</h2><br>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -368,13 +432,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir (DD-MM-YYYY)" required autofocus />
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
+                                   <!--  <label>One Year view</label> -->
+                                    <div class="input-group date nk-int-st">
+                                        <span class="input-group-addon"></span>
+                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -382,8 +445,9 @@
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="form-control" name="agama">
+                                    <select class="selectpicker" name="agama">
                                             <optgroup label="Agama">
+                                                <option value="">-----Agama-----</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Kristen">Kristen</option>
                                                 <option value="Hindu">Hindu</option>
@@ -420,8 +484,9 @@
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="form-control" name="pekerjaan">
+                                    <select class="selectpicker" name="pekerjaan">
                                             <optgroup label="Pekerjaan">
+                                                <option value="">-----Pekerjaan-----</option>
                                                 <option value="Petani/Pekebun">Petani/Pekebun</option>
                                                 <option value="Buruh Tani">Buruh Tani</option>
                                                 <option value="Wiraswasta">Wiraswasta</option>
@@ -458,8 +523,9 @@
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="form-control" name="status">
+                                    <select class="selectpicker" name="status">
                                             <optgroup label="Status">
+                                                <option value="">-----Status-----</option>
                                                 <option value="Belum Menikah">Belum Menikah</option>
                                                 <option value="Sudah Menikah">Sudah Menikah</option>
                                             </optgroup>
@@ -478,40 +544,45 @@
                                     </div>
                                 </div>
                             </div>
-                           <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-dollar"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="pendapatan" name="pendapatan" placeholder="Penghasilan / Bulan" required autofocus />
-                                    </div>
-                                </div>
-                            </div> -->
-                        <div class="row">
-                      <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">
-                        <div class="form-group">
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group">
                           <font color="red">*Jenis Kelamin</font>
                           <br>
                           <input type="radio" value="Perempuan" checked="checked" id="jenis_kelamin" name="jenis_kelamin">Perempuan
                           <input type="radio" value="Laki-laki" id="jenis_kelamin" name="jenis_kelamin">Laki-laki
                         </div>
                       </div>
+                    </div>             
                     </div>
-                  </div>
-                    <br>
+                  <!--   <div class="row">
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                    <h2>Serach Option</h2>
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker" value="NIK" data-live-search="true">
+                                        <?php foreach ($penduduk as $data ){ ?>
+                                          <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                </option>
+                                             <?php } ?>
+                                </select>
+                                </div>
+                            </div>
+                          </div> -->
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
           </div>
       </div>
-
+</div>
+<div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h4>Data Tempat Tinggal</h4><br>
+                            <h2>Data Tempat Tinggal</h2><br>
                         <div class="row">
-                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -521,7 +592,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -531,7 +602,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -540,21 +612,10 @@
                                         <input type="text" class="form-control" id="RW" name="RW" placeholder="RW" required autofocus />
                                     </div>
                                 </div>
+                              </div>
+                             </div>
                             </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                             <div class="bootstrap-select fm-cmp-mg">
-                                  <font color="red"><i><option value="">*Asal Desa</option></i></font>
-                                        <select name="fk_desa" class="form-control">
-                                        <option value="">Pilih Desa</option>
-                                            <?php foreach ($desa as $data ){ ?>
-                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                          <font color="red"><i>* Wajib diisi</i></font>
+                         <font color="red"><i>* Wajib diisi</i></font>
                         <center>
                             <br>
                             <br>
@@ -563,15 +624,15 @@
                             <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
-                                 </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                     </div>
                     </div>
                   </div>
-       
+                </div>
+              </div>
+            </div>
+        
+
+
     <?php echo form_close(); ?>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -650,68 +711,19 @@
    $('#example').DataTable();
    } );
    </script>    
-    
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
+
+    <!-- datapicker JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- wow JS
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
-    <!-- price-slider JS
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
-    <!-- knob JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
-   <!--  Chat JS
-    ============================================ -->
-    <script src="js/chat/jquery.chat.js"></script>
-    <!--  wizard JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
-    <!--  todo JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
-  <!--  wave JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
-    <!-- plugins JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
-    <!-- main JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
+  
 </body>
 
 </html>

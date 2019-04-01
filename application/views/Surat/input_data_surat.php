@@ -331,20 +331,30 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Input Data Surat</h1><br>
-        
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kota Batu</h6>
+       
+        <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Form Input Data Surat</h2>
+                                        <p>Tambah Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
+        </div>
+    </div>
 
      <?php echo form_open_multipart('ListSurat/create'); 
         
@@ -360,7 +370,8 @@
                 <div class="form-group">
                     <input type="hidden" class="form-control" id="id_surat" name="id_surat" value="<?php echo $id ?>">
                 </div>
-                  
+               
+             <div class="container">     
    
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -418,7 +429,7 @@
                                 </div>
                             </div>   
                             <br>
-                            <div class="row">                       
+                            <!-- <div class="row">                       
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                               <font color="red"><i><option value="">*Tanggal Surat</option></i></font> 
                                 <div class="form-group ic-cmp-int">
@@ -430,7 +441,7 @@
                                     </div>
                                 </div>
                             </div>
-                       </div>  
+                       </div>   -->
                        <div class="row">                     
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <font color="red"><i><option value="">*Keterangan Surat</option></i></font>   

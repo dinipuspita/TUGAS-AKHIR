@@ -9,8 +9,9 @@ class List_Surat extends CI_Model {
 		$data = array('id_surat' => $this->input->post('id_surat'),
 					  'NIK' => $this->input->post('NIK'), 
 					  // 'id_desa' => $this->input->post('id_desa'), 
-					  'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
+					  // 'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
 					  'keterangan' => $this->input->post('keterangan'),
+					  'status_surat' => ('Diterima'),
 					  'tanggal_surat' => $tanggal_surat);				
 		
 		$this->db->insert('surat', $data);
@@ -70,7 +71,8 @@ class List_Surat extends CI_Model {
 	public function updateById($id)
 	{	
 		$object = array('keterangan' => $this->input->post('keterangan'), 
-					  'tanggal_surat' => $this->input->post('tanggal_surat')
+					  'tanggal_surat' => $this->input->post('tanggal_surat'),
+					  'status_surat' => $this->input->post('status_surat')
 					);
 
 		$this->db->where('id_surat', $id);
@@ -78,12 +80,17 @@ class List_Surat extends CI_Model {
 	}
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK");
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa where c.id_desa = $id_desa");
 		return $query->result_array();
 	}
 	public function getTampilSurat($id)
 	{
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_kepala_desa=a.id_kepala_desa where id_surat = $id");
+		$id_desa = $this->input->post('id_desa');
+	
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa and jabatan_selesai between 2014 and 2020 and id_surat = $id");
 		return $query->result_array();
 	}
 
@@ -105,28 +112,16 @@ class List_Surat extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
+	
+	//laporan surat perdesa
 	public function getReportSurat()
 	{
-	
-		$id_desa = $this->input->post('id_desa');
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa'");
 		return $query->result_array();
 	}
-
-	// public function getReportSurat()
-	// {
-	
-	// 	$id_desa = $this->input->post('id_desa');
-	// 	$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
-	// 	return $query->result_array();
-	// }
-	// public function getReport()
-	// {
-	
-	// 	$id_desa = $this->input->post('id_desa');
-	// 	$query = $this->db->query("Select * from laporan AS a Join login AS b ON a.id_user=b.id_user join kecamatan as e on e.id_kecamatan=b.id_kecamatan join desa AS f ON f.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_laporan DESC LIMIT 1'");
-	// 	return $query->result_array();
-	// }
 
 
 }

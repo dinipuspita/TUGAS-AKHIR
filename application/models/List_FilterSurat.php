@@ -11,25 +11,42 @@ class List_FilterSurat extends CI_Model {
 					  'tanggungan_keluarga' => $this->input->post('tanggungan_keluarga'), 
 					  'kelengkapan_dokumen' => $this->input->post('kelengkapan_dokumen'), 
 					  'status_bangunan' => $this->input->post('status_bangunan'), 
-					  'jml_lahan' => $this->input->post('jml_lahan'), 
+					  'jml_lahan' => $this->input->post('jml_lahan')
 					 );				
 		
 		// $this->db->insert('desa', $data);
 
+	
+
+		$id_surat=$this->input->post('id_surat');
+		$status_surat=$this->input->post('status_surat');
+		$NIK = $this->input->post('NIK');
 		$jumlah_tanggungan=$this->input->post('tanggungan_keluarga');
 		$dokumen=$this->input->post('kelengkapan_dokumen');
 		$lahan=$this->input->post('jml_lahan');
 		$statusBangunan=$this->input->post('status_bangunan');
 		$pendapatan=$this->input->post('pendapatan');
 
+		//tidak mampu tapi lengkap
 		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan < 8){
-		// if ($this->input->post('tanggungan_keluarga')!= 'Lengkap') {	
 
-			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create'; </script>";
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create/$NIK'; </script>";
 		
-		}else{
+		}
+		//tidak mampu tidak lengkap
+		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan < 8){
+
+ 
+			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); 	window.location.href='../ListSurat/create/$NIK'; </script>";
+	
+			return $query = $this->db->query("UPDATE surat set status_surat ='Menunggu' where id_surat=$id");
+	
+		}
+		else{
+		//mampu
 			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListSurat'; </script>";
 		}
+
 
 	}
 

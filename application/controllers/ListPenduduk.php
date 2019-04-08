@@ -10,6 +10,7 @@ class ListPenduduk extends CI_Controller {
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
 			$data['level'] = $session_data['level'];
+			$data['id_desa'] = $session_data['id_desa'];
 			$current_controller = $this->router->fetch_class();
 			$this->load->library('acl');
 			if (! $this->acl->is_public($current_controller))
@@ -29,6 +30,7 @@ class ListPenduduk extends CI_Controller {
 	{
 		$this->load->model('list_Penduduk');
 		$data["penduduk"] = $this->list_Penduduk->getTampil();
+		$data["pendudukByDinsos"] = $this->list_Penduduk->getTampilDinsos();
 		$data['user'] = $this->list_Penduduk->getUser();		
 		// $data['pendudukByUser'] = $this->list_Penduduk->getPendudukByUser();
 		$this->load->view('Penduduk/penduduk', $data);	
@@ -39,7 +41,9 @@ class ListPenduduk extends CI_Controller {
 		// $data['last'] = $this->list_Penduduk->getLastPenduduk();
 
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
+
 		$this->form_validation->set_rules('NO_KK', 'NO_KK', 'trim|required');
+		// $this->form_validation->set_rules('NIK', 'NIK','trim|required|callback_CheckNIK');
 		$this->form_validation->set_rules('nama_penduduk', 'nama_penduduk', 'trim|required');
 		$this->form_validation->set_rules('tempat_lahir', 'tempat_lahir', 'trim|required');
 		$this->form_validation->set_rules('tanggal_lahir', 'tanggal_lahir', 'trim|required');
@@ -50,22 +54,26 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 		$this->form_validation->set_rules('RT', 'RT', 'trim|required');
 		$this->form_validation->set_rules('RW', 'RW', 'trim|required');
-		$this->form_validation->set_rules('pekerjaan', 'pekerjaan', 'trim|required');
+		$this->form_validation->set_rules('id_pekerjaan', 'id_pekerjaan', 'trim|required');
 		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
-		// $this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 
 		$this->load->model('list_desa');
 		$data["desa"] = $this->list_desa->getTampilDesa();
+
 		$data["user"] = $this->list_desa->getUser();
+
+		$this->load->model('list_pekerjaan');
+		$data["pekerjaan"] = $this->list_pekerjaan->getTampilPekerjaan();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('penduduk/input_data_penduduk',$data);
 		}
-		else{
+		else 
+		{
 			$this->list_Penduduk->insertPenduduk();
 			echo "<script> alert('Data Penduduk Berhasil Ditambahkan'); window.location.href='';
 			</script>";
-		}
+		}	
 	}
 	public function update($id)
 	{
@@ -83,17 +91,19 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 		$this->form_validation->set_rules('RT', 'RT', 'trim|required');
 		$this->form_validation->set_rules('RW', 'RW', 'trim|required');
-		$this->form_validation->set_rules('pekerjaan', 'pekerjaan', 'trim|required');
+		$this->form_validation->set_rules('id_pekerjaan', 'id_pekerjaan', 'trim|required');
 		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
-		$this->form_validation->set_rules('fk_desa', 'fk_desa', 'trim|required');
-		// $this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 
 		$this->load->model('list_penduduk');
 		$data['penduduk'] = $this->list_penduduk->getPenduduk($id);
+
 		$data["user"] = $this->list_penduduk->getUser();
 
 		$this->load->model('list_desa');
 		$data["desa"] = $this->list_desa->getTampilDesa($id);
+
+		$this->load->model('list_pekerjaan');
+		$data["pekerjaan"] = $this->list_pekerjaan->getTampilPekerjaan($id);
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Penduduk/edit_data_penduduk',$data);
@@ -131,4 +141,14 @@ class ListPenduduk extends CI_Controller {
 		$this->load->library('pdf');
 		$this->pdf->load_view('Penduduk/print_penduduk', $data);
 	}
+	//controller CheckUsername
+function CheckNIK($NIK){
+   if ($this->model->check_NIK($NIK)==''){
+      return true;
+   }else{
+      $this->form_validation->set_message('NIK', 'NIK '. $NIK .' telah terdaftar');
+      return false;		
+   }
+}
+
 }

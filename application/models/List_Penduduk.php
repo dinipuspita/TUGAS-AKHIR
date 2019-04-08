@@ -7,7 +7,7 @@ class List_Penduduk extends CI_Model {
 		// $tglraw=explode('-', $tgl);
 		// $tglfix=$tglraw[2].'-'.$tglraw[1].'-'.$tglraw[0];
 		$session_data = $this->session->userdata('logged_in');
-		// $id_user = $session_data['id_user'];
+		$id_desa = $session_data['id_desa'];
 
 		$object = array(
 						'NIK' => $this->input->post('NIK'), 
@@ -22,9 +22,9 @@ class List_Penduduk extends CI_Model {
 						'alamat' => $this->input->post('alamat'),
 						'RT' => $this->input->post('RT'),
 						'RW' => $this->input->post('RW'),
-						'pekerjaan' => $this->input->post('pekerjaan'),
+						'id_pekerjaan' => $this->input->post('id_pekerjaan'),
 						'usia' => $this->input->post('usia'),
-						'id_desa' => $session_data['id_user'],
+						'id_desa' => $session_data['id_desa'],
 						// 'id_desa' => $this->input->post('fk_desa'),
 						);
 		
@@ -40,6 +40,16 @@ class List_Penduduk extends CI_Model {
 		$this->db->insert('desa', $data);
 	}
 
+	public function insertPekerjaan()
+	{
+		
+	$object = array('id_pekerjaan' => $this->input->post('id_pekerjaan'),
+					'nama_pekerjaan' => $this->input->post('nama_pekerjaan')
+				   );
+		
+		$this->db->insert('pekerjaan', $object);
+	}
+
 	public function getPenduduk($id)
 	{
 		$this->db->where('NIK', $id);
@@ -47,16 +57,14 @@ class List_Penduduk extends CI_Model {
 		return $query->result();
 	}
 	public function updateById($id)
-	{	
-		$tgl=$this->input->post('tanggal_lahir');
-		$tglraw=explode('-', $tgl);
-		$tglfix=$tglraw[2].'-'.$tglraw[1].'-'.$tglraw[0];
-		
-		$object = array('NIK' => $this->input->post('NIK'), 
+	{
+
+		$object = array(
+						'NIK' => $this->input->post('NIK'), 
 						'NO_KK' => $this->input->post('NO_KK'), 
 						'nama_penduduk' => $this->input->post('nama_penduduk'), 
 						'tempat_lahir' => $this->input->post('tempat_lahir'),
-						'tanggal_lahir' => ($tglfix),
+						'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 						'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 						'agama' => $this->input->post('agama'),
 						'status' => $this->input->post('status'), 
@@ -64,10 +72,10 @@ class List_Penduduk extends CI_Model {
 						'alamat' => $this->input->post('alamat'),
 						'RT' => $this->input->post('RT'),
 						'RW' => $this->input->post('RW'),
-						'pekerjaan' => $this->input->post('pekerjaan'),
-						'usia' => $this->input->post('usia'),
-						'id_desa' => $this->input->post('fk_desa')
-					);
+						'id_pekerjaan' => $this->input->post('id_pekerjaan'),
+						'usia' => $this->input->post('usia')
+						// 'id_desa' => $this->input->post('fk_desa'),
+						);
 
 		$this->db->where('NIK', $id);
 		$this->db->update('penduduk', $object);
@@ -75,6 +83,15 @@ class List_Penduduk extends CI_Model {
 
 	public function getTampil()
 	{
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa");
+		return $query->result_array();
+	}
+
+	public function getTampilDinsos()
+	{
+	
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa");
 		return $query->result_array();
 	}
@@ -92,7 +109,7 @@ class List_Penduduk extends CI_Model {
 
 	public function getTampilDetail($id)
 	{
-		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where NIK = $id");
+		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NIK = $id");
 		return $query->result_array();
 	}
 
@@ -104,7 +121,10 @@ class List_Penduduk extends CI_Model {
 
 	public function getTampilSuratPenduduk()
 	{
-		$query = $this->db->query("Select * from penduduk");
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa");
 		return $query->result_array();
 	}
 	
@@ -116,6 +136,18 @@ class List_Penduduk extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
+	//model
+	function check_NIK($NIK){
+   $this->db->select('NIK');
+   $this->db->where('NIK',$NIK);		
+   $query =$this->db->get('penduduk');
+   $row = $query->row();
+   if ($query->num_rows > 0){
+         return $row->NIK; 
+   }else{
+         return "";
+  }
+}
 	// 	public function getPendudukByUser()
 	// {
 	// 	$session_data = $this->session->userdata('logged_in');

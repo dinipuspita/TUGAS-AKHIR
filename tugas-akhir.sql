@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2019 at 04:42 AM
+-- Generation Time: Apr 08, 2019 at 07:19 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -33,21 +33,22 @@ CREATE TABLE `desa` (
   `nama_desa` varchar(50) NOT NULL,
   `kode_pos` int(11) NOT NULL,
   `alamat` varchar(50) NOT NULL,
-  `no_telepon` varchar(13) NOT NULL
+  `no_telepon` varchar(13) NOT NULL,
+  `status_akun` enum('Terdaftar','Belum Terdaftar') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `desa`
 --
 
-INSERT INTO `desa` (`id_desa`, `nama_desa`, `kode_pos`, `alamat`, `no_telepon`) VALUES
-(1, 'DESA JUNREJO', 65314, 'Jl.Tamrinn', '460603'),
-(2, 'DESA BEJI', 65314, 'Jl.Raya Beji 73', '596852'),
-(5, 'KELURAHAN DADAPREJO', 65314, 'Jl.Martorejo 10', '460817'),
-(6, 'DESA MOJOREJO', 65314, 'Jl.Raya Mojorejo 76 Batu', '531377'),
-(7, 'DESA PENDEM', 65314, 'Jl.Raya Caru 7 Batu', '531180'),
-(8, 'DESA TLEKUNG', 65314, 'Jl.Raya Tlekung 197 Batu', '590396'),
-(9, 'DESA TORONGREJO', 65314, 'Jl.Wukir Retawu Batu', '596765');
+INSERT INTO `desa` (`id_desa`, `nama_desa`, `kode_pos`, `alamat`, `no_telepon`, `status_akun`) VALUES
+(1, 'DESA JUNREJO', 65314, 'Jl.Tamrinn', '460603', 'Terdaftar'),
+(2, 'DESA BEJI', 65314, 'Jl.Raya Beji 73', '596852', 'Terdaftar'),
+(5, 'KELURAHAN DADAPREJO', 65314, 'Jl.Martorejo 10', '460817', 'Terdaftar'),
+(6, 'DESA MOJOREJO', 65314, 'Jl.Raya Mojorejo 76 Batu', '531377', 'Terdaftar'),
+(7, 'DESA PENDEM', 65314, 'Jl.Raya Caru 7 Batu', '531180', 'Terdaftar'),
+(8, 'DESA TLEKUNG', 65314, 'Jl.Raya Tlekung 197 Batu', '590396', 'Terdaftar'),
+(9, 'DESA TORONGREJO', 65314, 'Jl.Wukir Retawu Batu', '596765', 'Terdaftar');
 
 -- --------------------------------------------------------
 
@@ -66,10 +67,10 @@ CREATE TABLE `jenis_bantuan` (
 --
 
 INSERT INTO `jenis_bantuan` (`id_jenis_bantuan`, `nama_bantuan`, `id_kategori`) VALUES
-(1, 'Raskin', 2),
-(2, 'PKH', 1),
-(3, 'Indonesia Sehat', 1),
-(4, 'Bpjs', 2);
+(6, 'Kartu Indonesia Pintar (KIP)', 2),
+(7, 'RASKIN', 2),
+(8, 'Kartu Keluarga Sejahtera (KKS)', 1),
+(9, 'Kartu Indonesia Sehat (KIS)', 1);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,7 @@ INSERT INTO `kepala_desa` (`id_kepala_desa`, `id_desa`, `nama_kepala_desa`, `jab
 
 CREATE TABLE `kepemilikan_aset` (
   `id_kepemilikan_aset` int(11) NOT NULL,
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `jml_tabung_gas` int(11) NOT NULL,
   `jml_AC` int(11) NOT NULL,
   `jml_pemanas_air` int(11) NOT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE `kepemilikan_aset` (
   `jml_mobil` int(11) NOT NULL,
   `jml_perahu` int(11) NOT NULL,
   `jml_motor_tempel` int(11) NOT NULL,
-  `jlm_perahumotor` int(11) NOT NULL,
+  `jml_perahumotor` int(11) NOT NULL,
   `jml_kapal` int(11) NOT NULL,
   `jml_lahan` int(11) NOT NULL,
   `jml_rumahlain` int(11) NOT NULL,
@@ -166,7 +167,7 @@ CREATE TABLE `keterangan_pengesahan` (
 
 CREATE TABLE `keterangan_perumahan` (
   `id_ket_perumahan` int(11) NOT NULL,
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `status_bangunan` text NOT NULL,
   `status_lahan` text NOT NULL,
   `luas_lantai` text NOT NULL,
@@ -189,13 +190,6 @@ CREATE TABLE `keterangan_perumahan` (
   `tempat_PAT` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `keterangan_perumahan`
---
-
-INSERT INTO `keterangan_perumahan` (`id_ket_perumahan`, `NIK`, `status_bangunan`, `status_lahan`, `luas_lantai`, `jenis_lantai_terluas`, `jenis_dinding_terluas`, `kondisi_dinding`, `jenis_atap`, `kondisi_atap`, `jumlah_kamar`, `sumber_air_minum`, `kode_pelanggan_air`, `cara_memperoleh_air`, `sumber_penerangan`, `daya_terpasang`, `id_pln`, `bahan_bakar_memasak`, `id_pelanggan_gas`, `fasilitas_bab`, `jenis_kloset`, `tempat_PAT`) VALUES
-(1, 3, '2.Kontrak/Sewa', '1.Milik Sendiri', '1000', '01.Marmer/Granit', '2.Plesteran/Anyaman Bambu/Kawat', '1.Bagus/Kualitas Tinggi', '01.Beton/Genteng Beton', '1.Bagus/Kualitas Tinggi', 2, '02.Air Isi Ulang', 'PAM-90', '1.Membeli Eceran', '2Listrik Non PLN', '2.900 watt', '1888', '1.Listrik', 'PGN-123', '2.Bersama', '1.Leher Angsa', '1.Tangki');
-
 -- --------------------------------------------------------
 
 --
@@ -204,7 +198,7 @@ INSERT INTO `keterangan_perumahan` (`id_ket_perumahan`, `NIK`, `status_bangunan`
 
 CREATE TABLE `keterangan_sosial_ekonomi` (
   `id_sosial_eko` int(11) NOT NULL,
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `NO_KK` int(11) NOT NULL,
   `jenis_cacat` text NOT NULL,
   `penyakit_kronis` text NOT NULL,
@@ -224,13 +218,6 @@ CREATE TABLE `keterangan_sosial_ekonomi` (
   `kelengkapan_dokumen` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `keterangan_sosial_ekonomi`
---
-
-INSERT INTO `keterangan_sosial_ekonomi` (`id_sosial_eko`, `NIK`, `NO_KK`, `jenis_cacat`, `penyakit_kronis`, `partisipasi_sekolah`, `jenjang_pendidikan`, `hub_kepala_keluarga`, `ijazah_tertinggi`, `kelas_tertinggi`, `lapangan_usaha`, `status_kedudukan`, `KKS`, `KIS`, `KIP`, `RASKIN`, `pendapatan`, `tanggungan_keluarga`, `kelengkapan_dokumen`) VALUES
-(1, 98667890, 98667890, '0.Tidak Cacat', '0.Tidak Ada', '0.Tidak/Belum Pernah Sekolah', '10.Perguruan Tinggi', '3.Anak', '4.D1/D2/D3', '3', '15.Informasi & Komunikasi', '3.PNS/TNI/Polri/BUMN/BUMD/Anggota Legislatif', 'Tidak', '0', '0', '0', '', 0, '');
-
 -- --------------------------------------------------------
 
 --
@@ -239,9 +226,16 @@ INSERT INTO `keterangan_sosial_ekonomi` (`id_sosial_eko`, `NIK`, `NO_KK`, `jenis
 
 CREATE TABLE `kriteria_bantuan` (
   `id_kriteria` int(11) NOT NULL,
-  `id_bantuan` int(11) NOT NULL,
+  `id_jenis_bantuan` int(11) NOT NULL,
   `isi_kriteria` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kriteria_bantuan`
+--
+
+INSERT INTO `kriteria_bantuan` (`id_kriteria`, `id_jenis_bantuan`, `isi_kriteria`) VALUES
+(1, 6, 'Mempunyai Anak Bersekolah Dengan Usia 7 s/d 12 Tahun Keatas');
 
 -- --------------------------------------------------------
 
@@ -254,21 +248,57 @@ CREATE TABLE `login` (
   `id_desa` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `level` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `level` varchar(10) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `no_telp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id_user`, `id_desa`, `username`, `password`, `level`, `email`) VALUES
-(1, 1, 'dinsos', '845388911209126f2566e2edeedcbc45', '1', 'dinassosial@gmail.com'),
-(2, 1, 'junrejo', 'aec477d7dacf40552155423f170de310', '2', 'desa.junrejo@gmail.com'),
-(7, 6, 'mojorejo', '69eae64401fe415bd42fd6d20c4adc0e', '2', 'mojorejo@gmail.com'),
-(8, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com'),
-(9, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com'),
-(10, 5, 'dadaprejo', '7fdc0f54ce46cfcb27aa326653d7c24d', '2', 'dadaprejo@gmail.com');
+INSERT INTO `login` (`id_user`, `id_desa`, `username`, `password`, `level`, `email`, `no_telp`) VALUES
+(1, 1, 'dinsos', '845388911209126f2566e2edeedcbc45', '1', 'dinassosial@gmail.com', 0),
+(2, 1, 'junrejo', 'aec477d7dacf40552155423f170de310', '2', 'desa.junrejo@gmail.com', 0),
+(7, 6, 'mojorejo', '69eae64401fe415bd42fd6d20c4adc0e', '2', 'mojorejo@gmail.com', 0),
+(9, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(10, 5, 'dadaprejo', '7fdc0f54ce46cfcb27aa326653d7c24d', '2', 'dadaprejo@gmail.com', 0),
+(11, 2, 'beji', '16467297b544fe96f6ca4ff57304cc0f', '2', 'beji_batu@gmail.com', 3415645),
+(12, 6, 'mojorejo', '69eae64401fe415bd42fd6d20c4adc0e', '2', 'mojorejo@gmail.com', 3415647),
+(13, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 3415621),
+(17, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
+(18, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(19, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(20, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(21, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(22, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
+(23, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
+(24, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
+(25, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
+(26, 9, 'torongrejo', '97cce5cdb3db719406f4fec082291ca2', '2', 'torongrejo@gmail.com', 3415645);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pekerjaan`
+--
+
+CREATE TABLE `pekerjaan` (
+  `id_pekerjaan` int(11) NOT NULL,
+  `nama_pekerjaan` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pekerjaan`
+--
+
+INSERT INTO `pekerjaan` (`id_pekerjaan`, `nama_pekerjaan`) VALUES
+(1, 'Guru'),
+(2, 'Petani'),
+(3, 'Nelayan'),
+(4, 'Buruh Tani'),
+(5, 'Wiraswasta'),
+(6, 'PNS');
 
 -- --------------------------------------------------------
 
@@ -277,11 +307,11 @@ INSERT INTO `login` (`id_user`, `id_desa`, `username`, `password`, `level`, `ema
 --
 
 CREATE TABLE `penduduk` (
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `NO_KK` varchar(30) NOT NULL,
   `nama_penduduk` varchar(50) NOT NULL,
   `tempat_lahir` varchar(50) NOT NULL,
-  `tanggal_lahir` date NOT NULL,
+  `tanggal_lahir` text NOT NULL,
   `jenis_kelamin` varchar(10) NOT NULL,
   `agama` text NOT NULL,
   `status` text NOT NULL,
@@ -289,7 +319,7 @@ CREATE TABLE `penduduk` (
   `alamat` varchar(50) NOT NULL,
   `RT` varchar(10) NOT NULL,
   `RW` varchar(10) NOT NULL,
-  `pekerjaan` text NOT NULL,
+  `id_pekerjaan` int(11) NOT NULL,
   `usia` int(11) NOT NULL,
   `id_desa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -298,10 +328,10 @@ CREATE TABLE `penduduk` (
 -- Dumping data for table `penduduk`
 --
 
-INSERT INTO `penduduk` (`NIK`, `NO_KK`, `nama_penduduk`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status`, `kewarganegaraan`, `alamat`, `RT`, `RW`, `pekerjaan`, `usia`, `id_desa`) VALUES
-(3, '0978556777777', 'Andi Pradana', 'malang', '2006-12-01', 'Perempuan', 'Islam', 'Belum Menikah', 'wni', '', '01', '04', 'Tidak/Belum Bekerja', 20, 1),
-(98667890, '0978556777777', 'Dini Puspita Sari', 'malang', '1998-05-25', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', '', '03', '01', 'Tidak/Belum Bekerja', 20, 1),
-(98667898, '0978556777779', 'siska', 'Batu', '0000-00-00', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', '', '09', '08', 'Tidak/Belum Bekerja', 20, 5);
+INSERT INTO `penduduk` (`NIK`, `NO_KK`, `nama_penduduk`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status`, `kewarganegaraan`, `alamat`, `RT`, `RW`, `id_pekerjaan`, `usia`, `id_desa`) VALUES
+('3517152608970001', '3717152608970002', 'Dini Puspita Sari', 'Malang', '2017-12-19', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 10', '003', '003', 1, 1, 1),
+('3517152608970002', '3717152608970004', 'Puri Handayani', 'Jombang', '2019-02-06', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 20', '09', '01', 1, 0, 1),
+('3517152608970090', '3717152608970002', 'Ananda Putri', 'Malang', '1999-06-15', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 201', '03', '04', 1, 19, 1);
 
 -- --------------------------------------------------------
 
@@ -311,7 +341,7 @@ INSERT INTO `penduduk` (`NIK`, `NO_KK`, `nama_penduduk`, `tempat_lahir`, `tangga
 
 CREATE TABLE `pengenalan_tempat` (
   `id_pengenalan_tempat` int(11) NOT NULL,
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `provinsi` varchar(50) NOT NULL,
   `kabupaten` varchar(30) NOT NULL,
   `kecamatan` varchar(50) NOT NULL,
@@ -331,19 +361,21 @@ CREATE TABLE `pengenalan_tempat` (
 --
 
 CREATE TABLE `surat` (
-  `id_surat` varchar(10) NOT NULL,
-  `NIK` int(11) NOT NULL,
-  `id_kepala_desa` int(11) NOT NULL,
-  `tanggal_surat` date NOT NULL,
-  `keterangan` varchar(200) NOT NULL
+  `id_surat` int(10) NOT NULL,
+  `NIK` varchar(16) DEFAULT NULL,
+  `tanggal_surat` date DEFAULT NULL,
+  `keterangan` varchar(200) NOT NULL,
+  `status_surat` enum('Diterima','Menunggu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `surat`
 --
 
-INSERT INTO `surat` (`id_surat`, `NIK`, `id_kepala_desa`, `tanggal_surat`, `keterangan`) VALUES
-('104', 98667898, 7, '2019-03-27', 'Untuk Melanjutkan Biaya Keringanan BPJS');
+INSERT INTO `surat` (`id_surat`, `NIK`, `tanggal_surat`, `keterangan`, `status_surat`) VALUES
+(101, '3517152608970090', '2019-04-08', 'RS A', 'Diterima'),
+(102, '3517152608970090', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Diterima'),
+(103, '3517152608970001', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Diterima');
 
 -- --------------------------------------------------------
 
@@ -354,7 +386,7 @@ INSERT INTO `surat` (`id_surat`, `NIK`, `id_kepala_desa`, `tanggal_surat`, `kete
 CREATE TABLE `transaksi_bantuan` (
   `id_transaksi` varchar(50) NOT NULL,
   `id_bantuan` int(11) NOT NULL,
-  `NIK` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `id_pengesahan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -420,7 +452,7 @@ ALTER TABLE `keterangan_sosial_ekonomi`
 --
 ALTER TABLE `kriteria_bantuan`
   ADD PRIMARY KEY (`id_kriteria`),
-  ADD KEY `id_bantuan` (`id_bantuan`);
+  ADD KEY `id_bantuan` (`id_jenis_bantuan`);
 
 --
 -- Indexes for table `login`
@@ -430,11 +462,18 @@ ALTER TABLE `login`
   ADD KEY `id_desa` (`id_desa`);
 
 --
+-- Indexes for table `pekerjaan`
+--
+ALTER TABLE `pekerjaan`
+  ADD PRIMARY KEY (`id_pekerjaan`);
+
+--
 -- Indexes for table `penduduk`
 --
 ALTER TABLE `penduduk`
   ADD PRIMARY KEY (`NIK`),
-  ADD KEY `id_desa` (`id_desa`);
+  ADD KEY `id_desa` (`id_desa`),
+  ADD KEY `id_pekerjaan` (`id_pekerjaan`);
 
 --
 -- Indexes for table `pengenalan_tempat`
@@ -448,8 +487,7 @@ ALTER TABLE `pengenalan_tempat`
 --
 ALTER TABLE `surat`
   ADD PRIMARY KEY (`id_surat`),
-  ADD KEY `NIK` (`NIK`),
-  ADD KEY `surat_ibfk_3` (`id_kepala_desa`);
+  ADD KEY `NIK` (`NIK`);
 
 --
 -- Indexes for table `transaksi_bantuan`
@@ -474,7 +512,7 @@ ALTER TABLE `desa`
 -- AUTO_INCREMENT for table `jenis_bantuan`
 --
 ALTER TABLE `jenis_bantuan`
-  MODIFY `id_jenis_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jenis_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kategori_bantuan`
@@ -504,31 +542,43 @@ ALTER TABLE `keterangan_pengesahan`
 -- AUTO_INCREMENT for table `keterangan_perumahan`
 --
 ALTER TABLE `keterangan_perumahan`
-  MODIFY `id_ket_perumahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ket_perumahan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `keterangan_sosial_ekonomi`
 --
 ALTER TABLE `keterangan_sosial_ekonomi`
-  MODIFY `id_sosial_eko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sosial_eko` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kriteria_bantuan`
 --
 ALTER TABLE `kriteria_bantuan`
-  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `pekerjaan`
+--
+ALTER TABLE `pekerjaan`
+  MODIFY `id_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pengenalan_tempat`
 --
 ALTER TABLE `pengenalan_tempat`
   MODIFY `id_pengenalan_tempat` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `surat`
+--
+ALTER TABLE `surat`
+  MODIFY `id_surat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- Constraints for dumped tables
@@ -568,7 +618,7 @@ ALTER TABLE `keterangan_sosial_ekonomi`
 -- Constraints for table `kriteria_bantuan`
 --
 ALTER TABLE `kriteria_bantuan`
-  ADD CONSTRAINT `kriteria_bantuan_ibfk_1` FOREIGN KEY (`id_bantuan`) REFERENCES `jenis_bantuan` (`id_jenis_bantuan`);
+  ADD CONSTRAINT `kriteria_bantuan_ibfk_1` FOREIGN KEY (`id_jenis_bantuan`) REFERENCES `jenis_bantuan` (`id_jenis_bantuan`);
 
 --
 -- Constraints for table `login`
@@ -580,7 +630,8 @@ ALTER TABLE `login`
 -- Constraints for table `penduduk`
 --
 ALTER TABLE `penduduk`
-  ADD CONSTRAINT `penduduk_ibfk_1` FOREIGN KEY (`id_desa`) REFERENCES `desa` (`id_desa`);
+  ADD CONSTRAINT `penduduk_ibfk_1` FOREIGN KEY (`id_desa`) REFERENCES `desa` (`id_desa`),
+  ADD CONSTRAINT `penduduk_ibfk_2` FOREIGN KEY (`id_pekerjaan`) REFERENCES `pekerjaan` (`id_pekerjaan`);
 
 --
 -- Constraints for table `pengenalan_tempat`
@@ -592,8 +643,7 @@ ALTER TABLE `pengenalan_tempat`
 -- Constraints for table `surat`
 --
 ALTER TABLE `surat`
-  ADD CONSTRAINT `surat_ibfk_3` FOREIGN KEY (`id_kepala_desa`) REFERENCES `kepala_desa` (`id_kepala_desa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `surat_ibfk_5` FOREIGN KEY (`NIK`) REFERENCES `penduduk` (`NIK`);
+  ADD CONSTRAINT `surat_ibfk_4` FOREIGN KEY (`NIK`) REFERENCES `penduduk` (`NIK`);
 
 --
 -- Constraints for table `transaksi_bantuan`

@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
  <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,7 @@
    
   <!-- wave CSS
     ============================================ -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
 
@@ -46,6 +50,7 @@
 
 </head>
   
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -53,7 +58,7 @@
 
     <!-- Sidebar -->
      <?php foreach ($user as $key) { ?>
-      <?php if($key['level'] == '1') { ?> 
+     <?php if($key['level'] == '1') { ?> 
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <?php } } ?>
 
@@ -84,7 +89,6 @@
           <span>Dashboard</span></a>
       </li>
 
-
       <?php foreach ($user as $key) { ?>
       <?php if($key['level'] == '2') { ?> 
       <!-- Divider -->
@@ -105,15 +109,12 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
-
-     
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
- 
           </div>
         </div>
       </li>
-
-     <!-- Nav Item - Utilities Collapse Menu -->
+      
+  <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -128,10 +129,9 @@
         </div>
       </li>
 
-      
-   <!-- Nav Item - Charts -->
+       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
       </li>
@@ -181,7 +181,7 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
@@ -193,7 +193,7 @@
         </div>
       </li>
   
-
+   
     <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
@@ -202,6 +202,7 @@
       </li>
 
   <?php } } ?>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -391,6 +392,8 @@
                         <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
                     </div>
                 </div>
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '2') { ?> 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
@@ -404,6 +407,23 @@
                         </div>
                     </div>
                 </div>
+                  <?php } } ?>
+                   <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '1') { ?> 
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h3>
+                                <?php foreach ($jumlahakun as $login) { ?>
+                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $login ?></span></li>
+                                <?php } ?></h3>
+                            <p>Akun Terdaftar</p>
+                        </div>
+                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
+                        </div>
+                    </div>
+                </div>
+                  <?php } } ?>
             </div>
         </div>
     </div>
@@ -439,20 +459,21 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+ 
+    <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
         </div>
       </div>
     </div>

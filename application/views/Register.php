@@ -370,16 +370,6 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                   <!--  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Pilih Form:</div>
-                      <a class="dropdown-item" href="#">Form 1</a>
-                      <a class="dropdown-item" href="#">Form 2</a>
-                      <a class="dropdown-item" href="#">Form 3</a>
-                      <a class="dropdown-item" href="#">Form 4</a>
-                      <a class="dropdown-item" href="#">Form 5</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div> -->
                   </div>
                 </div>
                     <div class="form-element-list">
@@ -401,7 +391,7 @@
                                 </div>
                             </div>
                             <br>
-                             <div class="row">
+                          
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -415,8 +405,8 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                             <div class="row">
+
+                         
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -430,8 +420,8 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                            <div class="row">
+               
+                           
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -445,8 +435,9 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-                         <div class="row">
+              
+
+                     
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -460,8 +451,8 @@
                                 </div>
                             </div>
                           </div>
-                        </div>   
-                            <div class="row">
+                     
+                       
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -475,9 +466,11 @@
                                 </div>
                             </div>
                           </div>
-                        </div>                        
-                            <br>
-                            <br>
+                        </div>
+                      </div>
+              
+      
+                               
                             <br>
                             <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span>
@@ -487,8 +480,7 @@
                 </div>
             </div>
         </div>
-    </div>
-  </div>
+      </div>
 
 
 <?php echo form_close(); ?>

@@ -47,6 +47,7 @@
 
 </head>
   
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -417,7 +418,17 @@
 
                                             <a href="<?php echo base_url('index.php/ListPenduduk/delete/' .$key['NIK'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-                                          </td>  
+                                          </td>
+
+                                     <!--    <div class="button-icon-btn button-icon-btn-cl sm-res-mg-t-30">
+
+                                        <td><a href="<?php echo base_url('index.php/listPenduduk/update/'.$key['NIK'])?>" class="btn btn-cyan cyan-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="left" title="Edit Data"><i class="notika-icon notika-draft"></i></button></a>
+
+                                        <a href="<?php echo base_url('index.php/listPenduduk/delete/'.$key['NIK'])?>" class="btn btn-danger danger-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="bottom" title="Delete Data"><i class="notika-icon notika-close"></i></button></a>
+
+                                        <a href="<?php echo base_url('index.php/listPenduduk/detail/'.$key['NIK'])?>" class="btn btn-lightgreen lightgreen-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="bottom" title="Detail Data"><i class="notika-icon notika-menus"></i></button></a> -->
+
+                                    </div> 
                                         </tr> 
                                       <?php $no++ ?>
                                       <?php } ?>
@@ -428,7 +439,7 @@
                                          <?php if($key['level'] == '1') { ?> 
                                             <?php $no=1; ?>
                                          
-                                               <?php foreach ($penduduk as $key) {
+                                               <?php foreach ($pendudukByDinsos as $key) {
                                             ?>
                                           <tr>
                                           <td><?php echo $no ?></td>
@@ -471,20 +482,20 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+    <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
         </div>
       </div>
     </div>
@@ -508,6 +519,13 @@
   <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
 
+    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>  
 
    <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
    <!-- Bootstrap Core JavaScript -->
@@ -531,13 +549,7 @@
    } );
    </script>  
 
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- main JS
-        ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>  
+  
     
 
 </body>

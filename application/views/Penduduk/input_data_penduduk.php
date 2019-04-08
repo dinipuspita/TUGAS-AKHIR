@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
   <meta charset="utf-8">
@@ -10,6 +11,18 @@
   <meta name="author" content="">
 
   <title>SB Admin 2 - Dashboard</title>
+<script type="text/javascript">
+
+function submitBday() {
+    var Bdate = document.getElementById('tanggal_lahir').value;
+    var Bday = +new Date(Bdate);
+    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('usia');
+    theBday.value = Hasil;
+}
+
+</script>
+
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -432,12 +445,22 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
+                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2"> -->
                                    <!--  <label>One Year view</label> -->
-                                    <div class="input-group date nk-int-st">
+                                   <!--  <div class="input-group date nk-int-st">
                                         <span class="input-group-addon"></span>
-                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" required autofocus />
+                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()" required autofocus />
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -476,11 +499,25 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia" required autofocus />
+                                        <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                        <select name="id_pekerjaan" class="selectpicker">
+                                        <option value="">----Pilih Pekerjaan----</option>
+                                            <?php foreach ($pekerjaan as $data ){ ?>
+                                            <option value="<?php echo $data['id_pekerjaan']; ?>"><?php echo $data['nama_pekerjaan'] ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                              </div>
+                            </div>  
+                        </div>
+                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
@@ -497,7 +534,7 @@
                                         </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -533,6 +570,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
@@ -555,21 +593,7 @@
                       </div>
                     </div>             
                     </div>
-                  <!--   <div class="row">
-                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                    <h2>Serach Option</h2>
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" value="NIK" data-live-search="true">
-                                        <?php foreach ($penduduk as $data ){ ?>
-                                          <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
-                                </option>
-                                             <?php } ?>
-                                </select>
-                                </div>
-                            </div>
-                          </div> -->
+                 
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
           </div>
@@ -657,15 +681,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
         </div>
       </div>
     </div>

@@ -13,16 +13,18 @@ class Register_akun extends CI_Model {
     public function insertUser()
 
 	{
-		
+		$id_desa=$this->input->post('id_desa');
 		$object = array(
 						'username' => $this->input->post('username'),
 						'password' => md5($this->input->post('password')),
 						'level' => '2',						
 						'no_telp' => $this->input->post('no_telp'),
 						'email' => $this->input->post('email'),
-						'id_desa' => $this->input->post('id_desa')
+						'id_desa' => $id_desa
 					);
 		$this->db->insert('login', $object);
+		return $query = $this->db->query("UPDATE desa set status_akun = 'Terdaftar' where id_desa=$id_desa");
+		
 	}
 	// public function insertKecamatan()
 	// {
@@ -34,15 +36,15 @@ class Register_akun extends CI_Model {
 	// 	$this->db->insert('kecamatan', $object);
 	// }
 
-	public function insertDesa()
-	{
+	// public function insertDesa()
+	// {
 
-	$object = array('id_desa' => $this->input->post('id_desa'),
-					'nama_desa' => $this->input->post('nama_desa')
-				);
+	// $object = array('id_desa' => $this->input->post('id_desa'),
+	// 				'nama_desa' => $this->input->post('nama_desa')
+	// 			);
 					
-		$this->db->insert('desa', $object);
-	}
+	// 	$this->db->insert('desa', $object);
+	// }
 
 	public function getTampil()
 	{

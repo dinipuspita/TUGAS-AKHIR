@@ -9,6 +9,7 @@ class Login extends CI_Controller {
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
 			$data['level'] = $session_data['level'];
+			$data['id_desa'] = $session_data['id_desa'];
 			$current_controller = $this->router->fetch_class();
 			$this->load->library('acl');
 			if (! $this->acl->is_public($current_controller))
@@ -20,7 +21,6 @@ class Login extends CI_Controller {
 			}
 		}
 	}
-
 
 	public function index()
 	{
@@ -48,13 +48,16 @@ class Login extends CI_Controller {
 				$sess_array = array(
 					'id_user' => $row->id_user,
 					'username' => $row->username,
-					'level' => $row->level
+					'level' => $row->level,
+					'id_desa' => $row->id_desa
 				);
 				$this->session->set_userdata('logged_in',$sess_array);
 			}
 			return true;
 		}else{
-			$this->form_validation->set_message('cekDb',"Login Gagal Username dan Password tidak valid");
+			$this->form_validation->set_message('cekDb');
+			echo "<script> alert('Login Gagal Username atau Password tidak valid');
+			</script>";
 			return false;
 		}
 	}

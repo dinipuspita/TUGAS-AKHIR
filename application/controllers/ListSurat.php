@@ -30,7 +30,7 @@ class ListSurat extends CI_Controller {
 		$data['user'] = $this->list_Surat->getUser();
 		$this->load->view('Surat/surat', $data);	
 	}
-	public function create()// sudah di isi di autoloard 
+	public function create($nik)// sudah di isi di autoloard 
 	{
 	
 		$this->form_validation->set_rules('id_surat', 'id_surat', 'trim|required');
@@ -38,6 +38,7 @@ class ListSurat extends CI_Controller {
 
 		$this->load->model('list_Surat');
 		$data['last'] = $this->list_Surat->getLastSurat();
+		$data['nik'] = $nik;
 
 		$data['user'] = $this->list_Surat->getUser();
 
@@ -49,6 +50,9 @@ class ListSurat extends CI_Controller {
 
 		$this->load->model('list_KepalaDesa');
 		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
+
+		$this->load->model('list_FilterSurat');
+		$data["surat"] = $this->list_FilterSurat->getTampil();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/input_data_surat',$data);
@@ -69,6 +73,9 @@ class ListSurat extends CI_Controller {
 		$this->load->model('list_Surat');
 		$data['surat'] = $this->list_Surat->getsurat($id);
 		$data['user'] = $this->list_Surat->getUser();
+
+		$this->load->model('list_FilterSurat');
+		$data["surat"] = $this->list_FilterSurat->getTampil($id);
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/edit_data_surat',$data);
@@ -92,29 +99,21 @@ class ListSurat extends CI_Controller {
 		$this->load->library('pdf');
 		$this->pdf->load_view('Surat/print_surat', $data);
 	}
+
 	public function laporanSurat()
 	{
-		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');	
+	$this->load->model('list_surat');
+		$data["surat"] = $this->list_surat->getReportSurat();
 	
-	
-		$this->load->model('list_desa');
-		$data["desa"] = $this->list_desa->getTampilDesa();
-		$data['user'] = $this->list_desa->getUser();
+		if (empty($data['surat'])) {
+			echo "<script> alert('Data Surat Masih Kosong'); window.location.href='../ListSurat';
+			</script>";
 
-		if($this->form_validation->run() == FALSE) {
-			$this->load->view('Surat/view_laporan',$data);
-		}else{
-			$this->load->model('list_surat');
-			$data["surat"] = $this->list_surat->getReportSurat();
-			if (empty($data['surat'])) {
-				echo "<script> alert('Maaf, Data Surat di Desa Tersebut Kosong');</script>";
-				$this->load->view('Surat/view_laporan',$data);
-			} else {
-				$this->load->library('pdf');
-				$this->pdf->load_view('Surat/print_laporan',$data);
-			}
-			// $this->load->view('Laporan/print_laporan',$data);
+		}else {
+
+	    $this->load->library('pdf');	
+		$this->pdf->load_view('Surat/print_laporan', $data);
 		}
-
-	}
+   }
 }
+

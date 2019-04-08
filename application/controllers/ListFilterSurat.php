@@ -33,7 +33,6 @@ class ListFilterSurat extends CI_Controller {
 	public function create()// sudah di isi di autoloard 
 	{
 		$this->load->model('list_FilterSurat');
-
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
@@ -50,7 +49,7 @@ class ListFilterSurat extends CI_Controller {
 			$this->load->view('Surat/input_data_FilterSurat',$data);
 		}
 		else{
-			$this->list_FilterSurat->insertFIlterSurat();
+			$this->list_FilterSurat->insertFilterSurat();
 			echo "<script> alert('Data Surat Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}

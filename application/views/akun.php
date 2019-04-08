@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+ <!DOCTYPE html>
+<html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -19,60 +22,59 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
- <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  
+  <!-- animate CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
-    <!-- meanmenu CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-    <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+   
   <!-- wave CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
-    <!-- mCustomScrollbar CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+
+  <!-- main CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- Notika icon CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+  <!-- style CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
-    <!-- main CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+  <!-- responsive CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-    <!-- style CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+
+  <!-- modernizr JS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-    <!-- responsive CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-    <!-- modernizr JS
-    ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
-
-
+  
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+     <?php foreach ($user as $key) { ?>
+     <?php if($key['level'] == '1') { ?> 
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+    <!-- Sidebar -->
+    <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '2') { ?> 
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
+    <br>
+
+         <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -106,13 +108,13 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
           </div>
         </div>
       </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
+      
+  <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -155,9 +157,9 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
           </div>
         </div>
       </li>
@@ -179,14 +181,27 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
       </li>
-    <?php } } ?>
+  
+   
+    <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Penduduk</span></a>
+      </li>
+
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -213,6 +228,10 @@
             <i class="fa fa-bars"></i>
           </button>
 
+
+        <!--   <div align="right">
+            <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
+                                    <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -331,8 +350,12 @@
           </ul>
 
         </nav>
-       
-        <div class="breadcomb-area">
+          <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+ <div class="breadcomb-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -344,9 +367,14 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Form Input Data Surat</h2>
-                                        <p>Tambah Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
+                                        <h2>Data Penerima Surat</h2>
+                                        <p>Data Penerima Surat Masyarakat Kota Batu<span class="bread-ntd"></span></p>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
                                 </div>
                             </div>
                         </div>
@@ -355,121 +383,50 @@
             </div>
         </div>
     </div>
-
-     <?php echo form_open_multipart('ListSurat/create/NIK/status_surat'); 
-        
-        echo validation_errors();
-                    $id = 101;
-                ?>
-                
-                <?php foreach ($last as $key){
-                    $id = $key['id_surat']+1;                    
-                }
-                 ?>               
-
-                <div class="form-group">
-                    <input type="hidden" class="form-control" id="id_surat" name="id_surat" value="<?php echo $id ?>">
-                </div>
-               
-             <div class="container">     
-   
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-element-list">
-                        <div class="basic-tb-hd">
-                            <h4>Input Data Surat</h4><br>
-                        <div class="row">
-                        <!--     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="NIK" class="form-control">
-                                        <option value="<?php echo $nik ?>"><?php echo $nik; ?></option>
-                                    </select>
-                                    </div>
-                                </div>
-                            </div> 
-                            <br>   -->
-                           <!--   <div class="row">      -->                
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*NIK Penduduk</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st"><input type="text" class="form-control" id="NIK" name="NIK" placeholder="nama penduduk" readonly="readonly" value="<?php echo $nik ?>">
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   
-                          <!--   <div class="row"> -->
-                            <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                             <font color="red"><i><option value="">*Pilih Kepala Desa</option></i></font>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="id_kepala_desa" class="form-control">
-                                        <option value="">-----Pilih-----</option>
-                                            <?php foreach ($kepala_desa as $data ){ ?>
-                                            <option value="<?php echo $data->id_kepala_desa; ?>"><?php echo $data->nama_kepala_desa; ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
-                                    </div>
-                                </div>
-                            </div>   
-                            <br> -->
-                            <!-- <div class="row">                       
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <font color="red"><i><option value="">*Tanggal Surat</option></i></font> 
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-calendar"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" placeholder="Tanggal Surat" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   -->
-                       <div class="row">                     
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*Keterangan Surat</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   
-                    <br>
-                     <font color="red"><i>* Wajib diisi</i></font>
-               </div>
+  
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
+               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
+            </div>
           </div>
-      </div>
-    </div>
-                        <center>
-                            <br>
-                            <br>
-                             <center>
-                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
-                        </center>
-                    <br>
-                                 </div>
+            <div class="card-body">
+                              <div class="table table-responsive">
+                                <table class="table" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Username</th>
+                                            <th>Asal Desa</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no=1; ?>
+                                           <?php foreach ($login as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['username'] ?></td>
+                                          <td><?php echo $key['nama_desa'] ?></td>
+
+                                          <td>
+                                            <a href="<?php echo base_url('index.php/ListAkun/update/'.$key['id_user'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
+
+                                            <a href="<?php echo base_url('index.php/ListAkun/delete/' .$key['id_user'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+
+                                          </td>  
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                    </tbody>
+                                </table>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-       
-    <?php echo form_close(); ?>
+                       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -488,7 +445,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-   <!-- Logout Modal-->
+    <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -524,6 +481,14 @@
   <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
 
+  <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+  <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+  <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
+
 
    <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
    <!-- Bootstrap Core JavaScript -->
@@ -545,69 +510,10 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>    
+   </script>   
+
     
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- wow JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
-    <!-- price-slider JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
-    <!-- knob JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
-   <!--  Chat JS
-    ============================================ -->
-    <script src="js/chat/jquery.chat.js"></script>
-    <!--  wizard JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
-    <!--  todo JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
-  <!--  wave JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
-    <!-- plugins JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
-    <!-- main JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
+
 </body>
 
 </html>

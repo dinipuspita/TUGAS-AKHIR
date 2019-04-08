@@ -5,7 +5,7 @@ class User extends CI_Model{
 	
 	public function login($username,$password)
 	{
-		$this->db->select('id_user,username,password,level');
+		$this->db->select('id_user,id_desa,username,password,level');
 		$this->db->from('login');
 		$this->db->where('username', $username);
 		$this->db->where('password', MD5($password));
@@ -20,7 +20,7 @@ class User extends CI_Model{
 	}
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from login");
+		$query = $this->db->query("Select * from login AS a Join desa AS b ON b.id_desa=a.id_desa");
 		return $query->result_array();
 	}
 		public function getUser()

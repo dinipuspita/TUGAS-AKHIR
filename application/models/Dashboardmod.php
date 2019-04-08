@@ -24,6 +24,10 @@ class Dashboardmod extends CI_Model {
 	    $query = $this->db->query("SELECT COUNT(id_surat) FROM surat");
 	    return $query->row();
 	}
+	public function getAkun(){
+	    $query = $this->db->query("SELECT COUNT(id_user) FROM login");
+	    return $query->row();
+	}
 	public function getUser()
 	{
 		$session_data = $this->session->userdata('logged_in');

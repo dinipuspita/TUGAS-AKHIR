@@ -52,7 +52,7 @@ class List_Desa extends CI_Model {
 
 		public function getTampilDesa()
 	{
-		$query = $this->db->query("Select * from desa");
+		$query = $this->db->query("Select * from desa where status_akun = 'Belum Terdaftar'");
 		return $query->result();
 	}
 	public function getUser()

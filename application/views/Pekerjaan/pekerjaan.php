@@ -57,22 +57,31 @@
     ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
-
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+     <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '1') { ?> 
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+    <!-- Sidebar -->
+    <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '2') { ?> 
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <?php } } ?>
+    <br>
+
+         <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -106,8 +115,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
@@ -121,19 +131,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+            <a class="collapse-item" href="utilities-color.html">Data Surat</a>
+            <a class="collapse-item" href="utilities-border.html">Buat Surat</a>
           </div>
         </div>
       </li>
-
-       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
-
       <?php } } ?>
 
       <!-- Divider -->
@@ -155,9 +157,9 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
           </div>
         </div>
       </li>
@@ -182,11 +184,24 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
       </li>
-    <?php } } ?>
+  
+
+    <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Penduduk</span></a>
+      </li>
+
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -213,6 +228,10 @@
             <i class="fa fa-bars"></i>
           </button>
 
+
+        <!--   <div align="right">
+            <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
+                                    <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -331,145 +350,53 @@
           </ul>
 
         </nav>
-       
-        <div class="breadcomb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Form Input Data Surat</h2>
-                                        <p>Tambah Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- End of Topbar -->
+    
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Data Pekerjaan</h1>
+          <br>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Pekerjaan</h6>
             </div>
-        </div>
-    </div>
+            <div class="card-body">
+                              <div class="table table-responsive">
+                                <table class="table" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Pekerjaan</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no=1; ?>
+                                           <?php foreach ($pekerjaan as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['nama_pekerjaan'] ?></td>
+                                          <td>
+                                            <a href="<?php echo base_url('index.php/ListPekerjaan/update/'.$key['id_pekerjaan'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
 
-     <?php echo form_open_multipart('ListSurat/create/NIK/status_surat'); 
-        
-        echo validation_errors();
-                    $id = 101;
-                ?>
-                
-                <?php foreach ($last as $key){
-                    $id = $key['id_surat']+1;                    
-                }
-                 ?>               
+                                            <a href="<?php echo base_url('index.php/ListPekerjaan/delete/' .$key['id_pekerjaan'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-                <div class="form-group">
-                    <input type="hidden" class="form-control" id="id_surat" name="id_surat" value="<?php echo $id ?>">
-                </div>
-               
-             <div class="container">     
-   
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-element-list">
-                        <div class="basic-tb-hd">
-                            <h4>Input Data Surat</h4><br>
-                        <div class="row">
-                        <!--     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                                        </td>  
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                    </tbody>
+                                </table>
                                 </div>
-                                 <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="NIK" class="form-control">
-                                        <option value="<?php echo $nik ?>"><?php echo $nik; ?></option>
-                                    </select>
-                                    </div>
-                                </div>
-                            </div> 
-                            <br>   -->
-                           <!--   <div class="row">      -->                
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*NIK Penduduk</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st"><input type="text" class="form-control" id="NIK" name="NIK" placeholder="nama penduduk" readonly="readonly" value="<?php echo $nik ?>">
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   
-                          <!--   <div class="row"> -->
-                            <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                             <font color="red"><i><option value="">*Pilih Kepala Desa</option></i></font>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="id_kepala_desa" class="form-control">
-                                        <option value="">-----Pilih-----</option>
-                                            <?php foreach ($kepala_desa as $data ){ ?>
-                                            <option value="<?php echo $data->id_kepala_desa; ?>"><?php echo $data->nama_kepala_desa; ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
-                                    </div>
-                                </div>
-                            </div>   
-                            <br> -->
-                            <!-- <div class="row">                       
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <font color="red"><i><option value="">*Tanggal Surat</option></i></font> 
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-calendar"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" placeholder="Tanggal Surat" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   -->
-                       <div class="row">                     
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*Keterangan Surat</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
-                       </div>   
-                    <br>
-                     <font color="red"><i>* Wajib diisi</i></font>
-               </div>
-          </div>
-      </div>
-    </div>
-                        <center>
-                            <br>
-                            <br>
-                             <center>
-                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
-                        </center>
-                    <br>
-                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-       
-    <?php echo form_close(); ?>
+                       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -488,24 +415,25 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-   <!-- Logout Modal-->
+  <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
@@ -547,67 +475,7 @@
    } );
    </script>    
     
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- wow JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
-    <!-- price-slider JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
-    <!-- knob JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
-   <!--  Chat JS
-    ============================================ -->
-    <script src="js/chat/jquery.chat.js"></script>
-    <!--  wizard JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
-    <!--  todo JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
-  <!--  wave JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
-    <!-- plugins JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
-    <!-- main JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
+
 </body>
 
 </html>

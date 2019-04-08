@@ -42,7 +42,7 @@ class Register extends CI_Controller {
 		$data["desa"] = $this->list_desa->getTampilDesa();
 		$this->load->view('Register', $data);	
 	}
-	public function create()// sudah di isi di autoloard 
+	public function create()
 	{
 		$this->load->model('register_akun');
 	
@@ -71,26 +71,24 @@ class Register extends CI_Controller {
 	}
 
 
-	public function cekDaftar()
-	{
-		$this->load->model('create');
-		$this->load->Library('form_validation');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
-		$this->form_validation->set_rules('konfirmasi', 'Konfirmasi', 'trim|required|callback_cekPassword');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
-		$this->form_validation->set_rules('no_telp', 'no_telp', 'trim|required');
-		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');
-	
-
+	// public function cekDaftar()
+	// {
+	// 	$this->load->model('create');
+	// 	$this->load->Library('form_validation');
+	// 	$this->form_validation->set_rules('username', 'Username', 'trim|required');
+	// 	$this->form_validation->set_rules('password', 'Password', 'trim|required');
+	// 	$this->form_validation->set_rules('konfirmasi', 'Konfirmasi', 'trim|required|callback_cekPassword');
+	// 	$this->form_validation->set_rules('email', 'Email', 'trim|required');
+	// 	$this->form_validation->set_rules('no_telp', 'no_telp', 'trim|required');
+	// 	$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');
 		
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('register');
-		}else{
-			$this->create->tambah();
-			redirect('admin','refresh');
-		}
-	}
+	// 	if ($this->form_validation->run() == FALSE) {
+	// 		$this->load->view('register');
+	// 	}else{
+	// 		$this->create->tambah();
+	// 		redirect('admin','refresh');
+	// 	}
+	// }
 
 		public function cekPassword($konfirmasi)
 	{

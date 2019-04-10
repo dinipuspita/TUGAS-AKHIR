@@ -77,15 +77,20 @@
     <?php } } ?>
     <br>
 
-         <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListKeteranganPerumahan/create')?>"</a></td>
+
+
+     <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
+ -->
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListKeteranganPerumahan/create')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -136,14 +141,28 @@
           </div>
         </div>
       </li>
+       <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Bantuan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'">Form Bantuan</a>
+          </div>
+        </div>
+      </li>
 
 
        <!-- Nav Item - Charts -->
-      <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
-      </li>
+      </li> -->
 
       <?php } } ?>
 
@@ -230,7 +249,7 @@
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <!--   <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -239,7 +258,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -338,7 +357,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Keluar
                 </a>
               </div>
             </li>
@@ -370,7 +389,7 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Keterangan Perumahan</h6>
-                  <div class="dropdown no-arrow">
+                  <!-- <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
@@ -382,27 +401,23 @@
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEkonomi/create"); ?>'>Form 4</a>
                       <a class="dropdown-item" href='<?php echo base_url("index.php/ListKepemilikanAset/create"); ?>'>Form 5</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
                             <h2><font color="red"><i><option value="">*Wajib diisi</option></i></font></h2><br>
-                               <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                 <font color="red"><i><option value="">*Pilih Data Penduduk</option></i></font>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select name="NIK" class="form-control">
-                                        <option value="">-----Pilih-----</option>
-                                            <?php foreach ($penduduk as $data ){ ?>
-                                            <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <font color="red"><i><option value="">*NIK Penduduk</option></i></font>   
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                      <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st"><input type="text" class="form-control" id="NIK" name="NIK" placeholder="nama penduduk" readonly="readonly" value="<?php echo $nik ?>">
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                       </div> 
                             <br>
                              <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -415,7 +430,8 @@
                                                 <option value="1.Milik Sendiri">1.Milik Sendiri</option>
                                                 <option value="2.Kontrak/Sewa">2.Kontrak/Sewa</option>
                                                 <option value="3.Bebas Sewa">3.Bebas Sewa</option>
-                                                <option value="3.Dinas">3.Dinas</option>
+                                                <option value="4.Dinas">4.Dinas</option>
+                                                <option value="5.Lainnya">5.Lainnya</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -433,6 +449,7 @@
                                                 <option value="1.Milik Sendiri">1.Milik Sendiri</option>
                                                 <option value="2.Milik Orang Lain">2.Milik Orang Lain</option>
                                                 <option value="3.Tanah Negara">3.Tanah Negara</option>
+                                                 <option value="4.Lainnya">4.Lainnya</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -447,7 +464,7 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Luas Lantai / m3</option></i></font>
+                                        <font color="red"><i><option value="">*Luas Lantai / m2</option></i></font>
                                         <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai" required autofocus />
                                     </div>
                                 </div>
@@ -470,6 +487,8 @@
                                                 <option value="06.Sementara/Bata Merah">06.Sementara/Bata Merah</option>
                                                 <option value="07.Bambu">07.Bambu</option>
                                                 <option value="08.Kayu/Papan Kualitas Rendah">08.Ubin/Tegel/Terasero</option>
+                                                <option value="09.Tanah">09.Tanah</option>
+                                                <option value="10.Lainnya">10.Lainnya</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -489,8 +508,8 @@
                                                 <option value="3.Kayu">3.Kayu</option>
                                                 <option value="4.Anyaman Bambu">4.Anyaman Bambu</option>
                                                 <option value="5.Batang Kayu">5.Batang Kayu</option>
-                                                <option value="6.Bambu">6.Bambu</option>                                             
-  
+                                                <option value="6.Bambu">6.Bambu</option>
+                                                 <option value="7.Lainnya">7.Lainnya</option>                                             
                                             </optgroup>
                                         </select>
                                     </div>
@@ -530,7 +549,8 @@
                                                 <option value="06.Seng">06.Seng</option>     
                                                 <option value="07.Sirap">07.Sirap</option>
                                                 <option value="08.Bambu">08.Bambu</option>
-                                                <option value="09.Jerami/Ijuk/Daun-daunan/Rumbia">09.Jerami/Ijuk/Daun-daunan/Rumbia</option>                                           
+                                                <option value="09.Jerami/Ijuk/Daun-daunan/Rumbia">09.Jerami/Ijuk/Daun-daunan/Rumbia</option>
+                                                <option value="10.Lainnya">10.Lainnya</option>                                           
                                               </optgroup>
                                         </select>
                                     </div>
@@ -588,6 +608,7 @@
                                                  <option value="09.Mata Air Tak Terlindung">09.Mata Air Tak Terlindung</option>
                                                  <option value="10.Air Sungai/Danau/Waduk">10.Air Sungai/Danau/Waduk</option>
                                                  <option value="11.Air Hujan">11.Air Hujan</option>
+                                                 <option value="12.Lainnya">12.Lainnya</option>
                                              </optgroup>
                                         </select>
                                     </div>
@@ -635,7 +656,8 @@
                                       <select class="form-control" name="sumber_penerangan">
                                           <option value="">-----Pilih-----</option>
                                                  <option value="1.Listrik PLN">1.Listrik PLN</option>
-                                                 <option value="2Listrik Non PLN">2Listrik Non PLN</option>                
+                                                 <option value="2.Listrik Non PLN">2.Listrik Non PLN</option>   
+                                                   <option value="3.Bukan Listrik">2.Bukan Listrik</option>              
                                              </optgroup>
                                         </select>
                                     </div>
@@ -742,8 +764,9 @@
                                       <select class="form-control" name="jenis_kloset">
                                           <option value="">-----Pilih-----</option>
                                                  <option value="1.Leher Angsa">1.Leher Angsa</option>
-                                                 <option value="2.Cemplung /Cubluk">2.Plengsengan</option>                
-                                                 <option value="3.Tidak Pakai">3.Tidak Pakai</option>               
+                                                 <option value="2.Plengsengan">2.Plengsengan</option>  
+                                                 <option value="3.Cemplung/cubluk">3.Cemplung/cubluk</option>               
+                                                 <option value="4.Tidak Pakai">4.Tidak Pakai</option>               
                                              </optgroup>
                                         </select>
                                     </div>
@@ -762,17 +785,19 @@
                                                  <option value="2.SPAL">2.SPAL</option>                
                                                  <option value="3.Lubang Tanah">3.Lubang Tanah</option>               
                                                  <option value="4.Kolam/Sawah/Sungai">4.Kolam/Sawah/Sungai</option>   
-                                                 <option value="5.Pantai/Tanah">5.Pantai/Tanah</option>               
+                                                 <option value="5.Pantai/Tanah">5.Pantai/Tanah</option>    
+                                                  <option value="6.Pantai/Tanah">6.Lainnya</option>           
                                              </optgroup>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <br>
-                            <center>
+                           <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span>
                                 </button>
-                            <a href="<?php echo base_url('index.php/listKepalaDesa')?>"class="btn btn-danger">Back</a></td>
+                                 <a href="<?php echo base_url('index.php/ListKeteranganPengesahan/create')?>"class="btn glyphicon glyphicon-chevron-left"></a></td>
+                              <a href="<?php echo base_url('index.php/ListSosialEkonomi/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
                         </center>
                     </div>
                 </div>
@@ -780,7 +805,6 @@
         </div>
     </div>
   </div>
-
 
 <?php echo form_close(); ?>
       
@@ -802,24 +826,26 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+ <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Iya</a>
         </div>
       </div>
     </div>
   </div>
+
+
 
 
   <!-- Bootstrap core JavaScript-->

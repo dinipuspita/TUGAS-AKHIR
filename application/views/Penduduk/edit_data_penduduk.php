@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
 
   <meta charset="utf-8">
@@ -11,18 +10,6 @@
   <meta name="author" content="">
 
   <title>SB Admin 2 - Dashboard</title>
-<script type="text/javascript">
-
-function submitBday() {
-    var Bdate = document.getElementById('tanggal_lahir').value;
-    var Bday = +new Date(Bdate);
-    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
-    var theBday = document.getElementById('usia');
-    theBday.value = Hasil;
-}
-
-</script>
-
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,54 +55,8 @@ function submitBday() {
     <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- meanmenu CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-    <!-- summernote CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
-    <!-- Range Slider CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
-    <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
-    <!-- mCustomScrollbar CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- Notika icon CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
-    <!-- bootstrap select CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
-    <!-- datapicker CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
-    <!-- Color Picker CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
-    <!-- wave CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-    <!-- main CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-    <!-- style CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-    <!-- responsive CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-    <!-- modernizr JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
 
 
 <body id="page-top">
@@ -126,15 +67,20 @@ function submitBday() {
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+        <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListPenduduk')?>"</a></td>
+
+
+     <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
+ -->
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListPenduduk')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -165,8 +111,8 @@ function submitBday() {
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Penduduk</a>
-            <a class="collapse-item" href="cards.html">Tambah Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'">Tambah Penduduk</a>
           </div>
         </div>
       </li>
@@ -186,13 +132,28 @@ function submitBday() {
         </div>
       </li>
 
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Bantuan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'">Form Bantuan</a>
+          </div>
+        </div>
+      </li>
+
       
        <!-- Nav Item - Charts -->
-      <li class="nav-item">
+    <!--   <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
-      </li>
+      </li> -->
 
       <?php } } ?>
 
@@ -275,7 +236,7 @@ function submitBday() {
 
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <!--   <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -285,7 +246,7 @@ function submitBday() {
               </div>
             </div>
           </form>
-
+ -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -383,7 +344,7 @@ function submitBday() {
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Keluar
                 </a>
               </div>
             </li>
@@ -433,17 +394,16 @@ function submitBday() {
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()"  value="<?php echo $penduduk[0]->tanggal_lahir?>">
+                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir (DD-MM-YYYY)" value="<?php echo $penduduk[0]->tanggal_lahir?>">
                                     </div>
                                 </div>
                             </div>
-                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="agama">
+                                    <select class="form-control" name="agama">
                                             <optgroup label="Agama">
-                                                <option value="">-----Agama-----</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Kristen">Kristen</option>
                                                 <option value="Hindu">Hindu</option>
@@ -472,29 +432,15 @@ function submitBday() {
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia" readonly value="<?php echo $penduduk[0]->usia?>">
+                                        <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia"  value="<?php echo $penduduk[0]->usia?>">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                        <select name="id_pekerjaan" class="selectpicker">
-                                        <option value="">----Pilih Pekerjaan----</option>
-                                            <?php foreach ($pekerjaan as $data ){ ?>
-                                            <option value="<?php echo $data['id_pekerjaan']; ?>"><?php echo $data['nama_pekerjaan'] ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
-                              </div>
-                            </div>  
-                        </div>
-                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="pekerjaan">
+                                    <select class="form-control" name="pekerjaan">
                                             <optgroup label="Pekerjaan">
                                                 <option value="Petani/Pekebun">Petani/Pekebun</option>
                                                 <option value="Buruh Tani">Buruh Tani</option>
@@ -506,7 +452,7 @@ function submitBday() {
                                         </select>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -532,9 +478,8 @@ function submitBday() {
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="status">
+                                    <select class="form-control" name="status">
                                             <optgroup label="Status">
-                                                <option value="">-----Status-----</option>
                                                 <option value="Belum Menikah">Belum Menikah</option>
                                                 <option value="Sudah Menikah">Sudah Menikah</option>
                                             </optgroup>
@@ -586,7 +531,7 @@ function submitBday() {
                         <div class="basic-tb-hd">
                             <h2>Data Tempat Tinggal</h2><br>
                         <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -596,7 +541,7 @@ function submitBday() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -606,7 +551,7 @@ function submitBday() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
@@ -616,11 +561,20 @@ function submitBday() {
                                     </div>
                                 </div>
                             </div>
-                          </div>
-                          <font color="red"><i>* Wajib diisi</i></font>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                             <div class="bootstrap-select fm-cmp-mg">
+                                  <font color="red"><i><option value="">*Asal Desa</option></i></font>
+                                        <select name="fk_desa" class="form-control">
+                                        <option value="">Pilih Desa</option>
+                                            <?php foreach ($desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
                         <center>
-                            <br>
-                            <br>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
                             <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
                         </center>
@@ -651,7 +605,7 @@ function submitBday() {
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+<!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -661,14 +615,16 @@ function submitBday() {
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Iya</a>
         </div>
       </div>
     </div>
   </div>
+
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
@@ -709,19 +665,68 @@ function submitBday() {
    $('#example').DataTable();
    } );
    </script>    
-
-    <!-- datapicker JS
+    
+    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
-    <!-- bootstrap select JS
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+    <!-- wow JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
-    <!--  color-picker JS
+    <script src="<?php echo base_url() ?>assets2/js/wow.min.js"></script>
+    <!-- price-slider JS
     ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
-  
+    <script src="<?php echo base_url() ?>assets2/js/jquery-price-slider.js"></script>
+    <!-- owl.carousel JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/owl.carousel.min.js"></script>
+    <!-- scrollUp JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/jquery.scrollUp.min.js"></script>
+    <!-- meanmenu JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/meanmenu/jquery.meanmenu.js"></script>
+    <!-- counterup JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
+    <!-- mCustomScrollbar JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sparkline JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/flot/jquery.flot.resize.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/flot/flot-active.js"></script>
+    <!-- knob JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.knob.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/knob/jquery.appear.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/knob/knob-active.js"></script>
+   <!--  Chat JS
+    ============================================ -->
+    <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/wizard/wizard-active.js"></script>
+    <!--  todo JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/todo/jquery.todo.js"></script>
+  <!--  wave JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/wave/waves.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/wave/wave-active.js"></script>
+    <!-- plugins JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/plugins.js"></script>
+    <!-- main JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
 </body>
 
 </html>

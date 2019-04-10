@@ -24,13 +24,12 @@
 <center>
 
 
-  <h4><img src="<?php echo base_url() ?>assets/img/satu.png" width="100px" height="120px"/></a>  
-  <a href="<?php echo base_url('index.php/admin')?>"class="btn glyphicon glyphicon-chevron-left"></a></td>
-    <font color="white"><div align="center"><h2><font face="Times New Roman">Selamat Datang</font></h2>
-        <font color="white"><div align="center"><h6><font face="Courier New"> 
+  <h4><img src="<?php echo base_url() ?>assets/img/satu.png" width="80px" height="100px"/></a>  
+    <font color="white"><div align="center"><h4><font face="Times New Roman">Selamat Datang</font></h4>
+        <font color="white"><div align="center"><h6><font face="Courier New">
              Lembaga Swadaya Masyarakat (LSM) Jawa Timur</p>
              Balaikota Amongtani Gedung B Lantai 2</p>
-             Jl.Panglima Sudirman No.507, Pesanggrahan </p> 
+             Jl.Panglima Sudirman No.507, Pesanggrahan </p>
              Kec.Batu, Kota Batu, Jawa Timur 65314</h6></font></div>
 </center>  
  <?php echo form_open('login/cekLogin') ?>
@@ -49,7 +48,6 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                   <h4><img src="<?php echo base_url() ?>assets/img/akun2.png" width="60px" height="60px"/></a>
                     <b><h1 class="h3 text-gray-900 mb-4">Login</b></h1>
                   </div>
 
@@ -124,9 +122,9 @@ function myFunction() {
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
-                  <!-- <div class="text-center">
+                  <div class="text-center">
                     <a class="small" href="register.html">Create an Account!</a>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>

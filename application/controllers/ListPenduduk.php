@@ -5,6 +5,7 @@ class ListPenduduk extends CI_Controller {
 		public function __construct()
 	
 	{
+
 		parent::__construct();
 		if($this->session->userdata('logged_in')){
 			$session_data = $this->session->userdata('logged_in');
@@ -43,7 +44,6 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 
 		$this->form_validation->set_rules('NO_KK', 'NO_KK', 'trim|required');
-		// $this->form_validation->set_rules('NIK', 'NIK','trim|required|callback_CheckNIK');
 		$this->form_validation->set_rules('nama_penduduk', 'nama_penduduk', 'trim|required');
 		$this->form_validation->set_rules('tempat_lahir', 'tempat_lahir', 'trim|required');
 		$this->form_validation->set_rules('tanggal_lahir', 'tanggal_lahir', 'trim|required');
@@ -70,9 +70,17 @@ class ListPenduduk extends CI_Controller {
 		}
 		else 
 		{
-			$this->list_Penduduk->insertPenduduk();
-			echo "<script> alert('Data Penduduk Berhasil Ditambahkan'); window.location.href='';
-			</script>";
+			if ($this->list_Penduduk->cekNIK() != ''){
+				echo "<script> alert('NIK Sudah Ada'); window.location.href='';
+				</script>";
+				$this->load->view('penduduk/input_data_penduduk',$data);	
+			}
+			else{
+				$this->list_Penduduk->insertPenduduk();
+				echo "<script> alert('Data Penduduk Berhasil Ditambahkan'); window.location.href='';
+				</script>";				
+			}
+
 		}	
 	}
 	public function update($id)
@@ -126,7 +134,6 @@ class ListPenduduk extends CI_Controller {
 	{
 		// var_dump($data['penduduk']);
   //       die();  
-
 		$this->load->model('list_penduduk');
 		$data["penduduk"] = $this->list_penduduk->getTampilDetail($id);
 		$data["user"] = $this->list_penduduk->getUser();
@@ -142,13 +149,22 @@ class ListPenduduk extends CI_Controller {
 		$this->pdf->load_view('Penduduk/print_penduduk', $data);
 	}
 	//controller CheckUsername
-function CheckNIK($NIK){
-   if ($this->model->check_NIK($NIK)==''){
-      return true;
-   }else{
-      $this->form_validation->set_message('NIK', 'NIK '. $NIK .' telah terdaftar');
-      return false;		
-   }
-}
+	function CheckNIK($NIK){
+	$this->load->model('list_penduduk');
+	   if ($this->list_penduduk->check_NIK($NIK)==''){
+	      return true;
+	   }else{
+	      $this->form_validation->set_message('CheckNIK');
+	      return false;		
+	   }
+	}
+	public function tampilGroup($NO_KK)
+	{
+		$this->load->model('list_Penduduk');
+		$data["penduduk"] = $this->list_Penduduk->getTampilGroup($NO_KK);
+		$data["pendudukByDinsos"] = $this->list_Penduduk->getTampilGroupDinsos($NO_KK);
+		$data['user'] = $this->list_Penduduk->getUser();		
+		$this->load->view('Penduduk/pendudukPerKK', $data);	
+	}
 
 }

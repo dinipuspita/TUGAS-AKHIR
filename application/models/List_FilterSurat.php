@@ -14,9 +14,6 @@ class List_FilterSurat extends CI_Model {
 					  'jml_lahan' => $this->input->post('jml_lahan')
 					 );				
 		
-		// $this->db->insert('desa', $data);
-
-	
 
 		$id_surat=$this->input->post('id_surat');
 		$status_surat=$this->input->post('status_surat');
@@ -30,16 +27,16 @@ class List_FilterSurat extends CI_Model {
 		//tidak mampu tapi lengkap
 		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan < 8){
 
-			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create/$NIK'; </script>";
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create/$NIK/1'; </script>";
 		
 		}
 		//tidak mampu tidak lengkap
 		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan < 8){
 
  
-			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); 	window.location.href='../ListSurat/create/$NIK'; </script>";
+			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); window.location.href='../ListSurat/create/$NIK/0'; </script>";
 	
-			return $query = $this->db->query("UPDATE surat set status_surat ='Menunggu' where id_surat=$id");
+			// return $query = $this->db->query("UPDATE surat set status_surat ='Menunggu' where id_surat=$id");
 	
 		}
 		else{

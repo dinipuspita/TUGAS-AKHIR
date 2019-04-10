@@ -2,8 +2,15 @@
 // define('BASEPATH') OR exit ('No direct script access allowed');
 class List_Surat extends CI_Model {
 
-	public function insertSurat()
+	public function insertSurat($status_surat)
 	{
+		if ($status_surat==0){
+			$status='menunggu';
+		}
+		else{
+			$status='Diterima';
+		}
+
 		$tanggal_surat = date("Y-m-d H:i:s");
 
 		$data = array('id_surat' => $this->input->post('id_surat'),
@@ -11,10 +18,12 @@ class List_Surat extends CI_Model {
 					  // 'id_desa' => $this->input->post('id_desa'), 
 					  // 'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
 					  'keterangan' => $this->input->post('keterangan'),
-					  'status_surat' => ('Diterima'),
+					  'status_surat' => $status,
 					  'tanggal_surat' => $tanggal_surat);				
 		
 		$this->db->insert('surat', $data);
+
+		
 	}
 	public function insertDesa()
 	{
@@ -72,7 +81,6 @@ class List_Surat extends CI_Model {
 	{	
 		$object = array('keterangan' => $this->input->post('keterangan'), 
 					  'tanggal_surat' => $this->input->post('tanggal_surat'),
-					  'status_surat' => $this->input->post('status_surat')
 					);
 
 		$this->db->where('id_surat', $id);
@@ -122,7 +130,14 @@ class List_Surat extends CI_Model {
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa'");
 		return $query->result_array();
 	}
+	public function konfirmasiStatus($id)
+	{
+	   
+		$object = array('status_surat' => 'Diterima');
+		$this->db->where('id_surat', $id);
+		$this->db->update('surat', $object);
 
+	}
 
 }
 

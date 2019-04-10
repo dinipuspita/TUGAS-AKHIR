@@ -85,14 +85,14 @@ class List_Penduduk extends CI_Model {
 	{
 		$session_data = $this->session->userdata('logged_in');
 		$id_desa = $session_data['id_desa'];
-		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa");
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK");
 		return $query->result_array();
 	}
 
 	public function getTampilDinsos()
 	{
 	
-		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa");
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa group by NO_KK");
 		return $query->result_array();
 	}
 
@@ -136,26 +136,34 @@ class List_Penduduk extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
-	//model
-	function check_NIK($NIK){
-   $this->db->select('NIK');
-   $this->db->where('NIK',$NIK);		
-   $query =$this->db->get('penduduk');
-   $row = $query->row();
-   if ($query->num_rows > 0){
-         return $row->NIK; 
-   }else{
-         return "";
-  }
-}
-	// 	public function getPendudukByUser()
-	// {
-	// 	$session_data = $this->session->userdata('logged_in');
-	// 	$id_desa = $session_data['id_desa'];
 
-	// 	$query = $this->db->query("Select * from penduduk AS a Join desa AS b where b.id_desa= '$id_desa'");
-	// 	return $query->result_array();
-	// }
+	//model
+	function cekNIK(){
+	   $nik = $this->input->post('NIK');
+	   $this->db->select('NIK');
+	   $this->db->where('NIK',$nik);		
+	   $query =$this->db->get('penduduk');
+	   $row = $query->row();
+	   if ($query->num_rows() > 0){
+	         return $row->NIK; 
+	   }else{
+	         return "";
+	  }
+	}
+	public function getTampilGroup($NO_KK)
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+		
+		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NO_KK = $NO_KK");
+		return $query->result_array();
+	}
+	
+	public function getTampilGroupDinsos($NO_KK)
+	{
+		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NO_KK = $NO_KK");
+		return $query->result_array();
+	}
 	
 }
 

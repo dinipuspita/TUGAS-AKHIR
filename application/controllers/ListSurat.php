@@ -30,7 +30,7 @@ class ListSurat extends CI_Controller {
 		$data['user'] = $this->list_Surat->getUser();
 		$this->load->view('Surat/surat', $data);	
 	}
-	public function create($nik)// sudah di isi di autoloard 
+	public function create($nik,$status_surat)// sudah di isi di autoloard 
 	{
 	
 		$this->form_validation->set_rules('id_surat', 'id_surat', 'trim|required');
@@ -58,29 +58,49 @@ class ListSurat extends CI_Controller {
 			$this->load->view('Surat/input_data_surat',$data);
 		}
 		else{
-			$this->list_Surat->insertSurat();
+			$this->list_Surat->insertSurat($status_surat);
 			echo "<script> alert('Data Surat Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
 
+	// public function update($id)
+	// {
+	
+	// 	$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
+	// 	$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
+
+	// 	$this->load->model('list_Surat');
+	// 	$data['surat'] = $this->list_Surat->getsurat($id);
+	// 	$data['user'] = $this->list_Surat->getUser();
+
+	// 	// $this->load->model('list_FilterSurat');
+	// 	// $data["surat"] = $this->list_FilterSurat->getTampil($id);
+
+	// 	if($this->form_validation->run() == FALSE) {
+	// 		$this->load->view('Surat/edit_data_surat',$data);
+	// 	}else{
+	// 		$this->list_Surat->updateById($id);
+	// 		echo "<script> alert('Data Surat Berhasil Diupdate'); window.location.href='';
+	// 		</script>";
+	// 	}
+	// }
 	public function update($id)
 	{
 	
+		$this->load->model('list_surat');
 		$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
-		$this->load->model('list_Surat');
-		$data['surat'] = $this->list_Surat->getsurat($id);
-		$data['user'] = $this->list_Surat->getUser();
+		$this->load->model('list_surat');
+		$data['surat'] = $this->list_surat->getSurat($id);
 
-		$this->load->model('list_FilterSurat');
-		$data["surat"] = $this->list_FilterSurat->getTampil($id);
+		$data['user'] = $this->list_surat->getUser();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/edit_data_surat',$data);
 		}else{
-			$this->list_Surat->updateById($id);
+			$this->list_surat->updateById($id);
 			echo "<script> alert('Data Surat Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}
@@ -97,6 +117,7 @@ class ListSurat extends CI_Controller {
 		$this->load->model('list_surat');
 		$data["surat"] = $this->list_surat->getTampilSurat($id);
 		$this->load->library('pdf');
+		$data["surat"] = $this->list_surat->getTampilSurat($id);
 		$this->pdf->load_view('Surat/print_surat', $data);
 	}
 
@@ -115,5 +136,12 @@ class ListSurat extends CI_Controller {
 		$this->pdf->load_view('Surat/print_laporan', $data);
 		}
    }
+
+   public function konfirmasi($id)
+	{
+		$this->load->model('list_surat');
+		$this->list_surat->konfirmasiStatus($id);
+		redirect('ListSurat');
+	}
 }
 

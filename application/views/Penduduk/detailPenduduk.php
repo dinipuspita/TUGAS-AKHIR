@@ -421,7 +421,7 @@
 <tr>     
 <th>RW           </th>      <td><?php echo $key['RW'] ?>            </td><br>
 <tr>     
-<th>Pekerjaan    </th>      <td><?php echo $key['pekerjaan'] ?>     </td><br>
+<th>Pekerjaan    </th>      <td><?php echo $key['nama_pekerjaan'] ?>     </td><br>
 <tr>     
 <th>Usia         </th>      <td><?php echo $key['usia'] ?>          </td><br>
 </tr>     

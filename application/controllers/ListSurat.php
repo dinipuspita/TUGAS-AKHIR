@@ -30,7 +30,7 @@ class ListSurat extends CI_Controller {
 		$data['user'] = $this->list_Surat->getUser();
 		$this->load->view('Surat/surat', $data);	
 	}
-	public function create($nik,$status_surat)// sudah di isi di autoloard 
+	public function create()// sudah di isi di autoloard 
 	{
 	
 		$this->form_validation->set_rules('id_surat', 'id_surat', 'trim|required');
@@ -58,7 +58,7 @@ class ListSurat extends CI_Controller {
 			$this->load->view('Surat/input_data_surat',$data);
 		}
 		else{
-			$this->list_Surat->insertSurat($status_surat);
+			$this->list_Surat->insertSurat();
 			echo "<script> alert('Data Surat Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}

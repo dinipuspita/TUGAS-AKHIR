@@ -98,9 +98,10 @@ class List_Surat extends CI_Model {
 	{
 		$id_desa = $this->input->post('id_desa');
 	
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa and jabatan_selesai between 2014 and 2020 and id_surat = $id");
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa join pekerjaan as e on e.id_pekerjaan=b.id_pekerjaan WHERE jabatan_selesai between 2014 and 2020 and id_surat = $id");
 		return $query->result_array();
 	}
+	
 
 	public function delete($id)
 	{

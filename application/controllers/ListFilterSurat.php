@@ -28,22 +28,36 @@ class ListFilterSurat extends CI_Controller {
 		$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getTampil();
 		$data['user'] = $this->list_FilterSurat->getUser();
-		$this->load->view('Surat/FilterSurat', $data);	
+		$this->load->view('Surat/Surat', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
 	{
 		$this->load->model('list_FilterSurat');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
+		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
 		$this->form_validation->set_rules('kelengkapan_dokumen', 'kelengkapan_dokumen', 'trim|required');
 		$this->form_validation->set_rules('status_bangunan', 'status_bangunan', 'trim|required');
 		$this->form_validation->set_rules('jml_lahan', 'jml_lahan', 'trim|required');
 
+		$this->load->model('list_Filtersurat');
 		$data['user'] = $this->list_FilterSurat->getUser();
 
 		$this->load->model('list_Penduduk');
 		$data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk();
+
+		$this->load->model('list_desa');
+		$data["desa"] = $this->list_desa->getTampilDesa();
+
+		$this->load->model('list_KepalaDesa');
+		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
+
+		$this->load->model('list_Penduduk');
+		$data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk();
+
+		$this->load->model('list_FilterSurat');
+		$data["surat"] = $this->list_FilterSurat->getTampil();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/input_data_FilterSurat',$data);
@@ -54,29 +68,61 @@ class ListFilterSurat extends CI_Controller {
 			</script>";
 		}
 	}
-	// public function update($id)
-	// {
+		public function update($id)
+	{
 	
-	// 	$this->load->model('list_FilterSurat');
-	// 	$this->form_validation->set_rules('id_penduduk', 'id_penduduk', 'trim|required');
-	// 	$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
+		$this->load->model('list_FilterSurat');
+		$this->form_validation->set_rules('tanggal_surat', 'tanggal_surat', 'trim|required');
+		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
-	// 	$this->load->model('list_FilterSurat');
-	// 	$data['surat'] = $this->list_FilterSurat->getSurat($id);
+		$this->load->model('list_Filtersurat');
+		$data['surat'] = $this->list_FilterSurat->getSurat($id);
 
-	// 	if($this->form_validation->run() == FALSE) {
-	// 		$this->load->view('Surat/edit_data_surat',$data);
-	// 	}else{
-	// 		$this->list_FilterSurat->updateById($id);
-	// 		echo "<script> alert('Data Surat Berhasil Diupdate'); window.location.href='';
-	// 		</script>";
-	// 	}
-	// }
-	
+		$data['user'] = $this->list_FilterSurat->getUser();
+
+		if($this->form_validation->run() == FALSE) {
+			$this->load->view('Surat/edit_data_surat',$data);
+		}else{
+			$this->list_Filtersurat->updateById($id);
+			echo "<script> alert('Data Surat Berhasil Diupdate'); window.location.href='';
+			</script>";
+		}
+	}
+
 	public function delete($id)
 	{
 		$this->load->model('list_FilterSurat');
 		$this->list_FilterSurat->delete($id);
-		redirect('ListFIlterSurat','refresh');
+		redirect('ListSurat','refresh');
+	}
+	public function report($id)
+	{
+		$this->load->model('list_FilterSurat');
+		$data["surat"] = $this->list_FilterSurat->getTampilSurat($id);
+		$this->load->library('pdf');
+		$this->pdf->load_view('Surat/print_surat', $data);
+	}
+
+	public function laporanSurat()
+	{
+	$this->load->model('list_Filtersurat');
+		$data["surat"] = $this->list_FilterSurat->getReportSurat();
+	
+		if (empty($data['surat'])) {
+			echo "<script> alert('Data Surat Masih Kosong'); window.location.href='../ListFilterSurat';
+			</script>";
+
+		}else {
+
+	    $this->load->library('pdf');	
+		$this->pdf->load_view('Surat/print_laporan', $data);
+		}
+   }
+
+   public function konfirmasi($id)
+	{
+		$this->load->model('list_FilterSurat');
+		$this->list_FilterSurat->konfirmasiStatus($id);
+		redirect('ListFilterSurat');
 	}
 }

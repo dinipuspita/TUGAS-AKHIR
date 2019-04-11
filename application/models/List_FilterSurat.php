@@ -12,8 +12,14 @@ class List_FilterSurat extends CI_Model {
 					  'kelengkapan_dokumen' => $this->input->post('kelengkapan_dokumen'), 
 					  'status_bangunan' => $this->input->post('status_bangunan'), 
 					  'jml_lahan' => $this->input->post('jml_lahan')
-					 );				
-		
+					 );	
+
+		// if ($status_surat==0){
+		// 	$status='menunggu';
+		// }
+		// else{
+		// 	$status='Diterima';
+		// }
 
 		$id_surat=$this->input->post('id_surat');
 		$status_surat=$this->input->post('status_surat');
@@ -24,27 +30,86 @@ class List_FilterSurat extends CI_Model {
 		$statusBangunan=$this->input->post('status_bangunan');
 		$pendapatan=$this->input->post('pendapatan');
 
+		$status = 'Diterima';
+
 		//tidak mampu tapi lengkap
 		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan < 8){
 
-			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListSurat/create/$NIK/1'; </script>";
+			$status = 'Diterima';
+
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListFilterSurat/create/$NIK/'; </script>";
 		
 		}
 		//tidak mampu tidak lengkap
 		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan < 8){
 
- 
-			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); window.location.href='../ListSurat/create/$NIK/0'; </script>";
-	
-			// return $query = $this->db->query("UPDATE surat set status_surat ='Menunggu' where id_surat=$id");
-	
+			$status = 'Menunggu';
+			
+			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); window.location.href='../ListFilterSurat/create/$NIK/'; </script>";
+
 		}
 		else{
 		//mampu
-			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListSurat'; </script>";
+			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListFilterSurat'; </script>";
 		}
 
+		$tanggal_surat = date("Y-m-d H:i:s");
 
+		$data_surat = array('id_surat' => $this->input->post('id_surat'),
+					  'NIK' => $this->input->post('NIK'), 
+					  'keterangan' => $this->input->post('keterangan'),
+					  // 'status_surat' => $status,
+					  'status_surat' => $status,
+					  'tanggal_surat' => $tanggal_surat);				
+		
+		$this->db->insert('surat', $data_surat);
+
+
+	}
+
+
+	// public function insertSurat($status_surat)
+	// {
+	// 	if ($status_surat==0){
+	// 		$status='menunggu';
+	// 	}
+	// 	else{
+	// 		$status='Diterima';
+	// 	}
+
+	// 	$tanggal_surat = date("Y-m-d H:i:s");
+
+	// 	$data = array('id_surat' => $this->input->post('id_surat'),
+	// 				  'NIK' => $this->input->post('NIK'), 
+	// 				  // 'id_desa' => $this->input->post('id_desa'), 
+	// 				  // 'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
+	// 				  'keterangan' => $this->input->post('keterangan'),
+	// 				  'status_surat' => $status,
+	// 				  'tanggal_surat' => $tanggal_surat);				
+		
+	// 	$this->db->insert('surat', $data);
+
+		
+	// }
+	public function insertDesa()
+	{
+
+		$data = array('nama_desa' => $this->input->post('nama_desa'), 
+					  'kode_pos' => $this->input->post('kode_pos'), 
+					  'no_telepon' => $this->input->post('no_telepon'), 
+					  'alamat' => $this->input->post('alamat'), 
+					  );				
+		
+		$this->db->insert('desa', $data);
+	}
+
+	public function insertKepdes()
+	{
+		
+	$object = array('nama_kepala_desa' => $this->input->post('nama_kepala_desa'),
+					'id_desa' => $this->input->post('id_desa'));
+		
+		$this->db->insert('kepala_desa', $object);
 	}
 
     public function insertPenduduk()
@@ -78,33 +143,41 @@ class List_FilterSurat extends CI_Model {
 		$query= $this->db->get('surat');
 		return $query->result();
 	}
-	// public function updateById($id)
-	// {	
-	// 	$data = array('NIK' => $this->input->post('NIK'), 
-	// 				  'tanggal_surat' => $this->input->post('tanggal_surat'));
+	public function updateById($id)
+	{	
+		$object = array('keterangan' => $this->input->post('keterangan'), 
+					  'tanggal_surat' => $this->input->post('tanggal_surat'),
+					);
 
-	// 	$this->db->where('id_surat', $id);
-	// 	$this->db->update('surat', $object);
-	// }
+		$this->db->where('id_surat', $id);
+		$this->db->update('surat',$object);
+	}
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join keterangan_sosial_ekonomi as c on c.NIK=a.NIK join keterangan_perumahan as d on d.NIK=b.NIK");
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa where c.id_desa = $id_desa");
 		return $query->result_array();
 	}
-
-	// $query = $this->db->query("Select * from peminjaman AS p JOIN peminjaman_detail AS pd ON p.id_peminjaman = pd.id_peminjaman join barang as b on b.id_barang=pd.id_barang join staff as c on c.id_staff=p.id_staff");
-	// 	return $query->result_array();
+	public function getTampilSurat($id)
+	{
+		$id_desa = $this->input->post('id_desa');
+	
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa join pekerjaan as e on e.id_pekerjaan=b.id_pekerjaan WHERE jabatan_selesai between 2014 and 2020 and id_surat = $id");
+		return $query->result_array();
+	}
 
 	public function delete($id)
 	{
 		$this->db->where('id_surat', $id);
 		$this->db->delete('surat');
 	}
-	// public function getLastSurat()
-	// {
-	// 	$query = $this->db->query("SELECT * FROM surat ORDER BY id_surat DESC LIMIT 1");
-	// 	return $query->result_array();
-	// }
+	public function getLastSurat()
+	{
+		$query = $this->db->query("SELECT * FROM surat ORDER BY id_surat DESC LIMIT 1");
+		return $query->result_array();
+	}
 	public function getUser()
 	{
 		$session_data = $this->session->userdata('logged_in');
@@ -112,6 +185,24 @@ class List_FilterSurat extends CI_Model {
 		$query = $this->db->query("SELECT * from login where username='$username'");
 		// var_dump($query);die();
 		return $query->result_array();
+	}
+	
+	//laporan surat perdesa
+	public function getReportSurat()
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa'");
+		return $query->result_array();
+	}
+	public function konfirmasiStatus($id)
+	{
+	   
+		$object = array('status_surat' => 'Diterima');
+		$this->db->where('id_surat', $id);
+		$this->db->update('surat', $object);
+
 	}
 
 }

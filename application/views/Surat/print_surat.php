@@ -72,7 +72,9 @@
 </style>
 
 <head>
-  <img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/>
+<!--   <img src="<?php echo base_url() ?>application/third_party/dompdf/lib/res/satu.png" width="50px" height="55px"/> -->
+  <img src="<?php echo base_url() ?>__DIR__ . "/../../lib/res/satu.png" width="50px" height="55px"/>
+<!--       Cache::$broken_image = realpath(__DIR__ . "/../../lib/res/broken_image.png"); -->
 
 
   <center><h4>PEMERINTAH KOTA BATU<br>
@@ -95,7 +97,7 @@ Kepala Desa <?php echo $surat[0]['nama_desa']?> Kecamatan Junrejo Pemerintah Kot
   Tempat / Tanggal Lahir      :<?php echo  $surat[0]['tempat_lahir'] ?>
   /                            <?php echo  $surat[0]['tanggal_lahir'] ?><br>
   Agama                       :<?php echo  $surat[0]['agama'] ?><br>
-  Pekerjaan                   :<?php echo  $surat[0]['pekerjaan'] ?><br>
+  Pekerjaan                   :<?php echo  $surat[0]['nama_pekerjaan'] ?><br>
   Status Perkawinan           :<?php echo  $surat[0]['status'] ?><br>  
   Kewarganegaraan             :<?php echo  $surat[0]['kewarganegaraan'] ?><br>
   Alamat                      :<?php echo  $surat[0]['alamat'] ?>

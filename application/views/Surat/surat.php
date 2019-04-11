@@ -123,7 +123,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
@@ -416,20 +416,18 @@
                                           <td><?php echo $key['tanggal_surat'] ?></td>
                                           <td><?php echo $key['keterangan'] ?></td>
                                           <td><?php echo $key['status_surat'] ?></td>
-                                          <td><?php if($key['status_surat']=='Menunggu') { ?>
+                                          
                                           
                                           <td>
+                                            <?php if($key['status_surat']=='Menunggu') { ?>
+                                              <a href="<?php echo base_url('index.php/ListFilterSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a>
+                                            <?php } ?>
+                                            <?php if($key['status_surat']=='Diterima') { ?>                              
+                                              <a href="<?php echo base_url('index.php/ListFilterSurat/update/'.$key['id_surat'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
 
-                                           <a href="<?php echo base_url('index.php/ListSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a><?php } ?>
+                                              <a href="<?php echo base_url('index.php/ListFilterSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-                                            <td><?php if($key['status_surat']=='Diterima') { ?>
-                                          
-                                          
-                                            <a href="<?php echo base_url('index.php/ListSurat/update/'.$key['id_surat'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
-
-                                            <a href="<?php echo base_url('index.php/ListSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
-
-                                            <a href="<?php echo base_url('index.php/ListSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
+                                              <a href="<?php echo base_url('index.php/ListFilterSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
                                             <?php } ?>
 
 

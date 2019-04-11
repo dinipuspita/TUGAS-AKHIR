@@ -514,7 +514,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Pendapatan Perbulan</option></i></font>
-                                        <input type="text" class="form-control" id="pendapatan" name="pendapatan" placeholder="Luas Lantai" required autofocus />
+                                        <input type="text" class="form-control" id="pendapatan" name="pendapatan" placeholder="Pendapatan" required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -552,6 +552,22 @@
                             </div>
                                 </div>
                                 </div>
+                             <br>
+                             <div class="row">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Keterangan / Keperluan Surat</option></i></font>
+                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Jumlah Keterangan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                                </div>     
                      <!--      
                           <font color="red"><i>* Wajib diisi</i></font> -->
                         <center>
@@ -559,7 +575,7 @@
                             <br>
                              <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
+                            <a href="<?php echo base_url('index.php/listSurat')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
                                  </div>

@@ -356,7 +356,7 @@
         </div>
     </div>
 
-     <?php echo form_open('ListSurat/update/'.$this->uri->segment(3)); 
+     <?php echo form_open('ListFilterSurat/update/'.$this->uri->segment(3)); 
         ?>
          <?php echo validation_errors(); ?> 
 

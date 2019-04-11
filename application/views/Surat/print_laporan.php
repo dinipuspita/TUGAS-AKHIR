@@ -55,48 +55,38 @@
 <center><h3>LAPORAN PENERIMA SURAT <?php echo $surat[0]['nama_desa']?><br></h3></center>
 <br>
 
-   <div class="breadcomb-list">
-    <table class="table table-bordered">
+                                  <div class="breadcomb-list">
+                                      <table class="table table-bordered">
+                                         <thead>
+                                            <tr class="success">
+                                                <th>No</th>
+                                                <th>NIK</th>
+                                                <th>Nama Penduduk</th>
+                                                <th>Tanggal Surat</th>
+                                                <th>Keterangan</th>
 
-      <thead>
-        <tr class="success">
-           <th>No</th>
-           <th>NIK</th>
-           <th>Nama Penduduk</th>
-           <th>Tanggal Pembuatan Surat</th>
-           <th>Keterangan</th>
-     
-     </thead>
-     <tbody>
-        <?php $no=1; ?>
-        <?php foreach ($surat as $key) {
-        ?>
-        <tr>
-        <td><?php echo $no ?></td>
-        <td><?php echo $key['NIK'] ?></td>
-        <td><?php echo $key['nama_penduduk'] ?></td>
-        <td><?php echo $key['tanggal_surat'] ?></td>
-        <td><?php echo $key['keterangan'] ?></td>
-      
-          </tr>
-          <?php  } ?>            
-      </tbody>  
-    </table>
-  </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php $no=1; ?>
+                                           <?php foreach ($surat as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['NIK'] ?></td>
+                                          <td><?php echo $key['nama_penduduk'] ?></td>
+                                          <td><?php echo $key['tanggal_surat'] ?></td>
+                                          <td><?php echo $key['keterangan'] ?></td>
+                                        </td>  
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                    </tbody>
+                                </table>
+                                </div>
+                              </div>
 
-
-
-          </div>
-        </div>
-      </div>    
-    </div>  
-  </div> 
-</div>
-</div>
-</div>
-</div>
-
-<script src="<?php echo base_url() ?>assets/js/vendor/jquery-1.12.4.min.js"></script>
+      <script src="<?php echo base_url() ?>assets/js/vendor/jquery-1.12.4.min.js"></script>
 
     <!-- bootstrap JS
       ============================================ -->

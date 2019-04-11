@@ -42,6 +42,27 @@ class List_PengenalanTempat extends CI_Model {
 		$this->db->insert('penduduk', $object);
 	}
 
+	// public function insertPengenalanTempat()
+	// {
+		
+	// 	$object = array('id_pengenalan_tempat' => $this->input->post('id_pengenalan_tempat'),
+	// 					'NIK' => $this->input->post('NIK'), 
+	// 					'provinsi' => $this->input->post('provinsi'), 
+	// 					'kabupaten' => $this->input->post('kabupaten'), 
+	// 					'kecamatan' => $this->input->post('kecamatan'),
+	// 					'nama_sls' => $this->input->post('nama_sls'),
+	// 					'alamat' => $this->input->post('alamat'),
+	// 					'no_urut_rt' => $this->input->post('no_urut_rt'),
+	// 					'nama_krt' => $this->input->post('nama_krt'), 
+	// 					'jumlah_ART' => $this->input->post('jumlah_ART'), 
+	// 					'jumlah_keluarga' => $this->input->post('jumlah_keluarga'),
+	// 					'no_kk_setiap_ART' => $this->input->post('no_kk_setiap_ART'));
+					
+		
+	// 	$this->db->insert('pengenalan_tempat', $object);
+	// }
+
+
 
 	public function getKetPerum($id)
 	{
@@ -67,7 +88,8 @@ class List_PengenalanTempat extends CI_Model {
 	}
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from pengenalan_tempat");
+		$query = $this->db->query("Select * from pengenalan_tempat AS Join penduduk AS B ON b.NIK=a.NIK where c.NO_KK = $ NO_KK");
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa where c.id_desa = $id_desa");
 		return $query->result_array();
 	}
 	public function delete($id)

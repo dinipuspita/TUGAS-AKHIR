@@ -456,7 +456,7 @@
                                <div class="row">
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                   <font color="red"><i><option value="">*Pilih Penduduk</option>
+                                   <font color="red"><i><option value="">*Pilih Penduduk (NIK & Nama Penduduk)</option>
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
                                     <select class="selectpicker" value="NIK" name="NIK" data-live-search="true">
@@ -612,6 +612,7 @@
                                     </div>
                                 </div>
                             </div>
+                          </div>
                           </div>
                             <div class="row">
                            <!--      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

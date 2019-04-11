@@ -55,9 +55,7 @@ class Login extends CI_Controller {
 			}
 			return true;
 		}else{
-			$this->form_validation->set_message('cekDb');
-			echo "<script> alert('Login Gagal Username atau Password tidak valid');
-			</script>";
+				$this->form_validation->set_message('cekDb',"<center><h3>Login Gagal Username atau Password tidak valid</center></h3>");
 			return false;
 		}
 	}

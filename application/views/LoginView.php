@@ -48,6 +48,7 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
+                  <h4><img src="<?php echo base_url() ?>assets/img/akun2.png" width="60px" height="60px"/></a>
                     <b><h1 class="h3 text-gray-900 mb-4">Login</b></h1>
                   </div>
 
@@ -122,9 +123,9 @@ function myFunction() {
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
-                  <div class="text-center">
+                 <!--  <div class="text-center">
                     <a class="small" href="register.html">Create an Account!</a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

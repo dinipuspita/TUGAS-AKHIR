@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2019 at 07:19 AM
+-- Generation Time: Apr 11, 2019 at 11:43 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -111,7 +111,7 @@ CREATE TABLE `kepala_desa` (
 
 INSERT INTO `kepala_desa` (`id_kepala_desa`, `id_desa`, `nama_kepala_desa`, `jabatan_mulai`, `jabatan_selesai`) VALUES
 (7, 5, 'Budi Harsono S', '', ''),
-(8, 2, 'KUKUK KUSBIANTO', '2014', '2020');
+(8, 1, 'KUKUK KUSBIANTO', '2014', '2020');
 
 -- --------------------------------------------------------
 
@@ -153,6 +153,7 @@ CREATE TABLE `kepemilikan_aset` (
 
 CREATE TABLE `keterangan_pengesahan` (
   `id_pengesahan` int(11) NOT NULL,
+  `NIK` varchar(16) NOT NULL,
   `tanggal_verivali` date NOT NULL,
   `nama_petugas` varchar(50) NOT NULL,
   `tanggal_pemeriksaan` date NOT NULL,
@@ -170,7 +171,7 @@ CREATE TABLE `keterangan_perumahan` (
   `NIK` varchar(16) NOT NULL,
   `status_bangunan` text NOT NULL,
   `status_lahan` text NOT NULL,
-  `luas_lantai` text NOT NULL,
+  `luas_lantai` int(11) NOT NULL,
   `jenis_lantai_terluas` text NOT NULL,
   `jenis_dinding_terluas` text NOT NULL,
   `kondisi_dinding` text NOT NULL,
@@ -259,23 +260,13 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_user`, `id_desa`, `username`, `password`, `level`, `email`, `no_telp`) VALUES
 (1, 1, 'dinsos', '845388911209126f2566e2edeedcbc45', '1', 'dinassosial@gmail.com', 0),
-(2, 1, 'junrejo', 'aec477d7dacf40552155423f170de310', '2', 'desa.junrejo@gmail.com', 0),
+(2, 1, 'junrejo', 'aec477d7dacf40552155423f170de310', '2', 'desa.junrejobatu@gmail.com', 0),
 (7, 6, 'mojorejo', '69eae64401fe415bd42fd6d20c4adc0e', '2', 'mojorejo@gmail.com', 0),
 (9, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
 (10, 5, 'dadaprejo', '7fdc0f54ce46cfcb27aa326653d7c24d', '2', 'dadaprejo@gmail.com', 0),
 (11, 2, 'beji', '16467297b544fe96f6ca4ff57304cc0f', '2', 'beji_batu@gmail.com', 3415645),
-(12, 6, 'mojorejo', '69eae64401fe415bd42fd6d20c4adc0e', '2', 'mojorejo@gmail.com', 3415647),
-(13, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 3415621),
-(17, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
-(18, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
-(19, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
-(20, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
-(21, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
-(22, 7, 'pendem', '00dde71d344adcbcbd0a531b9640d337', '2', 'pendem@gmail.com', 0),
-(23, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
-(24, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
-(25, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415645),
-(26, 9, 'torongrejo', '97cce5cdb3db719406f4fec082291ca2', '2', 'torongrejo@gmail.com', 3415645);
+(27, 8, 'tlekung', '3938bc98aa245a8673f9c0002f286551', '2', 'tlekung@gmail.com', 3415621),
+(28, 9, 'torongrejo', '82b9b361242c3a5fa1e4080ed19a1cc9', '2', 'torongrejo@gmail.com', 3415647);
 
 -- --------------------------------------------------------
 
@@ -331,6 +322,12 @@ CREATE TABLE `penduduk` (
 INSERT INTO `penduduk` (`NIK`, `NO_KK`, `nama_penduduk`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status`, `kewarganegaraan`, `alamat`, `RT`, `RW`, `id_pekerjaan`, `usia`, `id_desa`) VALUES
 ('3517152608970001', '3717152608970002', 'Dini Puspita Sari', 'Malang', '2017-12-19', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 10', '003', '003', 1, 1, 1),
 ('3517152608970002', '3717152608970004', 'Puri Handayani', 'Jombang', '2019-02-06', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 20', '09', '01', 1, 0, 1),
+('3517152608970003', '3717152608970004', 'Siska Rahmadina', 'Batu', '2014-06-17', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 201', '005', '005', 5, 4, 1),
+('3517152608970006', '3717152608970003', 'Zahkiyah Fermania', 'Batu', '2013-05-14', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 20', '01', '01', 5, 5, 1),
+('3517152608970008', '3717152608970003', 'Nurizal Febryan', 'Batu', '2016-06-07', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Mawar No.59', '08', '09', 2, 2, 1),
+('3517152608970013', '3717152608970004', 'Andi Pradana', 'Batu', '1998-05-25', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Baturejo 10', '003', '003', 5, 20, 1),
+('351715260897006', '3717152608970002', 'Andi Pradana', 'Malang', '2019-04-10', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Malang', '003', '003', 5, 0, 1),
+('3517152608970087', '0978556777777', 'Dini Puspita Sari', 'Malang', '2019-04-10', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Malang', '003', '003', 1, 0, 1),
 ('3517152608970090', '3717152608970002', 'Ananda Putri', 'Malang', '1999-06-15', 'Perempuan', 'Islam', 'Belum Menikah', 'WNI', 'Jl.Martorejo 201', '03', '04', 1, 19, 1);
 
 -- --------------------------------------------------------
@@ -373,9 +370,23 @@ CREATE TABLE `surat` (
 --
 
 INSERT INTO `surat` (`id_surat`, `NIK`, `tanggal_surat`, `keterangan`, `status_surat`) VALUES
-(101, '3517152608970090', '2019-04-08', 'RS A', 'Diterima'),
-(102, '3517152608970090', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Diterima'),
-(103, '3517152608970001', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Diterima');
+(101, '3517152608970090', '2019-04-11', 'RS B', 'Menunggu'),
+(102, '3517152608970090', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Menunggu'),
+(103, '3517152608970001', '2019-04-08', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Menunggu'),
+(109, '3517152608970001', '2019-04-10', 'Untuk BPJS di Rumah Sakit', 'Menunggu'),
+(110, '3517152608970001', '2019-04-10', 'Untuk BPJS di Rumah Sakit', 'Menunggu'),
+(111, '351715260897006', '2019-04-10', 'Untuk BPJS C', 'Menunggu'),
+(112, '3517152608970001', '2019-04-10', 'Untuk BPJS C', 'Menunggu'),
+(113, '3517152608970008', '2019-04-10', 'Untuk BPJS CV', 'Menunggu'),
+(115, '3517152608970003', '2019-04-11', 'Untuk BPJS C', 'Menunggu'),
+(116, '3517152608970006', '2019-04-11', 'Untuk BPJS di Rumah Sakit', 'Diterima'),
+(117, '3517152608970001', '2019-04-11', 'Untuk BPJS C', 'Menunggu'),
+(118, '3517152608970006', '2019-04-11', 'Untuk BPJS C', 'Diterima'),
+(119, '3517152608970001', '2019-04-11', 'Untuk Melanjutkan Biaya Keringanan BPJS Cakra Husada', 'Menunggu'),
+(120, '3517152608970002', '2019-04-11', 'Untuk BPJS di Rumah Sakit A', 'Menunggu'),
+(121, '351715260897006', '2019-04-11', 'Untuk BPJS C', 'Diterima'),
+(122, '3517152608970006', '2019-04-11', 'Untuk R', 'Menunggu'),
+(123, '351715260897006', '2019-04-11', 'Untuk BPJS R', 'Diterima');
 
 -- --------------------------------------------------------
 
@@ -431,7 +442,8 @@ ALTER TABLE `kepemilikan_aset`
 -- Indexes for table `keterangan_pengesahan`
 --
 ALTER TABLE `keterangan_pengesahan`
-  ADD PRIMARY KEY (`id_pengesahan`);
+  ADD PRIMARY KEY (`id_pengesahan`),
+  ADD KEY `NIK` (`NIK`);
 
 --
 -- Indexes for table `keterangan_perumahan`
@@ -560,7 +572,7 @@ ALTER TABLE `kriteria_bantuan`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `pekerjaan`
@@ -578,7 +590,7 @@ ALTER TABLE `pengenalan_tempat`
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_surat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- Constraints for dumped tables
@@ -601,6 +613,12 @@ ALTER TABLE `kepala_desa`
 --
 ALTER TABLE `kepemilikan_aset`
   ADD CONSTRAINT `kepemilikan_aset_ibfk_1` FOREIGN KEY (`NIK`) REFERENCES `penduduk` (`NIK`);
+
+--
+-- Constraints for table `keterangan_pengesahan`
+--
+ALTER TABLE `keterangan_pengesahan`
+  ADD CONSTRAINT `keterangan_pengesahan_ibfk_1` FOREIGN KEY (`NIK`) REFERENCES `penduduk` (`NIK`);
 
 --
 -- Constraints for table `keterangan_perumahan`

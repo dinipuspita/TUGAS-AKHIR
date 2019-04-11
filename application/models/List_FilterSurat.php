@@ -53,7 +53,7 @@ class List_FilterSurat extends CI_Model {
 			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListFilterSurat'; </script>";
 		}
 
-		$tanggal_surat = date("Y-m-d H:i:s");
+		$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis pas buat surat
 
 		$data_surat = array('id_surat' => $this->input->post('id_surat'),
 					  'NIK' => $this->input->post('NIK'), 
@@ -152,7 +152,7 @@ class List_FilterSurat extends CI_Model {
 		$this->db->where('id_surat', $id);
 		$this->db->update('surat',$object);
 	}
-	public function getTampil()
+	public function getTampil() //tampil surat perdesa
 	{
 		$session_data = $this->session->userdata('logged_in');
 		$id_desa = $session_data['id_desa'];
@@ -162,7 +162,7 @@ class List_FilterSurat extends CI_Model {
 	}
 	public function getTampilSurat($id)
 	{
-		$id_desa = $this->input->post('id_desa');
+		$id_desa = $this->input->post('id_desa'); //tampil cetak surat ben wong
 	
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa join pekerjaan as e on e.id_pekerjaan=b.id_pekerjaan WHERE jabatan_selesai between 2014 and 2020 and id_surat = $id");
 		return $query->result_array();
@@ -173,7 +173,7 @@ class List_FilterSurat extends CI_Model {
 		$this->db->where('id_surat', $id);
 		$this->db->delete('surat');
 	}
-	public function getLastSurat()
+	public function getLastSurat() 
 	{
 		$query = $this->db->query("SELECT * FROM surat ORDER BY id_surat DESC LIMIT 1");
 		return $query->result_array();

@@ -95,7 +95,7 @@ class ListFilterSurat extends CI_Controller {
 		$this->list_FilterSurat->delete($id);
 		redirect('ListSurat','refresh');
 	}
-	public function report($id)
+	public function report($id)// cetak surat per id surat
 	{
 		$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getTampilSurat($id);
@@ -103,7 +103,7 @@ class ListFilterSurat extends CI_Controller {
 		$this->pdf->load_view('Surat/print_surat', $data);
 	}
 
-	public function laporanSurat()
+	public function laporanSurat() //cetak laporan surat setiap deta
 	{
 	$this->load->model('list_Filtersurat');
 		$data["surat"] = $this->list_FilterSurat->getReportSurat();

@@ -29,6 +29,9 @@
     ============================================ -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+     <!-- Notika icon CSS
+    ============================================ -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
 
   <!-- main CSS
     ============================================ -->
@@ -178,7 +181,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -337,7 +340,7 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
+           <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
@@ -345,22 +348,22 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+              <!--   <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Keluar
+                  Logout
                 </a>
               </div>
             </li>
@@ -441,7 +444,17 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
@@ -454,11 +467,11 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
+     <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
-  <!-- Logout Modal-->
+  
+   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -468,14 +481,15 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Iya</a>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
         </div>
       </div>
     </div>
   </div>
+
 
 
   <!-- Bootstrap core JavaScript-->

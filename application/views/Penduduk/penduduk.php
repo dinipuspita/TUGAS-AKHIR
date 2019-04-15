@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
  <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +49,7 @@
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
+  
   
   
 <body id="page-top">
@@ -156,7 +160,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -181,7 +185,7 @@
        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
@@ -189,6 +193,20 @@
           </div>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
+  
   
    
     <!-- Nav Item - Charts -->
@@ -230,17 +248,7 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+      
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -328,14 +336,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -370,9 +378,6 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -519,13 +524,14 @@
   <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
 
-    <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
         ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
     <!-- main JS
         ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/main.js"></script>  
+  <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
+
 
    <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
    <!-- Bootstrap Core JavaScript -->
@@ -547,9 +553,8 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>  
+   </script>   
 
-  
     
 
 </body>

@@ -273,18 +273,6 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -371,14 +359,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -403,8 +391,8 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Form Filter  Penerima Surat</h2>
-                                        <p>Filter Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
+                                        <h2>Penentuan Penerima Surat</h2>
+                                        <p>Form Penentuan Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -578,16 +566,15 @@
                             <a href="<?php echo base_url('index.php/listSurat')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
-                                 </div>
-                               </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                     </div>
                     </div>
                   </div>
-       
+                </div>
+              </div>
+            </div>
+        
+
+
     <?php echo form_close(); ?>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -625,6 +612,8 @@
       </div>
     </div>
   </div>
+
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
   <!-- Bootstrap core JavaScript-->

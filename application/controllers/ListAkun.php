@@ -31,5 +31,12 @@ class ListAkun extends CI_Controller {
 		$this->load->view('akun', $data);	
 	}
 
+	public function delete($id)
+	{
+		$this->load->model('list_akun');
+		$this->list_akun->delete($id);
+		redirect('ListAkun');
+	}
+
 
 }

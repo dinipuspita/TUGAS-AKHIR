@@ -371,14 +371,14 @@ function submitBday() {
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -445,15 +445,6 @@ function submitBday() {
                                     </div>
                                 </div>
                             </div>
-                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2"> -->
-                                   <!--  <label>One Year view</label> -->
-                                   <!--  <div class="input-group date nk-int-st">
-                                        <span class="input-group-addon"></span>
-                                        <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()" required autofocus />
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
@@ -517,24 +508,6 @@ function submitBday() {
                               </div>
                             </div>  
                         </div>
-                            <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="pekerjaan">
-                                            <optgroup label="Pekerjaan">
-                                                <option value="">-----Pekerjaan-----</option>
-                                                <option value="Petani/Pekebun">Petani/Pekebun</option>
-                                                <option value="Buruh Tani">Buruh Tani</option>
-                                                <option value="Wiraswasta">Wiraswasta</option>
-                                                <option value="Tidak/Belum Bekerja">Tidak/Belum Bekerja</option>
-                                                <option value="Pedagang">Pedagang</option>
-                                                <option value="Sopir">Sopir</option>
-                                            </optgroup>
-                                        </select>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -695,6 +668,7 @@ function submitBday() {
     </div>
   </div>
 
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
   <!-- Bootstrap core JavaScript-->

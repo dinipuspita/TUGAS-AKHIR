@@ -28,6 +28,7 @@ class ListSurat extends CI_Controller {
 		$this->load->model('list_Surat');
 		$data["surat"] = $this->list_Surat->getTampil();
 		$data['user'] = $this->list_Surat->getUser();
+		$data["login"] = $this->list_Surat->getTampilProfil();
 		$this->load->view('Surat/surat', $data);	
 	}
 	public function create()// sudah di isi di autoloard 

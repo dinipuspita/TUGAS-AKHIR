@@ -178,7 +178,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -203,7 +203,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
@@ -439,11 +439,21 @@
        
     <?php echo form_close(); ?>
     
-      <!-- Footer -->
+       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>

@@ -192,6 +192,20 @@
           </div>
         </div>
       </li>
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
+  
   
    
     <!-- Nav Item - Charts -->
@@ -331,14 +345,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -389,7 +403,7 @@
              <div class="row">
 
             <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-12 mb-4">
 
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
@@ -412,23 +426,25 @@
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div> -->
                   </div>
-                </div>
-                  <div align="center">  
-              <h3><font color="teal">Update Profil</font></h3>                           
+                </div>     
+        <center>             
           <div class="form-group">
             <br>
-                  <font color="red">*Username</font>
-                <div class="col-md-12"> 
-                   <font color="teal"><h4><?php echo  $login[0]['username'] ?></h4></font>
+                <font color="red">*Username</font> 
+                  <div class="col-md-12"> 
+                    <font color="teal"><h5><?php echo  $login[0]['username'] ?></h5></font>
+                  
             </div>
           </div>         
          <div class="form-group">
                 <font color="red">*Email</font>
                 <div class="col-md-12"> 
-                   <font color="teal"><h4><?php echo  $login[0]['email'] ?></h4></font>
+                   <font color="teal"><h5><?php echo  $login[0]['email'] ?></h5></font>
         </div>                    
-      </div> 
-    </center>      
+      </div>  
+    </center>     
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -467,8 +483,8 @@
         </div>
         <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Ya</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Tidak</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
         </div>
       </div>
     </div>

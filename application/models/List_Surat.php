@@ -139,6 +139,12 @@ class List_Surat extends CI_Model {
 		$this->db->update('surat', $object);
 
 	}
-
+	public function getTampilProfil()
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$id_user = $session_data['id_user'];
+		$query = $this->db->query("Select * from login where id_user=$id_user ");
+		return $query->result_array();
+	}
 }
 

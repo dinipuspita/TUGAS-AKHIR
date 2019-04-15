@@ -25,7 +25,7 @@
 
 
   <h4><img src="<?php echo base_url() ?>assets/img/satu.png" width="80px" height="100px"/></a>  
-    <font color="white"><div align="center"><h4><font face="Times New Roman">Selamat Datang</font></h4>
+    <font color="white"><div align="center"><h4><font face="Times New Roman">Selamat Datang</font></h4><br>
         <font color="white"><div align="center"><h6><font face="Courier New">
              Lembaga Swadaya Masyarakat (LSM) Jawa Timur</p>
              Balaikota Amongtani Gedung B Lantai 2</p>

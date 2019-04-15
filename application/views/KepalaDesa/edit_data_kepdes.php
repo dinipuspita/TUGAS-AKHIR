@@ -1,6 +1,9 @@
  <!DOCTYPE html>
 <html lang="en">
 
+ <!DOCTYPE html>
+<html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -19,44 +22,34 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
- <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  
+  <!-- animate CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
-    <!-- meanmenu CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-    <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+   
   <!-- wave CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
-    <!-- mCustomScrollbar CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+
+  <!-- main CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- Notika icon CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+  <!-- style CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
-    <!-- main CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+  <!-- responsive CSS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-    <!-- style CSS
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+
+  <!-- modernizr JS
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-    <!-- responsive CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-    <!-- modernizr JS
-    ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
+
   
 <body id="page-top">
 
@@ -76,9 +69,8 @@
     <?php } } ?>
     <br>
 
-      
-         <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListKepalaDesa')?>"</a></td>
+        <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListDesa')?>"</a></td>
 
 
      <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
@@ -86,7 +78,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListKepalaDesa')?>"</a></td></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListDesa')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -121,7 +113,12 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
+
+      <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '2') { ?> 
+        
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+    <?php } } ?>
           </div>
         </div>
       </li>
@@ -163,7 +160,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -185,10 +182,10 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
@@ -196,13 +193,31 @@
           </div>
         </div>
       </li>
-  <!-- Nav Item - Charts -->
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
+  
+  
+
+    <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Penduduk</span></a>
       </li>
-    <?php } } ?>
+
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -235,7 +250,7 @@
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
           <!-- Topbar Search -->
-      <!--     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <!--   <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -244,8 +259,8 @@
                 </button>
               </div>
             </div>
-          </form>
- -->
+          </form> -->
+
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -332,14 +347,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -353,16 +368,44 @@
         </nav>
         <!-- End of Topbar -->
 
+       
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Edit Data Kepala Desa</h1><br>
+ <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Edit Data Desa</h2>
+                                        <p>Edit Data Desa Kota Batu <span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
         
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Kepala Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Edit Data Kepala Desa Kota Batu</h6>
             </div>
             <div class="card-body">
       <?php echo form_open('listKepalaDesa/update/'.$this->uri->segment(3)); 
@@ -372,7 +415,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Data Desa</h2><br>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -440,9 +482,7 @@
                 </div>
              </div>
           </div>
-       </div>
-   </div>
- </div>
+          
 
 <?php echo form_close(); ?>
     
@@ -450,7 +490,17 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
@@ -482,6 +532,7 @@
       </div>
     </div>
   </div>
+
 
 
   <!-- Bootstrap core JavaScript-->

@@ -39,6 +39,7 @@ class listFormBantuan extends CI_Controller {
 	{
 		//Form Pengenalan Tempat
 		$this->load->model('List_FormBantuan');
+	    $this->form_validation->set_rules('provinsi', 'provinsi', 'trim|required');
 		$this->form_validation->set_rules('provinsi', 'provinsi', 'trim|required');
 		$this->form_validation->set_rules('kabupaten', 'kabupaten', 'trim|required');
 		$this->form_validation->set_rules('kecamatan', 'kecamatan', 'trim|required');

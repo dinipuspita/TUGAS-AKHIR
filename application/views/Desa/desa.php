@@ -1,6 +1,9 @@
  <!DOCTYPE html>
 <html lang="en">
 
+ <!DOCTYPE html>
+<html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -27,6 +30,7 @@
    
   <!-- wave CSS
     ============================================ -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
 
@@ -45,6 +49,7 @@
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
+
   
 <body id="page-top">
 
@@ -155,7 +160,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -180,11 +185,24 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
             <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
+          </div>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
           </div>
         </div>
       </li>
@@ -327,14 +345,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+               <!--  <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -361,7 +379,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-support"></i>
+                                        <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Data Desa Kota Batu</h2>
@@ -370,9 +388,6 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -422,16 +437,24 @@
                             </div>
                           </div>
                        </div>
-      <!-- Footer -->
+ <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
 

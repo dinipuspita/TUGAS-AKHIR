@@ -55,6 +55,12 @@ class List_Desa extends CI_Model {
 		$query = $this->db->query("Select * from desa where status_akun = 'Belum Terdaftar'");
 		return $query->result();
 	}
+		public function getTampilDesa2()
+	{
+		$query = $this->db->query("Select * from desa");
+		return $query->result();
+	}
+
 	public function getUser()
 	{
 		$session_data = $this->session->userdata('logged_in');

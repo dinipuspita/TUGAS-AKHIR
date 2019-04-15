@@ -4,6 +4,7 @@ class List_FormBantuan extends CI_Model {
 	public function insertFormBantuan()
 	{
 		
+	$nik ='nik';		
 	$object1 = array('NIK' => $this->input->post('NIK'),
 					'provinsi' => $this->input->post('provinsi'),
 					'kabupaten' => $this->input->post('kabupaten'), 
@@ -13,13 +14,14 @@ class List_FormBantuan extends CI_Model {
 					'no_urut_rt' => $this->input->post('no_urut_rt'), 
 					'nama_krt' => $this->input->post('nama_krt'), 
 					'jumlah_ART' => $this->input->post('jumlah_ART'), 
-					'jumlah_keluarga' => $this->input->post('jumlah_keluarga'), 
-					'no_kk_setiap_ART' => $this->input->post('no_kk_setiap_ART')
+					'jumlah_keluarga' => $this->input->post('jumlah_keluarga')
+					// 'no_kk_setiap_ART' => $this->input->post('no_kk_setiap_ART')
 					);			
 		
 		$this->db->insert('pengenalan_tempat', $object1);
 
-	$object2 = array('tanggal_verivali' => $this->input->post('tanggal_verivali'),
+	$object2 = array($nik => $this->input->post('NIK'),
+					'tanggal_verivali' => $this->input->post('tanggal_verivali'),
 					'nama_petugas' => $this->input->post('nama_petugas'),
 					'tanggal_pemeriksaan' => $this->input->post('tanggal_pemeriksaan'), 
 					'hasil_verivali' => $this->input->post('hasil_verivali')
@@ -27,7 +29,7 @@ class List_FormBantuan extends CI_Model {
 				);
 		$this->db->insert('keterangan_pengesahan', $object2);
 
-	$object3 = array('NIK' => $this->input->post('NIK'),
+	$object3 = array($nik => $this->input->post('NIK'),
 					'status_bangunan' => $this->input->post('status_bangunan'),
 					'status_lahan' => $this->input->post('status_lahan'), 
 					'luas_lantai' => $this->input->post('luas_lantai'), 
@@ -51,7 +53,7 @@ class List_FormBantuan extends CI_Model {
 		
 		$this->db->insert('keterangan_perumahan', $object3);
 
-	$object4 = array('NIK' => $this->input->post('NIK'),
+	$object4 = array($nik => $this->input->post('NIK'),
 					'NO_KK' => $this->input->post('NO_KK'),
 					'jenis_cacat' => $this->input->post('jenis_cacat'),
 					'penyakit_kronis' => $this->input->post('penyakit_kronis'), 
@@ -70,7 +72,7 @@ class List_FormBantuan extends CI_Model {
 		
 		$this->db->insert('keterangan_sosial_ekonomi', $object4);
 		
-	$object5 = array('NIK' => $this->input->post('NIK'),
+	$object5 = array($nik => $this->input->post('NIK'),
 					'jml_tabung_gas' => $this->input->post('jml_tabung_gas'),
 					'jml_AC' => $this->input->post('jml_AC'), 
 					'jml_pemanas_air' => $this->input->post('jml_pemanas_air'), 

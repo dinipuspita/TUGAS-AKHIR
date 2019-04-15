@@ -233,17 +233,6 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -331,14 +320,14 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+              <!--   <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -419,7 +408,7 @@
                                           
                                           
                                           <td>
-                                            <?php if($key['status_surat']=='Menunggu') { ?>
+                                          <!--   <?php if($key['status_surat']=='Menunggu') { ?>
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a>
                                             <?php } ?>
                                             <?php if($key['status_surat']=='Diterima') { ?>                              
@@ -428,22 +417,30 @@
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
-                                            <?php } ?>
+                                            <?php } ?> -->
 
 
-<!-- 
+
 
                                         <div class="button-icon-btn button-icon-btn-cl sm-res-mg-t-30">
 
-                                        <td><a href="<?php echo base_url('index.php/listSurat/update/'.$key['id_surat'])?>" class="btn btn-cyan cyan-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="left" title="Edit Data"><i class="notika-icon notika-draft"></i></button></a>
+                                         <?php if($key['status_surat']=='Menunggu') { ?>
+                                        <a href="<?php echo base_url('index.php/listSurat/konfirmasi/'.$key['id_surat'])?>" class="btn btn-amber amber-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="left" title="Konfirmasi"><i class="notika-icon notika-checked"></i></button></a>
+                                          <?php } ?> 
+
+                                        <?php if($key['status_surat']=='Diterima') { ?>    
+                                        <a href="<?php echo base_url('index.php/listSurat/update/'.$key['id_surat'])?>" class="btn btn-cyan cyan-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="left" title="Edit Data"><i class="notika-icon notika-draft"></i></button></a>
+
+                                         <a href="<?php echo base_url('index.php/listPenduduk/report/'.$key['id_surat'])?>" class="btn btn-lightgreen lightgreen-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="bottom" title="Cetak Surat"><i class="notika-icon notika-sent"></i></button></a>
+
+                                        <?php } ?>
 
                                         <a href="<?php echo base_url('index.php/listSurat/delete/'.$key['id_surat'])?>" class="btn btn-danger danger-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="bottom" title="Delete Data"><i class="notika-icon notika-close"></i></button></a>
 
-                                        <a href="<?php echo base_url('index.php/listSurat/report/'.$key['id_surat'])?>" class="btn btn-lightgreen lightgreen-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="bottom" title="Cetak Surat"><i class="notika-icon down-arrow"></i></button></a>
-                                    </div> -->
+                                      
+                                    </div>
 
-                                          </td>  
-                                        </tr> 
+                                          </td></tr> 
                                       <?php $no++ ?>
                                       <?php } ?>
                                     </tbody>

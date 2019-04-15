@@ -177,7 +177,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -202,7 +202,7 @@
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
@@ -384,11 +384,11 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-support"></i>
+                                        <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Tambah Data Bantuan Sosial</h2>
-                                        <p>Tambah Data Bantuan Sosial <span class="bread-ntd"></span></p>
+                                        <h2>Tambah Data Jenis Bantuan Masyarakat Sosial</h2>
+                                        <p>Tambah Data Jenis Bantuan Sosial Masyarakat Kota Batu <span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -407,7 +407,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Bantuan Sosial</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Jenis Bantuan Sosial</h6>
             </div>
             <div class="card-body">
 
@@ -420,7 +420,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Data Bantuan Sosial</h2><br>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
@@ -470,7 +469,17 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>

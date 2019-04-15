@@ -159,7 +159,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -184,7 +184,7 @@
        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
@@ -233,17 +233,6 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -364,18 +353,15 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Data Penerima Surat</h2>
-                                        <p>Data Penerima Surat Masyarakat Kota Batu<span class="bread-ntd"></span></p>
+                                        <h2>Data Akun Desa</h2>
+                                        <p>Data Akun Desa yang Terdaftar<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,10 +373,8 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
+              <h6 class="m-0 font-weight-bold text-primary">Data Akun Desa yang Terdaftar</h6>
             </div>
-          </div>
             <div class="card-body">
                               <div class="table table-responsive">
                                 <table class="table" id="example">
@@ -412,7 +396,6 @@
                                           <td><?php echo $key['nama_desa'] ?></td>
 
                                           <td>
-                                            <a href="<?php echo base_url('index.php/ListAkun/update/'.$key['id_user'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
 
                                             <a href="<?php echo base_url('index.php/ListAkun/delete/' .$key['id_user'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 

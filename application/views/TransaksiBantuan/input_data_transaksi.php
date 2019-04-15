@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <!DOCTYPE html>
-<html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -22,36 +19,90 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  
-  <!-- animate CSS
+ <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- owl.carousel CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
-   
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
   <!-- wave CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
-
-  <!-- main CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+    <!-- mCustomScrollbar CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
-  <!-- style CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
-  <!-- responsive CSS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- main CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
-
-  <!-- modernizr JS
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
     ============================================ -->
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- meanmenu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+    <!-- summernote CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
+    <!-- Range Slider CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+    <!-- mCustomScrollbar CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
+    <!-- wave CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+    <!-- main CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+    <!-- style CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+    <!-- modernizr JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-  
-  
-  
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -59,7 +110,7 @@
 
     <!-- Sidebar -->
      <?php foreach ($user as $key) { ?>
-     <?php if($key['level'] == '1') { ?> 
+      <?php if($key['level'] == '1') { ?> 
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <?php } } ?>
 
@@ -114,8 +165,8 @@
           </div>
         </div>
       </li>
-      
-  <!-- Nav Item - Utilities Collapse Menu -->
+
+    <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -130,9 +181,10 @@
         </div>
       </li>
 
+
        <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
       </li>
@@ -182,40 +234,14 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
-          </div>
-        </div>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Pekerjaan</span>
-        </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
           </div>
         </div>
       </li>
-  
-   
-    <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Penduduk</span></a>
-      </li>
-
-  <?php } } ?>
+    <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -246,8 +272,6 @@
         <!--   <div align="right">
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
-
-      
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -354,7 +378,7 @@
           </ul>
 
         </nav>
-       
+
         <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -367,8 +391,8 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Form Edit Data Profil</h2>
-                                        <p>Edit Data Profil<span class="bread-ntd"></span></p>
+                                        <h2>Seleksi Penerima Surat</h2>
+                                        <p>Seleksi Penerima Bantuan Sosial<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -378,58 +402,85 @@
             </div>
         </div>
     </div>
+      <br>
+        
+       <?php echo form_open('ListTransaksiBantuan/create'); ?> 
+        
+        <?php echo validation_errors(); ?>
 
-     <?php echo form_open('ListProfil/update/'.$this->uri->segment(3)); 
-        ?>
-         <?php echo validation_errors(); ?> 
+  <div class="container">
+                          
+             <div class="row">
 
-          <div class="container">    
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+               <!--  <div class="card-header py-3"> -->
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Seleksi Data Penerima Surat</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                  </div>
+                </div>
+
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h4>Edit Data Profil</h4><br>
-                       <div class="row">                     
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*Username</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-support"></i>
-                                    </div>
-                                    <div class="nk-int-st"><input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?php echo $login[0]->username?>">
-                                    </div>
+                            <div class="row">
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
-                            </div>
-                       </div>  
-                        <div class="row">                     
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <font color="red"><i><option value="">*Email</option></i></font>   
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                      <i class="notika-icon notika-mail"></i>
-                                    </div>
-                                    <div class="nk-int-st"><input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $login[0]->email?>">
-                                    </div>
-                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker" value="NIK" name="NIK" data-live-search="true">
+                                      <option value="">-----Pilih Penduduk-----</option>
+                                        <?php foreach ($penduduk as $data ){ ?>
+                                          <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                </option>
+                                             <?php } ?>
+                                </select>
                               </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <center>
-                      <br>
-                      <br>
-                      <center>
-                      <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                      <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
-                      </center>
-                      <br>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                        <select name="id_bantuan" class="form-control">
+                                        <option value="">Pilih Nama Bantuan</option>
+                                            <?php foreach ($jenis_bantuan as $data ){ ?>
+                                            <option value="<?php echo $data->id_jenis_bantuan; ?>"><?php echo $data->nama_bantuan ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                              </div>
+                            </div>  
+                      
+                          
+                          <font color="red"><i>* Wajib diisi</i></font>
+                        <center>
+                            <br>
+                            <br>
+                             <center>
+                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
+                            <a href="<?php echo base_url('index.php/listSurat')?>"class="btn btn-danger">Back</a></td>
+                        </center>
+                    <br>
                      </div>
-                     </div>
-                            
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
 
-       
+
     <?php echo form_close(); ?>
- <!-- Footer -->
+      <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -466,6 +517,8 @@
     </div>
   </div>
 
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
@@ -483,14 +536,6 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
-
-  <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-  <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- main JS
-        ============================================ -->
-  <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
 
 
    <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
@@ -513,10 +558,20 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>   
+   </script>    
 
-    
-
+    <!-- datapicker JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+    ============================================ -->
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
+    <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
+  
 </body>
 
 </html>

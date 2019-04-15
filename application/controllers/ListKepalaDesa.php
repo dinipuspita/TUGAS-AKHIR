@@ -43,7 +43,7 @@ class ListKepalaDesa extends CI_Controller {
 		$data['user'] = $this->list_KepalaDesa->getUser();
 
 		$this->load->model('list_desa');
-		$data["desa"] = $this->list_desa->getTampilDesa();
+		$data["desa"] = $this->list_desa->getTampilDesa2();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('KepalaDesa/input_data_kepdes',$data);

@@ -60,6 +60,7 @@ class ListProfil extends CI_Controller {
 		$this->list_user->delete($id);
 		redirect('Listprofil');
 	}
+	
 	public function ganti_password()
     {
         $session_data = $this->session->userdata('logged_in');

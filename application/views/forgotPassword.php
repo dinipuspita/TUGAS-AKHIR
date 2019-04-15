@@ -103,13 +103,13 @@
      <!--  <?php foreach ($user as $key) { ?>
       <?php if($key['level'] == '2') { ?>  -->
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!-- <hr class="sidebar-divider"> -->
 
       <!-- Heading -->
-      <div class="sidebar-heading">
+   <!--    <div class="sidebar-heading">
         Desa
       </div>
-
+ -->
       <!-- Nav Item - Pages Collapse Menu -->
     <!--   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -152,12 +152,12 @@
       <!-- Divider -->
     <!--   <?php foreach ($user as $key) { ?>
       <?php if($key['level'] == '1') { ?>  -->
-      <hr class="sidebar-divider">
+  <!--     <hr class="sidebar-divider"> -->
 
       <!-- Heading -->
-      <div class="sidebar-heading">
+    <!--   <div class="sidebar-heading">
         Dinas Sosial
-      </div>
+      </div> -->
 
       <!-- Nav Item - Pages Collapse Menu -->
      <!--  <li class="nav-item">
@@ -213,8 +213,8 @@
     <?php } } ?>
  -->
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
+     <!--  <hr class="sidebar-divider d-none d-md-block">
+ -->
       <!-- Sidebar Toggler (Sidebar) -->
    <!--    <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -228,18 +228,26 @@
 
       <!-- Main Content -->
       <div id="content">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+       <!--  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"> -->
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+       <!--    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
-          </button>
+          </button> -->
 
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+         <!--  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"> -->
          <!--    <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -251,13 +259,13 @@
           </form> -->
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+  <!--         <ul class="navbar-nav ml-auto"> -->
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <!--  <li class="nav-item dropdown no-arrow d-sm-none"> -->
+             <!--  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
-              </a>
+              </a> -->
               <!-- Dropdown - Messages -->
              <!--  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -271,12 +279,12 @@
                   </div>
                 </form>
               </div> -->
-            </li>
+         <!--    </li> -->
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
+           <!--  <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <!--     <i class="fas fa-bell fa-fw"></i> -->
+ -->            <!--     <i class="fas fa-bell fa-fw"></i> -->
                 <!-- Counter - Alerts -->
            <!--      <span class="badge badge-danger badge-counter">3+</span> -->
               </a>
@@ -350,18 +358,19 @@
                   Logout
                 </a>
               </div> -->
-            </li>
+         <!--    </li>
 
           </ul>
 
-        </nav>
+        </nav> -->
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+       <!--  <center> -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pemberitahuan Lupa Passwod</h1><br>
+         <center> <h2 class="h2 mb-2 text-gray-800">Pemberitahuan Lupa Passwod</h2></center><br></h1>
         
        <?php echo form_open('forgotPassword/create'); ?> 
         
@@ -385,14 +394,21 @@
                     </a>
                   </div> -->
                 </div>
+                <center>
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
                                <div class="row">
-                             <div class="col-lg-6 col-md-6 col-sm6 col-xs-12">
+                             <div class="col-lg-10 col-md-10 col-sm10 col-xs-20">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
                                   <h3 class="m-0 font-weight-bold text-primary">Silahkan Hubungi Admin</h3>
+                                  <br>
+                                     <font color="blue"><i class="notika-icon notika-phone"> Nomor Telepon (0341) 592200 Dinas Sosial Kota Batu</i>
+                                     </br>
+                                  </div></div></div>
+                                  </div></div></div></center>
+          
                                  <!--  <font color="red"><i><option value="">*Asal Desa</option></i></font>
                                         <select name="id_desa" class="form-control">
                                         <option value="">Pilih Desa</option>
@@ -490,25 +506,41 @@
                            <a href="<?php echo base_url('index.php/Login')?>"class="btn btn-danger">Back</a>
                             <!--  <a href="<?php echo base_url('index.php/Login')?>"class="btn glyphicon glyphicon-chevron-left"></a></td> -->
                         </center>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </div>
-        </div>
+           <!--  </div>
+        </div> -->
+    <!--   </div>
       </div>
+      </div>
+      </div> -->
+
+
 
 
 <?php echo form_close(); ?>
       
-      <!-- Footer -->
+     <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
       <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
 

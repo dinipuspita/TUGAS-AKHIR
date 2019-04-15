@@ -121,7 +121,7 @@ function myFunction() {
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <a class="small" a href="<?php echo base_url('index.php/forgotPassword')?>"</a></td>Forgot Password?</a>
                   </div>
                  <!--  <div class="text-center">
                     <a class="small" href="register.html">Create an Account!</a>

@@ -129,12 +129,30 @@
         </div>
       </li>
 
-       <!-- Nav Item - Charts -->
+
+      
+        <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Bantuan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
+          </div>
+        </div>
+      </li>
+
+
+       <!-- Nav Item - Charts -->
+      <<!-- li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
-      </li>
+      </li> -->
 
       <?php } } ?>
 

@@ -38,10 +38,7 @@ class listFormBantuan extends CI_Controller {
 	public function create()// sudah di isi di autoloard 
 	{
 		//Form Pengenalan Tempat
-
 		$this->load->model('List_FormBantuan');
-		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
-		$this->form_validation->set_rules('provinsi', 'provinsi', 'trim|required');
 	    $this->form_validation->set_rules('provinsi', 'provinsi', 'trim|required');
 		$this->form_validation->set_rules('provinsi', 'provinsi', 'trim|required');
 		$this->form_validation->set_rules('kabupaten', 'kabupaten', 'trim|required');
@@ -138,7 +135,7 @@ class listFormBantuan extends CI_Controller {
 		}
 		else{
 			$this->List_FormBantuan->insertFormBantuan();
-			echo "<script> alert('Data Form Bantuan Berhasil Ditambahkan'); window.location.href='';
+			echo "<script> alert('Data FOrm Bantuan Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}

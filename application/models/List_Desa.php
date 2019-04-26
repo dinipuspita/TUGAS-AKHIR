@@ -9,6 +9,7 @@ class List_Desa extends CI_Model {
 					  'kode_pos' => $this->input->post('kode_pos'), 
 					  'no_telepon' => $this->input->post('no_telepon'), 
 					  'alamat' => $this->input->post('alamat'), 
+					  'status_akun' => 'Belum Terdaftar', 
 					  );				
 		
 		$this->db->insert('desa', $data);

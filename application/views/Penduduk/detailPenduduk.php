@@ -143,7 +143,7 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+    <!--   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
@@ -155,7 +155,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'">Form Bantuan</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
    <!-- Nav Item - Charts -->
      <!--  <li class="nav-item">
@@ -425,7 +425,11 @@
                                 ?>
 
 <th>Nama Penduduk</th>      <td><?php echo $key['nama_penduduk'] ?></td><br> 
-<tr>                                 
+<tr> 
+<th>Nama Ayah    </th>      <td><?php echo $key['nama_ayah'] ?></td><br> 
+<tr>   
+<th>Nama Ibu     </th>      <td><?php echo $key['nama_ibu'] ?></td><br> 
+<tr>                                     
 <th>NIK</th>                <td><?php echo $key['NIK'] ?>           </td><br>
 <tr>   
 <th>NO KK</th>              <td><?php echo $key['NO_KK'] ?>         </td><br>
@@ -440,7 +444,7 @@
 <tr>     
 <th>Status       </th>      <td><?php echo $key['status'] ?>        </td><br>
 <tr>     
-<th>Kewarganegara</th>      <td><?php echo $key['kewarganegaraan'] ?> </td><br>
+<th>Kewarganegaran</th>      <td><?php echo $key['kewarganegaraan'] ?> </td><br>
 <tr>     
 <th>Desa         </th>      <td><?php echo $key['nama_desa'] ?>     </td><br>
 <tr>     
@@ -452,8 +456,12 @@
 <tr>     
 <th>Pekerjaan    </th>      <td><?php echo $key['nama_pekerjaan'] ?>     </td><br>
 <tr>     
-<th>Usia         </th>      <td><?php echo $key['usia'] ?>          </td><br>
+<th>Usia         </th>      <td><?php echo $key['usia'] ?> Tahun          </td><br>
 </tr>     
+<th>Status Hubungan Keluarga  </th>      <td><?php echo $key['status_hubungan_keluarga'] ?>  </td><br>
+</tr>  
+<th>Pendidikan </th>      <td><?php echo $key['pendidikan'] ?>  </td><br>
+</tr>   
          
 
 <?php  } ?>                                                                                      
@@ -465,11 +473,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
 
-      <!-- Footer -->
+
+     <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -489,6 +495,7 @@
       </footer>
       <!-- End of Footer -->
     </div>
+    <!-- End of Content Wrapper -->
 
   </div>
     <a class="scroll-to-top rounded" href="#page-top">

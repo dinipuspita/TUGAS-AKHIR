@@ -182,13 +182,12 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
@@ -414,26 +413,44 @@
                               </div>
                           </div>
                         </div>
-                      </div>
+
+
+                   
                       <center>
-                      <br>
-                      <br>
+                  
                       <center>
                       <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                      <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
+                      <a href="<?php echo base_url('index.php/Admin')?>"class="btn btn-danger">Back</a></td>
                       </center>
                       <br>
                      </div>
                      </div>
+                     </div>
+                     </div>
+                     </div>
+                      <br>
+                      <br>
+                        
                             
 
        
     <?php echo form_close(); ?>
  <!-- Footer -->
+    <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>

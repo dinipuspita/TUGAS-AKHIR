@@ -5,11 +5,20 @@ class List_TransaksiBantuan extends CI_Model {
 	public function insertTransaksi()
 	{
 		
-	$object = array('id_bantuan' => $this->input->post('id_bantuan'),
+	$object = array('id_jenis_bantuan' => $this->input->post('fk_bantuan'),
 					'id_pengesahan' => $this->input->post('id_pengesahan'),
 					'NIK' => $this->input->post('NIK'));
 		
 		$this->db->insert('transaksi_bantuan', $object);
+	}
+	public function insertBantuan()
+	{
+		
+	$object = array('id_jenis_bantuan' => $this->input->post('id_jenis_bantuan'),
+					'nama_bantuan' => $this->input->post('nama_bantuan'),
+					'fk_kategori' => $this->input->post('fk_kategori'));
+		
+		$this->db->insert('jenis_bantuan', $object);
 	}
 
 	public function getTransaksi($id)

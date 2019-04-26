@@ -25,7 +25,10 @@ class List_Penduduk extends CI_Model {
 						'id_pekerjaan' => $this->input->post('id_pekerjaan'),
 						'usia' => $this->input->post('usia'),
 						'id_desa' => $session_data['id_desa'],
-						// 'id_desa' => $this->input->post('fk_desa'),
+						'status_hubungan_keluarga' => $this->input->post('status_hubungan_keluarga'),
+						'nama_ayah' => $this->input->post('nama_ayah'),
+						'nama_ibu' => $this->input->post('nama_ibu'),
+						'pendidikan' => $this->input->post('pendidikan')
 						);
 		
 		$this->db->insert('penduduk', $object);
@@ -73,8 +76,11 @@ class List_Penduduk extends CI_Model {
 						'RT' => $this->input->post('RT'),
 						'RW' => $this->input->post('RW'),
 						'id_pekerjaan' => $this->input->post('id_pekerjaan'),
-						'usia' => $this->input->post('usia')
-						// 'id_desa' => $this->input->post('fk_desa'),
+						'usia' => $this->input->post('usia'),
+						'status_hubungan_keluarga' => $this->input->post('status_hubungan_keluarga'),
+						'nama_ayah' => $this->input->post('nama_ayah'),
+						'nama_ibu' => $this->input->post('nama_ibu'),
+						'pendidikan' => $this->input->post('pendidikan')
 						);
 
 		$this->db->where('NIK', $id);

@@ -500,7 +500,7 @@
         <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Iya</a>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
         </div>
       </div>
     </div>

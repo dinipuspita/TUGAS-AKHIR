@@ -33,7 +33,7 @@ class ListTransaksiBantuan extends CI_Controller {
 	public function create()// sudah di isi di autoloard 
 	{
 		$this->load->model('list_TransaksiBantuan');
-		$this->form_validation->set_rules('id_bantuan', 'id_bantuan', 'trim|required');
+		$this->form_validation->set_rules('id_jenis_bantuan', 'id_jenis_bantuan', 'trim|required');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 
 		$this->load->model('list_penduduk');

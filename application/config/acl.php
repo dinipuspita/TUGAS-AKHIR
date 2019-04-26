@@ -84,7 +84,7 @@ $acl = array(
 		'1' => true,
 		'2' => false,
 	),
-	'ListBantuan' => array(
+	'ListFormBantuan' => array(
 		'1' => true,
 		'2' => false,
 	),

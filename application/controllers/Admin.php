@@ -30,11 +30,13 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['jumlahpenduduk'] = $this->Dashboardmod->getPenduduk();
+		$data['jumlahpendudukByDesa'] = $this->Dashboardmod->getPendudukByDesa();
 		$data['jumlahdesa'] = $this->Dashboardmod->getDesa();
 		$data['jumlahbantuan'] = $this->Dashboardmod->getBantuan();
 		$data['jumlahsurat'] = $this->Dashboardmod->getSurat();
 		$data['jumlahakun'] = $this->Dashboardmod->getAkun();
 		$data['user'] = $this->Dashboardmod->getUser();
+		
 
 		$this->load->view('index',$data);
 	}

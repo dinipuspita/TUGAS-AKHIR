@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
  <!DOCTYPE html>
 <html lang="en">
 
@@ -23,16 +20,25 @@
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  
+
+   <link rel="stylesheet" href="/assets3/tablestrap/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/bootstrap-theme.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/datatables-bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/pnotify.custom.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/datatables.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/extras/TableTools/media/css/TableTools.css" rel="stylesheet">
+   
   <!-- animate CSS
     ============================================ -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
    
   <!-- wave CSS
     ============================================ -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
+     <!-- Notika icon CSS
+    ============================================ -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
 
   <!-- main CSS
     ============================================ -->
@@ -50,7 +56,6 @@
 
 </head>
   
-  
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -58,7 +63,7 @@
 
     <!-- Sidebar -->
      <?php foreach ($user as $key) { ?>
-     <?php if($key['level'] == '1') { ?> 
+      <?php if($key['level'] == '1') { ?> 
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <?php } } ?>
 
@@ -70,11 +75,15 @@
     <br>
 
          <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/Admin')?>"</a></td>
+
+
+     <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
+ -->
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -88,6 +97,7 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+
 
       <?php foreach ($user as $key) { ?>
       <?php if($key['level'] == '2') { ?> 
@@ -109,12 +119,15 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
+
+     
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
-      
-  <!-- Nav Item - Utilities Collapse Menu -->
+
+     <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -129,13 +142,30 @@
         </div>
       </li>
 
-       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
+        <!-- Nav Item - Utilities Collapse Menu -->
+     <!--  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Bantuan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
+          </div>
+        </div>
+      </li> -->
+
+
+      
+   <!-- Nav Item - Charts -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
       </li>
-
+ -->
       <?php } } ?>
 
       <!-- Divider -->
@@ -159,7 +189,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -181,19 +211,32 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
   
-   
+
     <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
@@ -202,7 +245,6 @@
       </li>
 
   <?php } } ?>
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -233,7 +275,18 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
-
+          <!-- Topbar Search -->
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+ -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -308,7 +361,7 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
+           <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
@@ -331,7 +384,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Keluar
                 </a>
               </div>
             </li>
@@ -362,9 +415,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                 <?php foreach ($user as $key) { ?>
+                                <?php if($key['level'] == '2') { ?> 
                                 <div class="breadcomb-report">
                                     <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
                                 </div>
+                              <?php } } ?>
                             </div>
                         </div>
                     </div>
@@ -377,8 +433,11 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '2') { ?> 
                <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
             </div>
+                <?php } } ?>
           </div>
             <div class="card-body">
                               <div class="table table-responsive">
@@ -391,10 +450,21 @@
                                             <th>Tanggal Surat</th>
                                             <th>Keterangan</th>
                                             <th>Status</th>
+
+                                         <?php foreach ($user as $key) { ?>
+                                         <?php if($key['level'] == '1') { ?> 
+                                            <th>Usia</th>
+                                            <th>Pendidikan</th>
+                                            <th>Pendapatan</th>
+                                            <th>Tanggungan Keluarga</th>
+                                            <th>Luas Lahan</th>
+                                          <?php } } ?>
                                             <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach ($user as $key) { ?>
+                                         <?php if($key['level'] == '2') { ?> 
                                         <?php $no=1; ?>
                                            <?php foreach ($surat as $key) {
                                         ?>
@@ -405,10 +475,12 @@
                                           <td><?php echo $key['tanggal_surat'] ?></td>
                                           <td><?php echo $key['keterangan'] ?></td>
                                           <td><?php echo $key['status_surat'] ?></td>
+                                     
+                                         
                                           
                                           
                                           <td>
-                                          <!--   <?php if($key['status_surat']=='Menunggu') { ?>
+                                            <?php if($key['status_surat']=='Menunggu') { ?>
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a>
                                             <?php } ?>
                                             <?php if($key['status_surat']=='Diterima') { ?>                              
@@ -417,12 +489,13 @@
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
-                                            <?php } ?> -->
+                                            <?php } ?>
+                                          </td>
 
 
 
 
-                                        <div class="button-icon-btn button-icon-btn-cl sm-res-mg-t-30">
+                                     <!--    <div class="button-icon-btn button-icon-btn-cl sm-res-mg-t-30">
 
                                          <?php if($key['status_surat']=='Menunggu') { ?>
                                         <a href="<?php echo base_url('index.php/listSurat/konfirmasi/'.$key['id_surat'])?>" class="btn btn-amber amber-icon-notika btn-reco-mg btn-button-mg" data-toggle="tooltip" data-placement="left" title="Konfirmasi"><i class="notika-icon notika-checked"></i></button></a>
@@ -439,10 +512,50 @@
 
                                       
                                     </div>
-
-                                          </td></tr> 
+ -->
+                                      </div> 
+                                        </tr> 
                                       <?php $no++ ?>
                                       <?php } ?>
+                                        <?php } } ?>
+
+
+
+                                       <?php foreach ($user as $key) { ?>
+                                         <?php if($key['level'] == '1') { ?> 
+                                        <?php $no=1; ?>
+                                           <?php foreach ($suratByDinsos as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['NIK'] ?></td>
+                                          <td><?php echo $key['nama_penduduk'] ?></td>
+                                          <td><?php echo $key['tanggal_surat'] ?></td>
+                                          <td><?php echo $key['keterangan'] ?></td>
+                                          <td><?php echo $key['persetujuan'] ?></td>
+                                          <td><?php echo $key['usia'] ?> Tahun</td>
+                                          <td><?php echo $key['pendidikan'] ?></td>
+                                          <td><?php echo $key['pendapatan'] ?></td>
+                                          <td><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
+                                          <td><?php echo $key['jml_lahan'] ?> Meter</td>
+                                      
+                                          
+                                        <td>
+                                        <?php if($key['persetujuan']=='Belum Disetujui') { ?>
+                                              <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
+                                            <?php } ?>   
+
+                                        <?php if($key['persetujuan']=='Disetujui') { ?>                              
+                                              <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
+                                        <?php } ?>  
+                                        </td>
+                                      
+                              </div> 
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                        <?php } } ?>
+
                                     </tbody>
                                 </table>
                                 </div>

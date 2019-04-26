@@ -11,17 +11,17 @@
   <meta name="author" content="">
 
   <title>SB Admin 2 - Dashboard</title>
-<script type="text/javascript">
+  <script type="text/javascript">
 
-function submitBday() {
-    var Bdate = document.getElementById('tanggal_lahir').value;
-    var Bday = +new Date(Bdate);
-    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
-    var theBday = document.getElementById('usia');
-    theBday.value = Hasil;
-}
+    function submitBday() {
+      var Bdate = document.getElementById('tanggal_lahir').value;
+      var Bday = +new Date(Bdate);
+      var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
+      var theBday = document.getElementById('usia');
+      theBday.value = Hasil;
+    }
 
-</script>
+  </script>
 
 
   <!-- Custom fonts for this template-->
@@ -29,339 +29,339 @@ function submitBday() {
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-<!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
- <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.carousel.css">
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.theme.css">
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/owl.transitions.css">
     <!-- meanmenu CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
     <!-- animate CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
     <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
   <!-- wave CSS
     ============================================ -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/button.css">
     <!-- mCustomScrollbar CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- Notika icon CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
     <!-- main CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
     <!-- style CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
     <!-- responsive CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+      ============================================ -->
+      <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- meanmenu CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/meanmenu/meanmenu.min.css">
     <!-- animate CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
     <!-- summernote CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/summernote/summernote.css">
     <!-- Range Slider CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/themesaller-forms.css">
     <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/normalize.css">
     <!-- mCustomScrollbar CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- Notika icon CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/notika-custom-icon.css">
     <!-- bootstrap select CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/bootstrap-select/bootstrap-select.css">
     <!-- datapicker CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/datapicker/datepicker3.css">
     <!-- Color Picker CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/color-picker/farbtastic.css">
     <!-- wave CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/wave/waves.min.css">
     <!-- main CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/main.css">
     <!-- style CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/style.css">
     <!-- responsive CSS
-    ============================================ -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
+      ============================================ -->
+      <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
     <!-- modernizr JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
+      ============================================ -->
+      <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
 
 
 
-<body id="page-top">
+    <body id="page-top">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+      <!-- Page Wrapper -->
+      <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-       
-        </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
-          <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
-      </a>
-    </div>
+          <!-- Sidebar - Brand -->
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>assets2/index.html">
+            <div class="sidebar-brand-icon rotate-n-15">
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href='<?php echo base_url("index.php/Admin"); ?>'>
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <?php foreach ($user as $key) { ?>
-      <?php if($key['level'] == '2') { ?> 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Desa
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Penduduk</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Penduduk</a>
-            <a class="collapse-item" href="cards.html">Tambah Penduduk</a>
+            </div>
+            <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="40px" height="45px"/></div>
+            <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
+            </a>
           </div>
-        </div>
-      </li>
 
-     <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Surat</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
-          </div>
-        </div>
-      </li>
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
 
-      
-       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
+          <!-- Nav Item - Dashboard -->
+          <li class="nav-item active">
+            <a class="nav-link" href='<?php echo base_url("index.php/Admin"); ?>'>
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Dashboard</span></a>
+            </li>
 
-      <?php } } ?>
+            <?php foreach ($user as $key) { ?>
+            <?php if($key['level'] == '2') { ?> 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-      <!-- Divider -->
-      <?php foreach ($user as $key) { ?>
-      <?php if($key['level'] == '1') { ?> 
-      <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+              Desa
+            </div>
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Dinas Sosial
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Desa</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-fw fa-folder"></i>
-          <span>Kepala Desa</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Kepala Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa"); ?>'">Data Kepala Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa/create"); ?>'>Tambah Kepala Desa</a>
-          </div>
-        </div>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Bantuan</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
-          </div>
-        </div>
-      </li>
-    <?php } } ?>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-
-       
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Penduduk</span>
               </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Penduduk</h6>
+                  <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Penduduk</a>
+                  <a class="collapse-item" href="cards.html">Tambah Penduduk</a>
+                </div>
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Surat</span>
               </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Surat</h6>
+                  <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
+                  <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+                </div>
               </div>
             </li>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-             <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+            <!-- Nav Item - Charts -->
+          <!--   <li class="nav-item">
+              <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Form Bantuan</span></a>
+              </li> -->
+
+              <?php } } ?>
+
+              <!-- Divider -->
+              <?php foreach ($user as $key) { ?>
+              <?php if($key['level'] == '1') { ?> 
+              <hr class="sidebar-divider">
+
+              <!-- Heading -->
+              <div class="sidebar-heading">
+                Dinas Sosial
+              </div>
+
+              <!-- Nav Item - Pages Collapse Menu -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                  <i class="fas fa-fw fa-folder"></i>
+                  <span>Desa</span>
                 </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Desa</h6>
+                    <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+                    <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
+                    <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi Desa</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="fas fa-fw fa-folder"></i>
+                  <span>Kepala Desa</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Kepala Desa</h6>
+                    <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa"); ?>'">Data Kepala Desa</a>
+                    <a class="collapse-item" href='<?php echo base_url("index.php/ListKepalaDesa/create"); ?>'>Tambah Kepala Desa</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="fas fa-fw fa-table"></i>
+                  <span>Bantuan</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Bantuan</h6>
+                    <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
+                  </div>
+                </div>
+              </li>
+              <?php } } ?>
+
+              <!-- Divider -->
+              <hr class="sidebar-divider d-none d-md-block">
+
+              <!-- Sidebar Toggler (Sidebar) -->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+
+            </ul>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+              <!-- Main Content -->
+              <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                  <!-- Sidebar Toggle (Topbar) -->
+                  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                  </button>
+
+
+
+
+                  <!-- Topbar Navbar -->
+                  <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                      <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                      </a>
+                      <!-- Dropdown - Messages -->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts -->
+                        <span class="badge badge-danger badge-counter">3+</span>
+                      </a>
+                      <!-- Dropdown - Alerts -->
+                      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">
+                          Alerts Center
+                        </h6>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="mr-3">
+                            <div class="icon-circle bg-primary">
+                              <i class="fas fa-file-alt text-white"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="small text-gray-500">December 12, 2019</div>
+                            <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                          </div>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="mr-3">
+                            <div class="icon-circle bg-success">
+                              <i class="fas fa-donate text-white"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="small text-gray-500">December 7, 2019</div>
+                            $290.29 has been deposited into your account!
+                          </div>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <div class="mr-3">
+                            <div class="icon-circle bg-warning">
+                              <i class="fas fa-exclamation-triangle text-white"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="small text-gray-500">December 2, 2019</div>
+                            Spending Alert: We've noticed unusually high spending for your account.
+                          </div>
+                        </a>
+                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                      </div>
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                        <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+                      </a>
+                      <!-- Dropdown - User Information -->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Profile
+                        </a>
                 <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
@@ -381,105 +381,131 @@ function submitBday() {
           </ul>
 
         </nav>
+         <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Edit Data Penduduk</h2>
+                                        <p>Edit Data Penduduk Kota Batu <span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-       <!--    <h1 class="h3 mb-2 text-gray-800">Tambah Data Penduduk</h1><br> -->
-       <h3><p class="h3 mb-2 text-gray-800">Edit Data Penduduk Kurang Mampu Kota Batu</a></p></h3>
-        
+          <!--    <h1 class="h3 mb-2 text-gray-800">Tambah Data Penduduk</h1><br> -->
+      <!--     <h3><p class="h3 mb-2 text-gray-800">Edit Data Penduduk Kurang Mampu Kota Batu</a></p></h3> -->
+
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kota Batu</h6>
             </div>
             <div class="card-body">
-        <?php echo form_open('ListPenduduk/update/'.$this->uri->segment(3)); 
-        ?>
-         <?php echo validation_errors(); ?> 
+              <?php echo form_open('ListPenduduk/update/'.$this->uri->segment(3)); 
+              ?>
+              <?php echo validation_errors(); ?> 
 
-    
-            <div class="row">
+
+              <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-element-list">
-                        <div class="basic-tb-hd">
-                            <h2>Data Penduduk</h2><br>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-support"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="nama_penduduk" name="nama_penduduk" placeholder="Nama Lengkap"  value="<?php echo $penduduk[0]->nama_penduduk?>">
-                                    </div>
-                                </div>
+                  <div class="form-element-list">
+                    <div class="basic-tb-hd">
+                      <h2>Data Penduduk</h2><br>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="form-group ic-cmp-int">
+                            <div class="form-ic-cmp">
+                              <i class="notika-icon notika-support"></i>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()"  value="<?php echo $penduduk[0]->tanggal_lahir?>">
-                                    </div>
-                                </div>
+                            <div class="nk-int-st">
+                              <input type="text" class="form-control" id="nama_penduduk" name="nama_penduduk" placeholder="Nama Lengkap"  value="<?php echo $penduduk[0]->nama_penduduk?>">
                             </div>
-                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="agama">
-                                            <optgroup label="Agama">
-                                                <option value="">-----Agama-----</option>
-                                                <option value="Islam">Islam</option>
-                                                <option value="Kristen">Kristen</option>
-                                                <option value="Hindu">Hindu</option>
-                                                <option value="Budha">Budha</option>
-                                                <option value="Khatolik">Khatolik</option>
-                                                <option value="Konghuchu">Konghuchu</option>
-                                            </optgroup>
-                                        </select>
-                                </div>
-                            </div>
+                          </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK"  value="<?php echo $penduduk[0]->NIK?>">
-                                    </div>
-                                </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="form-group ic-cmp-int">
+                            <div class="form-ic-cmp">
+                              <i class="notika-icon notika-edit"></i>
                             </div>
-                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-support"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia" readonly value="<?php echo $penduduk[0]->usia?>">
-                                    </div>
-                                </div>
+                            <div class="nk-int-st">
+                              <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" onchange="submitBday()"  value="<?php echo $penduduk[0]->tanggal_lahir?>">
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                        <select name="id_pekerjaan" class="selectpicker">
-                                        <option value="">----Pilih Pekerjaan----</option>
-                                            <?php foreach ($pekerjaan as $data ){ ?>
-                                            <option value="<?php echo $data['id_pekerjaan']; ?>"><?php echo $data['nama_pekerjaan'] ?>
-                                         </option>
-                                             <?php } ?>
-                                    </select>
-                              </div>
-                            </div>  
+                          </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                          </div>
+                          <div class="bootstrap-select fm-cmp-mg">
+                            <select class="selectpicker" name="agama">
+                              <optgroup label="Agama">
+                                <option value="">-----Agama-----</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Khatolik">Khatolik</option>
+                                <option value="Konghuchu">Konghuchu</option>
+                              </optgroup>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="form-group ic-cmp-int">
+                            <div class="form-ic-cmp">
+                              <i class="notika-icon notika-edit"></i>
+                            </div>
+                            <div class="nk-int-st">
+                              <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK"  value="<?php echo $penduduk[0]->NIK?>">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="form-group ic-cmp-int">
+                            <div class="form-ic-cmp">
+                              <i class="notika-icon notika-support"></i>
+                            </div>
+                            <div class="nk-int-st">
+                              <input type="text" class="form-control" id="usia" name="usia" placeholder="Usia" readonly value="<?php echo $penduduk[0]->usia?>">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                          </div>
+                          <div class="bootstrap-select fm-cmp-mg">
+                            <select name="id_pekerjaan" class="selectpicker">
+                              <option value="">----Pilih Pekerjaan----</option>
+                              <?php foreach ($pekerjaan as $data ){ ?>
+                              <option value="<?php echo $data['id_pekerjaan']; ?>"><?php echo $data['nama_pekerjaan'] ?>
+                              </option>
+                              <?php } ?>
+                            </select>
+                          </div>
+                        </div>  
+                      </div>
                             <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
@@ -496,233 +522,307 @@ function submitBday() {
                                         </select>
                                 </div>
                             </div>
-                        </div> -->
-                        <div class="row">
+                          </div> -->
+                          <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="NO_KK" name="NO_KK" placeholder="Nomor KK"  value="<?php echo $penduduk[0]->NO_KK?>">
-                                    </div>
+                              <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                  <i class="notika-icon notika-edit"></i>
                                 </div>
+                                <div class="nk-int-st">
+                                  <input type="text" class="form-control" id="NO_KK" name="NO_KK" placeholder="Nomor KK"  value="<?php echo $penduduk[0]->NO_KK?>">
+                                </div>
+                              </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-flag"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" placeholder="Kewarganegaraan"  value="<?php echo $penduduk[0]->kewarganegaraan?>">
-                                    </div>
+                              <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                  <i class="notika-icon notika-flag"></i>
                                 </div>
+                                <div class="nk-int-st">
+                                  <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" placeholder="Kewarganegaraan"  value="<?php echo $penduduk[0]->kewarganegaraan?>">
+                                </div>
+                              </div>
                             </div>
-                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                </div>
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="status">
-                                            <optgroup label="Status">
-                                                <option value="">-----Status-----</option>
-                                                <option value="Belum Menikah">Belum Menikah</option>
-                                                <option value="Sudah Menikah">Sudah Menikah</option>
-                                            </optgroup>
-                                        </select>
-                                </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                              </div>
+                              <div class="bootstrap-select fm-cmp-mg">
+                                <select class="selectpicker" name="status">
+                                  <optgroup label="Status">
+                                    <option value="">-----Status-----</option>
+                                    <option value="Belum Menikah">Belum Menikah</option>
+                                    <option value="Sudah Menikah">Sudah Menikah</option>
+                                  </optgroup>
+                                </select>
+                              </div>
                             </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
+                                <div class="form-ic-cmp">
+                                  <i class="notika-icon notika-map"></i>
+                                </div>
+                                <div class="nk-int-st">
+                                  <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" value="<?php echo $penduduk[0]->tempat_lahir?>">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                              </div>
+                              <div class="bootstrap-select fm-cmp-mg">
+                                <select class="selectpicker" name="pendidikan">
+                                  <optgroup label="Pendidikan">
+                                    <option value="">-----Pendidikan-----</option>
+                                    <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
+                                    <option value="Tamat SMP / Sederajat">Tamat SMP / Sederajat</option> 
+                                    <option value="Tamat SMA / Sederajat">Tamat SMA / Sederajat</option>    
+                                    <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat</option>
+                                    <option value="Belum Tamat SMP / Sederajat">Belum Tamat SMP / Sederajat</option> 
+                                    <option value="Belum Tamat SMA / Sederajat">Belum Tamat SMA / Sederajat</option>   
+                                    <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option> 
+
+                                  </optgroup>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                              <font color="red">*Jenis Kelamin</font>
+                              <br>
+                              <input type="radio" value="Perempuan" checked="checked" id="jenis_kelamin" name="jenis_kelamin">Perempuan
+                              <input type="radio" value="Laki-laki" id="jenis_kelamin" name="jenis_kelamin">Laki-laki
+                            </div>
+                          </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-map"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" value="<?php echo $penduduk[0]->tempat_lahir?>">
-                                    </div>
-                                </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="form-element-list">
+                    <div class="basic-tb-hd">
+                      <h2>Data Tempat Tinggal</h2><br>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="form-group ic-cmp-int">
+                            <div class="form-ic-cmp">
+                              <i class="notika-icon notika-house"></i>
                             </div>
-                          <!--   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-dollar"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="pendapatan" name="pendapatan" placeholder="Penghasilan / Bulan"  value="<?php echo $penduduk[0]->pendapatan?>">
-                                    </div>
-                                </div>
-                            </div> -->
-                              <div class="row">
-                        <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">
-                        <div class="form-group">
-                          <font color="red">*Jenis Kelamin</font>
-                          <br>
-                          <input type="radio" value="Perempuan" checked="checked" id="jenis_kelamin" name="jenis_kelamin">Perempuan
-                          <input type="radio" value="Laki-laki" id="jenis_kelamin" name="jenis_kelamin">Laki-laki
+                            <div class="nk-int-st">
+                             <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah"  value="<?php echo $penduduk[0]->nama_ayah?>">
+                           </div>
+                         </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group ic-cmp-int">
+                          <div class="form-ic-cmp">
+                            <i class="notika-icon notika-house"></i>
+                          </div>
+                          <div class="nk-int-st">
+                           <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" placeholder="Nama Ibu"  value="<?php echo $penduduk[0]->nama_ibu?>">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                          <i class="notika-icon notika-edit"></i>
+                        </div>
+                        <select class="selectpicker" name="status_hubungan_keluarga" required autofocus />
+                         <optgroup label="Status Hubungan Keluarga">
+                          <option value="">-----Status Hubungan Dalam Keluarga-----</option>
+                          <option value="1.Kepala Rumah Tangga">1.Kepala Rumah Tangga</option>
+                          <option value="2.Istri/Suami">2.Istri/Suami</option>
+                          <option value="3.Anak">3.Anak</option>
+                          <option value="4.Menantu">4.Menantu</option>
+                          <option value="5.Cucu">5.Cucu</option>
+                          <option value="6.Orang Tua/Mertua">6.Orang Tua/Mertua</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+
+                  <font color="red"><i>* Wajib diisi</i></font>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <br>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-element-list">
+                  <div class="basic-tb-hd">
+                    <h2>Data Tempat Tinggal</h2><br>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group ic-cmp-int">
+                          <div class="form-ic-cmp">
+                            <i class="notika-icon notika-house"></i>
+                          </div>
+                          <div class="nk-int-st">
+                           <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]->alamat?>">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                          <i class="notika-icon notika-house"></i>
+                        </div>
+                        <div class="nk-int-st">
+                          <input type="text" class="form-control" id="RT" name="RT" placeholder="RT"  value="<?php echo $penduduk[0]->RT?>">
                         </div>
                       </div>
                     </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                          <i class="notika-icon notika-house"></i>
                         </div>
+                        <div class="nk-int-st">
+                          <input type="text" class="form-control" id="RW" name="RW" placeholder="RW"  value="<?php echo $penduduk[0]->RW?>">
+                        </div>
+                      </div>
                     </div>
-               </div>
-          </div>
-      </div>
-
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-element-list">
-                        <div class="basic-tb-hd">
-                            <h2>Data Tempat Tinggal</h2><br>
-                        <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-house"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]->alamat?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-house"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="RT" name="RT" placeholder="RT"  value="<?php echo $penduduk[0]->RT?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-house"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="RW" name="RW" placeholder="RW"  value="<?php echo $penduduk[0]->RW?>">
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                          <font color="red"><i>* Wajib diisi</i></font>
-                        <center>
-                            <br>
-                            <br>
-                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
-                        </center>
+                  </div>
+                  <font color="red"><i>* Wajib diisi</i></font>
+                  <center>
+                    <center>
+                      <br>
+                      <br>
+                      <center>
+                        <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
+                        <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
+                      </center>
+                      <br>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-  </div>
-
-<?php echo form_close(); ?>
-    
-            <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span><div class="contact-dt">
-                          <h5>
-                            <ul class="contact-list widget-contact-list">
-                              <font color="blue">
-                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
-                            </ul>
-                          </font>
-                          </h5>
-                        </div></span>
           </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
+        
 
-    </div>
-    <!-- End of Content Wrapper -->
 
-  </div>
-    <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+        <?php echo form_close(); ?>
+        <br>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span><div class="contact-dt">
+                <h5>
+                  <ul class="contact-list widget-contact-list">
+                    <font color="blue">
+                     <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                       <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                         <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                         </ul>
+                       </font>
+                     </h5>
+                   </div></span>
+                 </div>
+               </div>
+             </footer>
+             <!-- End of Footer -->
 
-   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+           </div>
+           <!-- End of Content Wrapper -->
+
+         </div>
+         <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+                <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="<?php echo base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url() ?>assets/js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="<?php echo base_url() ?>assets/js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="<?php echo base_url() ?>assets/vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="<?php echo base_url() ?>assets/vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
 
 
-   <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
-   <!-- Bootstrap Core JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-   <!-- Menu Plugin JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
-   <!--slimscroll JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
-   <!--Wave Effects -->
-   <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
-   <!-- Custom Theme JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
+        <!-- Bootstrap Core JavaScript -->
+        <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
+        <!--slimscroll JavaScript -->
+        <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
+        <!--Wave Effects -->
+        <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
 
-   <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
-   <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
-   <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
 
-   <script type="text/javascript">
-   $(document).ready(function(){
-   $('#example').DataTable();
-   } );
-   </script>    
+        <script type="text/javascript">
+         $(document).ready(function(){
+           $('#example').DataTable();
+         } );
+       </script>    
 
     <!-- datapicker JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
+      ============================================ -->
+      <script src="<?php echo base_url() ?>assets2/js/datapicker/bootstrap-datepicker.js"></script>
+      <script src="<?php echo base_url() ?>assets2/js/datapicker/datepicker-active.js"></script>
     <!-- bootstrap select JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
+      ============================================ -->
+      <script src="<?php echo base_url() ?>assets2/js/bootstrap-select/bootstrap-select.js"></script>
     <!--  color-picker JS
-    ============================================ -->
-    <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
-    <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
-  
-</body>
+      ============================================ -->
+      <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
+      <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
 
-</html>
+    </body>
+
+    </html>

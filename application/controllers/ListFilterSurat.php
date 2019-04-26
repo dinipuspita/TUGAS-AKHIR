@@ -27,6 +27,7 @@ class ListFilterSurat extends CI_Controller {
 	{
 		$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getTampil();
+		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos();
 		$data['user'] = $this->list_FilterSurat->getUser();
 		$this->load->view('Surat/Surat', $data);	
 	}
@@ -35,10 +36,11 @@ class ListFilterSurat extends CI_Controller {
 		$this->load->model('list_FilterSurat');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
+		$this->form_validation->set_rules('status_bangunan', 'status_bangunan', 'trim|required');
+
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
 		$this->form_validation->set_rules('kelengkapan_dokumen', 'kelengkapan_dokumen', 'trim|required');
-		$this->form_validation->set_rules('status_bangunan', 'status_bangunan', 'trim|required');
 		$this->form_validation->set_rules('jml_lahan', 'jml_lahan', 'trim|required');
 
 		$this->load->model('list_Filtersurat');
@@ -58,6 +60,10 @@ class ListFilterSurat extends CI_Controller {
 
 		$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getTampil();
+
+		$this->load->model('List_FormBantuan');
+		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5();
+
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/input_data_FilterSurat',$data);
@@ -93,7 +99,7 @@ class ListFilterSurat extends CI_Controller {
 	{
 		$this->load->model('list_FilterSurat');
 		$this->list_FilterSurat->delete($id);
-		redirect('ListSurat','refresh');
+		redirect('ListFilterSurat','refresh');
 	}
 	public function report($id)// cetak surat per id surat
 	{
@@ -125,4 +131,12 @@ class ListFilterSurat extends CI_Controller {
 		$this->list_FilterSurat->konfirmasiStatus($id);
 		redirect('ListFilterSurat');
 	}
+  
+  public function persetujuan($id)
+	{
+		$this->load->model('list_Filtersurat');
+		$this->list_Filtersurat->persetujuanStatus($id);
+		redirect('ListFilterSurat');
+	}
+	
 }

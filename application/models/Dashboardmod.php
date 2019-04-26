@@ -12,6 +12,12 @@ class Dashboardmod extends CI_Model {
 	    $query = $this->db->query("SELECT COUNT(NIK) FROM penduduk");
 	    return $query->row();
 	}
+	public function getPendudukByDesa(){
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+	    $query = $this->db->query("SELECT COUNT(NIK) FROM penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa");
+	    return $query->row();
+	}
 	public function getDesa(){
 	    $query = $this->db->query("SELECT COUNT(id_desa) FROM desa");
 	    return $query->row();
@@ -21,7 +27,9 @@ class Dashboardmod extends CI_Model {
 	    return $query->row();
 	}
 	public function getSurat(){
-	    $query = $this->db->query("SELECT COUNT(id_surat) FROM surat");
+		$session_data = $this->session->userdata('logged_in');
+		$id_desa = $session_data['id_desa'];
+	    $query = $this->db->query("SELECT COUNT(id_surat) FROM surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa'");
 	    return $query->row();
 	}
 	public function getAkun(){
@@ -36,6 +44,8 @@ class Dashboardmod extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
+
+		// $query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK");
 	
 }
 

@@ -2,8 +2,7 @@
 // define('BASEPATH') OR exit ('No direct script access allowed');
 class ListPenduduk extends CI_Controller {
 	
-		public function __construct()
-	
+	public function __construct()
 	{
 
 		parent::__construct();
@@ -42,7 +41,6 @@ class ListPenduduk extends CI_Controller {
 		// $data['last'] = $this->list_Penduduk->getLastPenduduk();
 
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
-
 		$this->form_validation->set_rules('NO_KK', 'NO_KK', 'trim|required');
 		$this->form_validation->set_rules('nama_penduduk', 'nama_penduduk', 'trim|required');
 		$this->form_validation->set_rules('tempat_lahir', 'tempat_lahir', 'trim|required');
@@ -56,6 +54,10 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('RW', 'RW', 'trim|required');
 		$this->form_validation->set_rules('id_pekerjaan', 'id_pekerjaan', 'trim|required');
 		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
+		$this->form_validation->set_rules('status_hubungan_keluarga', 'status_hubungan_keluarga', 'trim|required');
+		$this->form_validation->set_rules('nama_ayah', 'nama_ayah', 'trim|required');
+		$this->form_validation->set_rules('nama_ibu', 'nama_ibu', 'trim|required');
+		$this->form_validation->set_rules('pendidikan', 'pendidikan', 'trim|required');
 
 		$this->load->model('list_desa');
 		$data["desa"] = $this->list_desa->getTampilDesa();
@@ -101,6 +103,10 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('RW', 'RW', 'trim|required');
 		$this->form_validation->set_rules('id_pekerjaan', 'id_pekerjaan', 'trim|required');
 		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
+		$this->form_validation->set_rules('status_hubungan_keluarga', 'status_hubungan_keluarga');
+		$this->form_validation->set_rules('nama_ayah', 'nama_ayah', 'trim|required');
+		$this->form_validation->set_rules('nama_ibu', 'nama_ibu', 'trim|required');
+		$this->form_validation->set_rules('pendidikan', 'pendidikan', 'trim|required');
 
 		$this->load->model('list_penduduk');
 		$data['penduduk'] = $this->list_penduduk->getPenduduk($id);

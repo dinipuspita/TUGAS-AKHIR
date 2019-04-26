@@ -10,9 +10,13 @@ class List_FilterSurat extends CI_Model {
 					  'pendapatan' => $this->input->post('pendapatan'), 
 					  'tanggungan_keluarga' => $this->input->post('tanggungan_keluarga'), 
 					  'kelengkapan_dokumen' => $this->input->post('kelengkapan_dokumen'), 
-					  'status_bangunan' => $this->input->post('status_bangunan'), 
-					  'jml_lahan' => $this->input->post('jml_lahan')
+					  'jml_lahan' => $this->input->post('jml_lahan'),
+
 					 );	
+
+		$this->db->insert('kepemilikan_aset', $data);
+
+
 
 		// if ($status_surat==0){
 		// 	$status='menunggu';
@@ -33,7 +37,7 @@ class List_FilterSurat extends CI_Model {
 		$status = 'Diterima';
 
 		//tidak mampu tapi lengkap
-		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan < 8){
+		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan <= 8){
 
 			$status = 'Diterima';
 
@@ -41,7 +45,7 @@ class List_FilterSurat extends CI_Model {
 		
 		}
 		//tidak mampu tidak lengkap
-		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan < 8){
+		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan <= 8){
 
 			$status = 'Menunggu';
 			
@@ -53,44 +57,20 @@ class List_FilterSurat extends CI_Model {
 			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListFilterSurat'; </script>";
 		}
 
-		$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis pas buat surat
+		$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis waktu buat surat
 
 		$data_surat = array('id_surat' => $this->input->post('id_surat'),
 					  'NIK' => $this->input->post('NIK'), 
 					  'keterangan' => $this->input->post('keterangan'),
-					  // 'status_surat' => $status,
 					  'status_surat' => $status,
-					  'tanggal_surat' => $tanggal_surat);				
+					  'tanggal_surat' => $tanggal_surat,
+					  'persetujuan' => 'Belum Disetujui');				
 		
 		$this->db->insert('surat', $data_surat);
 
 
 	}
 
-
-	// public function insertSurat($status_surat)
-	// {
-	// 	if ($status_surat==0){
-	// 		$status='menunggu';
-	// 	}
-	// 	else{
-	// 		$status='Diterima';
-	// 	}
-
-	// 	$tanggal_surat = date("Y-m-d H:i:s");
-
-	// 	$data = array('id_surat' => $this->input->post('id_surat'),
-	// 				  'NIK' => $this->input->post('NIK'), 
-	// 				  // 'id_desa' => $this->input->post('id_desa'), 
-	// 				  // 'id_kepala_desa' => $this->input->post('id_kepala_desa'), 
-	// 				  'keterangan' => $this->input->post('keterangan'),
-	// 				  'status_surat' => $status,
-	// 				  'tanggal_surat' => $tanggal_surat);				
-		
-	// 	$this->db->insert('surat', $data);
-
-		
-	// }
 	public function insertDesa()
 	{
 
@@ -160,6 +140,12 @@ class List_FilterSurat extends CI_Model {
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa where c.id_desa = $id_desa");
 		return $query->result_array();
 	}
+	public function getTampilSuratDinsos() //tampil surat perdesa
+	{
+
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=a.NIK where status_surat = 'Diterima'");
+		return $query->result_array();
+	}
 	public function getTampilSurat($id)
 	{
 		$id_desa = $this->input->post('id_desa'); //tampil cetak surat ben wong
@@ -200,6 +186,14 @@ class List_FilterSurat extends CI_Model {
 	{
 	   
 		$object = array('status_surat' => 'Diterima');
+		$this->db->where('id_surat', $id);
+		$this->db->update('surat', $object);
+
+	}
+	public function persetujuanStatus($id)
+	{
+	   
+		$object = array('persetujuan' => 'Disetujui');
 		$this->db->where('id_surat', $id);
 		$this->db->update('surat', $object);
 

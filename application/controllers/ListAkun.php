@@ -37,6 +37,13 @@ class ListAkun extends CI_Controller {
 		$this->list_akun->delete($id);
 		redirect('ListAkun');
 	}
+	   public function updateStatusAkun($id)
+	{
+		$this->load->model('list_akun');
+		$this->list_akun->UpdateStatus($id);
+		redirect('ListAkun');
+	}
+  
 
 
 }

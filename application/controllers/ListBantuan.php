@@ -27,6 +27,7 @@ class ListBantuan extends CI_Controller {
 	{
 		$this->load->model('list_Bantuan');
 		$data["jenis_bantuan"] = $this->list_Bantuan->getTampil();
+		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampil2();
 		$data['user'] = $this->list_Bantuan->getUser();
 		$this->load->view('Bantuan/bantuan', $data);	
 	}
@@ -35,9 +36,13 @@ class ListBantuan extends CI_Controller {
 		$this->load->model('list_Bantuan');
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
 
+		$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
+
 		$this->load->model('list_KategoriBantuan');
 		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori();
+		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampilKriteria();
 		$data['user'] = $this->list_Bantuan->getUser();
+		$data['last'] = $this->list_Bantuan->getLastBantuan();
 
 		$this->load->model('list_bantuan');
 		$data["jenis_bantuan"] = $this->list_bantuan->getTampilBantuan();
@@ -59,8 +64,11 @@ class ListBantuan extends CI_Controller {
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
 		$this->form_validation->set_rules('fk_kategori', 'fk_kategori', 'trim|required');
 
+		$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
+
 		$this->load->model('list_bantuan');
 		$data['jenis_bantuan'] = $this->list_Bantuan->getBantuan($id);
+		$data["kriteria_bantuan"] = $this->list_Bantuan->getKriteria($id);
 
 		$this->load->model('list_KategoriBantuan');
 		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori($id);

@@ -9,7 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Dashboard</title>
+  <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -129,14 +131,14 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
       </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
@@ -148,7 +150,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
 
       
@@ -209,8 +211,7 @@
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
@@ -404,7 +405,24 @@
                         <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
                     </div>
                 </div>
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '2') { ?> 
                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h3>
+                                <?php foreach ($jumlahpendudukByDesa as $penduduk) { ?>
+                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $penduduk ?></span></li>
+                                <?php } ?></h3>
+                            <p>Penduduk</p>
+                        </div>
+                        <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
+                    </div>
+                </div>
+                <?php } }?>
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '1') { ?> 
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h3>
@@ -416,6 +434,7 @@
                         <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
                     </div>
                 </div>
+                <?php } }?>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
@@ -428,6 +447,9 @@
                         <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
                     </div>
                 </div>
+
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '2') { ?> 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
@@ -440,6 +462,22 @@
                         <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
                         </div>
                     </div>
+                <?php } }?>
+                <?php foreach ($user as $key) { ?>
+                <?php if($key['level'] == '1') { ?> 
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h3>
+                                <?php foreach ($jumlahakun as $login) { ?>
+                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $login ?></span></li>
+                                <?php } ?></h3>
+                            <p>Akun Terdaftar</p>
+                        </div>
+                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
+                        </div>
+                    </div>
+                     <?php } }?>
                 </div>
             </div>
         </div>

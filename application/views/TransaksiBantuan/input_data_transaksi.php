@@ -103,6 +103,7 @@
     <script src="<?php echo base_url() ?>assets2/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
+  
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -121,12 +122,16 @@
     <?php } } ?>
     <br>
 
-         <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+             <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListKriteriaBantuan/create')?>"</a></td>
+
+
+     <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
+ -->
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"/></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListKriteriaBantuan/create')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -162,11 +167,12 @@
             <h6 class="collapse-header">Penduduk</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+      <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -175,20 +181,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+            <a class="collapse-item" href="utilities-color.html">Data Surat</a>
+            <a class="collapse-item" href="utilities-border.html">Buat Surat</a>
           </div>
         </div>
       </li>
-
-
-       <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
-
       <?php } } ?>
 
       <!-- Divider -->
@@ -212,7 +209,7 @@
             <h6 class="collapse-header">Desa</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -237,11 +234,37 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href="utilities-color.html">Data Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
       </li>
-    <?php } } ?>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
+  
+
+    <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Penduduk</span></a>
+      </li>
+
+  <?php } } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -273,6 +296,18 @@
             <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
                                     <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
 
+          <!-- Topbar Search -->
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+ -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -355,7 +390,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
+                <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -370,7 +405,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Keluar
                 </a>
               </div>
             </li>
@@ -378,8 +413,12 @@
           </ul>
 
         </nav>
+        <!-- End of Topbar -->
 
-        <div class="breadcomb-area">
+             <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+ <div class="breadcomb-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -388,13 +427,15 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Seleksi Penerima Surat</h2>
-                                        <p>Seleksi Penerima Bantuan Sosial<span class="bread-ntd"></span></p>
+                                        <h2>Penentuan Penerima Bantuan Sosial</h2>
+                                        <p>Penentuan Penerima Bantuan Sosial Untuk Masyarakat Kota Batu <span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                             </div>
                         </div>
                     </div>
@@ -402,54 +443,47 @@
             </div>
         </div>
     </div>
-      <br>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Penentuan Penerima Bantuan Sosial Untuk Masyarakat Kota Batu</h6>
+            </div>
+            <div class="card-body">
+
+      <?php echo form_open_multipart('ListTransaksiBantuan/create'); ?> 
         
-       <?php echo form_open('ListTransaksiBantuan/create'); ?> 
-        
-        <?php echo validation_errors(); ?>
-
-  <div class="container">
-                          
-             <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-12 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-               <!--  <div class="card-header py-3"> -->
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Seleksi Data Penerima Surat</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                  </div>
-                </div>
-
+      <?php echo validation_errors(); ?>
+                  
+   
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <div class="row">
-                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                   <font color="red"><i><option value="">*Pilih Penduduk</option>
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
                                     <select class="selectpicker" value="NIK" name="NIK" data-live-search="true">
-                                      <option value="">-----Pilih Penduduk-----</option>
+                                      <option value="">-----Pilih-----</option>
                                         <?php foreach ($penduduk as $data ){ ?>
                                           <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
                                 </option>
                                              <?php } ?>
                                 </select>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <br>
+                           <div class="row">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                <font color="red"><i><option value="">*Pilih Jenis Bantuan</option>
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                        <select name="id_bantuan" class="form-control">
+                                         <select class="selectpicker" value="fk_bantuan" name="fk_bantuan" data-live-search="true">
                                         <option value="">Pilih Nama Bantuan</option>
                                             <?php foreach ($jenis_bantuan as $data ){ ?>
                                             <option value="<?php echo $data->id_jenis_bantuan; ?>"><?php echo $data->nama_bantuan ?>
@@ -458,33 +492,42 @@
                                     </select>
                               </div>
                             </div>  
-                      
-                          
+                           </div>    
+                           <br>         
                           <font color="red"><i>* Wajib diisi</i></font>
                         <center>
                             <br>
                             <br>
                              <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/listSurat')?>"class="btn btn-danger">Back</a></td>
+                            <a href="<?php echo base_url('index.php/ListBantuan')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
-                     </div>
+                                 </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-
-
+       
     <?php echo form_close(); ?>
-      <!-- Footer -->
+    <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
@@ -498,7 +541,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-    <!-- Logout Modal-->
+  <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -508,7 +551,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini?</div>
+        <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
           <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
@@ -517,10 +560,7 @@
     </div>
   </div>
 
-<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
-  <!-- Bootstrap core JavaScript-->
+<!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

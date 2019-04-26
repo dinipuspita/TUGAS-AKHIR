@@ -49,7 +49,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
 		$this->form_validation->set_rules('konfirmasi', 'Konfirmasi', 'trim|required|callback_cekPassword');
-		$this->form_validation->set_rules('no_telp', 'no_telp', 'trim|required');
+		// $this->form_validation->set_rules('no_telp', 'no_telp', 'trim|required');
 		$this->form_validation->set_rules('email', 'email', 'trim|required');
 
 

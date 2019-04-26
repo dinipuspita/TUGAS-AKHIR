@@ -179,7 +179,7 @@ function submitBday() {
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
@@ -187,11 +187,11 @@ function submitBday() {
 
 
        <!-- Nav Item - Charts -->
-      <li class="nav-item">
+    <!--   <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
-      </li>
+      </li> -->
 
       <?php } } ?>
 
@@ -273,18 +273,7 @@ function submitBday() {
           </button>
 
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
+          
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -556,6 +545,27 @@ function submitBday() {
                                 </div>
                             </div>
 
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker" name="pendidikan">
+                                            <optgroup label="Pendidikan">
+                                                <option value="">-----Pendidikan-----</option>
+                                                <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
+                                                <option value="Tamat SMP / Sederajat">Tamat SMP / Sederajat</option> 
+                                                <option value="Tamat SMA / Sederajat">Tamat SMA / Sederajat</option>    
+                                                <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat</option>
+                                                <option value="Belum Tamat SMP / Sederajat">Belum Tamat SMP / Sederajat</option> 
+                                                <option value="Belum Tamat SMA / Sederajat">Belum Tamat SMA / Sederajat</option>   
+                                                <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option> 
+
+                                               </optgroup>
+                                      </select>
+                                </div>
+                            </div>
+                    
+
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="form-group">
                           <font color="red">*Jenis Kelamin</font>
@@ -571,8 +581,68 @@ function submitBday() {
                </div>
           </div>
       </div>
-</div>
+    </div>
+
+
+
+<br>
+
 <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                            <h2>Data Kelengkapan</h2><br>
+                        <div class="row">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" placeholder="Nama Ibu" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                </div>
+                                   <select class="selectpicker" name="status_hubungan_keluarga">
+                                          <option value="">-----Status Hubungan Dalam Keluarga-----</option>
+                                                <option value="Kepala Rumah Tangga">Kepala Rumah Tangga</option>
+                                                <option value="Istri/Suami">Istri/Suami</option>
+                                                <option value="Anak">Anak</option>
+                                                <option value="Menantu">Menantu</option>
+                                                <option value="Cucu">Cucu</option>
+                                                <option value="Orang Tua/Mertua">Orang Tua/Mertua</option>
+                                            </optgroup>
+                                        </select>
+                                </div>
+                            </div>
+                               <font color="red"><i>* Wajib diisi</i></font>
+                                </div>
+                              </div>
+                             </div>
+                           </div>
+                         </div>
+                         
+                      
+        <br>
+
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
@@ -611,8 +681,9 @@ function submitBday() {
                                 </div>
                               </div>
                              </div>
-                            </div>
-                         <font color="red"><i>* Wajib diisi</i></font>
+                           </div>
+                                   <font color="red"><i>* Wajib diisi</i></font>
+                        <center>
                         <center>
                             <br>
                             <br>
@@ -622,15 +693,22 @@ function submitBday() {
                         </center>
                     <br>
                      </div>
-                    </div>
+                   </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        
+
+          
+     
+
         
 
 
     <?php echo form_close(); ?>
+    <br>
            <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -648,13 +726,14 @@ function submitBday() {
                         </div></span>
           </div>
         </div>
+ 
+
       </footer>
       <!-- End of Footer -->
 
-    </div>
     <!-- End of Content Wrapper -->
 
-  </div>
+
     <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>

@@ -175,7 +175,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
           </div>
         </div>
@@ -183,12 +183,12 @@
 
 
        <!-- Nav Item - Charts -->
-      <li class="nav-item">
+     <!--  <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
       </li>
-
+ -->
       <?php } } ?>
 
       <!-- Divider -->
@@ -563,7 +563,7 @@
                             <br>
                              <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/listSurat')?>"class="btn btn-danger">Back</a></td>
+                            <a href="<?php echo base_url('index.php/listFilterSurat')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
                      </div>

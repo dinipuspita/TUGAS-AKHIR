@@ -18,7 +18,7 @@ class Register_akun extends CI_Model {
 						'username' => $this->input->post('username'),
 						'password' => md5($this->input->post('password')),
 						'level' => '2',						
-						'no_telp' => $this->input->post('no_telp'),
+						// 'no_telp' => $this->input->post('no_telp'),
 						'email' => $this->input->post('email'),
 						'id_desa' => $id_desa
 					);

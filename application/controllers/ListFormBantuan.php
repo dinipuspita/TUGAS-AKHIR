@@ -33,6 +33,7 @@ class listFormBantuan extends CI_Controller {
 		$data["keterangan_sosial_ekonomi"] = $this->List_FormBantuan->getTampilKeteranganSosialEkonomi();
 		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset();
 		$data['user'] = $this->List_FormBantuan->getUser();
+		$data["penduduk"] = $this->list_Penduduk->getTampil();
 		$this->load->view('FormBantuan/Tampil_DataBantuan', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
@@ -129,6 +130,7 @@ class listFormBantuan extends CI_Controller {
 		// $data["NO_KK"] = $this->List_FormBantuan->getTampilPenduduk($nik);
 		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5();
 		$data['user'] = $this->List_FormBantuan->getUser();
+		$data["penduduk"] = $this->list_Penduduk->getTampilFormBantuan($id);
 
 		$this->load->model('list_penduduk');
 		$data["penduduk"] = $this->list_penduduk->getTampilPendudukPerum();

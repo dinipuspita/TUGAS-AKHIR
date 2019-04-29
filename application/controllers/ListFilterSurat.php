@@ -63,6 +63,7 @@ class ListFilterSurat extends CI_Controller {
 
 		$this->load->model('List_FormBantuan');
 		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5();
+	    $data["hitung_NOKK"] = $this->list_Filtersurat->getHitungNoKK();
 
 
 		if($this->form_validation->run() == FALSE) {
@@ -109,9 +110,9 @@ class ListFilterSurat extends CI_Controller {
 		$this->pdf->load_view('Surat/print_surat', $data);
 	}
 
-	public function laporanSurat() //cetak laporan surat setiap deta
+	public function laporanSurat() //cetak laporan surat setiap desa
 	{
-	$this->load->model('list_Filtersurat');
+	$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getReportSurat();
 	
 		if (empty($data['surat'])) {
@@ -138,5 +139,6 @@ class ListFilterSurat extends CI_Controller {
 		$this->list_Filtersurat->persetujuanStatus($id);
 		redirect('ListFilterSurat');
 	}
+	
 	
 }

@@ -515,7 +515,18 @@
                                     </div>
                                 </div>
                             </div>
-
+                     
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Keluarga" required autofocus />
+                                    </div>
+                                </div>
+                            </div>           
+                   
                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
@@ -545,17 +556,22 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="nama_sls" name="nama_sls" placeholder="Nama SLS (Satuan Lingkungan Setempat)" required autofocus />
+                                        <input type="text" class="form-control" id="nama_sls" name="nama_sls" placeholder="Nama SLS (Satuan Lingkungan Setempat)" value="RT <?php echo $penduduk[0]['RT']?> RW <?php echo $penduduk[0]['RW']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
+
                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required autofocus />
+                                    <!--     <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required autofocus /> -->
+                                   <!--  <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="<?php echo $penduduk[0]['alamat']?>" readonly required autofocus /> -->
+                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]['alamat']?>" readonly required autofocus />
+                                  
+                              
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +583,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="number" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="Nomor Urut RT" required autofocus />
+                                        <input type="number" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="Nomor Urut RT" value="<?php echo $penduduk[0]['NO_KK']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -595,18 +611,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int form-elet-mg res-mg-fcs">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Anggota Keluarga" required autofocus />
-                                    </div>
-                                </div>
-                            </div>           
-                        </div>
+                       
                      <br>
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
@@ -1505,6 +1510,7 @@
                                       <div class="nk-int-st">
                                         <font color="red"><i><option value="">*Jumlah lahan</option></i></font>
                                         <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" required autofocus />
+                                     <!--    <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" value="<?php echo $kepemilikan_aset[0]['jml_lahan']?>" readonly required autofocus /> -->
                                     </div>
                                 </div>
                             </div>

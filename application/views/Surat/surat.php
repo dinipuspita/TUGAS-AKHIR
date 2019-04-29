@@ -19,6 +19,7 @@
 <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="css/font-awesome.min.css">
 
    <link rel="stylesheet" href="/assets3/tablestrap/css/bootstrap.min.css" rel="stylesheet">
@@ -56,6 +57,7 @@
 
 </head>
   
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -137,7 +139,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Penentuan Penerima Surat</a>
           </div>
         </div>
       </li>
@@ -310,77 +312,21 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
+           
 
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Profil
                 </a>
-              <!--   <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -418,7 +364,7 @@
                                  <?php foreach ($user as $key) { ?>
                                 <?php if($key['level'] == '2') { ?> 
                                 <div class="breadcomb-report">
-                                    <a href="<?php echo base_url('index.php/ListSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
+                                    <a href="<?php echo base_url('index.php/ListFilterSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
                                 </div>
                               <?php } } ?>
                             </div>
@@ -453,6 +399,7 @@
 
                                          <?php foreach ($user as $key) { ?>
                                          <?php if($key['level'] == '1') { ?> 
+                                            <th>Desa</th>
                                             <th>Usia</th>
                                             <th>Pendidikan</th>
                                             <th>Pendapatan</th>
@@ -533,6 +480,7 @@
                                           <td><?php echo $key['tanggal_surat'] ?></td>
                                           <td><?php echo $key['keterangan'] ?></td>
                                           <td><?php echo $key['persetujuan'] ?></td>
+                                          <td><?php echo $key['nama_desa'] ?></td>
                                           <td><?php echo $key['usia'] ?> Tahun</td>
                                           <td><?php echo $key['pendidikan'] ?></td>
                                           <td><?php echo $key['pendapatan'] ?></td>
@@ -557,6 +505,38 @@
                                         <?php } } ?>
 
                                     </tbody>
+                                    <tfoot>
+                                      <tr>
+
+                                        <?php foreach ($user as $key) { ?>
+                                         <?php if($key['level'] == '2') { ?> 
+                                          <th>No</th>
+                                          <th>NIK</th>
+                                          <th>Nama Penduduk</th>
+                                          <th>Tanggal Surat</th>
+                                          <th>Keterangan</th>
+                                          <th>Status</th>
+                                          <th>Options</th>
+                                          <?php } } ?>
+                                         
+                                         <?php foreach ($user as $key) { ?>
+                                         <?php if($key['level'] == '1') { ?> 
+                                          <th>No</th>
+                                          <th>NIK</th>
+                                          <th>Nama Penduduk</th>
+                                          <th>Tanggal Surat</th>
+                                          <th>Keterangan</th>
+                                          <th>Status</th>
+                                          <th>Desa</th>
+                                          <th>Usia</th>
+                                          <th>Pendidikan</th>
+                                          <th>Pendapatan</th>
+                                          <th>Tanggungan Keluarga</th>
+                                          <th>Luas Lahan</th>
+                                          <th>Options</th>
+                                             <?php } } ?>
+                                      </tr>
+                                  </tfoot>
                                 </table>
                                 </div>
                               </div>
@@ -658,8 +638,34 @@
    } );
    </script>   
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
+</script>
     
 
 </body>
 
 </html>
+

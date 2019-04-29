@@ -44,8 +44,6 @@ class Dashboardmod extends CI_Model {
 		// var_dump($query);die();
 		return $query->result_array();
 	}
-
-		// $query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK");
 	
 }
 

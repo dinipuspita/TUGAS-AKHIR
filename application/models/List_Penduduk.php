@@ -112,6 +112,11 @@ class List_Penduduk extends CI_Model {
 		$query = $this->db->query("Select * from penduduk where NIK = $id");
 		return $query->result_array();
 	}
+	public function getTampilFormBantuan($id)
+	{
+		$query = $this->db->query("Select * from penduduk AS a Join pengenalan_tempat AS b ON b.NIK=a.NIK where NIK = $id");
+		return $query->result_array();
+	}
 
 	public function getTampilDetail($id)
 	{

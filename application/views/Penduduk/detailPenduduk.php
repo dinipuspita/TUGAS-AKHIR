@@ -58,7 +58,6 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -66,7 +65,7 @@
 
     <!-- Sidebar -->
      <?php foreach ($user as $key) { ?>
-     <?php if($key['level'] == '1') { ?> 
+      <?php if($key['level'] == '1') { ?> 
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <?php } } ?>
 
@@ -77,8 +76,8 @@
     <?php } } ?>
     <br>
 
-       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/ListPenduduk')?>"</a></td>
+         <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"   a href="<?php echo base_url('index.php/Admin')?>"</a></td>
 
 
      <!--   <a href="<?php echo base_url('index.php/ListKepemilikanAset/create')?>"class="btn glyphicon glyphicon-chevron-right"></a></td>
@@ -86,11 +85,10 @@
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/ListPenduduk')?>"</a></td></div>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
-
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -101,6 +99,7 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+
 
       <?php foreach ($user as $key) { ?>
       <?php if($key['level'] == '2') { ?> 
@@ -121,13 +120,16 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Penduduk</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'">Data Penduduk</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>Data Penduduk</a>
+
+     
             <a class="collapse-item" href='<?php echo base_url("index.php/ListPenduduk/create"); ?>'>Tambah Penduduk</a>
+ 
           </div>
         </div>
       </li>
 
-       <!-- Nav Item - Utilities Collapse Menu -->
+     <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -136,14 +138,14 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Surat</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listSurat"); ?>'">Data Surat</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Filter Penerima Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'">Data Surat</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFilterSurat/create"); ?>'">Penentuan Penerima Surat</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-    <!--   <li class="nav-item">
+        <!-- Nav Item - Utilities Collapse Menu -->
+     <!--  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
@@ -152,19 +154,20 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListPengenalanTempat/create"); ?>'">Form Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
           </div>
         </div>
       </li> -->
 
+
+      
    <!-- Nav Item - Charts -->
-     <!--  <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Form Bantuan</span></a>
-      </li> -->
-
-
+      </li>
+ -->
       <?php } } ?>
 
       <!-- Divider -->
@@ -186,9 +189,9 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desa</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'">Data Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa"); ?>'>Data Desa</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListDesa/create"); ?>'>Tambah Desa</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/Registrasi/create"); ?>'>Registrasi AKun Desa</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/Register/create"); ?>'>Registrasi Akun Desa</a>
           </div>
         </div>
       </li>
@@ -210,29 +213,40 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Jenis Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListKriteriaBantuan"); ?>'>Data Kriteria Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Kriteria Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
           </div>
         </div>
       </li>
 
-     <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pekerjaan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bantuan</h6>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan"); ?>'>Data Pekerjaan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListPekerjaan/create"); ?>'>Tambah Pekerjaan</a>
+          </div>
+        </div>
+      </li>
+  
+
+    <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href='<?php echo base_url("index.php/ListPenduduk"); ?>'>
           <i class="fas fa-fw fa-folder"></i>
           <span>Penduduk</span></a>
       </li>
 
-        <?php } } ?>
-
-
-
+  <?php } } ?>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -259,6 +273,10 @@
           </button>
 
 
+        <!--   <div align="right">
+            <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
+                                    <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
+
           <!-- Topbar Search -->
           <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
@@ -269,8 +287,8 @@
                 </button>
               </div>
             </div>
-          </form> -->
-
+          </form>
+ -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -294,77 +312,21 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+           
 
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
+           <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href='<?php echo base_url("index.php/ListProfil"); ?>'>
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Profil
                 </a>
-              <!--   <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -376,7 +338,6 @@
           </ul>
 
         </nav>
-
         <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -407,9 +368,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-         <!--  <h1 class="h3 mb-2 text-gray-800">Detail Penduduk</h1><br> -->
-         <h3><p class="mb-4">Data Detail Penduduk Kurang Mampu Kota Batu</a></p></h3>
-        
+       
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">

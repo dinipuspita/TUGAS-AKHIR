@@ -198,6 +198,12 @@ class List_FilterSurat extends CI_Model {
 		$this->db->update('surat', $object);
 
 	}
+	public function getHitungNoKK()
+	{
+
+	    $query = $this->db->query("SELECT COUNT(NO_KK) FROM penduduk where NO_KK=NO_KK");
+	    return $query->row();
+	}
 
 }
 

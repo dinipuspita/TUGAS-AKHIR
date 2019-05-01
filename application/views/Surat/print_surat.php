@@ -62,6 +62,19 @@
   width: 30%;
   margin-top:20px;
 }
+.column3 {
+  float: right;
+  padding-right: :50px;
+  width: 30%;
+  margin-top:1px;
+}
+.column4 {
+  float: right;
+  padding-right: :15px;
+  padding-left: : :25px;
+  width: 80%;
+  margin-top:0px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -72,25 +85,30 @@
 </style>
 
 <head>
-<!--   <img src="<?php echo base_url() ?>application/third_party/dompdf/lib/res/satu.png" width="50px" height="55px"/> -->
-  <img src="<?php echo base_url() ?>__DIR__ . "/../../lib/res/satu.png" width="50px" height="55px"/>
-<!--       Cache::$broken_image = realpath(__DIR__ . "/../../lib/res/broken_image.png"); -->
 
+  <img src="C:/xampp/xampp/htdocs/TUGAS-AKHIR/application/third_party/dompdf/lib/res/satu.png" width="80px" height="90px"/>
 
-  <center><h4>PEMERINTAH KOTA BATU<br>
-          KECAMATAN JUNREJO</h4><h3><?php echo $surat[0]['nama_desa']?></h3>
+<div class="column4">
+<center><h4>PEMERINTAH KOTA BATU<br>
+          KECAMATAN JUNREJO</h4><p><h3><?php echo $surat[0]['nama_desa']?></h3></p>
+  <i><?php echo $surat[0]['alamat']?>, Telp <?php echo $surat[0]['no_telepon']?> Batu Kode Pos <?php echo $surat[0]['kode_pos']?></i> 
+
+</center>
+ <p>
+  </div>   
+  <br>
+  <br> 
 <hr/>
-
+   
+  <center>
           <u><b>SURAT KETERANGAN TIDAK MAMPU</b></u></center>
              <center>Nomor:470/00<?php echo $surat[0]['id_surat']?>/422 310.2/2019
              <br>
              <br>
 
-Kepala Desa <?php echo $surat[0]['nama_desa']?> Kecamatan Junrejo Pemerintah Kota Batu menerangkan bahwa menerangkan bahwa<br></center>
-
- <div class="column">
-
-      
+Kepala <?php echo $surat[0]['nama_desa']?> Kecamatan Junrejo Pemerintah Kota Batu menerangkan bahwa menerangkan bahwa :</center>
+<br>
+<!--  <div class="column"> -->
 
   Nama                        :<?php echo  $surat[0]['nama_penduduk'] ?><br>
   Jenis Kelamin               :<?php echo  $surat[0]['jenis_kelamin'] ?><br>

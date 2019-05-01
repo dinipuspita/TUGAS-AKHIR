@@ -29,6 +29,8 @@ class ListBantuan extends CI_Controller {
 		$data["jenis_bantuan"] = $this->list_Bantuan->getTampil();
 		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampil2();
 		$data['user'] = $this->list_Bantuan->getUser();
+
+
 		$this->load->view('Bantuan/bantuan', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
@@ -43,6 +45,7 @@ class ListBantuan extends CI_Controller {
 		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampilKriteria();
 		$data['user'] = $this->list_Bantuan->getUser();
 		$data['last'] = $this->list_Bantuan->getLastBantuan();
+		$data['temporary'] = $this->list_Bantuan->getTampilTemporary();
 
 		$this->load->model('list_bantuan');
 		$data["jenis_bantuan"] = $this->list_bantuan->getTampilBantuan();
@@ -55,6 +58,15 @@ class ListBantuan extends CI_Controller {
 			echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
+	}
+
+	public function createBantuan()// sudah di isi di autoloard 
+	{
+		$this->load->model('list_Bantuan');
+	
+		$this->list_Bantuan->insertBantuan2();
+		echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='../ListBantuan/';
+		</script>";
 	}
 	
 	public function update($id)
@@ -96,5 +108,11 @@ class ListBantuan extends CI_Controller {
 		$this->load->model('list_bantuan');
 		$data['jenis_bantuan'] = $this->list_bantuan->getTampilDetail($id);
 		$this->load->view('Bantuan/detailBantuan', $data);	
+	}
+	public function delete2($id)
+	{
+		$this->load->model('list_bantuan');
+		$this->list_bantuan->delete2($id);
+		redirect('listBantuan/create','refresh');
 	}
 }

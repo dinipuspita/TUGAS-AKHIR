@@ -219,7 +219,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -374,6 +374,63 @@
             </div>
         </div>
     </div>
+
+      <?php foreach ($user as $key) { ?>
+      <?php if($key['level'] == '1') { ?> 
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                        <div class="row">
+                           
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                        <select id="pilihbantuan" class="form-control">
+                                        <option value="">Pilih Id Bantuan</option>
+                                            <?php foreach ($jenis_bantuan as $data ){ ?>
+                                            <option value="<?php echo $data->id_jenis_bantuan; ?>"><?php echo $data->id_jenis_bantuan; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                              </div>
+                            </div>  
+                  
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Nama Bantuan</option></i></font>
+                                        <input type="text" class="form-control" id="nama_bantuan" name="nama_bantuan" placeholder="Nama Bantuan" required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Kriteria Bantuan</option></i></font>
+                                        <input type="text" class="form-control" id="isi_kriteria" name="isi_kriteria" placeholder="Isi Kriteria" required autofocus />
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              <?php } } ?>
+
+                    <br>
+                    <br>
+                    <br>
+                   
+
   
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -664,6 +721,22 @@
 } );
 </script>
     
+      <script type="text/javascript">
+      $('#pilihbantuan').change(function(){
+        let bantuan = this.value
+        let url = "<?= base_url() ?>index.php/ListFilterSurat/getBantuanOtomatis";
+        $.ajax({
+          url:url,
+          type:"POST",
+          dataType:"json",
+          data:{bantuan:bantuan},
+          success:function(response){
+            $("#nama_bantuan").val(response[0].a);
+          }
+        })
+
+      })
+    </script>
 
 </body>
 

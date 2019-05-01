@@ -210,7 +210,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -491,19 +491,68 @@
                             <br>
                             <br>
                              <center>
-                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListBantuan')?>"class="btn btn-danger">Back</a></td>
+                            <button type="submit" class="btn btn-warning">Tambah <span class="glyphicon glyphicon-plus"></span></button>
+                           
                         </center>
                     <br>
                                  </div>
                               </div>
                             </div>
                           </div>
+                    
+           
+    <?php echo form_close(); ?>
+
+
+      <?php echo form_open_multipart('ListBantuan/createBantuan'); 
+        
+            $id = 1;
+                ?>
+
+
+       
+        
+            <div class="card-body">
+                              <div class="table table-responsive">
+                                <table class="table" id="example">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>No</th>
+                                            <th>Nama Bantuan</th>
+                                            <th>Nama Kategori</th>
+                                            <th>Isi Kriteria</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no=1; ?>
+                                           <?php foreach ($temporary as $key) {
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no ?></td>
+                                          <td><?php echo $key['nama_bantuan'] ?></td>
+                                          <td><?php echo $key['nama_kategori'] ?></td>
+                                          <td><?php echo $key['isi_kriteria'] ?></td>
+                                       
+                                          <td>
+                                          <a href="<?php echo base_url('index.php/ListBantuan/delete2/' .$key['id_temporary'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+                                          </td>  
+                                        </tr> 
+                                      <?php $no++ ?>
+                                      <?php } ?>
+                                    </tbody>
+                                </table>
+                                <center>
+                                 <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-send"></span></button>
+                            <a href="<?php echo base_url('index.php/ListBantuan')?>"class="btn btn-danger">Back</a></td></center>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-       
+
+                  
     <?php echo form_close(); ?>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">

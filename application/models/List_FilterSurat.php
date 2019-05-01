@@ -91,7 +91,19 @@ class List_FilterSurat extends CI_Model {
 		
 		$this->db->insert('kepala_desa', $object);
 	}
+	public function insertBantuan()
+	{
 
+
+	$object = array(
+					'nama_bantuan' => $this->input->post('nama_bantuan'),
+					'isi_kriteria' => $this->input->post('isi_kriteria'),
+					'id_kategori' => $this->input->post('fk_kategori'));
+		
+		$this->db->insert('temporary', $object);
+
+
+	}
     public function insertPenduduk()
 	{
 		$tgl=$this->input->post('tanggal_lahir');
@@ -196,13 +208,21 @@ class List_FilterSurat extends CI_Model {
 		$object = array('persetujuan' => 'Disetujui');
 		$this->db->where('id_surat', $id);
 		$this->db->update('surat', $object);
-
 	}
-	public function getHitungNoKK()
+	public function getHitungNoKK($nokk)
 	{
-
-	    $query = $this->db->query("SELECT COUNT(NO_KK) FROM penduduk where NO_KK=NO_KK");
-	    return $query->row();
+	    $query = $this->db->query("SELECT COUNT(NIK) as jumlah FROM penduduk where NO_KK='$nokk'");
+	    return $query->result();
+	}
+	public function getTampilBantuan()
+	{
+		$query = $this->db->query("Select * from jenis_bantuan");
+		return $query->result();
+	}
+		public function getBantuanSelected($bantuan)
+	{
+	    $query = $this->db->query("Select * from jenis_bantuan AS a Join kategori_bantuan AS b ON b.id_kategori=a.id_kategori Join kriteria_bantuan AS c ON c.id_jenis_bantuan=a.id_jenis_bantuan where id_jenis_bantuan=$bantuan");
+		return $query->result_array();
 	}
 
 }

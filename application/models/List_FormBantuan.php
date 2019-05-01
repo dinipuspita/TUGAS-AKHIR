@@ -352,6 +352,8 @@ class List_FormBantuan extends CI_Model {
 		$query = $this->db->query("Select NO_KK from penduduk");
 		return $query->result();
 	}
+	
+
 
 
 

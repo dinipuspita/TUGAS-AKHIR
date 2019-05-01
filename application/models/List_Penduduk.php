@@ -124,9 +124,9 @@ class List_Penduduk extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function getTampilPendudukPerum()
+	public function getTampilPendudukPerum($id)
 	{
-		$query = $this->db->query("Select * from penduduk");
+		$query = $this->db->query("Select * from penduduk where NIK='$id'");
 		return $query->result_array();
 	}
 

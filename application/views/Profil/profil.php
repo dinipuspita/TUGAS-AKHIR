@@ -213,7 +213,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -332,6 +332,7 @@
           </ul>
 
         </nav>
+
           <!-- End of Topbar -->
 
         <!-- Begin Page Content -->

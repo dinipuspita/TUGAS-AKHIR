@@ -265,7 +265,7 @@
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Seleksi Penerima Bantuan</a>
+            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -452,10 +452,10 @@
                                    <font color="red"><i><option value="">*Pilih Penduduk</option>
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" value="NIK" name="NIK" data-live-search="true">
-                                      <option value="">-----Pilih-----</option>
+                                    <select id="hitungnokk" class="selectpicker" value="NIK" name="NIK" data-live-search="true">
+                                      <option  value="">-----Pilih-----</option>
                                         <?php foreach ($penduduk as $data ){ ?>
-                                          <option value="<?php echo $data['NIK']; ?>"><?php echo $data['NIK'] ?> | <?php echo $data['nama_penduduk']; ?>
+                                          <option value="<?php echo $data['NO_KK']; ?>"><?php echo $data['NO_KK'] ?> | <?php echo $data['nama_penduduk']; ?>
                                 </option>
                                              <?php } ?>
                                 </select>
@@ -522,10 +522,10 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <?php foreach ($hitung_NOKK as $penduduk) { ?>
+                                        
                                         <font color="red"><i><option value="">*Jumlah Tanggungan Keluarga</option></i></font>
-                                        <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  value=" <?php echo $penduduk ?>" readonly required autofocus />
-                                        <?php } ?>
+                                        <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -669,6 +669,23 @@
     <script src="<?php echo base_url() ?>assets2/js/color-picker/farbtastic.min.js"></script>
     <script src="<?php echo base_url() ?>assets2/js/color-picker/color-picker.js"></script>
   
+    <script type="text/javascript">
+      $('#hitungnokk').change(function(){
+        let nokk = this.value
+        let url = "<?= base_url() ?>index.php/ListFilterSurat/getHitungNoKK";
+        $.ajax({
+          url:url,
+          type:"POST",
+          dataType:"json",
+          data:{nokk:nokk},
+          success:function(response){
+            $("#tanggungan_keluarga").val(response[0].jumlah);
+          }
+        })
+
+      })
+    </script>
+
 </body>
 
 </html>

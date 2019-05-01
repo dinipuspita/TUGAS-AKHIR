@@ -29,6 +29,8 @@ class ListFilterSurat extends CI_Controller {
 		$data["surat"] = $this->list_FilterSurat->getTampil();
 		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos();
 		$data['user'] = $this->list_FilterSurat->getUser();
+		$data["jenis_bantuan"] = $this->list_FilterSurat->getTampilBantuan();
+
 		$this->load->view('Surat/Surat', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
@@ -36,7 +38,6 @@ class ListFilterSurat extends CI_Controller {
 		$this->load->model('list_FilterSurat');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
-		$this->form_validation->set_rules('status_bangunan', 'status_bangunan', 'trim|required');
 
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
@@ -63,7 +64,7 @@ class ListFilterSurat extends CI_Controller {
 
 		$this->load->model('List_FormBantuan');
 		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5();
-	    $data["hitung_NOKK"] = $this->list_Filtersurat->getHitungNoKK();
+
 
 
 		if($this->form_validation->run() == FALSE) {
@@ -75,6 +76,16 @@ class ListFilterSurat extends CI_Controller {
 			</script>";
 		}
 	}
+
+
+	public function getHitungNoKK(){
+		$this->load->model('list_Filtersurat');
+		$nokk = $this->input->post('nokk');
+		$data = $this->list_Filtersurat->getHitungNoKK($nokk);
+		echo json_encode($data);
+	}
+
+
 		public function update($id)
 	{
 	
@@ -140,5 +151,10 @@ class ListFilterSurat extends CI_Controller {
 		redirect('ListFilterSurat');
 	}
 	
-	
+		public function getBantuanOtomatis(){
+		$this->load->model('list_Filtersurat');
+		$bantuan = $this->input->post('bantuan');
+		$data = $this->list_Filtersurat->getBantuanSelected($bantuan);
+		echo json_encode($data);
+	}
 }

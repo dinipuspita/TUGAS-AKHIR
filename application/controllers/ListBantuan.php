@@ -27,47 +27,46 @@ class ListBantuan extends CI_Controller {
 	{
 		$this->load->model('list_Bantuan');
 		$data["jenis_bantuan"] = $this->list_Bantuan->getTampil();
-		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampil2();
 		$data['user'] = $this->list_Bantuan->getUser();
 
 
 		$this->load->view('Bantuan/bantuan', $data);	
 	}
-	public function create()// sudah di isi di autoloard 
-	{
-		$this->load->model('list_Bantuan');
-		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
+	// public function create()// sudah di isi di autoloard 
+	// {
+	// 	$this->load->model('list_Bantuan');
+	// 	$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
 
-		$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
+	// 	$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
 
-		$this->load->model('list_KategoriBantuan');
-		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori();
-		$data["kriteria_bantuan"] = $this->list_Bantuan->getTampilKriteria();
-		$data['user'] = $this->list_Bantuan->getUser();
-		$data['last'] = $this->list_Bantuan->getLastBantuan();
-		$data['temporary'] = $this->list_Bantuan->getTampilTemporary();
+	// 	$this->load->model('list_KategoriBantuan');
+	// 	$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori();
+	// 	$data["kriteria_bantuan"] = $this->list_Bantuan->getTampilKriteria();
+	// 	$data['user'] = $this->list_Bantuan->getUser();
+	// 	$data['last'] = $this->list_Bantuan->getLastBantuan();
+	// 	$data['temporary'] = $this->list_Bantuan->getTampilTemporary();
 
-		$this->load->model('list_bantuan');
-		$data["jenis_bantuan"] = $this->list_bantuan->getTampilBantuan();
+	// 	$this->load->model('list_bantuan');
+	// 	$data["jenis_bantuan"] = $this->list_bantuan->getTampilBantuan();
 
-		if($this->form_validation->run() == FALSE) {
-			$this->load->view('Bantuan/input_data_bantuan',$data);
-		}
-		else{
-			$this->list_Bantuan->insertBantuan();
-			echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='';
-			</script>";
-		}
-	}
+	// 	if($this->form_validation->run() == FALSE) {
+	// 		$this->load->view('Bantuan/input_data_bantuan',$data);
+	// 	}
+	// 	else{
+	// 		$this->list_Bantuan->insertBantuan();
+	// 		echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='';
+	// 		</script>";
+	// 	}
+	// }
 
-	public function createBantuan()// sudah di isi di autoloard 
-	{
-		$this->load->model('list_Bantuan');
+	// public function createBantuan()// sudah di isi di autoloard 
+	// {
+	// 	$this->load->model('list_Bantuan');
 	
-		$this->list_Bantuan->insertBantuan2();
-		echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='../ListBantuan/';
-		</script>";
-	}
+	// 	$this->list_Bantuan->insertBantuan2();
+	// 	echo "<script> alert('Data Bantuan Berhasil Ditambahkan'); window.location.href='../ListBantuan/';
+	// 	</script>";
+	// }
 	
 	public function update($id)
 	{
@@ -75,12 +74,10 @@ class ListBantuan extends CI_Controller {
 		$this->load->model('list_Bantuan');
 		$this->form_validation->set_rules('nama_bantuan', 'nama_bantuan', 'trim|required');
 		$this->form_validation->set_rules('fk_kategori', 'fk_kategori', 'trim|required');
-
-		$this->form_validation->set_rules('isi_kriteria', 'isi_kriteria', 'trim|required');
+		$this->form_validation->set_rules('keterangan_bantuan', 'keterangan_bantuan', 'trim|required');
 
 		$this->load->model('list_bantuan');
 		$data['jenis_bantuan'] = $this->list_Bantuan->getBantuan($id);
-		$data["kriteria_bantuan"] = $this->list_Bantuan->getKriteria($id);
 
 		$this->load->model('list_KategoriBantuan');
 		$data["kategori_bantuan"] = $this->list_KategoriBantuan->getTampilKategori($id);
@@ -101,18 +98,28 @@ class ListBantuan extends CI_Controller {
 		$this->list_bantuan->delete($id);
 		redirect('listbantuan','refresh');
 	}
-	public function detail($id)
-	{
-		// var_dump($data['bantuan']);
-  //       die();  
-		$this->load->model('list_bantuan');
-		$data['jenis_bantuan'] = $this->list_bantuan->getTampilDetail($id);
-		$this->load->view('Bantuan/detailBantuan', $data);	
-	}
+	// public function detail($id)
+	// {
+	// 	// var_dump($data['bantuan']);
+ //  //       die();  
+	// 	$this->load->model('list_bantuan');
+	// 	$data['jenis_bantuan'] = $this->list_bantuan->getTampilDetail($id);
+	// 	$this->load->view('Bantuan/detailBantuan', $data);	
+	// }
 	public function delete2($id)
 	{
 		$this->load->model('list_bantuan');
 		$this->list_bantuan->delete2($id);
 		redirect('listBantuan/create','refresh');
 	}
+	public function getHitungNoKK(){
+		$this->load->model('list_Bantuan');
+		$nokk = $this->input->post('nokk');
+		// $nokk => 'Kartu Indonesia Pintar (KIP)',
+		$data = $this->list_Bantuan->getHitungNoKK($nokk);
+		echo json_encode($data);
+		  // 'status_akun' => 'Belum Terdaftar', 
+	}
+	
+
 }

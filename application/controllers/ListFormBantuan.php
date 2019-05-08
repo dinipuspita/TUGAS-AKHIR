@@ -33,7 +33,6 @@ class listFormBantuan extends CI_Controller {
 		$data["keterangan_sosial_ekonomi"] = $this->List_FormBantuan->getTampilKeteranganSosialEkonomi();
 		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset();
 		$data['user'] = $this->List_FormBantuan->getUser();
-		$data["penduduk"] = $this->list_Penduduk->getTampil();
 		$this->load->view('FormBantuan/Tampil_DataBantuan', $data);	
 	}
 	
@@ -87,12 +86,10 @@ class listFormBantuan extends CI_Controller {
 
         //Form Sosial Ekonomi
         $this->form_validation->set_rules('hub_kepala_keluarga', 'hub_kepala_keluarga', 'trim|required');
+        $this->form_validation->set_rules('NO_KK', 'NO_KK', 'trim|required');
 		$this->form_validation->set_rules('jenis_cacat', 'jenis_cacat', 'trim|required');
 		$this->form_validation->set_rules('penyakit_kronis', 'penyakit_kronis', 'trim|required');
-		$this->form_validation->set_rules('partisipasi_sekolah', 'partisipasi_sekolah', 'trim|required');
-	    $this->form_validation->set_rules('jenjang_pendidikan', 'jenjang_pendidikan', 'trim|required');
-	    $this->form_validation->set_rules('ijazah_tertinggi', 'ijazah_tertinggi', 'trim|required');
-	    $this->form_validation->set_rules('kelas_tertinggi', 'kelas_tertinggi', 'trim|required');
+		$this->form_validation->set_rules('jenjang_pendidikan', 'jenjang_pendidikan', 'trim|required');
 	    $this->form_validation->set_rules('lapangan_usaha', 'lapangan_usaha', 'trim|required');
 	    $this->form_validation->set_rules('status_kedudukan', 'status_kedudukan', 'trim|required');
 	    $this->form_validation->set_rules('KKS', 'KKS', 'trim|required');
@@ -134,7 +131,7 @@ class listFormBantuan extends CI_Controller {
 
 		$this->load->model('list_penduduk');
 		$data["penduduk"] = $this->list_penduduk->getTampilPendudukPerum($id);
-
+		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAsetById($id);
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('FormBantuan/input_data_bantuan',$data);
@@ -146,5 +143,17 @@ class listFormBantuan extends CI_Controller {
 		}
 	}
 
+	public function tampil($id)
+	{
+		$this->load->model('List_FormBantuan');
+		$data['user'] = $this->List_FormBantuan->getUser();
+		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAsetById($id);
+		$data["pengenalan_tempat"] = $this->List_FormBantuan->getTampilPengenalanTempatById($id);
+		$data["keterangan_pengesahan"] = $this->List_FormBantuan->getTampilKeteranganPengesahanById($id);
+		$data["keterangan_sosial_ekonomi"] = $this->List_FormBantuan->getTampilKeteranganSosialEkonomiById($id);
+		$data["keterangan_perumahan"] = $this->List_FormBantuan->getTampilKeteranganPerumahanById($id);
+
+		$this->load->view('FormBantuan/Tampil_PerNIK', $data);
+	}
 
 }

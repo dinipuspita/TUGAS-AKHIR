@@ -190,30 +190,7 @@
         </div>
       </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-     <!--  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Bantuan</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
-          </div>
-        </div>
-      </li> -->
-
-
       
-   <!-- Nav Item - Charts -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
- -->
       <?php } } ?>
 
       <!-- Divider -->
@@ -263,9 +240,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/index"); ?>'>Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -360,9 +336,10 @@
 
            
 
+          
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
@@ -409,7 +386,7 @@
     </div>
       <br>
         
-       <?php echo form_open('ListFilterSurat/create'); ?> 
+       <?php echo form_open('ListFilterSurat/create/'); ?> 
         
         <?php echo validation_errors(); ?>
 
@@ -430,16 +407,7 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                   <!--  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Pilih Form:</div>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListPengenalantempat/create"); ?>'>Form 1</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 2</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 3</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListSosialEkonomi/create"); ?>'>Form 4</a>
-                      <a class="dropdown-item" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>Form 5</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div> -->
+                 
                   </div>
                 </div>
 
@@ -524,11 +492,19 @@
                                       <div class="nk-int-st">
                                         
                                         <font color="red"><i><option value="">*Jumlah Tanggungan Keluarga</option></i></font>
-                                        <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
                                         
+                                        <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
+
+                                        <input type="hidden" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
                                     </div>
                                 </div>
                             </div>
+
+                                </div>
+                                </div>
+                                <div class="row">
+                             
+                            
                                 </div>
                                 </div>
                              <br>
@@ -546,7 +522,9 @@
                                 </div>
                             </div>
                                 </div>
-                                </div>     
+                                </div>    
+
+ 
                      <!--      
                           <font color="red"><i>* Wajib diisi</i></font> -->
                         <center>
@@ -680,6 +658,7 @@
           data:{nokk:nokk},
           success:function(response){
             $("#tanggungan_keluarga").val(response[0].jumlah);
+            $("#NIK").val(response[0].nikk);
           }
         })
 

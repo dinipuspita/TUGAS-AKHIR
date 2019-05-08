@@ -85,6 +85,31 @@ class ListFilterSurat extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function getKKS(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getDataKKS($kriteria_bantuan);
+		echo json_encode($data);
+	}
+	public function getKIS(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getDataKIS($kriteria_bantuan);
+		echo json_encode($data);
+	}
+	public function getKIP(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getDataKIP($kriteria_bantuan);
+		echo json_encode($data);
+	}
+	public function getRASKIN(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getDataRASKIN($kriteria_bantuan);
+		echo json_encode($data);
+	}
+
 
 		public function update($id)
 	{
@@ -151,10 +176,21 @@ class ListFilterSurat extends CI_Controller {
 		redirect('ListFilterSurat');
 	}
 	
-		public function getBantuanOtomatis(){
+	public function getKriteriaOtomatis(){
 		$this->load->model('list_Filtersurat');
-		$bantuan = $this->input->post('bantuan');
-		$data = $this->list_Filtersurat->getBantuanSelected($bantuan);
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getKriteriaSelected($kriteria_bantuan);
 		echo json_encode($data);
 	}
+	public function tampilPengajuan()
+	{
+		$this->load->model('list_FilterSurat');
+		$data["surat"] = $this->list_FilterSurat->getTampil();
+		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos();
+		$data['user'] = $this->list_FilterSurat->getUser();
+		$data["jenis_bantuan"] = $this->list_FilterSurat->getTampilBantuan();
+
+		$this->load->view('Surat/SuratByDinsos', $data);	
+	}
+
 }

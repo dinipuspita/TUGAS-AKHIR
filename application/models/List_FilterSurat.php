@@ -4,27 +4,6 @@ class List_FilterSurat extends CI_Model {
 
 	public function insertFilterSurat()
 	{
-
-
-		$data = array('NIK' => $this->input->post('NIK'), 
-					  'pendapatan' => $this->input->post('pendapatan'), 
-					  'tanggungan_keluarga' => $this->input->post('tanggungan_keluarga'), 
-					  'kelengkapan_dokumen' => $this->input->post('kelengkapan_dokumen'), 
-					  'jml_lahan' => $this->input->post('jml_lahan'),
-
-					 );	
-
-		$this->db->insert('kepemilikan_aset', $data);
-
-
-
-		// if ($status_surat==0){
-		// 	$status='menunggu';
-		// }
-		// else{
-		// 	$status='Diterima';
-		// }
-
 		$id_surat=$this->input->post('id_surat');
 		$status_surat=$this->input->post('status_surat');
 		$NIK = $this->input->post('NIK');
@@ -33,40 +12,77 @@ class List_FilterSurat extends CI_Model {
 		$lahan=$this->input->post('jml_lahan');
 		$statusBangunan=$this->input->post('status_bangunan');
 		$pendapatan=$this->input->post('pendapatan');
-
-		$status = 'Diterima';
+		$keterangan=$this->input->post('keterangan');
 
 		//tidak mampu tapi lengkap
 		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan <= 8){
 
-			$status = 'Diterima';
+			$data = array('NIK' => $NIK, 
+			  'pendapatan' => $pendapatan, 
+			  'tanggungan_keluarga' => $jumlah_tanggungan, 
+			  'kelengkapan_dokumen' => $dokumen, 
+			  'jml_lahan' => $lahan
+			);	
 
-			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../ListFilterSurat/create/$NIK/'; </script>";
+			$this->db->insert('kepemilikan_aset', $data);
+
+
+			$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis waktu buat surat
+
+			$status = 'Diterima';
+			
+			$data_surat = array(
+						  'id_surat' => $id_surat,
+						  'NIK' => $NIK, 
+						  'keterangan' => $keterangan,
+						  'status_surat' => $status,
+						  'tanggal_surat' => $tanggal_surat,
+						  'persetujuan' => 'Belum Disetujui'
+						);				
+			
+			$this->db->insert('surat', $data_surat);
+
+
+
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../create/'; </script>";
 		
 		}
 		//tidak mampu tidak lengkap
 		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan <= 8){
 
+			$data = array('NIK' => $NIK, 
+			  'pendapatan' => $pendapatan, 
+			  'tanggungan_keluarga' => $jumlah_tanggungan, 
+			  'kelengkapan_dokumen' => $dokumen, 
+			  'jml_lahan' => $lahan
+			);	
+
+			$this->db->insert('kepemilikan_aset', $data);
+
+			$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis waktu buat surat
+
 			$status = 'Menunggu';
 			
-			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); window.location.href='../ListFilterSurat/create/$NIK/'; </script>";
+			$data_surat = array(
+						  'id_surat' => $id_surat,
+						  'NIK' => $NIK, 
+						  'keterangan' => $keterangan,
+						  'status_surat' => $status,
+						  'tanggal_surat' => $tanggal_surat,
+						  'persetujuan' => 'Belum Disetujui'
+						);				
+			
+			$this->db->insert('surat', $data_surat);
+
+			
+			echo "<script> alert('Data Penduduk Penerima Surat Dipending, Anda Dapat Mencetak Surat SKTM Namun Lengkapi Persyaratan Terlebih Dahulu '); window.location.href='../create/'; </script>";
 
 		}
 		else{
 		//mampu
-			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../ListFilterSurat'; </script>";
+			echo "<script> alert('Maaf Penduduk Tersebut belum termasuk Penerima Surat'); window.location.href='../'; </script>";
 		}
 
-		$tanggal_surat = date("Y-m-d H:i:s"); //tgl otomatis waktu buat surat
-
-		$data_surat = array('id_surat' => $this->input->post('id_surat'),
-					  'NIK' => $this->input->post('NIK'), 
-					  'keterangan' => $this->input->post('keterangan'),
-					  'status_surat' => $status,
-					  'tanggal_surat' => $tanggal_surat,
-					  'persetujuan' => 'Belum Disetujui');				
-		
-		$this->db->insert('surat', $data_surat);
 
 
 	}
@@ -211,19 +227,53 @@ class List_FilterSurat extends CI_Model {
 	}
 	public function getHitungNoKK($nokk)
 	{
-	    $query = $this->db->query("SELECT COUNT(NIK) as jumlah FROM penduduk where NO_KK='$nokk'");
+	    $query = $this->db->query("SELECT NIK as nikk, COUNT(NIK) as jumlah FROM penduduk where NO_KK='$nokk'");
 	    return $query->result();
+	}
+	public function getTableIsi($isi_table)
+	{
+	    $query = $this->db->query("Select (NIK, nama_penduduk, tanggal_surat, keterangan, status_surat, nama_desa, usia, pendidikan, pendapatan, tanggungan_keluarga, luas_lahan) as table from penduduk  where NIK='$nokk'");
+	    return $query->result();
+	// Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=a.NIK where status_surat = 'Diterima' and b.usia BETWEEN 45 and 74
 	}
 	public function getTampilBantuan()
 	{
 		$query = $this->db->query("Select * from jenis_bantuan");
 		return $query->result();
 	}
-		public function getBantuanSelected($bantuan)
+	
+	public function getKriteriaSelected($kriteria_bantuan)
 	{
-	    $query = $this->db->query("Select * from jenis_bantuan AS a Join kategori_bantuan AS b ON b.id_kategori=a.id_kategori Join kriteria_bantuan AS c ON c.id_jenis_bantuan=a.id_jenis_bantuan where id_jenis_bantuan=$bantuan");
-		return $query->result_array();
+	    $query = $this->db->query("Select (keterangan_bantuan) as A from jenis_bantuan where id_jenis_bantuan='$kriteria_bantuan'"); 
+	    return $query->result();	   
+
 	}
+	public function getDataKKS($kriteria_bantuan)
+	{
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 45 and 74"); 
+	    return $query->result();	   
+
+	}
+	public function getDataKIS($kriteria_bantuan)
+	{
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima'"); 
+	    return $query->result();	   
+
+	}
+	public function getDataRASKIN($kriteria_bantuan)
+	{
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 75 and 90"); 
+	    return $query->result();	   
+
+	}
+	public function getDataKIP($kriteria_bantuan)
+	{
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 7 and 18"); 
+	    return $query->result();	   
+
+	}
+
+
 
 }
 

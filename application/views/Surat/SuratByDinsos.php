@@ -56,7 +56,7 @@
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
-  
+
 
 <body id="page-top">
 
@@ -144,6 +144,7 @@
         </div>
       </li>
 
+      
       <?php } } ?>
 
       <!-- Divider -->
@@ -189,15 +190,13 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/index"); ?>'>Data Penerima Bantuan</a>
           </div>
-        </div>
-      </li>
         </div>
       </li>
 
@@ -291,7 +290,7 @@
 
            
 
-
+          
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
@@ -316,120 +315,21 @@
           </ul>
 
         </nav>
-          <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
- <div class="breadcomb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Data Penerima Surat</h2>
-                                        <p>Data Penerima Surat Masyarakat Kota Batu<span class="bread-ntd"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                 <?php foreach ($user as $key) { ?>
-                                <?php if($key['level'] == '2') { ?> 
-                                <div class="breadcomb-report">
-                                    <a href="<?php echo base_url('index.php/ListFilterSurat/LaporanSurat')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
-                                </div>
-                      
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '2') { ?> 
+           
                <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
             </div>
-                <?php } } ?>
+          
           </div>       
 
-            <div class="card-body style="display:none">
-                              <div class="table table-responsive">
-                                <table class="table" id="example">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>Tanggal Surat</th>
-                                            <th>Keterangan</th>
-                                            <th>Status</th>
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-<!--                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '2') { ?>  -->
-                                        <?php $no=1; ?>
-                                           <?php foreach ($surat as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td><?php echo $key['NIK'] ?></td>
-                                          <td><?php echo $key['nama_penduduk'] ?></td>
-                                          <td><?php echo $key['tanggal_surat'] ?></td>
-                                          <td><?php echo $key['keterangan'] ?></td>
-                                          <td><?php echo $key['status_surat'] ?></td>
-                                     
-                                         
-                                          
-                                          
-                                          <td>
-                                            <?php if($key['status_surat']=='Menunggu') { ?>
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a>
-                                            <?php } ?>
-                                            <?php if($key['status_surat']=='Diterima') { ?>                              
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/update/'.$key['id_surat'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
-
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
-
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
-                                            <?php } ?>
-                                          </td>
-
-                                      </div> 
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
-                                    <!--             <?php } } ?> -->
-                                                   </tr>
-                                  </tfoot>
-                                </table>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                 
                  
                  
 
 
-      <?php foreach ($user as $key) { ?>
-      <?php if($key['level'] == '1') { ?> 
-
-            <div class="row">
+           <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
@@ -449,7 +349,7 @@
                               </div>
                             </div>  
                               <Select id="colorselector">
-                                <option value="0">its danger</option>
+                                <option value="danger">its danger</option>
                                  <option value="red">Red</option>
                                  <option value="yellow">Yellow</option>
                                  <option value="blue">Blue</option>
@@ -469,8 +369,8 @@
                         </div>
                       </div>
                     </div>
-              <?php } } ?>
-
+                  </option>
+     
                     <br>
                     <br>
                     <br>
@@ -481,13 +381,11 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-               
- <!--               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span> -->
             </div>
        
           </div>       
 
-            <div class="card-body colors"  id="yellow" style="display:none">
+            <div class="card-body colors"  id="KIS" style="display:none">
                               <div class="table table-responsive">
                                 <table class="table" id="example">
                                     <thead>
@@ -586,16 +484,7 @@
                                     <tfoot>
                                       <tr>
 
-                                        <!-- <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '2') { ?> 
-                                          <th>No</th>
-                                          <th>NIK</th>
-                                          <th>Nama Penduduk</th>
-                                          <th>Tanggal Surat</th>
-                                          <th>Keterangan</th>
-                                          <th>Status</th>
-                                          <th>Options</th>
-                                          <?php } } ?> -->
+
                                          
                                          <?php foreach ($user as $key) { ?>
                                          <?php if($key['level'] == '1') { ?> 
@@ -620,11 +509,11 @@
                               </div>
                             </div>
                           </div>
-                       </div>
+                    
 
-            <div class="card-body colors" id="red" style="display:none">
+            <div class="card-body colors" id="yellow" style="display:none">
                               <div class="table table-responsive">
-                                <table class="table" id="example">
+                                <table class="table" id="example1">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -633,16 +522,13 @@
                                             <th>Tanggal Surat</th>
                                             <th>Keterangan</th>
                                             <th>Status</th>
-
-                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
                                             <th>Desa</th>
                                             <th>Usia</th>
                                             <th>Pendidikan</th>
                                             <th>Pendapatan</th>
                                             <th>Tanggungan Keluarga</th>
                                             <th>Luas Lahan</th>
-                                          <?php } } ?>
+
                                             <th>Options</th>
                                         </tr>
                                     </thead>
@@ -708,15 +594,15 @@
                                 </table>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                       </div>
 
-<?php foreach ($user as $key) { ?>
-<?php if($key['level'] == '1') { ?> 
- <div class="card-body colors" id="yellow" style="display:none">
+                            
+                     
+              
+
+
+   <div class="card-body colors" id="blue" style="display:none">
                               <div class="table table-responsive">
-                                <table class="table" id="example">
+                                <table class="table" id="example2">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -731,11 +617,11 @@
                                             <th>Pendapatan</th>
                                             <th>Tanggungan Keluarga</th>
                                             <th>Luas Lahan</th>
+
                                             <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
                                        <?php foreach ($user as $key) { ?>
                                          <?php if($key['level'] == '1') { ?> 
                                         <?php $no=1; ?>
@@ -760,7 +646,6 @@
                                         <?php if($key['persetujuan']=='Belum Disetujui') { ?>
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
                                             <?php } ?>   
-
                                         <?php if($key['persetujuan']=='Disetujui') { ?>                              
                                               <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
                                         <?php } ?>  
@@ -771,11 +656,11 @@
                                       <?php $no++ ?>
                                       <?php } ?>
                                         <?php } } ?>
-                                          <?php } } ?>
 
                                     </tbody>
                                     <tfoot>
                                       <tr>
+
                                          
                                          <?php foreach ($user as $key) { ?>
                                          <?php if($key['level'] == '1') { ?> 
@@ -798,15 +683,10 @@
                                 </table>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                       </div>
 
-            <?php foreach ($user as $key) { ?>
-<?php if($key['level'] == '1') { ?> 
- <div class="card-body colors" id="red" style="display:none">
+                                 <div class="card-body colors" id="danger" style="display:none">
                               <div class="table table-responsive">
-                                <table class="table" id="example">
+                                <table class="table" id="example3">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -821,11 +701,11 @@
                                             <th>Pendapatan</th>
                                             <th>Tanggungan Keluarga</th>
                                             <th>Luas Lahan</th>
+
                                             <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
                                        <?php foreach ($user as $key) { ?>
                                          <?php if($key['level'] == '1') { ?> 
                                         <?php $no=1; ?>
@@ -850,7 +730,6 @@
                                         <?php if($key['persetujuan']=='Belum Disetujui') { ?>
                                               <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
                                             <?php } ?>   
-
                                         <?php if($key['persetujuan']=='Disetujui') { ?>                              
                                               <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
                                         <?php } ?>  
@@ -861,7 +740,6 @@
                                       <?php $no++ ?>
                                       <?php } ?>
                                         <?php } } ?>
-                                          <?php } } ?>
 
                                     </tbody>
                                     <tfoot>
@@ -893,9 +771,6 @@
                           </div>
                        </div>
                       </div>
-                    </div>
-                       </div>
-                    </div>
 
 
                        
@@ -993,7 +868,25 @@
    $(document).ready(function(){
    $('#example').DataTable();
    } );
-   </script>   
+   </script> 
+
+  <script type="text/javascript">
+   $(document).ready(function(){
+   $('#example1').DataTable();
+   } );
+   </script>  
+
+  <script type="text/javascript">
+   $(document).ready(function(){
+   $('#example2').DataTable();
+   } );
+   </script>  
+
+  <script type="text/javascript">
+   $(document).ready(function(){
+   $('#example3').DataTable();
+   } );
+   </script>  
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -1035,18 +928,81 @@
         })
 
       })
-    </script>
-    
 
-                                <script type="text/javascript">
-                                $(function() {
-                                    $('#colorselector').change(function(){
-                                      $('.colors').hide();
-                                      $('#' + $(this).val()).show();
-                                    });
-                                });
-                                </script>
+
+    </script>
+
+    <script type="text/javascript">
+      $('#kriteria').change(function(){
+        $('.colors').hide();
+        let kriteria_bantuan = this.value;
+        if (kriteria_bantuan==863){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIP",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              console.log(response);
+            }
+          })  
+        }
+        else if (kriteria_bantuan==864){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              console.log(response);
+            }
+          })
+        }
+        else if (kriteria_bantuan==865){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKKS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              console.log(response);
+            }
+          })
+        }
+        else if (kriteria_bantuan==866){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getRASKIN",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              console.log(response);
+            }
+          })
+        }
+      })
+
+    </script>
+
+
+   <!--   <script type="text/javascript">
+      $(function() {
+      $('#colorselector').change(function(){
+        $('.colors').hide();
+        $('#' + $(this).val()).show();
+         });
+      });
+      <f/script> -->
              
+     <script type="text/javascript">
+      $(function() {
+      $('#colorselector').change(function(){
+        $('.colors').hide();
+        $('#' + $(this).val()).show();
+         });
+      });
+      </script>
+      
                              
 </body>
 

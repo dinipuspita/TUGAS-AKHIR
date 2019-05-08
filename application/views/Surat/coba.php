@@ -355,11 +355,6 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '2') { ?> 
-               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
-            </div>
-                <?php } } ?>
           </div>       
 
             <div class="card-body style="display:none">
@@ -481,8 +476,6 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-               
- <!--               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span> -->
             </div>
        
           </div>       

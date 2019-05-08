@@ -191,7 +191,6 @@
         </div>
       </li>
 
-      
       <?php } } ?>
 
       <!-- Divider -->
@@ -237,7 +236,7 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Bantuan</span>
         </a>
-       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
@@ -246,7 +245,7 @@
           </div>
         </div>
       </li>
-      
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -383,8 +382,8 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Form Edit Data Pendukung</h2>
-                                        <p>Form Edit Data Pendukung Penduduk Kota Batu<span class="bread-ntd"></span></p>
+                                        <h2>Detail Data</h2>
+                                        <p>Data Detail Form Data Pendukung<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +396,7 @@
   
 
   
-     <?php echo form_open('ListFormBantuan/update/'.$this->uri->segment(3)); ?>
+     <?php echo form_open('ListFormBantuan/tampil/'.$this->uri->segment(3)); ?>
         
       <?php echo validation_errors(); ?>
 
@@ -432,7 +431,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="Provinsi" required autofocus />
+                                         <font color="blue"><i>* Provinsi</i></font>
+                                        <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="Provinsi"  value="<?php echo $pengenalan_tempat[0]['provinsi']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -442,7 +442,8 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                    <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Keluarga"  value="<?php echo $kepemilikan_aset[0]['tanggungan_keluarga']?>" readonly required autofocus />
+                                    <font color="blue"><i>* Jumlah Keluarga</i></font>
+                                    <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Keluarga"  value="<?php echo $kepemilikan_aset[0]['tanggungan_keluarga']?> Orang" readonly required autofocus />
                                     </div>
                                 </div>
                               </div>
@@ -452,7 +453,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="kabupaten" name="kabupaten" placeholder="Kabupaten" required autofocus />
+                                    <font color="blue"><i>* Kabupaten</i></font>
+                                       <input type="text" class="form-control" id="kabupaten" name="kabupaten" placeholder="kabupaten"  value="<?php echo $pengenalan_tempat[0]['kabupaten']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -465,7 +467,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required autofocus />
+                                       <font color="blue"><i>* Kecamatan</i></font>
+                                       <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="kecamatan"  value="<?php echo $pengenalan_tempat[0]['kecamatan']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +478,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="nama_sls" name="nama_sls" placeholder="Nama SLS (Satuan Lingkungan Setempat)" value="RT <?php echo $penduduk[0]['RT']?> RW <?php echo $penduduk[0]['RW']?>" readonly required autofocus />
+                                       <font color="blue"><i>* Nama Satuan Lingkungan Setempat</i></font>
+                                       <input type="text" class="form-control" id="nama_sls" name="nama_sls" placeholder="nama_sls"  value="<?php echo $pengenalan_tempat[0]['nama_sls']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +490,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $penduduk[0]['alamat']?>" readonly required autofocus />
+                                    <font color="blue"><i>* Alamat</i></font>
+                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"  value="<?php echo $pengenalan_tempat[0]['alamat']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -498,7 +503,8 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="number" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="Nomor Urut RT" value="<?php echo $penduduk[0]['NO_KK']?>" readonly required autofocus />
+                                       <font color="blue"><i>* Nomor Urut RT</i></font>
+                                       <input type="number" class="form-control" id="no_urut_rt" name="no_urut_rt" placeholder="Nomor Urut RT" value="<?php echo $pengenalan_tempat[0]['no_urut_rt']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -508,8 +514,9 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="nama_krt" name="nama_krt" placeholder="Nama Kepala rumah Tangga" required autofocus />
-                                    </div>
+                                      <font color="blue"><i>* Nama Kepala Rumah Tangga</i></font>
+                                       <input type="text" class="form-control" id="nama_krt" name="nama_krt" placeholder="Jumlah Keluarga"  value="<?php echo $pengenalan_tempat[0]['nama_krt']?>" readonly required autofocus />
+                                     </div>
                                 </div>
                             </div>
 
@@ -520,15 +527,16 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="jumlah_ART" name="jumlah_ART" placeholder="Jumlah Anggota Rumah Tangga" required autofocus />
+                                        <font color="blue"><i>* Jumlah Anggota Rumah Tangga</i></font>
+                                       <input type="text" class="form-control" id="jumlah_ART" name="jumlah_ART" placeholder="Jumlah Keluarga"  value="<?php echo $pengenalan_tempat[0]['jumlah_ART']?> KK" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                      </div>
 
                        
                      <br>
-                     <font color="red"><i>* Wajib diisi</i></font>
                </div>
           </div>
       </div>
@@ -536,8 +544,7 @@
      </div>
      <br>
      <br>
-
-<div class="container">
+     <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
@@ -550,115 +557,180 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Nama Petugas" required autofocus />
+                                        <font color="blue"><i>* Nama Petugas</i></font>
+                                        <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Jumlah Keluarga"  value="<?php echo $keterangan_pengesahan[0]['nama_petugas']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
-                                    <option value="">*Tanggal Verivali</option></i></font><br>
+                                    <font color="blue"><i>* Tanggal Verivali</i></font><br>
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-calendar"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_verivali" name="tanggal_verivali" placeholder="Tanggal Verivali" required autofocus />
+                                        <input type="date" class="form-control" id="tanggal_verivali" name="tanggal_verivali" placeholder="Tanggal Verivali" value="<?php echo $keterangan_pengesahan[0]['tanggal_verivali']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
 
-                          <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                       <font color="blue"><i>* Hasil Verivali</i></font><br>
+                                        <input type="text" class="form-control" id="hasil_verivali" name="hasil_verivali" placeholder="Jumlah Keluarga"  value="<?php echo $keterangan_pengesahan[0]['hasil_verivali']?>" readonly required autofocus />
+                                    </div>
                                 </div>
-                                    <select class="selectpicker" name="hasil_verivali">
-                                          <option value="">-----Hasil Verivali-----</option>
-                                             <option value="1.Selesai Verivali">1.Selesai Verivali</option>
-                                                <option value="2.Rumah Tangga Tidak Ditemukan">2.Rumah Tangga Tidak Dtemukan</option>
-                                                <option value="3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada<">3.Rumah Tangga/Bangunan Sensus Sudah Tidak Ada</option>
-                                                <option value="Bagian dari Rumah Tangga Sesuai Prelist">Bagian dari Rumah Tangga Sesuai Prelist</option>
-                                            </optgroup>                                        
-                                      </select>
-                                </div>
-                            </div>
+                              </div>
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
-                                    <option value="">*Tanggal Pemeriksaan</option></i></font><br>
+                                    <font color="blue"><i>* Tangal Pemeriksaan</i></font><br>
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-calendar"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="date" class="form-control" id="tanggal_pemeriksaan" name="tanggal_pemeriksaan" placeholder="Tanggal Pemeriksaan" required autofocus />
+                                       <input type="date" class="form-control" id="tanggal_pemeriksaan" name="tanggal_pemeriksaan" placeholder="Tanggal Verivali" value="<?php echo $keterangan_pengesahan[0]['tanggal_pemeriksaan']?>" readonly required autofocus />
                                     </div>
                                 </div>
+</div>
                               </div>  
                           </div>
-                        </div>
+
 
                         <br>   
-                         <font color="red"><i>* Wajib diisi</i></font>
-
-                    </div>
-                  </div>
-                </div>
               </div>
             <br>
             <br>
-
-
-          <div class="container">
+            <br>
+            <br>
+             <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
                             <h2>Form 3. Keterangan Perumahan</h2><br>
                         
-                          <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                           <div class="row">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Status Bangunan</i></font>
+                                        <input type="text" class="form-control" id="status_bangunan" name="status_bangunan" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['status_bangunan']?>" readonly required autofocus />
+                                    </div>
                                 </div>
-                                    <select class="selectpicker" name="status_bangunan">
-                                           <option value="">-----Status Bangunan-----</option>
-                                                <option value="1.Milik Sendiri">1.Milik Sendiri</option>
-                                                <option value="2.Kontrak/Sewa">2.Kontrak/Sewa</option>
-                                                <option value="3.Bebas Sewa">3.Bebas Sewa</option>
-                                                <option value="4.Dinas">4.Dinas</option>
-                                                <option value="5.Lainnya">5.Lainnya</option>
-                                            </optgroup>                                        
-                                      </select>
-                                </div>
-                            </div>
-                     <!--    </div> -->
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                         </div>
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Status Lahan</i></font>
+                                        <input type="text" class="form-control" id="status_bangunan" name="status_bangunan" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['status_bangunan']?>" readonly required autofocus />
+                                    </div>
                                 </div>
-                                    <select class="selectpicker" name="status_lahan">
-                                           <option value="">-----Status Lahan-----</option>
-                                                <option value="1.Milik Sendiri">1.Milik Sendiri</option>
-                                                <option value="2.Kontrak/Sewa">2.Kontrak/Sewa</option>
-                                                <option value="3.Bebas Sewa">3.Bebas Sewa</option>
-                                                <option value="4.Dinas">4.Dinas</option>
-                                                <option value="5.Lainnya">5.Lainnya</option>
-                                            </optgroup>                                        
-                                      </select>
-                                </div>
-                            </div>
-                        
+                              </div>
                       
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Luas Lantai</i></font>
+                                        <input type="text" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['luas_lantai']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+                                        
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Jenis Lantai</i></font>
+                                        <input type="text" class="form-control" id="jenis_lantai_terluas" name="jenis_lantai_terluas" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['jenis_lantai_terluas']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Jenis Dinding</i></font>
+                                        <input type="text" class="form-control" id="jenis_dinding_terluas" name="jenis_dinding_terluas" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['jenis_dinding_terluas']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+                       
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Kondisi Dinding</i></font>
+                                        <input type="text" class="form-control" id="kondisi_dinding" name="kondisi_dinding" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['kondisi_dinding']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Jenis Atap</i></font>
+                                        <input type="text" class="form-control" id="jenis_atap" name="jenis_atap" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['jenis_atap']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Kondisi Atap</i></font>
+                                        <input type="text" class="form-control" id="kondisi_atap" name="kondisi_atap" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['kondisi_atap']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="number" class="form-control" id="luas_lantai" name="luas_lantai" placeholder="Luas Lantai/m2" required autofocus />
+                                        <font color="blue"><i>* Jumlah Kamar</i></font>
+                                        <input type="text" class="form-control" id="jumlah_kamar" name="jumlah_kamar" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['jumlah_kamar']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <font color="blue"><i>* Sumber Air Minum</i></font>
+                                        <input type="text" class="form-control" id="sumber_air_minum" name="sumber_air_minum" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['sumber_air_minum']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -667,41 +739,11 @@
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="jenis_lantai_terluas">
-                                           <option value="">-----Jenis Lantai-----</option>
-                                                <option value="01.Marmer/Granit">01.Marmer/Granit</option>
-                                                <option value="02.Keramik">02.Keramik</option>
-                                                <option value="03.Parket/vinil/permadani">03.Parket/vinil/permadani</option>
-                                                <option value="04.Ubin/Tegel/Terasero">04.Ubin/Tegel/Terasero</option>
-                                                <option value="05.Kayu/Papan Kualitas Tinggi">05.Kayu/Papan Kualitas Tinggi</option>
-                                                <option value="06.Sementara/Bata Merah">06.Sementara/Bata Merah</option>
-                                                <option value="07.Bambu">07.Bambu</option>
-                                                <option value="08.Kayu/Papan Kualitas Rendah">08.Ubin/Tegel/Terasero</option>
-                                                <option value="09.Tanah">09.Tanah</option>
-                                                <option value="10.Lainnya">10.Lainnya</option>
-                                            </optgroup>                                  
-                                      </select>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="jenis_dinding_terluas">
-                                           <option value="">-----Jenis Dinding-----</option>
-                                              <option value="1.Tembok">1.Tembok</option>
-                                                <option value="2.Plesteran/Anyaman Bambu/Kawat">2.Plesteran/Anyaman Bambu/Kawat</option>
-                                                <option value="3.Kayu">3.Kayu</option>
-                                                <option value="4.Anyaman Bambu">4.Anyaman Bambu</option>
-                                                <option value="5.Batang Kayu">5.Batang Kayu</option>
-                                                <option value="6.Bambu">6.Bambu</option>
-                                                 <option value="7.Lainnya">7.Lainnya</option>                                             
-                                            </optgroup>                                 
-                                      </select>
+                                    </div>
+                                   <div class="nk-int-st">
+                                        <font color="blue"><i>* Kode Pelanggan Air</i></font>
+                                        <input type="text" class="form-control" id="kode_pelanggan_air" name="kode_pelanggan_air" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['kode_pelanggan_air']?>" readonly required autofocus />
+                                    </div>
                                 </div>
                             </div>
 
@@ -709,154 +751,49 @@
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="kondisi_dinding">
-                                           <option value="">-----Kondisi Dinding-----</option>
-                                               <option value="1.Bagus/Kualitas Tinggi">1.Bagus/Kualitas Tinggi</option>
-                                                <option value="2.Jelek/Kualitas Rendah">2.Jelek/Kualitas Rendah</option>
-                                                <option value="3.Tidak Ada">3.Tidak Ada</option>               
-                                              </optgroup>                              
-                                      </select>
+                                    </div>
+                                   <div class="nk-int-st">
+                                        <font color="blue"><i>* Cara Memperoleh Air</i></font>
+                                        <input type="text" class="form-control" id="cara_memperoleh_air" name="cara_memperoleh_air" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['cara_memperoleh_air']?>" readonly required autofocus />
+                                    </div>
                                 </div>
                             </div>
-
-
-
-                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="jenis_atap">
-                                           <option value="">-----Jenis Atap-----</option>
-                                             <option value="01.Beton/Genteng Beton">01.Beton/Genteng Beton</option>
-                                                <option value="02.Genteng Keramik">02.Genteng Keramik</option>
-                                                <option value="03.Genteng Metal">03.Genteng Metal</option>
-                                                <option value="04.Genteng Tanah Liat">04.Genteng Tanah Liat</option>
-                                                <option value="05.Asbes">05.Asbes</option>
-                                                <option value="06.Seng">06.Seng</option>     
-                                                <option value="07.Sirap">07.Sirap</option>
-                                                <option value="08.Bambu">08.Bambu</option>
-                                                <option value="09.Jerami/Ijuk/Daun-daunan/Rumbia">09.Jerami/Ijuk/Daun-daunan/Rumbia</option>
-                                                <option value="10.Lainnya">10.Lainnya</option>                                           
-                                              </optgroup>                             
-                                      </select>
-                                </div>
-                            </div>
-
+                          
                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="kondisi_atap">
-                                           <option value="">-----Kondisi Atap-----</option>
-                                              <option value="1.Bagus/Kualitas Tinggi">1.Bagus/Kualitas Tinggi</option>
-                                                 <option value="2.Jelek/Kualitas Rendah">2.Jelek/Kualitas Rendah</option>
-                                                 <option value="3.Tidak Ada">3.Tidak Ada</option>       
-                                             </optgroup>                             
-                                      </select>
+                                    </div>
+                                   <div class="nk-int-st">
+                                        <font color="blue"><i>* Sumber Penerangan</i></font>
+                                        <input type="text" class="form-control" id="sumber_penerangan" name="sumber_penerangan" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['sumber_penerangan']?>" readonly required autofocus />
+                                    </div>
                                 </div>
                             </div>
-
-
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
-                                    <div class="nk-int-st">
-                                        <input type="number" class="form-control" id="jumlah_kamar" name="jumlah_kamar" placeholder="Jumlah Kamar" required autofocus />
+                                   <div class="nk-int-st">
+                                        <font color="blue"><i>* Daya Terpasang</i></font>
+                                        <input type="text" class="form-control" id="daya_terpasang" name="daya_terpasang" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['daya_terpasang']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="sumber_air_minum">
-                                           <option value="">-----Sumber Air Minum-----</option>
-                                                 <option value="01.Air Kemasan Bermerk">01.Air Kemasan Bermerk</option>
-                                                 <option value="02.Air Isi Ulang">02.Air Isi Ulang</option>                
-                                                 <option value="03.Leding Meteran">03.Leding Meteran</option>               
-                                                 <option value="04.Leding Eceran">04.Leding Eceran</option>   
-                                                 <option value="05.Sumur Bor/Pompa">05.Sumur Bor/Pompa</option>               
-                                                 <option value="06.Sumur Terlindung">06.Sumur Terlindung</option>  
-                                                 <option value="07.Sumur Tak Terlindung">07.Sumur Tak Terlindung</option>
-                                                 <option value="08.Mata Air Terlindung">08.Mata Air Terlindung</option>  
-                                                 <option value="09.Mata Air Tak Terlindung">09.Mata Air Tak Terlindung</option>
-                                                 <option value="10.Air Sungai/Danau/Waduk">10.Air Sungai/Danau/Waduk</option>
-                                                 <option value="11.Air Hujan">11.Air Hujan</option>
-                                                 <option value="12.Lainnya">12.Lainnya</option>
-                                             </optgroup>                          
-                                      </select>
-                                </div>
-                            </div>
-
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="kode_pelanggan_air" name="kode_pelanggan_air" placeholder="Jika berkode 3 tulis No. ID Pelanggan(PAM/PDAM/BPAM/.....*)" required autofocus />
-                                    </div>
-                                </div>
-                            </div>
+                          
 
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                             <select class="selectpicker" name="cara_memperoleh_air">
-                                          <option value="">-----Cara Memperoleh Air-----</option>
-                                                 <option value="1.Membeli Eceran">1.Membeli Eceran</option>
-                                                 <option value="2.Langganan">2.Langganan</option>   
-                                                 <option value="3.Tidak Membeli">3.Tidak Membeli</option>               
-                                             </optgroup>
-                                        </select>
                                     </div>
-                                </div>
-                            
-
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                      <select class="selectpicker" name="sumber_penerangan">
-                                          <option value="">-----Sumber Pengerangan Utama-----</option>
-                                                 <option value="1.Listrik PLN">1.Listrik PLN</option>
-                                                 <option value="2.Listrik Non PLN">2.Listrik Non PLN</option>   
-                                                   <option value="3.Bukan Listrik">2.Bukan Listrik</option>              
-                                             </optgroup>
-                                        </select>
+                                    <div class="nk-int-st">
+                                         <font color="blue"><i>* Id PLN</i></font>
+                                        <input type="text" class="form-control" id="id_pln" name="id_pln" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['id_pln']?>" readonly required autofocus />
                                     </div>
-                                </div>
-
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="selectpicker" name="daya_terpasang">
-                                          <option value="">-----Daya Terpasang-----</option>
-                                                 <option value="1. 450watt">1. 450watt</option>
-                                                 <option value="2. 900watt">2. 900watt</option>                
-                                                 <option value="3. 1.300watt">3. 1.300watt</option>               
-                                                 <option value="4. 2.200watt">4. 2.200watt</option>   
-                                                 <option value="5. 2.200watt">5. 2.200watt</option>               
-                                                 <option value="6.Tanpa Meteran">6.Tanpa Meteran</option>  
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
+                                  </div>
                                 </div>
 
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -865,112 +802,75 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="id_pln" name="id_pln" placeholder="Id PLN" required autofocus />
+                                  <font color="blue"><i>* Bahan Bakar Memasak</i></font>
+                                        <input type="text" class="form-control" id="bahan_bakar_memasak" name="bahan_bakar_memasak" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['bahan_bakar_memasak']?>" readonly required autofocus />
                                     </div>
+                                  </div>
                                 </div>
-                            </div>
-
-                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="selectpicker" name="bahan_bakar_memasak">
-                                          <option value="">-----Bahan Bakar Memasak-----</option>
-                                                 <option value="1.Listrik">1.Listrik</option>
-                                                 <option value="2.Gas > 3 kg">2.Gas > 3 kg</option>                
-                                                 <option value="3.Gas 3 kg">3.Gas 3 kg</option>               
-                                                 <option value="4.Gas Kota/Biogas">4.Gas Kota/Biogas</option>   
-                                                 <option value="5.Minyak Tanah">5.Minyak Tanah</option>               
-                                                 <option value="6.Briket">6.Sumur Terlindung</option>  
-                                                 <option value="7.Arang">7.Arang</option>
-                                                 <option value="8.Kayu Bakar">8.Kayu Bakar</option>  
-                                                 <option value="9.Tidak Memasak dirumah">9.Tidak Memasak dirumah</option>
-                                             </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                            
-
                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" id="id_pelanggan_gas" name="id_pelanggan_gas" placeholder="Jika berkode 4 tulis No. ID Pelanggan(PGN/Gas Kota/.....*)" required autofocus />
+                                  <font color="blue"><i>* Id Pelanggan Gas</i></font>
+                                        <input type="text" class="form-control" id="id_pelanggan_gas" name="id_pelanggan_gas" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['id_pelanggan_gas']?>" readonly required autofocus />
                                     </div>
+                                  </div>
                                 </div>
-                            </div>
 
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                                   <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="selectpicker" name="fasilitas_bab">
-                                          <option value="">-----Fasilitas BAB-----</option>
-                                                 <option value="1.Sendiri">1.Sendiri</option>
-                                                 <option value="2.Bersama">2.Bersama</option>                
-                                                 <option value="3.Umum">3.Umum</option>          
-                                                 <option value="4.Tidak Ada">4.Tidak Ada</option>   
-                                             </optgroup>
-                                        </select>
                                     </div>
+                                    <div class="nk-int-st">
+                                  <font color="blue"><i>* Fasilitas BAB</i></font>
+                                        <input type="text" class="form-control" id="fasilitas_bab" name="fasilitas_bab" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['fasilitas_bab']?>" readonly required autofocus />
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
 
 
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                      <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                              <select class="selectpicker" name="jenis_kloset">
-                                          <option value="">-----Jenis Kloset-----</option>
-                                                 <option value="1.Leher Angsa">1.Leher Angsa</option>
-                                                 <option value="2.Plengsengan">2.Plengsengan</option>  
-                                                 <option value="3.Cemplung/cubluk">3.Cemplung/cubluk</option>               
-                                                 <option value="4.Tidak Pakai">4.Tidak Pakai</option>               
-                                             </optgroup>
-                                        </select>
                                     </div>
+                                    <div class="nk-int-st">
+                                  <font color="blue"><i>* Jenis_kloset</i></font>
+                                        <input type="text" class="form-control" id="jenis_kloset" name="jenis_kloset" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['jenis_kloset']?>" readonly required autofocus />
+                                    </div>
+                                  </div>
                                 </div>
-                            
 
 
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
+                                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                      <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-edit"></i>
-                                </div>
-                            <select class="selectpicker" name="tempat_PAT">
-                                          <option value="">-----Tempat Pembuangan Akhir Tinja-----</option>
-                                                 <option value="1.Tangki">1.Tangki</option>
-                                                 <option value="2.SPAL">2.SPAL</option>                
-                                                 <option value="3.Lubang Tanah">3.Lubang Tanah</option>               
-                                                 <option value="4.Kolam/Sawah/Sungai">4.Kolam/Sawah/Sungai</option>   
-                                                 <option value="5.Pantai/Tanah">5.Pantai/Tanah</option>    
-                                                  <option value="6.Pantai/Tanah">6.Lainnya</option>           
-                                             </optgroup>
-                                        </select>
                                     </div>
+                                    <div class="nk-int-st">
+                                  <font color="blue"><i>* Tempat Pembuangan Akhir Tinja</i></font>
+                                        <input type="text" class="form-control" id="tempat_PAT" name="tempat_PAT" placeholder="Status Bangunan"  value="<?php echo $keterangan_perumahan[0]['tempat_PAT']?>" readonly required autofocus />
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
+
                      <br>
-                     <font color="red"><i>* Wajib diisi</i></font>
                   </div>
                </div>
+            </div>
+             </div>
+            </div>
             </div>
              </div>
      </div>
      <br>
      <br>
-          <div class="container">
+      <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
@@ -984,188 +884,139 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                    <input type="text" class="form-control" id="hub_kepala_keluarga" name="hub_kepala_keluarga" placeholder="Status Hubungan Keluarga"  value="<?php echo $penduduk[0]['status_hubungan_keluarga']?>" readonly required autofocus />
+                                    <font color="blue"><i>* Hubungan Dengan Kepala Rumah Tangga</i></font>
+                                    <input type="text" class="form-control" id="hub_kepala_keluarga" name="hub_kepala_keluarga" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['hub_kepala_keluarga']?>" readonly required autofocus />
                                     </div>
                                 </div>
                               </div>
 
-                  
                             
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <div class="bootstrap-select fm-cmp-mg">
-                                      <select class="selectpicker" name="jenis_cacat">
-                                          <option value="">-----Jenis Cacat-----</option>
-                                                <option value="0.Tidak Cacat">0.Tidak Cacat</option>
-                                                <option value="01.Tuna Daksa/Cacat Tubuh">01.Tuna Daksa/Cacat Tubuh</option>
-                                                <option value="02.Tuna Netra/Buta">02.Tuna Netra/Buta</option>
-                                                <option value="03.Tuna Rungu">03.Tuna Rungu</option>
-                                                <option value="04.Tuna Wicara">04.Tuna Wicara</option>
-                                                <option value="05.Tuna Rungu & Wicara">05.Tuna Rungu & Wicara</option>
-                                                <option value="06.Tuna Netra & Cacat Tubuh">06.Tuna Netra & Cacat Tubuh</option>
-                                                <option value="07.Tuna Netra, Rungu & Wicara">07.Tuna Netra, Rungu & Wicara</option>
-                                                <option value="08.Tuna Rungu, Wicara & Cacat Tubuh">08.Tuna Rungu, Wicara & Cacat Tubuh</option>
-                                                <option value="09.Tuna Rungu, Wicara, Netra & Cacat Tubuh">09.Tuna Rungu, Wicara, Netra & Cacat Tubuh</option>
-                                                <option value="10.Cacat Mental retradasi">10.Cacat Mental retradasi</option>
-                                                <option value="11.Mantan Penderita Gangguan Jiwa">11.Mantan Penderita Gangguan Jiwa</option>
-                                                <option value="12.Cacat Fisik & Mental">12.Cacat Fisik & Mental</option>
-
-                                            </optgroup>
-                                        </select>
-                                </div>
-                            </div>
-                            </div>
-                        
-                
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                    <select class="selectpicker" name="penyakit_kronis">
-                                          <option value="">-----Penyakit Kronis-----</option>
-                                                <option value="0.Tidak Ada">0.Tidak Ada</option>
-                                                <option value="1.Hipertensi ( Tekanan Darah Tinggi)">1.Hipertensi ( Tekanan Darah Tinggi)</option>
-                                                <option value="2.Rematik">2.Rematik</option>
-                                                <option value="3.Asma">3.Asma</option>
-                                                <option value="4.Masalah Jantung">4.Masalah Jantung</option>
-                                                <option value="5.Diabetes(Kencing Manis)">5.Diabetes(Kencing Manis)</option>
-                                                <option value="6.Tuberculosis(TBC)">6.Tuberculosis(TBC)</option>
-                                                <option value="7.Stroke">7.Stroke</option>
-                                                <option value="8.Kanker atau Tomor Ganas">8.Kanker atau Tomor Ganas</option>
-                                                <option value="9.Lainya(gagal ginjal,paru-Paru Flek dan Sejenisnya">9.Lainya(gagal ginjal,paru-Paru Flek dan Sejenisnya</option>
-                                            </optgroup>
-                                        </select>
-                                </div>
-                            </div>
-                          </div>
-
-                  <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" placeholder="Jenjang Pendidikan"  value="<?php echo $penduduk[0]['pendidikan']?>" readonly required autofocus />
+                                    <font color="blue"><i>* Jenis Cacat</i></font>
+                                    <input type="text" class="form-control" id="jenis_cacat" name="jenis_cacat" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['jenis_cacat']?>" readonly required autofocus />
                                     </div>
                                 </div>
-                            </div>
-                      
-
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              </div>
+                        
+                
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Penyakit Kronis</i></font>
+                                    <input type="text" class="form-control" id="penyakit_kronis" name="penyakit_kronis" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['penyakit_kronis']?>" readonly required autofocus />
+                                    </div>
                                 </div>
-                                   <select class="selectpicker" name="lapangan_usaha">
-                                          <option value="">-----Lapangan Usaha-----</option>
-                                                <option value="1.Pertanian">1.Pertanian</option>
-                                                <option value="2.Holtikultura">2.Holtikultura</option>
-                                                <option value="3.Perkebunan">3.Perkebunan</option>
-                                                <option value="4.Perikanan Tangkap">3.Perikanan Tangkap</option>
-                                                <option value="5.Perikanan Budidaya">5.Perikanan Budidaya</option>
-                                                <option value="6Peternakan.">6Peternakan.</option>
-                                                <option value="7.Kehutanan & pertanian Lainya">7.Kehutanan & pertanian Lainya</option>
-                                                <option value="8.Pertambangan/Penggalian">8.Pertambangan/Penggalian</option>
-                                                <option value="9.Industri Pengolahan">9.Industri Pengolahan</option>
-                                                <option value="10.Listrik & Gas">10.Listrik & Gas</option>
-                                                <option value="11.Bangunan/Konstruksi">11.Bangunan/Konstruksi</option>
-                                                <option value="12.Perdagangan">12.Perdagangan</option>
-                                                <option value="13.Hotel & Rumah Makan">13.Hotel & Rumah Makan</option>
-                                                <option value="14.Trasnportasi & Pergudangan">14.Trasnportasi & Pergudangan</option>
-                                                <option value="15.Informasi & Komunikasi">15.Informasi & Komunikasi</option>
-                                                <option value="16.Keuangan & Asuransi">16.Keuangan & Asuransi</option>
-                                                <option value="17.Jasa Pendidikan">17.Jasa Pendidikan</option>
-                                                <option value="18.Jasa Kesehatan">18.Jasa Kesehatan</option>
-                                                <option value="19.Jasa Kemasyarakatan, Pemerintahan & Perseorangan">19.Jasa Kemasyarakatan, Pemerintahan & Perseorangan</option>
-                                                <option value="20.Pemulung">20.Pemulung</option>
+                              </div>
 
-                                            </optgroup>
-                                        </select>
+                    <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Jenjang Pendidikan</i></font>
+                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['jenjang_pendidikan']?>" readonly required autofocus />
+                                    </div>
                                 </div>
-                            </div>
+                              </div>
+                       
+
 
                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
-                                </div>
-                                   <select class="selectpicker" name="status_kedudukan">
-                                          <option value="">-----Status Kedudukan-----</option>
-                                                <option value="1.Berusaha Sendiri">1.Berusaha Sendiri</option>
-                                                <option value="2.Berusaha diBantu Buruh Tidak tetap/Tidak Dibayar">2.Berusaha diBantu Buruh Tidak tetap/Tidak Dibayar</option>
-                                                <option value="3.Buruh/Karyawan/Pegawai Swasta">3.Buruh/Karyawan/Pegawai Swasta</option>
-                                                <option value="3.PNS/TNI/Polri/BUMN/BUMD/Anggota Legislatif">3.PNS/TNI/Polri/BUMN/BUMD/Anggota Legislatif</option>
-                                                <option value="4.Pekerja Bebas Pertanian">4.Pekerja Bebas Pertanian</option>
-                                                <option value="5.Pekerja Bebas Non-Pertanian">5.Pekerja Bebas Non-Pertanian</option>
-                                                <option value="6.Pekerja Keluarga/Tidak Dibayar">6.Pekerja Keluarga/Tidak Dibayar</option>
-                                            </optgroup>
-                                        </select>
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Lapangan Usaha</i></font>
+                                    <input type="text" class="form-control" id="lapangan_usaha" name="lapangan_usaha" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['lapangan_usaha']?>" readonly required autofocus />
+                                    </div>
                                 </div>
                               </div>
-                            </div>
-
-                      
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="form-group">
-                            <font color="red">*KPS/KKS</font>
-                            <br>
-                            <input type="radio" value="Ya" checked="checked" id="KKS" name="KKS">Ya
-                            <input type="radio" value="Tidak" id="KKS" name="KKS">Tidak
-                           </div>
-                          </div>
+                       
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Status Kedudukan</i></font>
+                                    <input type="text" class="form-control" id="status_kedudukan" name="status_kedudukan" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['status_kedudukan']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
+                                                   
+                          <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Apakah Sudah Menerima KIS?</i></font>
+                                    <input type="text" class="form-control" id="KIS" name="KIS" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['KIS']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
                          
 
-                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="form-group">
-                            <font color="red">*KIS/PBI JKN</font>
-                            <br>
-                            <input type="radio" value="Ya" checked="checked" id="KIS" name="KIS">Ya
-                            <input type="radio" value="Tidak" id="KIS" name="KIS">Tidak
-                           </div>
-                          </div>
-                         
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Apakah Sudah Menerima KKS?</i></font>
+                                    <input type="text" class="form-control" id="KKS" name="KKS" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['KKS']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="form-group">
-                            <font color="red">*KIP/BSM</font>
-                            <br>
-                            <input type="radio" value="Ya" checked="checked" id="KIP" name="KIP">Ya
-                            <input type="radio" value="Tidak" id="KIP" name="KIP">Tidak
-                           </div>
-                          </div>   
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Apakah Sudah Menerima KIP?</i></font>
+                                    <input type="text" class="form-control" id="KIP" name="KIP" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['KIP']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
 
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="form-group">
-                            <font color="red">*RASKIN/RASTRA</font>
-                            <br>
-                            <input type="radio" value="Ya" checked="checked" id="RASKIN" name="RASKIN">Ya
-                            <input type="radio" value="Tidak" id="RASKIN" name="RASKIN">Tidak
-
-                            <input type="hidden" class="form-control" id="NO_KK" name="NO_KK" placeholder="Nomor KK" value="<?php echo $penduduk[0]['NO_KK']?>" readonly required autofocus />
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                    <font color="blue"><i>* Apakah Sudah Menerima RASKIN?</i></font>
+                                    <input type="text" class="form-control" id="KIP" name="KIP" placeholder="Status Hubungan Keluarga"  value="<?php echo $keterangan_sosial_ekonomi[0]['KIP']?>" readonly required autofocus />
+                                    </div>
+                                </div>
+                              </div>
 
                          </div>
                        </div>
                       </div>
-                      <font color="red"><i>* Wajib diisi</i></font>
                      </div>
                    </div>
                    <br>  
                   </div>
                 </div>
-               </div>
+              </div>
 
-    
-                <br>
-                <br>
-
-
- <div class="container">
+                 <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
@@ -1178,11 +1029,12 @@
                                     <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah Tabung Gas</option></i></font>
-                                        <input type="number" class="form-control" id="jml_tabung_gas" name="jml_tabung_gas" placeholder="Jumlah Tabung Gas" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah Tabung Gas</option></i></font>
+                                        <input type="number" class="form-control" id="jml_tabung_gas" name="jml_tabung_gas" placeholder="Jumlah Tabung Gas" value="<?php echo $kepemilikan_aset[0]['jml_tabung_gas']?>" readonly required autofocus />
                                     </div>
                                 </div>
                               </div>
+                       
                        
                        
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -1191,8 +1043,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah AC</option></i></font>
-                                        <input type="number" class="form-control" id="jml_AC" name="jml_AC" placeholder="jumlah AC" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah AC</option></i></font>
+                                        <input type="number" class="form-control" id="jml_AC" name="jml_AC" placeholder="jumlah AC" value="<?php echo $kepemilikan_aset[0]['jml_AC']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1203,12 +1055,13 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah pemanas air</option></i></font>
-                                        <input type="number" class="form-control" id="jml_pemanas_air" name="jml_pemanas_air" placeholder="jumlah pemanas_air" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah pemanas air</option></i></font>
+                                        <input type="number" class="form-control" id="jml_pemanas_air" name="jml_pemanas_air" placeholder="jumlah pemanas air" value="<?php echo $kepemilikan_aset[0]['jml_pemanas_air']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                          </div>
+                      
               
                       
                         <div class="row">
@@ -1218,8 +1071,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah telepon rumah</option></i></font>
-                                        <input type="number" class="form-control" id="jml_telepon_rumah" name="jml_telepon_rumah" placeholder="jumlah telepon_rumah" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah telepon rumah</option></i></font>
+                                        <input type="number" class="form-control" id="jml_telepon_rumah" name="jml_telepon_rumah" placeholder="jumlah telepon_rumah" value="<?php echo $kepemilikan_aset[0]['jml_telepon_rumah']?>" readonly required autofocus />
                                     </div>
                                 </div>
                           </div>
@@ -1231,8 +1084,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah televisi</option></i></font>
-                                        <input type="number" class="form-control" id="jml_televisi" name="jml_televisi" placeholder="jumlah televisi" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah televisi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_televisi" name="jml_televisi" placeholder="jumlah televisi" value="<?php echo $kepemilikan_aset[0]['jml_televisi']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1243,8 +1096,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah emas</option></i></font>
-                                        <input type="number" class="form-control" id="jml_emas" name="jml_emas" placeholder="jumlah emas" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah emas</option></i></font>
+                                        <input type="number" class="form-control" id="jml_emas" name="jml_emas" placeholder="jumlah emas" value="<?php echo $kepemilikan_aset[0]['jml_telepon_rumah']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1258,8 +1111,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah komputer</option></i></font>
-                                        <input type="number" class="form-control" id="jml_komputer" name="jml_komputer" placeholder="jumlah komputer" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah komputer</option></i></font>
+                                        <input type="number" class="form-control" id="jml_komputer" name="jml_komputer" placeholder="jumlah komputer" value="<?php echo $kepemilikan_aset[0]['jml_komputer']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1271,8 +1124,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah sepeda</option></i></font>
-                                        <input type="number" class="form-control" id="jml_sepeda" name="jml_sepeda" placeholder="jumlah sepeda" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah sepeda</option></i></font>
+                                        <input type="number" class="form-control" id="jml_sepeda" name="jml_sepeda" placeholder="jumlah sepeda" value="<?php echo $kepemilikan_aset[0]['jml_sepeda']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1284,8 +1137,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah sepeda motor</option></i></font>
-                                        <input type="number" class="form-control" id="jml_spdmotor" name="jml_spdmotor" placeholder="jumlah spdmotor" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah sepeda motor</option></i></font>
+                                        <input type="number" class="form-control" id="jml_spdmotor" name="jml_spdmotor" placeholder="jumlah sepeda motor" value="<?php echo $kepemilikan_aset[0]['jml_spdmotor']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1298,8 +1151,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah mobil</option></i></font>
-                                        <input type="number" class="form-control" id="jml_mobil" name="jml_mobil" placeholder="jumlah mobil" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah mobil</option></i></font>
+                                        <input type="number" class="form-control" id="jml_mobil" name="jml_mobil" placeholder="jumlah mobil" value="<?php echo $kepemilikan_aset[0]['jml_mobil']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1311,7 +1164,7 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah perahu</option></i></font>
+                                        <font color="blue"><i><option value="">*Jumlah perahu</option></i></font>
                                         <input type="number" class="form-control" id="jml_perahu" name="jml_perahu" placeholder="jumlah perahu" required autofocus />
                                     </div>
                                 </div>
@@ -1323,8 +1176,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah motor tempel</option></i></font>
-                                        <input type="number" class="form-control" id="jml_motor_tempel" name="jml_motor_tempel" placeholder="jumlah motor_tempel" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah motor tempel</option></i></font>
+                                        <input type="number" class="form-control" id="jml_motor_tempel" name="jml_motor_tempel" placeholder="jumlah motor_tempel" value="<?php echo $kepemilikan_aset[0]['jml_motor_tempel']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1337,8 +1190,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah perahu motor</option></i></font>
-                                        <input type="number" class="form-control" id="jml_perahumotor" name="jml_perahumotor" placeholder="Jumlah ah Perahu Motor" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah perahu motor</option></i></font>
+                                        <input type="number" class="form-control" id="jml_perahumotor" name="jml_perahumotor" placeholder="Jumlah ah Perahu Motor" value="<?php echo $kepemilikan_aset[0]['jml_perahumotor']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1349,8 +1202,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah kapal</option></i></font>
-                                        <input type="number" class="form-control" id="jml_kapal" name="jml_kapal" placeholder="jumlah kapal" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah kapal</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kapal" name="jml_kapal" placeholder="jumlah kapal" value="<?php echo $kepemilikan_aset[0]['jml_kapal']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1362,9 +1215,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah lahan</option></i></font>
-                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" required autofocus />
-                                     <!--    <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" value="<?php echo $kepemilikan_aset[0]['jml_lahan']?>" readonly required autofocus /> -->
+                                        <font color="blue"><i><option value="">*Jumlah lahan</option></i></font>
+                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" value="<?php echo $kepemilikan_aset[0]['jml_lahan']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1377,8 +1229,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah rumah lain</option></i></font>
-                                        <input type="number" class="form-control" id="jml_rumahlain" name="jml_rumahlain" placeholder="jumlah rumahlain" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah rumah lain</option></i></font>
+                                        <input type="number" class="form-control" id="jml_rumahlain" name="jml_rumahlain" placeholder="jumlah rumahlain" value="<?php echo $kepemilikan_aset[0]['jml_rumahlain']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1390,8 +1242,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah sapi</option></i></font>
-                                        <input type="number" class="form-control" id="jml_sapi" name="jml_sapi" placeholder="jumlah sapi" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah sapi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_sapi" name="jml_sapi" placeholder="jumlah sapi" value="<?php echo $kepemilikan_aset[0]['jml_sapi']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1402,7 +1254,7 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah kerbau</option></i></font>
+                                        <font color="blue"><i><option value="">*Jumlah kerbau</option></i></font>
                                         <input type="number" class="form-control" id="jml_kerbau" name="jml_kerbau" placeholder="jumlah kerbau" required autofocus />
                                     </div>
                                 </div>
@@ -1416,8 +1268,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah kuda</option></i></font>
-                                        <input type="number" class="form-control" id="jml_kuda" name="jml_kuda" placeholder="jumlah kuda" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah kuda</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kuda" name="jml_kuda" placeholder="jumlah kuda" value="<?php echo $kepemilikan_aset[0]['jml_kuda']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1428,8 +1280,8 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah babi</option></i></font>
-                                        <input type="number" class="form-control" id="jml_babi" name="jml_babi" placeholder="jumlah babi" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah babi</option></i></font>
+                                        <input type="number" class="form-control" id="jml_babi" name="jml_babi" placeholder="jumlah babi" value="<?php echo $kepemilikan_aset[0]['jml_babi']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
@@ -1440,35 +1292,24 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah kambing</option></i></font>
-                                        <input type="number" class="form-control" id="jml_kambing" name="jml_kambing" placeholder="jumlah kambing" required autofocus />
+                                        <font color="blue"><i><option value="">*Jumlah kambing</option></i></font>
+                                        <input type="number" class="form-control" id="jml_kambing" name="jml_kambing" placeholder="jumlah kambing" value="<?php echo $kepemilikan_aset[0]['jml_kambing']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>
                           </div>
                       <!--   </div> -->
                      <br>
-                     <font color="red"><i>* Wajib diisi</i></font>
                  </div>
-                          <!-- </div>    
-                         </div>
-                       </div> -->
-                     <!--   <br>
-                       <br> -->
-                             <center>
-                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListPenduduk')?>"class="btn btn-danger">Back</a></td>
-                        </center>
-                    <br>
-                     </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        <!--     </div>
-            </div> -->
-            <br>
-            <br>
+               </div>
+             </div>
+           </div>
+         </div>
+         <br>
+         <br>
+
+
+
             
         
 

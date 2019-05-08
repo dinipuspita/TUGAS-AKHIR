@@ -9,7 +9,7 @@ class User extends CI_Model{
 		$this->db->from('login');
 		$this->db->where('username', $username);
 		$this->db->where('password', MD5($password));
-		
+
 		$query = $this->db->get();
 		
 		if($query->num_rows()==1){

@@ -348,12 +348,7 @@
                                     </select>
                               </div>
                             </div>  
-                              <Select id="colorselector">
-                                <option value="danger">its danger</option>
-                                 <option value="red">Red</option>
-                                 <option value="yellow">Yellow</option>
-                                 <option value="blue">Blue</option>
-                              </Select>
+                
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
@@ -406,46 +401,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '2') { ?> 
-                                        <?php $no=1; ?>
-                                           <?php foreach ($surat as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td><?php echo $key['NIK'] ?></td>
-                                          <td><?php echo $key['nama_penduduk'] ?></td>
-                                          <td><?php echo $key['tanggal_surat'] ?></td>
-                                          <td><?php echo $key['keterangan'] ?></td>
-                                          <td><?php echo $key['status_surat'] ?></td>
+
+
                                      
-                                         
-                                          
-                                          
-                                          <td>
-                                            <?php if($key['status_surat']=='Menunggu') { ?>
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/konfirmasi/' .$key['id_surat'])?>" class="btn btn-warning">Konfirmasi<span class="glyphicon glyphicon-ok"></a>
-                                            <?php } ?>
-                                            <?php if($key['status_surat']=='Diterima') { ?>                              
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/update/'.$key['id_surat'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
-
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/delete/' .$key['id_surat'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
-
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/report/' .$key['id_surat'])?>" class="btn btn-success" id="Btn" onclick="myFunction()">Print <span class="glyphicon glyphicon-print"></span></a>
-                                            <?php } ?>
-                                          </td>
-
-                                      </div> 
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
-                                          <?php } } ?>
-
-
-
-                                       <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
                                         <?php $no=1; ?>
                                            <?php foreach ($suratByDinsos as $key) {
                                         ?>
@@ -486,8 +444,7 @@
 
 
                                          
-                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
+                                      
                                           <th>No</th>
                                           <th>NIK</th>
                                           <th>Nama Penduduk</th>
@@ -501,7 +458,6 @@
                                           <th>Tanggungan Keluarga</th>
                                           <th>Luas Lahan</th>
                                           <th>Options</th>
-                                             <?php } } ?>
                                       </tr>
                                   </tfoot>
                                 </table>
@@ -509,270 +465,11 @@
                               </div>
                             </div>
                           </div>
-                    
-
-            <div class="card-body colors" id="yellow" style="display:none">
-                              <div class="table table-responsive">
-                                <table class="table" id="example1">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>Tanggal Surat</th>
-                                            <th>Keterangan</th>
-                                            <th>Status</th>
-                                            <th>Desa</th>
-                                            <th>Usia</th>
-                                            <th>Pendidikan</th>
-                                            <th>Pendapatan</th>
-                                            <th>Tanggungan Keluarga</th>
-                                            <th>Luas Lahan</th>
-
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                        <?php $no=1; ?>
-                                           <?php foreach ($suratByDinsos as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td id="nik"><?php echo $key['NIK'] ?></td>
-                                          <td id="nama_penduduk"><?php echo $key['nama_penduduk'] ?></td>
-                                          <td id="tanggal_surat"><?php echo $key['tanggal_surat'] ?></td>
-                                          <td id="keterangan"><?php echo $key['keterangan'] ?></td>
-                                          <td id="persetujuan"><?php echo $key['persetujuan'] ?></td>
-                                          <td id="nama_desa"><?php echo $key['nama_desa'] ?></td>
-                                          <td id="usia"><?php echo $key['usia'] ?> Tahun</td>
-                                          <td id="pendidikan"><?php echo $key['pendidikan'] ?></td>
-                                          <td id="pendapatan"><?php echo $key['pendapatan'] ?></td>
-                                          <td id="tanggungan_keluarga"><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
-                                          <td id="jumlah_lahan"><?php echo $key['jml_lahan'] ?> Meter</td>
-                                      
-                                          
-                                        <td>
-                                        <?php if($key['persetujuan']=='Belum Disetujui') { ?>
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
-                                            <?php } ?>   
-                                        <?php if($key['persetujuan']=='Disetujui') { ?>                              
-                                              <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
-                                        <?php } ?>  
-                                        </td>
-                                      
-                              </div> 
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
-
-                                    </tbody>
-                                    <tfoot>
-                                      <tr>
-
-                                         
-                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                          <th>No</th>
-                                          <th>NIK</th>
-                                          <th>Nama Penduduk</th>
-                                          <th>Tanggal Surat</th>
-                                          <th>Keterangan</th>
-                                          <th>Status</th>
-                                          <th>Desa</th>
-                                          <th>Usia</th>
-                                          <th>Pendidikan</th>
-                                          <th>Pendapatan</th>
-                                          <th>Tanggungan Keluarga</th>
-                                          <th>Luas Lahan</th>
-                                          <th>Options</th>
-                                             <?php } } ?>
-                                      </tr>
-                                  </tfoot>
-                                </table>
-                                </div>
-                              </div>
-
-                            
-                     
-              
-
-
-   <div class="card-body colors" id="blue" style="display:none">
-                              <div class="table table-responsive">
-                                <table class="table" id="example2">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>Tanggal Surat</th>
-                                            <th>Keterangan</th>
-                                            <th>Status</th>
-                                            <th>Desa</th>
-                                            <th>Usia</th>
-                                            <th>Pendidikan</th>
-                                            <th>Pendapatan</th>
-                                            <th>Tanggungan Keluarga</th>
-                                            <th>Luas Lahan</th>
-
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                        <?php $no=1; ?>
-                                           <?php foreach ($suratByDinsos as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td id="nik"><?php echo $key['NIK'] ?></td>
-                                          <td id="nama_penduduk"><?php echo $key['nama_penduduk'] ?></td>
-                                          <td id="tanggal_surat"><?php echo $key['tanggal_surat'] ?></td>
-                                          <td id="keterangan"><?php echo $key['keterangan'] ?></td>
-                                          <td id="persetujuan"><?php echo $key['persetujuan'] ?></td>
-                                          <td id="nama_desa"><?php echo $key['nama_desa'] ?></td>
-                                          <td id="usia"><?php echo $key['usia'] ?> Tahun</td>
-                                          <td id="pendidikan"><?php echo $key['pendidikan'] ?></td>
-                                          <td id="pendapatan"><?php echo $key['pendapatan'] ?></td>
-                                          <td id="tanggungan_keluarga"><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
-                                          <td id="jumlah_lahan"><?php echo $key['jml_lahan'] ?> Meter</td>
-                                      
-                                          
-                                        <td>
-                                        <?php if($key['persetujuan']=='Belum Disetujui') { ?>
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
-                                            <?php } ?>   
-                                        <?php if($key['persetujuan']=='Disetujui') { ?>                              
-                                              <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
-                                        <?php } ?>  
-                                        </td>
-                                      
-                              </div> 
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
-
-                                    </tbody>
-                                    <tfoot>
-                                      <tr>
-
-                                         
-                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                          <th>No</th>
-                                          <th>NIK</th>
-                                          <th>Nama Penduduk</th>
-                                          <th>Tanggal Surat</th>
-                                          <th>Keterangan</th>
-                                          <th>Status</th>
-                                          <th>Desa</th>
-                                          <th>Usia</th>
-                                          <th>Pendidikan</th>
-                                          <th>Pendapatan</th>
-                                          <th>Tanggungan Keluarga</th>
-                                          <th>Luas Lahan</th>
-                                          <th>Options</th>
-                                             <?php } } ?>
-                                      </tr>
-                                  </tfoot>
-                                </table>
-                                </div>
-                              </div>
-
-                                 <div class="card-body colors" id="danger" style="display:none">
-                              <div class="table table-responsive">
-                                <table class="table" id="example3">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>NIK</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>Tanggal Surat</th>
-                                            <th>Keterangan</th>
-                                            <th>Status</th>
-                                            <th>Desa</th>
-                                            <th>Usia</th>
-                                            <th>Pendidikan</th>
-                                            <th>Pendapatan</th>
-                                            <th>Tanggungan Keluarga</th>
-                                            <th>Luas Lahan</th>
-
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                        <?php $no=1; ?>
-                                           <?php foreach ($suratByDinsos as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td id="nik"><?php echo $key['NIK'] ?></td>
-                                          <td id="nama_penduduk"><?php echo $key['nama_penduduk'] ?></td>
-                                          <td id="tanggal_surat"><?php echo $key['tanggal_surat'] ?></td>
-                                          <td id="keterangan"><?php echo $key['keterangan'] ?></td>
-                                          <td id="persetujuan"><?php echo $key['persetujuan'] ?></td>
-                                          <td id="nama_desa"><?php echo $key['nama_desa'] ?></td>
-                                          <td id="usia"><?php echo $key['usia'] ?> Tahun</td>
-                                          <td id="pendidikan"><?php echo $key['pendidikan'] ?></td>
-                                          <td id="pendapatan"><?php echo $key['pendapatan'] ?></td>
-                                          <td id="tanggungan_keluarga"><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
-                                          <td id="jumlah_lahan"><?php echo $key['jml_lahan'] ?> Meter</td>
-                                      
-                                          
-                                        <td>
-                                        <?php if($key['persetujuan']=='Belum Disetujui') { ?>
-                                              <a href="<?php echo base_url('index.php/ListFilterSurat/persetujuan/' .$key['id_surat'])?>" class="btn btn-success">Setujui <span class="glyphicon glyphicon-ok"></a>
-                                            <?php } ?>   
-                                        <?php if($key['persetujuan']=='Disetujui') { ?>                              
-                                              <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
-                                        <?php } ?>  
-                                        </td>
-                                      
-                              </div> 
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
-
-                                    </tbody>
-                                    <tfoot>
-                                      <tr>
-
-                                         
-                                         <?php foreach ($user as $key) { ?>
-                                         <?php if($key['level'] == '1') { ?> 
-                                          <th>No</th>
-                                          <th>NIK</th>
-                                          <th>Nama Penduduk</th>
-                                          <th>Tanggal Surat</th>
-                                          <th>Keterangan</th>
-                                          <th>Status</th>
-                                          <th>Desa</th>
-                                          <th>Usia</th>
-                                          <th>Pendidikan</th>
-                                          <th>Pendapatan</th>
-                                          <th>Tanggungan Keluarga</th>
-                                          <th>Luas Lahan</th>
-                                          <th>Options</th>
-                                             <?php } } ?>
-                                      </tr>
-                                  </tfoot>
-                                </table>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                       </div>
+                        </div>
                       </div>
 
-
+                    
+                    
                        
 
          <!-- Footer -->
@@ -866,27 +563,9 @@
 
    <script type="text/javascript">
    $(document).ready(function(){
-   $('#example').DataTable();
-   } );
+      var t = $('#example').DataTable();
+    } );
    </script> 
-
-  <script type="text/javascript">
-   $(document).ready(function(){
-   $('#example1').DataTable();
-   } );
-   </script>  
-
-  <script type="text/javascript">
-   $(document).ready(function(){
-   $('#example2').DataTable();
-   } );
-   </script>  
-
-  <script type="text/javascript">
-   $(document).ready(function(){
-   $('#example3').DataTable();
-   } );
-   </script>  
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -985,14 +664,6 @@
     </script>
 
 
-   <!--   <script type="text/javascript">
-      $(function() {
-      $('#colorselector').change(function(){
-        $('.colors').hide();
-        $('#' + $(this).val()).show();
-         });
-      });
-      <f/script> -->
              
      <script type="text/javascript">
       $(function() {
@@ -1003,7 +674,8 @@
       });
       </script>
       
-                             
+<script type="text/javascript">
+ </script>                         
 </body>
 
 </html>

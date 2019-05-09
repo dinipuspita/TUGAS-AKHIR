@@ -328,10 +328,19 @@
                                     <div class="breadcomb-icon">
                                         <i class="notika-icon notika-support"></i>
                                     </div>
+                                    <?php foreach ($user as $key) { ?>
+                                    <?php if($key['level'] == '1') { ?> 
                                     <div class="breadcomb-ctn">
-                                      <marquee>  <h2>Sistem Pelayanan Bantuan dan Pengajuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu<!-- Sistem Pelayanan Bantuan dan Penganjuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu --></h2></marquee>
-                                        <!-- <p>Data Penduduk Kota Batu <span class="bread-ntd"></span></p> -->
+                                      <marquee>  <h2>Sistem Pelayanan Bantuan</h2></marquee>
+
                                     </div>
+                                    <?php } }?>
+                                    <?php foreach ($user as $key) { ?>
+                                    <?php if($key['level'] == '2') { ?> 
+                                    <div class="breadcomb-ctn">
+                                      <marquee>  <h2>Sistem Pengajuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu</h2></marquee>
+                                    </div>
+                                    <?php } }?>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">

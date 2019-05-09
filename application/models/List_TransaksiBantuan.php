@@ -37,7 +37,8 @@ class List_TransaksiBantuan extends CI_Model {
 	// }
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from transaksi_bantuan");
+		$query = $this->db->query("Select * from transaksi_bantuan as a join jenis_bantuan as b ON a.id_jenis_bantuan
+			=b.id_jenis_bantuan");
 		// $query = $this->db->query("Select * from kriteria_bantuan AS a Join jenis_bantuan AS b ON b.id_jenis_bantuan=a.id_jenis_bantuan");
 		return $query->result_array();
 	}

@@ -210,9 +210,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan/create"); ?>'>Tambah Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
-            <a class="collapse-item" href="utilities-color.html">Data Penerima Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat/tampilPengajuan"); ?>'>Data Pengajuan Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/index"); ?>'>Data Penerima Bantuan</a>
           </div>
         </div>
       </li>
@@ -349,8 +348,8 @@
                                         <i class="notika-icon notika-house"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Data Desa Kota Batu</h2>
-                                        <p>Data Desa Kota Batu <span class="bread-ntd"></span></p>
+                                        <h2>Data Penerima Bantuan</h2>
+                                        <p>Data Penerima Bantuan Kota Batu <span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
                             </div>

@@ -257,18 +257,18 @@ class List_FilterSurat extends CI_Model {
 	public function getDataKIS($kriteria_bantuan)
 	{
 	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima'"); 
-	    return $query->result();	   
+	    return $query->result_array();	   
 
 	}
 	public function getDataRASKIN($kriteria_bantuan)
 	{
-	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 75 and 90"); 
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where a.status_surat = 'Diterima' and b.usia BETWEEN 75 and 90"); 
 	    return $query->result();	   
 
 	}
 	public function getDataKIP($kriteria_bantuan)
 	{
-	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 7 and 18"); 
+	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 7 and 18 "); 
 	    return $query->result();	   
 
 	}

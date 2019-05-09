@@ -86,6 +86,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+             <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -194,7 +196,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat/tampilPengajuan"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/index"); ?>'>Data Penerima Bantuan</a>
           </div>
         </div>
@@ -295,7 +297,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?>  <span class=" glyphicon glyphicon-chevron-down"></span></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -315,19 +317,34 @@
           </ul>
 
         </nav>
+        <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Data Pengajuan Bantuan</h2>
+                                        <p>Data Pengajuan Bantuan Masyarakat Kota Batu<span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
 
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-           
-               <div align="right"><a href="<?php echo base_url('index.php/ListFilterSurat/create')?>"class="btn btn-primary">Filter Penduduk <span class="glyphicon glyphicon-filter"></a></span>
+                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          
-          </div>       
-
-                 
-                 
-
+          </div>
+          <br>
+  
 
            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -369,18 +386,18 @@
                     <br>
                     <br>
                     <br>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '1') { ?> 
-            
-   <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penerima Surat</h6>
-            </div>
-       
-          </div>       
+      
 
-            <div class="card-body colors"  id="KIS" style="display:none">
+      <?php echo form_open_multipart('ListTransaksiBantuan/create'); ?> 
+        
+      <?php echo validation_errors(); ?>
+
+   <!-- DataTales Example -->
+       <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Pengajuan Penerima Bantuan Kota Batu</h6>
+            </div>
+            <div class="card-body">
                               <div class="table table-responsive">
                                 <table class="table" id="example">
                                     <thead>
@@ -404,22 +421,22 @@
 
 
                                      
-                                        <?php $no=1; ?>
+                                     <!--    <?php $no=1; ?>
                                            <?php foreach ($suratByDinsos as $key) {
                                         ?>
                                         <tr>
                                           <td><?php echo $no ?></td>
-                                          <td id="nik"><?php echo $key['NIK'] ?></td>
-                                          <td id="nama_penduduk"><?php echo $key['nama_penduduk'] ?></td>
-                                          <td id="tanggal_surat"><?php echo $key['tanggal_surat'] ?></td>
-                                          <td id="keterangan"><?php echo $key['keterangan'] ?></td>
-                                          <td id="persetujuan"><?php echo $key['persetujuan'] ?></td>
-                                          <td id="nama_desa"><?php echo $key['nama_desa'] ?></td>
-                                          <td id="usia"><?php echo $key['usia'] ?> Tahun</td>
-                                          <td id="pendidikan"><?php echo $key['pendidikan'] ?></td>
-                                          <td id="pendapatan"><?php echo $key['pendapatan'] ?></td>
-                                          <td id="tanggungan_keluarga"><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
-                                          <td id="jumlah_lahan"><?php echo $key['jml_lahan'] ?> Meter</td>
+                                          <td><?php echo $key['NIK'] ?></td>
+                                          <td><?php echo $key['nama_penduduk'] ?></td>
+                                          <td><?php echo $key['tanggal_surat'] ?></td>
+                                          <td><?php echo $key['keterangan'] ?></td>
+                                          <td><?php echo $key['persetujuan'] ?></td>
+                                          <td><?php echo $key['nama_desa'] ?></td>
+                                          <td><?php echo $key['usia'] ?> Tahun</td>
+                                          <td><?php echo $key['pendidikan'] ?></td>
+                                          <td><?php echo $key['pendapatan'] ?></td>
+                                          <td><?php echo $key['tanggungan_keluarga'] ?> Orang</td>
+                                          <td><?php echo $key['jml_lahan'] ?> Meter</td>
                                       
                                           
                                         <td>
@@ -435,15 +452,13 @@
                               </div> 
                                         </tr> 
                                       <?php $no++ ?>
-                                      <?php } ?>
-                                        <?php } } ?>
+                                      <?php } ?> -->
+
 
                                     </tbody>
                                     <tfoot>
                                       <tr>
-
-
-                                         
+                                        
                                       
                                           <th>No</th>
                                           <th>NIK</th>
@@ -462,6 +477,7 @@
                                   </tfoot>
                                 </table>
                                 </div>
+                    <center><button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-send"></span></button></center>
                               </div>
                             </div>
                           </div>
@@ -469,7 +485,7 @@
                       </div>
 
                     
-                    
+             <?php echo form_close(); ?>         
                        
 
          <!-- Footer -->
@@ -562,13 +578,9 @@
    <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
 
    <script type="text/javascript">
-   $(document).ready(function(){
-      var t = $('#example').DataTable();
-    } );
-   </script> 
+    $(document).ready(function(){
+      var t = $('#example').DataTable();    
 
-<script type="text/javascript">
-  $(document).ready(function() {
     // Setup - add a text input to each footer cell
     $('#example tfoot th').each( function () {
         var title = $(this).text();
@@ -588,11 +600,9 @@
                     .search( this.value )
                     .draw();
             }
-        } );
-    } );
-} );
-</script>
- <script type="text/javascript">
+        });
+    });
+
       $('#kriteria').change(function(){
         let kriteria_bantuan = this.value
         let url = "<?= base_url() ?>index.php/ListFilterSurat/getKriteriaOtomatis";
@@ -609,10 +619,8 @@
       })
 
 
-    </script>
-
-    <script type="text/javascript">
       $('#kriteria').change(function(){
+        t.clear();
         $('.colors').hide();
         let kriteria_bantuan = this.value;
         if (kriteria_bantuan==863){
@@ -622,7 +630,9 @@
             dataType:"json",
             data:{kriteria_bantuan:kriteria_bantuan},
             success:function(response){
-              console.log(response);
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
             }
           })  
         }
@@ -633,7 +643,9 @@
             dataType:"json",
             data:{kriteria_bantuan:kriteria_bantuan},
             success:function(response){
-              console.log(response);
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
             }
           })
         }
@@ -644,7 +656,9 @@
             dataType:"json",
             data:{kriteria_bantuan:kriteria_bantuan},
             success:function(response){
-              console.log(response);
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
             }
           })
         }
@@ -655,27 +669,99 @@
             dataType:"json",
             data:{kriteria_bantuan:kriteria_bantuan},
             success:function(response){
-              console.log(response);
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
             }
           })
         }
       })
 
-    </script>
+      function addTable(data){
+        t.row.add([
+          data.id_surat,
+          data.NIK,
+          data.nama_penduduk,
+          data.tanggal_surat,
+          data.keterangan,
+          data.status_surat,
+          data.nama_desa,
+          data.usia,
+          data.pendidikan,
+          data.pendapatan,
+          data.tanggungan_keluarga,
+          data.jml_lahan,
+          // '<a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>'
+          '<input type="checkbox" class="editor-active">'
 
 
-             
-     <script type="text/javascript">
+
+                                      
+        ]).draw(false);
+      }
+
+
       $(function() {
       $('#colorselector').change(function(){
         $('.colors').hide();
         $('#' + $(this).val()).show();
          });
       });
+    });
+      </script>
+
+
+
+
+
+
+
+
+
+        <!-- chekbox -->
+
+      <script type="text/javascript">
+          $('#example').DataTable( {
+        dom: "Bfrtip",
+        ajax: "../php/checkbox.php",
+        columns: [
+            { data: "id_jenis_bantuan" },
+            { data: "NIK" },
+            {
+                data:   "active",
+                render: function ( data, type, row ) {
+                    if ( type === 'display' ) {
+                        return '<input type="checkbox" class="editor-active">';
+                    }
+                    return data;
+                },
+                className: "dt-body-center"
+            }
+        ],
+        select: {
+            style: 'os',
+            selector: 'td:not(:last-child)' // no row selection on last column
+        },
+        buttons: [
+            { extend: "create", editor: editor },
+            // { extend: "edit",   editor: editor },
+            // { extend: "remove", editor: editor }
+        ],
+        rowCallback: function ( row, data ) {
+            // Set the checked state of the checkbox in the table
+            $('input.editor-active', row).prop( 'checked', data.active == 1 );
+        }
+    } );
+ 
+    $('#example').on( 'change', 'input.editor-active', function () {
+        editor
+            .edit( $(this).closest('tr'), false )
+            .set( 'active', $(this).prop( 'checked' ) ? 1 : 0 )
+            .submit();
+    } );
+} );
       </script>
       
-<script type="text/javascript">
- </script>                         
 </body>
 
 </html>

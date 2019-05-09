@@ -240,7 +240,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bantuan</h6>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListBantuan"); ?>'>Data Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat"); ?>'>Data Pengajuan Bantuan</a>
+            <a class="collapse-item" href='<?php echo base_url("index.php/listFilterSurat/tampilPengajuan"); ?>'>Data Pengajuan Bantuan</a>
             <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/index"); ?>'>Data Penerima Bantuan</a>
           </div>
         </div>
@@ -581,14 +581,14 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                       <font color="blue"><i>* Hasil Verivali</i></font><br>
-                                        <input type="text" class="form-control" id="hasil_verivali" name="hasil_verivali" placeholder="Jumlah Keluarga"  value="<?php echo $keterangan_pengesahan[0]['hasil_verivali']?>" readonly required autofocus />
+                                        <font color="blue"><i>* Hasil Verivali</i></font>
+                                        <input type="text" class="form-control" id="hasil_verivali" name="hasil_verivali" placeholder="Hasil Verivali"  value="<?php echo $keterangan_pengesahan[0]['hasil_verivali']?>" readonly required autofocus />
                                     </div>
                                 </div>
                               </div>
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
-                                    <font color="blue"><i>* Tangal Pemeriksaan</i></font><br>
+                                    <font color="blue"><i>* Tanggal Pemeriksaan</i></font><br>
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-calendar"></i>
                                     </div>
@@ -596,15 +596,12 @@
                                        <input type="date" class="form-control" id="tanggal_pemeriksaan" name="tanggal_pemeriksaan" placeholder="Tanggal Verivali" value="<?php echo $keterangan_pengesahan[0]['tanggal_pemeriksaan']?>" readonly required autofocus />
                                     </div>
                                 </div>
-</div>
                               </div>  
-                          </div>
+                          </div> 
+                       </div>
+                    </div>
 
-
-                        <br>   
-              </div>
-            <br>
-            <br>
+                       
             <br>
             <br>
              <div class="container">
@@ -1301,10 +1298,13 @@
                       <!--   </div> -->
                      <br>
                  </div>
+                 <center>
+               <a href="<?php echo base_url('index.php/ListFormBantuan/')?>"class="btn btn-danger">Back</a></center>
                </div>
              </div>
            </div>
          </div>
+
          <br>
          <br>
 

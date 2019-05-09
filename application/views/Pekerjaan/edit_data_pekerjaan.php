@@ -78,6 +78,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+                <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -286,7 +288,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?><span class=" glyphicon glyphicon-chevron-down"></span></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -307,28 +309,52 @@
 
         </nav>
 
+             <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+ <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Edit Data Desa</h2>
+                                        <p>Edit Data Desa Kota Batu <span class="bread-ntd"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tambah Data Penduduk</h1><br>
         
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Edit Data Pekerjaan</h6>
             </div>
             <div class="card-body">
-
  <?php echo form_open('ListPekerjaan/update/'.$this->uri->segment(3)); ?>                  
       <?php echo validation_errors(); ?>   
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Data Bantuan Sosial</h2><br>
+                            <h2>Edit Data Pekerjaan</h2><br>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">

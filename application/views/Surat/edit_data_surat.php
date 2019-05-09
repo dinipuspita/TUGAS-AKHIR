@@ -88,6 +88,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+           <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -297,7 +299,9 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?>
+                   <span class=" glyphicon glyphicon-chevron-down"></span>
+                </h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -330,7 +334,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Form Edit Data Surat</h2>
+                                        <h2>Edit Data Surat</h2>
                                         <p>Edit Data Penerima Surat Keterangan Kurang Mampu<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
@@ -351,7 +355,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h4>Input Data Surat</h4><br>
+                            <h4>Edit Data Surat</h4><br>
                          <div class="row">                     
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <font color="red"><i><option value="">*Tanggal Surat</option></i></font>   
@@ -379,31 +383,32 @@
                     <br>
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
-              </div>
+       <!--        </div>
           </div>
         </div>
       </div>
     </div>
-                        <center>
-                            <br>
-                            <br>
+              -->           <center>
+                        
                              <center>
                             <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
-                            <a href="<?php echo base_url('index.php/ListSurat')?>"class="btn btn-danger">Back</a></td>
+                            <a href="<?php echo base_url('index.php/ListFilterSurat')?>"class="btn btn-danger">Back</a></td>
                         </center>
                     <br>
+                    <br><br><br>
+                    </div>
                                  </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                    <!--     </div>
                       </div>
                     </div>
                   </div>
-
+ -->
        
     <?php echo form_close(); ?>
-           <!-- Footer -->
+                <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -421,7 +426,6 @@
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->

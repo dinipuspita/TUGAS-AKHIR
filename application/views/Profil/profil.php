@@ -80,6 +80,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+             <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -288,7 +290,10 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?>
+                
+                <span class=" glyphicon glyphicon-chevron-down"></span>
+                </h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -325,7 +330,7 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Update Profil</h2>
+                                        <h2>Informasi Profil</h2>
                                         <p>Perbarui Data Profil<span class="bread-ntd"></span></p>
                                     </div>
                                 </div>
@@ -397,15 +402,37 @@
     <center>
         <a href="<?php echo base_url('index.php/Admin')?>"class="btn btn-danger">Back</a>
         <a href="listProfil/update/<?php echo $key['id_user'];  ?>"class="btn btn-success"><i class="fa fa-edit fa-fw" aria-hidden="true"></i>Update Profil</a></td>
-      
+        </center>
+        </center>
+        <div>
+          </div>
+          </div>
+          </div>
+          <br>
+          <br>
+          <br>
+       <!--  </div>
+          </div>
+       -->
 
+         <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
+            <span><div class="contact-dt">
+                          <h5>
+                            <ul class="contact-list widget-contact-list">
+                              <font color="blue">
+                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
+                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
+                            </ul>
+                          </font>
+                          </h5>
+                        </div></span>
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
 
     </div>
   </div>

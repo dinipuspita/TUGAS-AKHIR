@@ -79,6 +79,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+             <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -287,7 +289,13 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?> 
+             <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+                     <span class=" glyphicon glyphicon-chevron-down"></span>
+
+
+                </h5></font></span>
+              <!--     glyphicon glyphicon-chevron-down -->
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -308,6 +316,32 @@
 
         </nav>
         <!-- End of Topbar -->
+
+         <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                      <marquee>  <h2>Sistem Pelayanan Bantuan dan Pengajuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu<!-- Sistem Pelayanan Bantuan dan Penganjuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu --></h2></marquee>
+                                        <!-- <p>Data Penduduk Kota Batu <span class="bread-ntd"></span></p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
       
   <div class="wrapper">
     <div class="notika-status-area">
@@ -320,7 +354,7 @@
                                 <?php foreach ($jumlahdesa as $desa) { ?>
                                 <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $desa ?></span></li>
                                 <?php } ?></h3>
-                            <p>Desa</p>
+                            <p>Jumlah Desa</p>
                         </div>
                         <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
                     </div>
@@ -349,7 +383,7 @@
                                 <?php foreach ($jumlahpenduduk as $penduduk) { ?>
                                 <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $penduduk ?></span></li>
                                 <?php } ?></h3>
-                            <p>Penduduk</p>
+                            <p>Jumlah Penduduk</p>
                         </div>
                         <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
                     </div>
@@ -362,7 +396,7 @@
                                 <?php foreach ($jumlahbantuan as $bantuan) { ?>
                                 <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $bantuan ?></span></li>
                                 <?php } ?></h3>
-                            <p>Bantuan</p>
+                            <p>Jumlah Bantuan Sosial</p>
                         </div>
                         <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
                     </div>
@@ -377,7 +411,7 @@
                                 <?php foreach ($jumlahsurat as $surat) { ?>
                                 <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $surat ?></span></li>
                                 <?php } ?></h3>
-                            <p>Surat</p>
+                            <p>Jumlah Surat</p>
                         </div>
                         <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
                         </div>

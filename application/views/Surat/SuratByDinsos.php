@@ -388,7 +388,7 @@
                     <br>
       
 
-      <?php echo form_open_multipart('ListTransaksiBantuan/create'); ?> 
+      <?php echo form_open_multipart('ListTransaksiBantuan'); ?> 
         
       <?php echo validation_errors(); ?>
 

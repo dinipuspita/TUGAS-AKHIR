@@ -155,5 +155,43 @@ class listFormBantuan extends CI_Controller {
 
 		$this->load->view('FormBantuan/Tampil_PerNIK', $data);
 	}
+		public function delete($id)
+	{
+		$this->load->model('List_FormBantuan');
+		$this->List_FormBantuan->delete($id);
+		redirect('listFormBantuan','refresh');
+	}
+	public function laporanPenerimaBantuan()
+	{
+		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');	
+	
+	
+		$this->load->model('list_desa');
+		$data["desa"] = $this->list_desa->getTampilDesa2();
+
+		$this->load->model('list_Penduduk');
+		$data["penduduk"] = $this->list_Penduduk->getTampil();
+
+		$this->load->model('list_TransaksiBantuan');
+		$data["transaksi_bantuan"] = $this->list_TransaksiBantuan->getTampil();
+		$data['user'] = $this->list_desa->getUser();
+
+		if($this->form_validation->run() == FALSE) {
+			$this->load->view('Surat/view_laporan',$data);
+		}else{
+			$this->load->model('List_FormBantuan');
+			$data["transaksi_bantuan"] = $this->List_FormBantuan->getReportLaporanDinsos();
+			if (empty($data['transaksi_bantuan'])) {
+				echo "<script> alert('Maaf, Data Surat di Desa Tersebut Kosong');</script>";
+				$this->load->view('Surat/view_laporan',$data);
+			} else {
+				$this->load->library('pdf');
+				$this->pdf->load_view('Surat/print_laporanDinsos',$data);
+			}
+			// $this->load->view('Laporan/print_laporan',$data);
+		}
+
+	}
+
 
 }

@@ -399,7 +399,7 @@
             </div>
             <div class="card-body">
                               <div class="table table-responsive">
-                                <table class="table" id="example">
+                                <table class="table table-striped table-bordered"" id="example">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -472,7 +472,7 @@
                                           <th>Pendapatan</th>
                                           <th>Tanggungan Keluarga</th>
                                           <th>Luas Lahan</th>
-                                          <th>Options</th>
+                                        
                                       </tr>
                                   </tfoot>
                                 </table>
@@ -535,7 +535,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
+   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -553,54 +553,151 @@
   <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
 
   <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
+  <!-- bootstrap JS
+  ============================================ -->
   <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
-    <!-- main JS
-        ============================================ -->
+  <!-- main JS
+  ============================================ -->
   <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
 
 
-   <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
-   <!-- Bootstrap Core JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-   <!-- Menu Plugin JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
-   <!--slimscroll JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
-   <!--Wave Effects -->
-   <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
-   <!-- Custom Theme JavaScript -->
-   <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
+  <!-- Bootstrap Core JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+  <!-- Menu Plugin JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
+  <!--slimscroll JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
+  <!--Wave Effects -->
+  <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
 
-   <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
-   <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
-   <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
+
+  <script src="<?php echo base_url() ?>assets/datatable/dataTables.select.min.js"></script>
 
    <script type="text/javascript">
     $(document).ready(function(){
-      var t = $('#example').DataTable();    
+      var t = $('#example').DataTable({
+        select:true
+      });
+
+      $('#kriteria').change(function(){
+        let kriteria_bantuan = this.value
+        let url = "<?= base_url() ?>index.php/ListFilterSurat/getKriteriaOtomatis";
+        $.ajax({
+          url:url,
+          type:"POST",
+          dataType:"json",
+          data:{kriteria_bantuan:kriteria_bantuan},
+          success:function(response){
+            $("#isi_kriteria").val(response[0].A);
+          }
+        })
+      })
+
+      $('#kriteria').change(function(){
+        t.clear();
+        $('.colors').hide();
+        let kriteria_bantuan = this.value;
+        if (kriteria_bantuan==863){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIP",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
+            }
+          })  
+        }
+        else if (kriteria_bantuan==864){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
+            }
+          })
+        }
+        else if (kriteria_bantuan==865){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKKS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
+            }
+          })
+        }
+        else if (kriteria_bantuan==866){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getRASKIN",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              for(i=0;i<response.length;i++){
+                addTable(response[i]);
+              }
+            }
+          })
+        }
+      })
+
+      function addTable(data){
+        t.row.add([
+          data.id_surat,
+          data.NIK,
+          data.nama_penduduk,
+          data.tanggal_surat,
+          data.keterangan,
+          data.status_surat,
+          data.nama_desa,
+          data.usia,
+          data.pendidikan,
+          data.pendapatan,
+          data.tanggungan_keluarga,
+          data.jml_lahan,
+          // '<a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>'
+          // '<input type="checkbox" class="editor-active">'
+
+
+
+                                      
+        ]).draw(false);
+      }
+
+    })
+    </script>
+      
+
+    
+
+</body>
+
+</html>
+
+<!-- var t = $('#example').DataTable({
+  select: true
+});
 
     // Setup - add a text input to each footer cell
     $('#example tfoot th').each( function () {
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
- 
-    // DataTable
-    var table = $('#example').DataTable();
- 
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
- 
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        });
     });
 
       $('#kriteria').change(function(){
@@ -615,7 +712,6 @@
             $("#isi_kriteria").val(response[0].A);
           }
         })
-
       })
 
 
@@ -692,7 +788,7 @@
           data.tanggungan_keluarga,
           data.jml_lahan,
           // '<a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>'
-          '<input type="checkbox" class="editor-active">'
+          // '<input type="checkbox" class="editor-active">'
 
 
 
@@ -759,10 +855,4 @@
             .set( 'active', $(this).prop( 'checked' ) ? 1 : 0 )
             .submit();
     } );
-} );
-      </script>
-      
-</body>
-
-</html>
-
+} ); -->

@@ -30,6 +30,7 @@ class ListFilterSurat extends CI_Controller {
 		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos();
 		$data['user'] = $this->list_FilterSurat->getUser();
 		$data["jenis_bantuan"] = $this->list_FilterSurat->getTampilBantuan();
+		$data['desa'] = $this->list_FilterSurat->getTampilDesa2();
 
 		$this->load->view('Surat/Surat', $data);	
 	}
@@ -191,6 +192,31 @@ class ListFilterSurat extends CI_Controller {
 		$data["jenis_bantuan"] = $this->list_FilterSurat->getTampilBantuan();
 
 		$this->load->view('Surat/SuratByDinsos', $data);	
+	}
+	public function laporanSuratDinsos()
+	{
+		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');	
+	
+	
+		$this->load->model('list_desa');
+		$data["desa"] = $this->list_desa->getTampilDesa2();
+		$data['user'] = $this->list_desa->getUser();
+
+		if($this->form_validation->run() == FALSE) {
+			$this->load->view('Surat/view_laporan',$data);
+		}else{
+			$this->load->model('list_FilterSurat');
+			$data["surat"] = $this->list_FilterSurat->getReportSuratDinsos();
+			if (empty($data['surat'])) {
+				echo "<script> alert('Maaf, Data Surat di Desa Tersebut Kosong');</script>";
+				$this->load->view('Surat/view_laporan',$data);
+			} else {
+				$this->load->library('pdf');
+				$this->pdf->load_view('Surat/print_laporanDinsos',$data);
+			}
+			// $this->load->view('Laporan/print_laporan',$data);
+		}
+
 	}
 
 }

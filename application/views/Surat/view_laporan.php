@@ -56,7 +56,6 @@
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
-  
 
 <body id="page-top">
 
@@ -85,8 +84,8 @@
         <div class="sidebar-brand-icon rotate-n-15">
        
         </div>
-          <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
-        <?php $session_data = $this->session->userdata('logged_in'); ?>
+        <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+             <?php $session_data = $this->session->userdata('logged_in'); ?>
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
@@ -146,30 +145,6 @@
         </div>
       </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-     <!--  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Bantuan</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bantuan</h6>
-            <a class="collapse-item" href='<?php echo base_url("index.php/"); ?>'">Data Form Bantuan</a>
-            <a class="collapse-item" href='<?php echo base_url("index.php/ListFormBantuan/create"); ?>'">Form Bantuan</a>
-          </div>
-        </div>
-      </li> -->
-
-
-      
-   <!-- Nav Item - Charts -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href='<?php echo base_url("index.php/ListKeteranganPerumahan/create"); ?>'>
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Form Bantuan</span></a>
-      </li>
- -->
       <?php } } ?>
 
       <!-- Divider -->
@@ -224,6 +199,7 @@
           </div>
         </div>
       </li>
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -315,12 +291,17 @@
 
            
 
-
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?><span class=" glyphicon glyphicon-chevron-down"></span></h5></font></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?> 
+             <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+                     <span class=" glyphicon glyphicon-chevron-down"></span>
+
+
+                </h5></font></span>
+              <!--     glyphicon glyphicon-chevron-down -->
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -341,11 +322,8 @@
 
         </nav>
 
-       
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
 
- <div class="breadcomb-area">
+        <div class="breadcomb-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -354,17 +332,12 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-house"></i>
+                                        <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Data Penerima Bantuan</h2>
-                                        <p>Data Penerima Bantuan Kota Batu <span class="bread-ntd"></span></p>
+                                        <h2>Laporan Penerima Surat Setiap Desa</h2>
+                                        <p>Laporan Penerima Surat Setiap Desa di Kota Batu<span class="bread-ntd"></span></p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <div class="breadcomb-report">
-                                    <a href="<?php echo base_url('index.php/ListFilterSurat/laporanSuratDinsos')?>" button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button></a>
                                 </div>
                             </div>
                         </div>
@@ -373,63 +346,150 @@
             </div>
         </div>
     </div>
+     
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+        
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Desa Kota Batu</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Cetak Laporan</h6>
             </div>
             <div class="card-body">
-                              <div class="table table-responsive">
-                                <table class="table" id="example">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Penduduk</th>
-                                            <th>NIK</th>
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no=1; ?>
-                                           <?php foreach ($pengenalan_tempat as $key) {
-                                        ?>
-                                        <tr>
-                                          <td><?php echo $no ?></td>
-                                          <td><?php echo $key['nama_penduduk'] ?></td>
-                                          <td><?php echo $key['NIK'] ?></td>
-                                          <td>
-                                          <a href="<?php echo base_url('index.php/ListFormBantuan/tampil/'.$key['NIK'])?>" class="btn btn-info">Detail Data<span class="glyphicon glyphicon-pencil"></span></a>
-                                           <a href="<?php echo base_url('index.php/ListFormBantuan/delete/' .$key['NIK'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-                                          </td>  
-                                        </tr> 
-                                      <?php $no++ ?>
-                                      <?php } ?>
-                                    </tbody>
-                                </table>
+     <?php echo form_open_multipart('ListFormBantuan/laporanPenerimaBantuan'); ?>
+        
+        <?php echo validation_errors(); ?>
+                  
+               
+                <!-- 
+                <?php foreach ($last as $key){
+                    $id = $key['id_surat']+1;                    
+                }
+                 ?>               
+
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="id_surat" name="id_surat" value="<?php echo $id ?>">
+                </div>
+                  
+    -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 </div>
+                                 <font color="red"><i><option value="">*Pilih Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div> 
+                            <br>  
+<!--                             <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                             <font color="red"><i><option value="">*Pilih Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_desa; ?>"><?php echo $data->nama_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>   
+                            <br> -->
+                           <!--  <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                             <font color="red"><i><option value="">*Pilih Kepala Desa</option></i></font>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select name="id_kepala_desa" class="form-control">
+                                        <option value="">-----Pilih-----</option>
+                                            <?php foreach ($kepala_desa as $data ){ ?>
+                                            <option value="<?php echo $data->id_kepala_desa; ?>"><?php echo $data->nama_kepala_desa; ?>
+                                         </option>
+                                             <?php } ?>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>   
+                            <br>
+                            <div class="row">                       
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <font color="red"><i><option value="">*Tanggal Surat</option></i></font> 
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                      <i class="notika-icon notika-calendar"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" placeholder="Tanggal Surat" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>  
+                       <div class="row">                     
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <font color="red"><i><option value="">*Keterangan Surat</option></i></font>   
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                      <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" required autofocus />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>   
+                    <br>
+                     <font color="red"><i>* Wajib diisi</i></font> -->
+               </div>
+          </div>
+      </div>
+    </div>
+                        <center>
+                            <br>
+                            <br>
+                             <center>
+                            <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-ok"></span></button>
+                            <a href="<?php echo base_url('index.php/ListFilterSurat')?>"class="btn btn-danger">Back</a></td>
+                        </center>
+                    <br>
+                                 </div>
                               </div>
                             </div>
                           </div>
-                       </div>
- <!-- Footer -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+       
+    <?php echo form_close(); ?>
+        <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span><div class="contact-dt">
-                          <h5>
-                            <ul class="contact-list widget-contact-list">
-                              <font color="blue">
-                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
-                            </ul>
-                          </font>
-                          </h5>
-                        </div></span>
+            <span>Copyright &copy; Your Website 2019</span>
           </div>
         </div>
       </footer>
+      <!-- End of Footer -->
+
     </div>
     <!-- End of Content Wrapper -->
 
@@ -451,15 +511,13 @@
         <div class="modal-body">Anda Akan Meninggalkan Halaman Ini</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Ya</a>
+          <a class="btn btn-primary" href="<?php echo base_url('index.php/logout/out')?>">Iya</a>
         </div>
       </div>
     </div>
   </div>
 
-
- 
- <!-- Bootstrap core JavaScript-->
+  <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -507,6 +565,7 @@
    } );
    </script>   
 
+    
 
 </body>
 

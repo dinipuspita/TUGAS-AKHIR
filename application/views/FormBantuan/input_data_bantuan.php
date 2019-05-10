@@ -133,6 +133,8 @@
        
         </div>
         <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url() ?>assets/img/satu.png" width="50px" height="55px"   a href="<?php echo base_url('index.php/Admin')?>"</a></td></div>
+           <?php $session_data = $this->session->userdata('logged_in'); ?>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5><!-- Anda Login Sebagai  --><font color="white"><?php echo $session_data['username']; ?></h5></font></span>
           <div align="right"><h6><b>Dinas Sosial Kota Batu</b></h6>
       </a>
     </div>
@@ -435,13 +437,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                    <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Keluarga"  value="<?php echo $kepemilikan_aset[0]['tanggungan_keluarga']?>" readonly required autofocus />
+                                    <!-- <font color="blue"><i>* Jumlah Keluarga</i></font> -->
+                                    <input type="text" class="form-control" id="jumlah_keluarga" name="jumlah_keluarga" placeholder="Jumlah Keluarga"  value="<?php echo $kepemilikan_aset[0]['tanggungan_keluarga']?> Orang" readonly required autofocus />
                                     </div>
                                 </div>
                               </div>
@@ -530,8 +533,7 @@
                      <font color="red"><i>* Wajib diisi</i></font>
                </div>
           </div>
-      </div>
-     </div>
+   
      </div>
      <br>
      <br>

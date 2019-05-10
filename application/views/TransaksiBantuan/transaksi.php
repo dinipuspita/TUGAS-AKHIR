@@ -341,9 +341,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                     <a href="<?php echo base_url('index.php/ListTransaksiBantuan/create')?>" button data-toggle="tooltip" data-placement="left" title="Seleksi Penerima Bantuan" class="btn"><i class="notika-icon notika-edit"></i></button></a>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -377,9 +375,13 @@
                                           <td><?php echo $key['NIK'] ?></td>
                                           <td><?php echo $key['nama_bantuan'] ?></td>
                                           <td>
-                                            <a href="<?php echo base_url('index.php/ListTransaksiBantuan/update/'.$key['id_transaksi'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a>
+                                            <!-- <a href="<?php echo base_url('index.php/ListTransaksiBantuan/update/'.$key['id_transaksi'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a> -->
+
+                                            <a href="<?php echo base_url('index.php/ListFormBantuan/update/'.$key['NIK'])?>" class="btn btn-info">Edit Data Pendukung <span class="glyphicon glyphicon-pencil"></span></a>
+
 
                                             <a href="<?php echo base_url('index.php/ListTransaksiBantuan/delete/' .$key['id_transaksi'])?>" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></a>
+
 
                                                         </td>  
                                         </tr> 

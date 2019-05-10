@@ -276,7 +276,30 @@ class List_FormBantuan extends CI_Model {
 		$query = $this->db->query("Select * from keterangan_perumahan where NIK='$id'");
 		return $query->result_array();
 	}
+	public function delete($id)
+	{
+		$this->db->where('id_kepemilikan_aset', $id);
+		$this->db->delete('kepemilikan_aset');
 
+		$this->db->where('id_sosial_eko', $id);
+		$this->db->delete('keterangan_sosial_ekonomi');
+
+		$this->db->where('id_ket_perumahan', $id);
+		$this->db->delete('keterangan_perumahan');
+
+		$this->db->where('id_pengesahan', $id);
+		$this->db->delete('keterangan_pengesahan');
+
+		$this->db->where('id_pengenalan_tempat', $id);
+		$this->db->delete('pengenalan_tempat');
+	}
+	 public function getReportLaporanDinsos()
+	{
+	    
+		$id_desa = $this->input->post('id_desa');
+		$query = $this->db->query("Select * from transaksi_bantuan AS a Join penduduk AS b ON b.NIK=a.NIK join jenis_bantuan join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_transaksi DESC LIMIT 1'");
+		return $query->result_array();
+	}
 	
 
 

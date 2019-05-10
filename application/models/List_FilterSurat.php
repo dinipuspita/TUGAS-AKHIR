@@ -268,11 +268,24 @@ class List_FilterSurat extends CI_Model {
 	}
 	public function getDataKIP($kriteria_bantuan)
 	{
-	    $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 7 and 18 "); 
+
+	     $query = $this->db->query("Select * from surat AS A Join penduduk AS b ON b.NIK=A.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=A.NIK where status_surat = 'Diterima' and b.usia BETWEEN 7 and 18 "); 
 	    return $query->result();	   
 
 	}
-
+    public function getReportSuratDinsos()
+	{
+	
+		$id_desa = $this->input->post('id_desa');
+		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
+		return $query->result_array();
+	}
+		public function getTampilDesa2()
+	{
+		$query = $this->db->query("Select * from desa");
+		return $query->result();
+	}
+	
 
 
 }

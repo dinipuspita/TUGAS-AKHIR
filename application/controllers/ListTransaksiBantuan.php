@@ -81,7 +81,7 @@ class ListTransaksiBantuan extends CI_Controller {
 	{
 		$this->load->model('list_TransaksiBantuan');
 		$this->list_TransaksiBantuan->delete($id);
-		redirect('ListTrasnsaksiBantuan','refresh');
+		redirect('ListTransaksiBantuan','refresh');
 	}
 	
 }

@@ -9,20 +9,29 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard</title>
-  <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
+  <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <!--   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Datatable -->
   <link href="<?php echo base_url() ?>assets/datatable/datatables.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets/datatable/select.bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  
+
+   <link rel="stylesheet" href="/assets3/tablestrap/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/bootstrap-theme.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/datatables-bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/pnotify.custom.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/css/datatables.css" rel="stylesheet">
+   <link rel="stylesheet" href="/assets3/tablestrap/extras/TableTools/media/css/TableTools.css" rel="stylesheet">
+   
   <!-- animate CSS
     ============================================ -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/animate.css">
@@ -45,12 +54,18 @@
     ============================================ -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets2/css/responsive.css">
 
+  <style type="text/css">
+    .hide_coloumn {
+      display: none;
+    }
+  </style>
+
   <!-- modernizr JS
     ============================================ -->
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
 </head>
-  
+
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -139,6 +154,7 @@
         </div>
       </li>
 
+      
       <?php } } ?>
 
       <!-- Divider -->
@@ -194,7 +210,6 @@
         </div>
       </li>
 
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-table"></i>
@@ -243,6 +258,23 @@
             <i class="fa fa-bars"></i>
           </button>
 
+
+        <!--   <div align="right">
+            <span style="color:teal;font-size:12px;">Lembaga Swadaya Masyarakat (LSM) Jawa Timur Balaikota Amongtani Gedung B 
+                                    <p>Lantai 2, Jl.Panglima Sudirman No.507, Pesanggrahan Kec.Batu, Kota Batu, Jawa Timur 65314</div> -->
+
+          <!-- Topbar Search -->
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+ -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -268,17 +300,12 @@
 
            
 
+          
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url() ?>assets/img/logoakun.png" width="50px" height="55px"
                 <?php $session_data = $this->session->userdata('logged_in'); ?>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?> 
-             <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
-                     <span class=" glyphicon glyphicon-chevron-down"></span>
-
-
-                </h5></font></span>
-              <!--     glyphicon glyphicon-chevron-down -->
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h5>Anda Login Sebagai <font color="blue"><?php echo $session_data['username']; ?>  <span class=" glyphicon glyphicon-chevron-down"></span></h5></font></span>
              <!--    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
@@ -298,167 +325,123 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
-
-         <div class="breadcomb-area">
+        <div class="breadcomb-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="breadcomb-list">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-support"></i>
+                                        <i class="notika-icon notika-edit"></i>
                                     </div>
-                                    <?php foreach ($user as $key) { ?>
-                                    <?php if($key['level'] == '1') { ?> 
                                     <div class="breadcomb-ctn">
-                                      <marquee>  <h2>Sistem Pelayanan Bantuan</h2></marquee>
-
+                                        <h2>Data Pengajuan Bantuan</h2>
+                                        <p>Data Pengajuan Bantuan Masyarakat Kota Batu<span class="bread-ntd"></span></p>
                                     </div>
-                                    <?php } }?>
-                                    <?php foreach ($user as $key) { ?>
-                                    <?php if($key['level'] == '2') { ?> 
-                                    <div class="breadcomb-ctn">
-                                      <marquee>  <h2>Sistem Pengajuan Surat Keterangan Tidak Mampu Untuk Masyarakat di Kota Batu</h2></marquee>
-                                    </div>
-                                    <?php } }?>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+
+                      
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+          </div>
+          <br>
+  
+
+           <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list">
+                        <div class="basic-tb-hd">
+                        <div class="row">
+                           
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                        <select id="kriteria" class="form-control">
+                                        <option value="">Pilih Id Bantuan</option>
+                                            <?php foreach ($jenis_bantuan as $data ){ ?>
+                                            <option value="<?php echo $data->id_jenis_bantuan; ?>"><?php echo $data->id_jenis_bantuan; ?> | <?php echo $data->nama_bantuan; ?> <!-- | <?php echo $data->isi_kriteria; ?>
+                                         </option> -->
+                                             <?php } ?>
+                                    </select>
+                              </div>
+                            </div>  
+                
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                      <div class="nk-int-st">
+                                        <font color="red"><i><option value="">*Kriteria Bantuan</option></i></font>
+                                        <input type="text" class="form-control" id="isi_kriteria" name="isi_kriteria" placeholder="Isi Kriteria" required autofocus />
+                                    </div>
+                                </div>
+                          </div>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </option>
+     
+                    <br>
+                    <br>
+                    <br>
       
-  <div class="wrapper">
-    <div class="notika-status-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h3>
-                                <?php foreach ($jumlahdesa as $desa) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $desa ?></span></li>
-                                <?php } ?></h3>
-                            <p>Jumlah Desa</p>
-                        </div>
-                        <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
-                    </div>
-                </div>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '2') { ?> 
-                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h3>
-                                <?php foreach ($jumlahpendudukByDesa as $penduduk) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $penduduk ?></span></li>
-                                <?php } ?></h3>
-                            <p>Penduduk</p>
-                        </div>
-                        <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
-                    </div>
-                </div>
-                <?php } }?>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '1') { ?> 
-                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h3>
-                                <?php foreach ($jumlahpenduduk as $penduduk) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $penduduk ?></span></li>
-                                <?php } ?></h3>
-                            <p>Jumlah Penduduk</p>
-                        </div>
-                        <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
-                    </div>
-                </div>
-                <?php } }?>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                           <h3> 
-                                <?php foreach ($jumlahbantuan as $bantuan) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $bantuan ?></span></li>
-                                <?php } ?></h3>
-                            <p>Jumlah Bantuan Sosial</p>
-                        </div>
-                        <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
-                    </div>
-                </div>
 
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '2') { ?> 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h3>
-                                <?php foreach ($jumlahsurat as $surat) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $surat ?></span></li>
-                                <?php } ?></h3>
-                            <p>Jumlah Surat</p>
-                        </div>
-                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
-                        </div>
-                    </div>
-                <?php } }?>
-                <?php foreach ($user as $key) { ?>
-                <?php if($key['level'] == '1') { ?> 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h3>
-                                <?php foreach ($jumlahakun as $login) { ?>
-                                <i class="ti-arrow-up text-primary"></i> <span class="counter text-primary"><?php echo $login ?></span></li>
-                                <?php } ?></h3>
-                            <p>Akun Terdaftar</p>
-                        </div>
-                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
-                        </div>
-                    </div>
-                     <?php } }?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-      <!-- /.container-fluid
+      <!-- <?php echo form_open_multipart('ListTransaksiBantuan'); ?> -->
+        
+      <?php echo validation_errors(); ?>
 
+      <!-- DataTales Pengajuan -->
+      <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Data Pengajuan Penerima Bantuan Kota Batu</h6>
       </div>
-      <!-- End of Main Content -->
-       <?php foreach ($user as $key) { ?>
-       <?php if($key['level'] == '1') { ?> 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span><div class="contact-dt">
-                          <h5>
-                            <ul class="contact-list widget-contact-list">
-                              <font color="blue">
-                               <li>  <font color="blue"><i class="notika-icon notika-phone"> (0341) 592200</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-mail"> dinsos.batukota.go.id</i></li>
-                               <li>  <font color="blue"><i class="notika-icon notika-map"> Balai Kota Among Tani, Jl. Panglima Sudirman No.507, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur 65314</i></li>
-                            </ul>
-                          </font>
-                          </h5>
-                        </div>
-                      </span>
-                  </div>
-              </div>
-         </footer>
-        <?php } }?>
+            <div class="card-body">
+              <div class="table table-responsive">
+                <table class="table table-striped table-bordered" id="dataPengajuan">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIK</th>
+                            <th>Nama Penduduk</th>
+                            <th>Tanggal Surat</th>
+                            <th>Keterangan</th>
+                            <th>Status</th>
+                            <th>Desa</th>
+                            <th>Usia</th>
+                            <th>Pendidikan</th>
+                            <th>Pendapatan</th>
+                            <th>Tanggungan Keluarga</th>
+                            <th>Luas Lahan</th>
+                            <th>id_surat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-       <?php foreach ($user as $key) { ?>
-       <?php if($key['level'] == '2') { ?> 
-      <!-- Footer -->
+                    </tbody>
+                </table>
+              </div>
+                <center><button type="submit" class="btn btn-primary" id="btnSubmit"> Submit <span class="glyphicon glyphicon-send"></span></button></center>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+             <?php echo form_close(); ?>         
+                       
+
+         <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -473,20 +456,16 @@
                           </font>
                           </h5>
                         </div></span>
-                      </div>
-                    </div>
-                  </footer>
-                  <?php } }?>
+          </div>
+        </div>
+      </footer>
       <!-- End of Footer -->
 
-                </div>
+    </div>
     <!-- End of Content Wrapper -->
 
-              </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-     <a class="scroll-to-top rounded" href="#page-top">
+  </div>
+    <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
   
@@ -509,8 +488,7 @@
     </div>
   </div>
 
-
-  <!-- Bootstrap core JavaScript-->
+   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -523,23 +501,215 @@
   <!-- Page level plugins -->
   <script src="<?php echo base_url() ?>assets/vendor/chart.js/Chart.min.js"></script>
 
- <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
-  
-  <!-- counterup JS
-        ============================================ -->
- <script src="<?php echo base_url() ?>assets2/js/counterup/jquery.counterup.min.js"></script>
- <script src="<?php echo base_url() ?>assets2/js/counterup/waypoints.min.js"></script>
- <script src="<?php echo base_url() ?>assets2/js/counterup/counterup-active.js"></script>
-   
-  <!-- sparkline JS
-        ============================================ -->
- <script src="<?php echo base_url() ?>assets2/js/sparkline/jquery.sparkline.min.js"></script>
- <script src="<?php echo base_url() ?>assets2/js/sparkline/sparkline-active.js"></script>
-  
-  <!--  animation JS
-        ============================================ -->
- <script src="<?php echo base_url() ?>assets2/js/animation/animation-active.js"></script>
-  
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url() ?>assets/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/demo/chart-pie-demo.js"></script>
+
+  <script src="<?php echo base_url() ?>assets2/js/vendor/jquery-1.12.4.min.js"></script>
+  <!-- bootstrap JS
+  ============================================ -->
+  <script src="<?php echo base_url() ?>assets2/js/bootstrap.min.js"></script>
+  <!-- main JS
+  ============================================ -->
+  <script src="<?php echo base_url() ?>assets2/js/main.js"></script>   
+
+
+  <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>    
+  <!-- Bootstrap Core JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+  <!-- Menu Plugin JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/sidebar-nav.min.js"></script>
+  <!--slimscroll JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/jquery.slimscroll.js"></script>
+  <!--Wave Effects -->
+  <script src="<?php echo base_url() ?>assets/js/waves.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="<?php echo base_url() ?>assets/js/custom.min.js"></script>
+
+  <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/datatables.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/datatables.bootstrap.min.js"></script>
+
+  <script src="<?php echo base_url() ?>assets/datatable/dataTables.select.min.js"></script>      
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // Inisialisasi Datatable
+      let table = $('#dataPengajuan').DataTable({
+        select:true,
+        "columnDefs": [
+          { className: "hide_coloumn", "targets": [ 12 ] }
+        ]
+      });
+
+      let kriteria_bantuan; // Agar bisa digunakan untuk kirim ke ajax transaksi bantuan
+
+      // Untuk menganti keterangan sesuai kriteria bantuan
+      $('#kriteria').change(function(){
+        kriteria_bantuan = this.value
+        let url = "<?= base_url() ?>index.php/ListFilterSurat/getKriteriaOtomatis";
+        $.ajax({
+          url:url,
+          type:"POST",
+          dataType:"json",
+          data:{kriteria_bantuan:kriteria_bantuan},
+          success:function(response){
+            $("#isi_kriteria").val(response[0].A);
+          }
+        })
+      })
+
+      // ketika dpilih isi datatable dengan data yang diget
+      $('#kriteria').change(function(){
+        table.clear();
+        $('.colors').hide();
+        let kriteria_bantuan = this.value;
+        if (kriteria_bantuan==863){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIP",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              if (response==''){
+                alert('Data Kosong');
+                $('#dataPengajuan').find('tbody').html('');
+              }
+              else {
+                let ii=1; // untuk no biar bisa urut
+                for(i=0;i<response.length;i++){
+                  addTable(response[i], ii); // tambahkan ke table hasil dari setiap response
+                  ii++;
+                }
+              }
+            }
+          })  
+        }
+        else if (kriteria_bantuan==864){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKIS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              if (response==''){
+                alert('Data Kosong');
+                $('#dataPengajuan').find('tbody').html('');
+              }
+              else {
+                let ii=1; // untuk no biar bisa urut
+                for(i=0;i<response.length;i++){
+                  addTable(response[i], ii); // tambahkan ke table hasil dari setiap response
+                  ii++;
+                }
+              }
+            }
+          })
+        }
+        else if (kriteria_bantuan==865){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getKKS",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              if (response==''){
+                alert('Data Kosong');
+                $('#dataPengajuan').find('tbody').html('');
+              }
+              else {
+                let ii=1; // untuk no biar bisa urut
+                for(i=0;i<response.length;i++){
+                  addTable(response[i], ii); // tambahkan ke table hasil dari setiap response
+                  ii++;
+                }
+              }
+            }
+          })
+        }
+        else if (kriteria_bantuan==866){
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/getRASKIN",
+            type:"POST",
+            dataType:"json",
+            data:{kriteria_bantuan:kriteria_bantuan},
+            success:function(response){
+              if (response==''){
+                alert('Data Kosong');
+                $('#dataPengajuan').find('tbody').html('');
+              }
+              else {
+                let ii=1; // untuk no biar bisa urut
+                for(i=0;i<response.length;i++){
+                  addTable(response[i], ii); // tambahkan ke table hasil dari setiap response
+                  ii++;
+                }
+              }
+            }
+          })
+        }
+      })
+
+      // mengisi datatable dengan data yang dipilih berdasarkan response ajax
+      function addTable(data, i){
+        table.row.add([
+          i+'.',
+          data.NIK,
+          data.nama_penduduk,
+          data.tanggal_surat,
+          data.keterangan,
+          data.status_surat,
+          data.nama_desa,
+          data.usia,
+          data.pendidikan,
+          data.pendapatan,
+          data.tanggungan_keluarga,
+          data.jml_lahan,
+          data.id_surat
+        ]).draw(false);
+      }
+      // ketika button submit diklik jalankan function
+      $("#btnSubmit").on("click", function(){
+        let dataPengajuan = [];
+        let id_surat = [];
+
+        // tambahkan setiap element yang dipilih dengan colomun index 12 atau id_surat dan ambil textnya
+        // lalu masukkan ke dalam array dataPengajuan
+        $.each($("#dataPengajuan tr.selected"),function(){
+            dataPengajuan.push($(this).find('td').eq(1).text());
+            id_surat.push($(this).find('td').eq(12).text());
+        });
+        // Jika masih kosong jangan ditambahkan
+        if (dataPengajuan.length==0){
+          alert('Pilih Data Terlebih Dahulu');
+        }
+        // Jika ada isinya
+        else {
+          // Jalankan ajax dengan tipe data array
+          $.ajax({
+            url:"<?= base_url() ?>index.php/ListFilterSurat/tambahTransaksiBantuan",
+            type:"POST",
+            data:{
+              id_jenis_bantuan:kriteria_bantuan,
+              nik:dataPengajuan,
+              id_surat:id_surat
+            },
+            success:function(response){
+              if (response==1){
+                location.reload();
+                alert("Data Berhasil Ditambahkan");
+              }
+              else {
+                location.reload();
+                alert("Data Gagal Ditambahkan");
+              }
+            }
+          })
+        }
+      });
+    });
+
+  </script>
 </body>
 
 </html>

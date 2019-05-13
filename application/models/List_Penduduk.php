@@ -166,7 +166,7 @@ class List_Penduduk extends CI_Model {
 		$session_data = $this->session->userdata('logged_in');
 		$id_desa = $session_data['id_desa'];
 		
-		$query = $this->db->query("Select * from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NO_KK = $NO_KK");
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa  Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NO_KK = $NO_KK");
 		return $query->result_array();
 	}
 	

@@ -255,7 +255,7 @@ class ListFilterSurat extends CI_Controller {
 		
 		$this->load->model('list_FilterSurat');
 		$tambahkanData = $this->list_FilterSurat->insertBanyak('transaksi_bantuan', $transaksiBantuan);
-		$update = $this->list_FilterSurat->updateBanyak('surat', $updateSurat); //update 
+		$update = $this->list_FilterSurat->updateBanyak('surat', $updateSurat);
 		if ($update){
 			echo 1;
 		}

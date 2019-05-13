@@ -625,24 +625,16 @@
                          </div>
                        </div>
                      </div>
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                      <div class="form-group ic-cmp-int">
-                        <div class="form-ic-cmp">
-                          <i class="notika-icon notika-edit"></i>
-                        </div>
-                        <select class="selectpicker" name="status_hubungan_keluarga" required autofocus />
-                         <optgroup label="Status Hubungan Keluarga">
-                          <option value="">-----Status Hubungan Dalam Keluarga-----</option>
-                          <option value="1.Kepala Rumah Tangga">1.Kepala Rumah Tangga</option>
-                          <option value="2.Istri/Suami">2.Istri/Suami</option>
-                          <option value="3.Anak">3.Anak</option>
-                          <option value="4.Menantu">4.Menantu</option>
-                          <option value="5.Cucu">5.Cucu</option>
-                          <option value="6.Orang Tua/Mertua">6.Orang Tua/Mertua</option>
-                        </optgroup>
-                      </select>
-                    </div>
-                  </div>
+                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                  <i class="notika-icon notika-support"></i>
+                                </div>
+                                <div class="nk-int-st">
+                                  <input type="text" class="form-control" id="status_hubungan_keluarga" name="status_hubungan_keluarga" placeholder="Status Hubungan Keluarga"  value="<?php echo $penduduk[0]->status_hubungan_keluarga?>">
+                                </div>
+                              </div>
+                            </div>
 
                   <font color="red"><i>* Wajib diisi</i></font>
                 </div>

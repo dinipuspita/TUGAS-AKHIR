@@ -362,6 +362,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>NIK</th>
+                                            <th>Nama Penduduk</th>
                                             <th>Nama Bantuan</th>
                                             <th>Options</th>
                                         </tr>
@@ -373,7 +374,9 @@
                                         <tr>
                                           <td><?php echo $no ?></td>
                                           <td><?php echo $key['NIK'] ?></td>
+                                          <td><?php echo $key['nama_penduduk'] ?></td>
                                           <td><?php echo $key['nama_bantuan'] ?></td>
+
                                           <td>
                                             <!-- <a href="<?php echo base_url('index.php/ListTransaksiBantuan/update/'.$key['id_transaksi'])?>" class="btn btn-info">Update <span class="glyphicon glyphicon-pencil"></span></a> -->
 

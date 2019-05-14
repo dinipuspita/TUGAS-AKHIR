@@ -227,8 +227,9 @@ class List_FilterSurat extends CI_Model {
 	}
 	public function getHitungNoKK($nokk)
 	{
-	    $query = $this->db->query("SELECT NIK as nikk, COUNT(NIK) as jumlah FROM penduduk where NO_KK='$nokk'");
-	    return $query->result();
+		echo 'halo';die();
+	    $query = $this->db->query("SELECT * FROM penduduk where NO_KK='$nokk'");
+	    return $query->result_array();
 	}
 	public function getTableIsi($isi_table)
 	{

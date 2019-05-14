@@ -11,19 +11,13 @@ class List_Akun extends CI_Model {
 	public function delete($id)
 	{
 		// $object = array('status_akun' => 'Belum Terdaftar');
-		// $this->db->where('id_desa', $id);
+		$id_desa = $this->db->query("Select * from login WHERE id_user='$id'")->row()->id_desa;
+		$this->db->query("Update desa SET status_akun='Belum Terdaftar' WHERE id_desa='$id_desa'");
 		$this->db->where('id_user', $id);
-		$this->db->delete('login');
-
-		$this->db->query("Update desa join login on desa.id_desa = login.id_desa set status_akun='Belum Terdaftar' where login.id_user='$id'");
-
+		$delete = $this->db->delete('login');
+		return $delete;
 	}
-	public function UpdateStatus($id)
-	{
-	   
-		
 
-	}
 
 }
 

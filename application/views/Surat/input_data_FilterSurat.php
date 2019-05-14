@@ -427,9 +427,9 @@
                                     <select id="hitungnokk" class="selectpicker" value="NIK" name="NIK" data-live-search="true">
                                       <option  value="">-----Pilih-----</option>
                                         <?php foreach ($penduduk as $data ){ ?>
-                                          <option value="<?php echo $data['NO_KK']; ?>"><?php echo $data['NO_KK'] ?> | <?php echo $data['nama_penduduk']; ?>
-                                </option>
-                                             <?php } ?>
+                                          <option value="<?php echo $data['NO_KK']; ?>"><?php echo $data['NO_KK'] ?>|<?php echo $data['nama_penduduk']; ?>
+                                          </option>
+                                        <?php } ?>
                                 </select>
                                 </div>
                             </div>
@@ -499,7 +499,7 @@
                                         
                                         <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
 
-                                        <input type="hidden" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
+                                        <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
                                     </div>
                                 </div>
                             </div>
@@ -653,16 +653,26 @@
   
     <script type="text/javascript">
       $('#hitungnokk').change(function(){
-        let nokk = this.value
+        //yg dipilih menghilangkan spasi 
+        let selected = $('#hitungnokk').find("option:selected").html().trim()
+       //membagi menajdi beberapa bagian berdasarkan pembeda
+        let values = selected.split('|');
+        //array
+        let nokk=values[0];
+        let nama=values[1];
         let url = "<?= base_url() ?>index.php/ListFilterSurat/getHitungNoKK";
         $.ajax({
           url:url,
           type:"POST",
           dataType:"json",
-          data:{nokk:nokk},
+          data:{
+            //1 di atas satu yang di controller
+            nokk:nokk,
+            nama:nama
+          },
           success:function(response){
-            $("#tanggungan_keluarga").val(response[0].jumlah);
-            $("#NIK").val(response[0].nikk);
+            $("#tanggungan_keluarga").val(response.jumlah);
+            $("#NIK").val(response.nikk);
           }
         })
 

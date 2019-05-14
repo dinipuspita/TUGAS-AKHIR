@@ -34,7 +34,13 @@ class ListAkun extends CI_Controller {
 	public function delete($id)
 	{
 		$this->load->model('list_akun');
-		$this->list_akun->delete($id);
+		$delete = $this->list_akun->delete($id);
+		// if ($delete){
+		// 	echo '<script>alert("Hapus User Berhasil")</script>';
+		// }
+		// else {
+		// 	echo '<script>alert("Hapus User Gagal")</script>';	
+		// }
 		redirect('ListAkun');
 	}
 	   public function updateStatusAkun($id)

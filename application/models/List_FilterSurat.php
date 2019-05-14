@@ -15,7 +15,7 @@ class List_FilterSurat extends CI_Model {
 		$keterangan=$this->input->post('keterangan');
 
 		//tidak mampu tapi lengkap
-		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan <= 8){
+		if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen == "Lengkap" && (int)$lahan <= 500){
 
 			$data = array('NIK' => $NIK, 
 			  'pendapatan' => $pendapatan, 
@@ -44,11 +44,11 @@ class List_FilterSurat extends CI_Model {
 
 
 
-			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat langsung Membuat Surat SKTM'); 	window.location.href='../create/'; </script>";
+			echo "<script> alert('Data Penduduk Penerima Surat Berhasil Di tambahkan, Anda Dapat Mencetak Surat SKTM'); 	window.location.href='../create/'; </script>";
 		
 		}
 		//tidak mampu tidak lengkap
-		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan <= 8){
+		else if((int)$pendapatan / (int)$jumlah_tanggungan <= 600000 && $dokumen != "Lengkap" && (int)$lahan <= 500){
 
 			$data = array('NIK' => $NIK, 
 			  'pendapatan' => $pendapatan, 
@@ -225,11 +225,23 @@ class List_FilterSurat extends CI_Model {
 		$this->db->where('id_surat', $id);
 		$this->db->update('surat', $object);
 	}
+
 	public function getHitungNoKK($nokk)
 	{
-	    $query = $this->db->query("SELECT NIK as nikk, COUNT(NIK) as jumlah FROM penduduk where NO_KK='$nokk'");
-	    return $query->result();
+		//menghitung no kk berdasarkan data yang dipilih
+	    $query = $this->db->query("SELECT * FROM penduduk where NO_KK='$nokk'");
+	    return $query->num_rows();
+	    //hitung jml baris
 	}
+
+	public function getDataKK($nokk, $nama)
+	{
+ 	   //select nama
+ 	    $query = $this->db->query("SELECT NIK FROM penduduk where NO_KK='$nokk' AND nama_penduduk='$nama'");
+	    return $query->row();
+	    // hitung baris
+	}	
+
 	public function getTableIsi($isi_table)
 	{
 	    $query = $this->db->query("Select (NIK, nama_penduduk, tanggal_surat, keterangan, status_surat, nama_desa, usia, pendidikan, pendapatan, tanggungan_keluarga, luas_lahan) as table from penduduk  where NIK='$nokk'");

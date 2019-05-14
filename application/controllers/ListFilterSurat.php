@@ -80,9 +80,16 @@ class ListFilterSurat extends CI_Controller {
 
 
 	public function getHitungNoKK(){
-		$this->load->model('list_Filtersurat');
 		$nokk = $this->input->post('nokk');
-		$data = $this->list_Filtersurat->getHitungNoKK($nokk);
+		$nama = $this->input->post('nama');
+		$this->load->model('list_FilterSurat');
+		$jumlahData = $this->list_FilterSurat->getHitungNoKK($nokk);
+		$nikk = $this->list_FilterSurat->getDataKK($nokk, $nama);
+		$data = [
+		    'jumlah' => $jumlahData,
+		    'nikk' => $nikk->NIK
+		];
+		
 		echo json_encode($data);
 	}
 

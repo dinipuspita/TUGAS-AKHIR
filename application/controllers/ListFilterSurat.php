@@ -36,10 +36,12 @@ class ListFilterSurat extends CI_Controller {
 	}
 	public function create()// sudah di isi di autoloard 
 	{
+		//insert to surat
 		$this->load->model('list_FilterSurat');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
+		//inset to kepemilikan aset
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
 		$this->form_validation->set_rules('kelengkapan_dokumen', 'kelengkapan_dokumen', 'trim|required');
@@ -57,8 +59,8 @@ class ListFilterSurat extends CI_Controller {
 		$this->load->model('list_KepalaDesa');
 		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
 
-		$this->load->model('list_Penduduk');
-		$data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk();
+		// $this->load->model('list_Penduduk');
+		// $data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk();
 
 		$this->load->model('list_FilterSurat');
 		$data["surat"] = $this->list_FilterSurat->getTampil();
@@ -196,12 +198,7 @@ class ListFilterSurat extends CI_Controller {
 		redirect('ListFilterSurat');
 	}
 	
-	public function getKriteriaOtomatis(){
-		$this->load->model('list_Filtersurat');
-		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
-		$data = $this->list_Filtersurat->getKriteriaSelected($kriteria_bantuan);
-		echo json_encode($data);
-	}
+
 	public function tampilPengajuan()
 	{
 		$this->load->model('list_FilterSurat');
@@ -236,6 +233,13 @@ class ListFilterSurat extends CI_Controller {
 			// $this->load->view('Laporan/print_laporan',$data);
 		}
 
+	}
+
+	public function getKriteriaOtomatis(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getKriteriaSelected($kriteria_bantuan);
+		echo json_encode($data);
 	}
 
 	// Tambahan ajax trambah transaksi bantuan

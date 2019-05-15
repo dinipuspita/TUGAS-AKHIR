@@ -9,7 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Form Bantuan</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -1244,7 +1246,7 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah emas</option></i></font>
+                                        <font color="red"><i><option value="">*Jumlah emas / Gram</option></i></font>
                                         <input type="number" class="form-control" id="jml_emas" name="jml_emas" placeholder="jumlah emas" required autofocus />
                                     </div>
                                 </div>
@@ -1363,9 +1365,9 @@
                                      <i class="notika-icon notika-edit"></i>
                                     </div>
                                       <div class="nk-int-st">
-                                        <font color="red"><i><option value="">*Jumlah lahan</option></i></font>
-                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" required autofocus />
-                                     <!--    <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" value="<?php echo $kepemilikan_aset[0]['jml_lahan']?>" readonly required autofocus /> -->
+                                        <font color="red"><i><option value="">*Jumlah lahan / Meter</option></i></font>
+                                       <!--  <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" required autofocus /> -->
+                                        <input type="number" class="form-control" id="jml_lahan" name="jml_lahan" placeholder="jumlah lahan" value="<?php echo $kepemilikan_aset[0]['jml_lahan']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>

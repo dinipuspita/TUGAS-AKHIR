@@ -9,8 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Form Bantuan</title>
 
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -1254,7 +1255,7 @@
                                     </div>
                                       <div class="nk-int-st">
                                         <font color="blue"><i><option value="">*Jumlah kerbau</option></i></font>
-                                        <input type="number" class="form-control" id="jml_kerbau" name="jml_kerbau" placeholder="jumlah kerbau" required autofocus />
+                                        <input type="number" class="form-control" id="jml_kerbau" name="jml_kerbau" placeholder="jumlah kerbau"  value="<?php echo $kepemilikan_aset[0]['jml_kerbau']?>" readonly required autofocus />
                                     </div>
                                 </div>
                             </div>

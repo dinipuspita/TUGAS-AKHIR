@@ -80,17 +80,21 @@ $acl = array(
 		'1' => true,
 		'2' => true,
 	),
-	'ListBantuan' => array(
-		'1' => true,
-		'2' => false,
-	),
 	'ListFormBantuan' => array(
 		'1' => true,
 		'2' => false,
 	),
-	'ListKeteranganPerumahan' => array(
+	'ListProfil' => array(
 		'1' => true,
 		'2' => true,
+	),
+	'ListTransaksiBantuan' => array(
+		'1' => true,
+		'2' => false,
+	),
+	'ListPekerjaan' => array(
+		'1' => true,
+		'2' => false,
 	)
 
 );

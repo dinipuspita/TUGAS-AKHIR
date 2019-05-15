@@ -11,17 +11,7 @@
   <meta name="author" content="">
 
   <title>SB Admin 2 - Dashboard</title>
-<script type="text/javascript">
 
-function submitBday() {
-    var Bdate = document.getElementById('tanggal_lahir').value;
-    var Bday = +new Date(Bdate);
-    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
-    var theBday = document.getElementById('usia');
-    theBday.value = Hasil;
-}
-
-</script>
 
 
   <!-- Custom fonts for this template-->
@@ -408,9 +398,11 @@ function submitBday() {
             </div>
         </div>
     </div>
-  
+  <!-- untuk menetapkan aksi dari listpenduduk ke method aksi pd controller list penduduk yaitu create-->
+<!-- masukin data dijalankan berdasarkan fungsi C -->
 
-      <?php echo form_open_multipart('ListPenduduk/create'); ?> 
+      <?php echo form_open_multipart('ListPenduduk/create'); ?>   
+
         
       <?php echo validation_errors(); ?>
                   
@@ -796,6 +788,20 @@ function submitBday() {
    $('#example').DataTable();
    } );
    </script>    
+
+     <!-- untuk usia otomatis -->
+<script type="text/javascript">
+
+function submitBday() {
+    var Bdate = document.getElementById('tanggal_lahir').value;
+    var Bday = +new Date(Bdate);
+    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('usia'); //menampilkan name di field usia
+    theBday.value = Hasil;
+}
+
+</script>
+
 
     <!-- datapicker JS
     ============================================ -->

@@ -326,7 +326,7 @@
                                         <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Tambah Kepala Des</h2>
+                                        <h2>Tambah Kepala Desa</h2>
                                         <p>Tambah Kepala Desa Kota Batu <span class="bread-ntd"></span></p>
                                     </div>
                                 </div>

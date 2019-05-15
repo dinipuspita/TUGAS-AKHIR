@@ -499,7 +499,7 @@
                                         
                                         <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
 
-                                        <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
+                                        <input type="hidden" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
                                     </div>
                                 </div>
                             </div>
@@ -655,7 +655,7 @@
       $('#hitungnokk').change(function(){
         //yg dipilih menghilangkan spasi 
         let selected = $('#hitungnokk').find("option:selected").html().trim()
-       //membagi menajdi beberapa bagian berdasarkan pembeda
+       //membagi menjadi beberapa bagian berdasarkan pembeda
         let values = selected.split('|');
         //array
         let nokk=values[0];
@@ -666,7 +666,7 @@
           type:"POST",
           dataType:"json",
           data:{
-            //1 di atas satu yang di controller
+            //1 di atas satu variable yang di controller 
             nokk:nokk,
             nama:nama
           },

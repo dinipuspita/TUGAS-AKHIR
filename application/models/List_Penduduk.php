@@ -83,19 +83,19 @@ class List_Penduduk extends CI_Model {
 						'pendidikan' => $this->input->post('pendidikan')
 						);
 
-		$this->db->where('NIK', $id);
+		$this->db->where('NIK', $id); // nik diumpakan $id
 		$this->db->update('penduduk', $object);
 	}
 
-	public function getTampil()
+	public function getTampil() // tampil data di desa
 	{
 		$session_data = $this->session->userdata('logged_in');
 		$id_desa = $session_data['id_desa'];
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 
-	public function getTampilDinsos()
+	public function getTampilDinsos() // tampil data di dinsos
 	{
 	
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa group by NO_KK");
@@ -107,7 +107,7 @@ class List_Penduduk extends CI_Model {
 		$this->db->where('NIK', $id);
 		$this->db->delete('penduduk');
 	}
-	public function getTampilPenduduk($id)
+	public function getTampilPenduduk($id) //menampilkan data detail penduduk berdasarkan dari NIK
 	{
 		$query = $this->db->query("Select * from penduduk where NIK = $id");
 		return $query->result_array();
@@ -153,9 +153,9 @@ class List_Penduduk extends CI_Model {
 	   $nik = $this->input->post('NIK');
 	   $this->db->select('NIK');
 	   $this->db->where('NIK',$nik);		
-	   $query =$this->db->get('penduduk');
+	   $query =$this->db->get('penduduk'); //dari tabel penduduk
 	   $row = $query->row();
-	   if ($query->num_rows() > 0){
+	   if ($query->num_rows() > 0){ //jika lebih besar dari 0 maka nik sudah ada
 	         return $row->NIK; 
 	   }else{
 	         return "";

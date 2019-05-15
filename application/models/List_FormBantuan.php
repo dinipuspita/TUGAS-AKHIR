@@ -278,19 +278,20 @@ class List_FormBantuan extends CI_Model {
 	}
 	public function delete($id)
 	{
-		$this->db->where('id_kepemilikan_aset', $id);
+
+		$this->db->where('nik', $id);
 		$this->db->delete('kepemilikan_aset');
 
-		$this->db->where('id_sosial_eko', $id);
+		$this->db->where('nik', $id);
 		$this->db->delete('keterangan_sosial_ekonomi');
 
-		$this->db->where('id_ket_perumahan', $id);
+		$this->db->where('nik', $id);
 		$this->db->delete('keterangan_perumahan');
 
-		$this->db->where('id_pengesahan', $id);
+		$this->db->where('nik', $id);
 		$this->db->delete('keterangan_pengesahan');
 
-		$this->db->where('id_pengenalan_tempat', $id);
+		$this->db->where('nik', $id);
 		$this->db->delete('pengenalan_tempat');
 	}
 	 public function getReportLaporanDinsos()

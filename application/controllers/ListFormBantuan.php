@@ -155,12 +155,7 @@ class listFormBantuan extends CI_Controller {
 
 		$this->load->view('FormBantuan/Tampil_PerNIK', $data);
 	}
-		public function delete($id)
-	{
-		$this->load->model('List_FormBantuan');
-		$this->List_FormBantuan->delete($id);
-		redirect('listFormBantuan','refresh');
-	}
+	
 	public function laporanPenerimaBantuan()
 	{
 		$this->form_validation->set_rules('id_desa', 'id_desa', 'trim|required');	
@@ -191,6 +186,12 @@ class listFormBantuan extends CI_Controller {
 			// $this->load->view('Laporan/print_laporan',$data);
 		}
 
+	}
+		public function delete($id)
+	{
+		$this->load->model('List_FormBantuan');
+		$this->List_FormBantuan->delete($id);
+		redirect('listFormBantuan','refresh');
 	}
 
 

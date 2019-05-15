@@ -10,19 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
-  <script type="text/javascript">
-
-    function submitBday() {
-      var Bdate = document.getElementById('tanggal_lahir').value;
-      var Bday = +new Date(Bdate);
-      var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
-      var theBday = document.getElementById('usia');
-      theBday.value = Hasil;
-    }
-
-  </script>
-
+ 
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -631,7 +619,7 @@
                                   <i class="notika-icon notika-support"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                  <input type="text" class="form-control" id="status_hubungan_keluarga" name="status_hubungan_keluarga" placeholder="Status Hubungan Keluarga"  value="<?php echo $penduduk[0]->status_hubungan_keluarga?>">
+                                  <input type="text" class="form-control" id="status_hubungan_keluarga" name="status_hubungan_keluarga" placeholder="Status Hubungan Keluarga" readonly value="<?php echo $penduduk[0]->status_hubungan_keluarga?>">
                                 </div>
                               </div>
                             </div>
@@ -791,6 +779,20 @@
            $('#example').DataTable();
          } );
        </script>    
+
+          <!-- untuk usia otomatis -->
+<script type="text/javascript">
+
+function submitBday() {
+    var Bdate = document.getElementById('tanggal_lahir').value;
+    var Bday = +new Date(Bdate);
+    var Hasil = " " + ~~ ((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('usia'); //menampilkan name di field usia
+    theBday.value = Hasil;
+}
+
+</script>
+
 
     <!-- datapicker JS
       ============================================ -->

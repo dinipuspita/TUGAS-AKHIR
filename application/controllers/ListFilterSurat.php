@@ -25,36 +25,35 @@ class ListFilterSurat extends CI_Controller {
 	// }
 	public function index()
 	{
-		$this->load->model('list_FilterSurat');
-		$data["surat"] = $this->list_FilterSurat->getTampil();
-		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos();
-		$data['user'] = $this->list_FilterSurat->getUser();
+		$this->load->model('list_FilterSurat'); //memuat model yg akan digunakan pada model di list_filtersurat
+		$data["surat"] = $this->list_FilterSurat->getTampil(); //$nama variabel dari array surat yg ditampilkan pada model list_filtersurat
+		$data["suratByDinsos"] = $this->list_FilterSurat->getTampilSuratDinsos(); //$nama variabel dari array suratByDinsos yg ditampilkan pada model list_filtersurat
+		$data['user'] = $this->list_FilterSurat->getUser(); // untuk mengecek data berdasarkan session
 		$data["jenis_bantuan"] = $this->list_FilterSurat->getTampilBantuan();
-		$data['desa'] = $this->list_FilterSurat->getTampilDesa2();
+		$data['desa'] = $this->list_FilterSurat->getTampilDesa2(); //$nama variabel dari array desa yg ditampilkan pada model list_filtersurat
 
 		$this->load->view('Surat/Surat', $data);	
 	}
 	public function create()// sudah di isi di autoloard 
 	{
-		//insert to surat
 		$this->load->model('list_FilterSurat');
 		$this->form_validation->set_rules('NIK', 'NIK', 'trim|required');
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
-		//inset to kepemilikan aset
 		$this->form_validation->set_rules('pendapatan', 'pendapatan', 'trim|required');
 		$this->form_validation->set_rules('tanggungan_keluarga', 'tanggungan_keluarga', 'trim|required');
 		$this->form_validation->set_rules('kelengkapan_dokumen', 'kelengkapan_dokumen', 'trim|required');
 		$this->form_validation->set_rules('jml_lahan', 'jml_lahan', 'trim|required');
 
 		$this->load->model('list_Filtersurat');
-		$data['user'] = $this->list_FilterSurat->getUser();
+		$data['user'] = $this->list_FilterSurat->getUser(); // untuk mengecek data berdasarkan session
 
 		$this->load->model('list_Penduduk');
-		$data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk();
+		$data["penduduk"] = $this->list_Penduduk->getTampilSuratPenduduk(); //$nama variabel dari array penduduk yg mengambil tampil data penduduk
 
 		$this->load->model('list_desa');
-		$data["desa"] = $this->list_desa->getTampilDesa();
+		$data["desa"] = $this->list_desa->getTampilDesa();  //$nama variabel dari array desa yg mengambil tampil data desa
+
 
 		$this->load->model('list_KepalaDesa');
 		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
@@ -66,7 +65,8 @@ class ListFilterSurat extends CI_Controller {
 		$data["surat"] = $this->list_FilterSurat->getTampil();
 
 		$this->load->model('List_FormBantuan');
-		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5();
+		$data["kepemilikan_aset"] = $this->List_FormBantuan->getTampilKepemilikanAset5(); //$nama variabel dari array kepemilikan aset yg mengambil tampil data form bantuan
+
 
 
 
@@ -74,22 +74,22 @@ class ListFilterSurat extends CI_Controller {
 			$this->load->view('Surat/input_data_FilterSurat',$data);
 		}
 		else{
-			$this->list_FilterSurat->insertFilterSurat();
+			$this->list_FilterSurat->insertFilterSurat(); // dimana pada model list_filtersurat melakukan insertfiltersurat
 			echo "<script> alert('Data Surat Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
 
 
-	public function getHitungNoKK(){
-		$nokk = $this->input->post('nokk');
-		$nama = $this->input->post('nama');
-		$this->load->model('list_FilterSurat');
-		$jumlahData = $this->list_FilterSurat->getHitungNoKK($nokk);
-		$nikk = $this->list_FilterSurat->getDataKK($nokk, $nama);
-		$data = [
-		    'jumlah' => $jumlahData,
-		    'nikk' => $nikk->NIK
+	public function getHitungNoKK(){ //menampilkan hitung no-kk
+		$nokk = $this->input->post('nokk'); //dimana variabel nokk di inputkan dengan nokk
+		$nama = $this->input->post('nama'); //dimana variabel nama di inputkan dengan nama
+		$this->load->model('list_FilterSurat'); //meload ke model list_filtersurat
+		$jumlahData = $this->list_FilterSurat->getHitungNoKK($nokk); //dimana jumlahdata menampilkan hitung NO-KK dengan variabel nokk
+		$nikk = $this->list_FilterSurat->getDataKK($nokk, $nama); //dimana nik di model list_filtersurat itu menampilkan dataKK dengan variabel nokk dan nama
+		$data = [ //variabel data
+		    'jumlah' => $jumlahData, //dimana variabel jumlahdata
+		    'nikk' => $nikk->NIK // dimana variabel nikk itu NIK
 		];
 		
 		echo json_encode($data);
@@ -133,7 +133,7 @@ class ListFilterSurat extends CI_Controller {
 	}
 
 
-	public function update($id)
+	public function update($id) //update berdasarkan parameter
 	{
 	
 		$this->load->model('list_FilterSurat');
@@ -141,14 +141,14 @@ class ListFilterSurat extends CI_Controller {
 		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
 		$this->load->model('list_Filtersurat');
-		$data['surat'] = $this->list_FilterSurat->getSurat($id);
+		$data['surat'] = $this->list_FilterSurat->getSurat($id);  //$nama variabel dari array surat yg mengambil data surat
 
 		$data['user'] = $this->list_FilterSurat->getUser();
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Surat/edit_data_surat',$data);
 		}else{
-			$this->list_Filtersurat->updateById($id);
+			$this->list_Filtersurat->updateById($id); // dimana pada model list_filtersurat melakukan updatefiltersurat
 			echo "<script> alert('Data Surat Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}
@@ -163,15 +163,15 @@ class ListFilterSurat extends CI_Controller {
 	public function report($id)// cetak surat per id surat
 	{
 		$this->load->model('list_FilterSurat');
-		$data["surat"] = $this->list_FilterSurat->getTampilSurat($id);
-		$this->load->library('pdf');
-		$this->pdf->load_view('Surat/print_surat', $data);
+		$data["surat"] = $this->list_FilterSurat->getTampilSurat($id); //$nama variabel dari array surat yg mengambil data surat
+		$this->load->library('pdf'); //meload ke library di pdf
+		$this->pdf->load_view('Surat/print_surat', $data); // dimana pf meload ke view
 	}
 
 	public function laporanSurat() //cetak laporan surat setiap desa
 	{
 	$this->load->model('list_FilterSurat');
-		$data["surat"] = $this->list_FilterSurat->getReportSurat();
+		$data["surat"] = $this->list_FilterSurat->getReportSurat(); //$nama variabel dari array surat yg mengambil data surat yang menampilkan report surat pada model list_filter_surat
 	
 		if (empty($data['surat'])) {
 			echo "<script> alert('Data Surat Masih Kosong'); window.location.href='../ListFilterSurat';
@@ -184,21 +184,25 @@ class ListFilterSurat extends CI_Controller {
 		}
    }
 
-   public function konfirmasi($id)
+   public function konfirmasi($id) // berdasarkan parameter id
 	{
-		$this->load->model('list_FilterSurat');
-		$this->list_FilterSurat->konfirmasiStatus($id);
+		$this->load->model('list_FilterSurat'); //meload ke model list_filtersurat
+		$this->list_FilterSurat->konfirmasiStatus($id); //dimana mengkonfirmasi status surat
 		redirect('ListFilterSurat');
 	}
   
-  public function persetujuan($id)
+  public function persetujuan($id) // berdasarkan parameter id
 	{
-		$this->load->model('list_Filtersurat');
-		$this->list_Filtersurat->persetujuanStatus($id);
+		$this->load->model('list_Filtersurat');		$this->list_Filtersurat->persetujuanStatus($id);
 		redirect('ListFilterSurat');
 	}
 	
-
+	public function getKriteriaOtomatis(){
+		$this->load->model('list_Filtersurat');
+		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
+		$data = $this->list_Filtersurat->getKriteriaSelected($kriteria_bantuan);
+		echo json_encode($data);
+	}
 	public function tampilPengajuan()
 	{
 		$this->load->model('list_FilterSurat');
@@ -233,13 +237,6 @@ class ListFilterSurat extends CI_Controller {
 			// $this->load->view('Laporan/print_laporan',$data);
 		}
 
-	}
-
-	public function getKriteriaOtomatis(){
-		$this->load->model('list_Filtersurat');
-		$kriteria_bantuan = $this->input->post('kriteria_bantuan');
-		$data = $this->list_Filtersurat->getKriteriaSelected($kriteria_bantuan);
-		echo json_encode($data);
 	}
 
 	// Tambahan ajax trambah transaksi bantuan

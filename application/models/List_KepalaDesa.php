@@ -24,10 +24,10 @@ class List_KepalaDesa extends CI_Model {
 		$this->db->insert('desa', $data);
 	}
 
-	public function getKepalaDesa($id)
+	public function getKepalaDesa($id) //menampilkan kepala desa berdasarkan id
 	{
-		$this->db->where('id_kepala_desa', $id);
-		$query= $this->db->get('kepala_desa');
+		$this->db->where('id_kepala_desa', $id); //dari db diama id_kepala_desa
+		$query= $this->db->get('kepala_desa'); //menampilkan nama kepala desa
 		return $query->result();
 	}
 	public function updateById($id)
@@ -50,14 +50,14 @@ class List_KepalaDesa extends CI_Model {
 		$this->db->where('id_kepala_desa', $id);
 		$this->db->delete('kepala_desa');
 	}
-	public function getTampilKepala()
+	public function getTampilKepala() //menampilkan kepala desa
 	{
 		$query = $this->db->query("Select * from kepala_desa");
 		return $query->result();
 	}
 	public function getUser()
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
 		$username = $session_data['username'];
 		$query = $this->db->query("SELECT * from login where username='$username'");
 		// var_dump($query);die();

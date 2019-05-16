@@ -23,7 +23,7 @@ class List_Desa extends CI_Model {
 	// 	$this->db->insert('kepala_desa', $object);
 	// }
 
-	public function getDesa($id)
+	public function getDesa($id) //menampilkan desa berdasarkan parameter
 	{
 		$this->db->where('id_desa', $id);
 		$query= $this->db->get('desa');
@@ -40,31 +40,31 @@ class List_Desa extends CI_Model {
 		$this->db->where('id_desa', $id);
 		$this->db->update('desa', $object);
 	}
-	public function getTampil()
+	public function getTampil() // tampil data di desa pada index di C listdesa
 	{
-		$query = $this->db->query("Select * from desa");
-		return $query->result_array();
+		$query = $this->db->query("Select * from desa"); 
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
-	public function delete($id)
+	public function delete($id) // delete desa berdasarkan parameter
 	{
 		$this->db->where('id_desa', $id);
 		$this->db->delete('desa');
 	}
 
-		public function getTampilDesa()
+		public function getTampilDesa()  //menampilkan desa
 	{
 		$query = $this->db->query("Select * from desa where status_akun = 'Belum Terdaftar'");
 		return $query->result();
 	}
-		public function getTampilDesa2()
+		public function getTampilDesa2() //menampilkan desa
 	{
 		$query = $this->db->query("Select * from desa");
 		return $query->result();
 	}
 
-	public function getUser()
+	public function getUser() 
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
 		$username = $session_data['username'];
 		$query = $this->db->query("SELECT * from login where username='$username'");
 		// var_dump($query);die();

@@ -6,13 +6,13 @@ class ListPenduduk extends CI_Controller {
 	{
 
 		parent::__construct();
-		if($this->session->userdata('logged_in')){
-			$session_data = $this->session->userdata('logged_in');
+		if($this->session->userdata('logged_in')){  // mengecek session data berdasarkan login
+			$session_data = $this->session->userdata('logged_in');  // mengecek session data berdasarkan login
 			$data['username'] = $session_data['username'];
 			$data['level'] = $session_data['level'];
 			$data['id_desa'] = $session_data['id_desa'];
 			$current_controller = $this->router->fetch_class();
-			$this->load->library('acl');
+			$this->load->library('acl'); //meload ke library acl
 			if (! $this->acl->is_public($current_controller))
 			{
 				if (! $this->acl->is_allowed($current_controller, $data['level']))
@@ -29,8 +29,8 @@ class ListPenduduk extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('list_Penduduk'); //memuat model yg akan digunakan pada model di list_penduduk
-		$data["penduduk"] = $this->list_Penduduk->getTampil(); //$nama variabel dari array penduduk yg di tampilkan
-		$data["pendudukByDinsos"] = $this->list_Penduduk->getTampilDinsos(); //$nama variabel dari array penduduk yg di tampilkan dinsos
+		$data["penduduk"] = $this->list_Penduduk->getTampil(); //$nama variabel dari array penduduk yg ditampilkan pada model list_penduduk
+		$data["pendudukByDinsos"] = $this->list_Penduduk->getTampilDinsos(); //$nama variabel dari array penduduk yg di tampilkan pada model list_penduduk
 		$data['user'] = $this->list_Penduduk->getUser();	// untuk mengecek data berdasarkan session
 		// $data['pendudukByUser'] = $this->list_Penduduk->getPendudukByUser();
 		$this->load->view('Penduduk/penduduk', $data);	 //meload ke view di folde penduduk
@@ -60,7 +60,7 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('pendidikan', 'pendidikan', 'trim|required');
 
 		$this->load->model('list_desa'); //memuat model yg akan digunakan pada model di list_desa
-		$data["desa"] = $this->list_desa->getTampilDesa(); //$nama variabel dari array desa yg mengambil tampil data desa
+		$data["desa"] = $this->list_desa->getTampilDesa(); //$nama variabel dari array desa yg mengambil data desa
 
 		$data["user"] = $this->list_desa->getUser(); //
 
@@ -79,14 +79,14 @@ class ListPenduduk extends CI_Controller {
 				$this->load->view('penduduk/input_data_penduduk',$data);	
 			}
 			else{
-				$this->list_Penduduk->insertPenduduk();
+				$this->list_Penduduk->insertPenduduk(); // dimana pada model list_penduduk melakukan insertpenduduk
 				echo "<script> alert('Data Penduduk Berhasil Ditambahkan'); window.location.href='';
 				</script>";				
 			}
 
 		}	
 	}
-	public function update($id) //parameter
+	public function update($id) //parameter id
 	{
 	
 		$this->load->model('list_penduduk'); //memuat model yg akan digunakan pada model di list_penduduk
@@ -110,7 +110,7 @@ class ListPenduduk extends CI_Controller {
 		$this->form_validation->set_rules('pendidikan', 'pendidikan', 'trim|required');
 
 		$this->load->model('list_penduduk'); //memuat model yg akan digunakan pada model di list_penduduk
-		$data['penduduk'] = $this->list_penduduk->getPenduduk($id); //$nama variabel dari array desa yg mengambil tampil data penduduk
+		$data['penduduk'] = $this->list_penduduk->getPenduduk($id); //$nama variabel dari array penduduk yg mengambil data penduduk
 
 		$data["user"] = $this->list_penduduk->getUser();
 
@@ -118,18 +118,18 @@ class ListPenduduk extends CI_Controller {
 		$data["desa"] = $this->list_desa->getTampilDesa($id);
 
 		$this->load->model('list_pekerjaan'); //memuat model yg akan digunakan pada model di list_pekerjaan
-		$data["pekerjaan"] = $this->list_pekerjaan->getTampilPekerjaan($id); //$nama variabel dari array pekerjaan yg mengambil tampil data pekerjaan
+		$data["pekerjaan"] = $this->list_pekerjaan->getTampilPekerjaan($id); //$nama variabel dari array pekerjaan yg mengambil data pekerjaan
 
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Penduduk/edit_data_penduduk',$data);
 		}else{
-			$this->list_penduduk->updateById($id);
+			$this->list_penduduk->updateById($id); // dimana pada model list_penduduk melakukan updatependuduk
 			echo "<script> alert('Data Penduduk Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}
 
 	}
-	
+	//untuk delete
 	public function delete($id)
 	{
 		$this->load->model('list_penduduk'); //memuat model yg akan digunakan pada model di list_penduduk
@@ -142,8 +142,8 @@ class ListPenduduk extends CI_Controller {
 		// var_dump($data['penduduk']);
   //       die();  
 		$this->load->model('list_penduduk'); //memuat model yg akan digunakan pada model di list_penduduk
-		$data["penduduk"] = $this->list_penduduk->getTampilDetail($id);
-		$data["user"] = $this->list_penduduk->getUser();
+		$data["penduduk"] = $this->list_penduduk->getTampilDetail($id); //$nama variabel dari array penduduk yg mengambil data penduduk
+		$data["user"] = $this->list_penduduk->getUser(); // untuk mengecek data berdasarkan session
 		$this->load->view('Penduduk/detailPenduduk', $data);	
 
 	}
@@ -156,7 +156,7 @@ class ListPenduduk extends CI_Controller {
 	// 	$this->pdf->load_view('Penduduk/print_penduduk', $data);
 	// }
 	//controller CheckUsername
-	function CheckNIK($NIK){
+	function CheckNIK($NIK){ //parameter NIK
 	$this->load->model('list_penduduk'); //load model list_penduduk
 	   if ($this->list_penduduk->check_NIK($NIK)==''){
 	      return true;
@@ -165,10 +165,10 @@ class ListPenduduk extends CI_Controller {
 	      return false;		
 	   }
 	}
-	public function tampilGroup($NO_KK) // parameter berdasarkan NO KK
+	public function tampilGroup($NO_KK) // parameter berdasarkan NO_KK
 	{
 		$this->load->model('list_Penduduk');
-		$data["penduduk"] = $this->list_Penduduk->getTampilGroup($NO_KK);
+		$data["penduduk"] = $this->list_Penduduk->getTampilGroup($NO_KK); //$nama variabel dari array penduduk yg mengambil data penduduk yang ditampilkan berdasarkan parameter NO_KK
 		$data["pendudukByDinsos"] = $this->list_Penduduk->getTampilGroupDinsos($NO_KK);
 		$data['user'] = $this->list_Penduduk->getUser();		
 		$this->load->view('Penduduk/pendudukPerKK', $data);	

@@ -27,7 +27,7 @@ class ListKepalaDesa extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('list_KepalaDesa');
-		$data["kepala_desa"] = $this->list_KepalaDesa->getTampil();
+		$data["kepala_desa"] = $this->list_KepalaDesa->getTampil(); //$nama variabel dari array kepaladesa yg ditampilkan pada model list_kepaladesa
 		$data['user'] = $this->list_KepalaDesa->getUser();
 		$this->load->view('KepalaDesa/kepalaDesa',$data);	
 	}
@@ -39,7 +39,8 @@ class ListKepalaDesa extends CI_Controller {
 		$this->form_validation->set_rules('jabatan_selesai', 'jabatan_selesai', 'trim|required');
 
 		$this->load->model('list_KepalaDesa');
-		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
+		$data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala(); //$nama variabel dari array kepaladesa yg mengambil data kepaladesa
+
 		$data['user'] = $this->list_KepalaDesa->getUser();
 
 		$this->load->model('list_desa');
@@ -49,12 +50,12 @@ class ListKepalaDesa extends CI_Controller {
 			$this->load->view('KepalaDesa/input_data_kepdes',$data);
 		}
 		else{
-			$this->list_KepalaDesa->insertKepdes();
+			$this->list_KepalaDesa->insertKepdes(); // dimana pada model list_kepala desa melakukan insertkepaladesa
 			echo "<script> alert('Data Kepala Desa Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
-	public function update($id)
+	public function update($id) //update berdasarkan parameter id
 	{
 	
 		$this->load->model('list_KepalaDesa');
@@ -66,7 +67,7 @@ class ListKepalaDesa extends CI_Controller {
 		$data['user'] = $this->list_KepalaDesa->getUser();
 
 		$this->load->model('list_KepalaDesa');
-		$data['kepala_desa'] = $this->list_KepalaDesa->getKepalaDesa($id);
+		$data['kepala_desa'] = $this->list_KepalaDesa->getKepalaDesa($id); //$nama variabel dari array kepaladesa yg mengambil data kepaladesa
 
 		$this->load->model('list_desa');
 		$data["desa"] = $this->list_desa->getTampilDesa2($id);
@@ -74,7 +75,7 @@ class ListKepalaDesa extends CI_Controller {
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('KepalaDesa/edit_data_kepdes',$data);
 		}else{
-			$this->list_KepalaDesa->updateById($id);
+			$this->list_KepalaDesa->updateById($id); // dimana pada model list_kepaladesa melakukan updateKepalaDesa
 			echo "<script> alert('Data Kepala Desa Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}

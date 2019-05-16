@@ -145,13 +145,13 @@ class List_FilterSurat extends CI_Model {
 		$this->db->insert('penduduk', $object);
 	}
 
-	public function getSurat($id)
+	public function getSurat($id) //menampilkan surat
 	{
-		$this->db->where('id_surat', $id);
-		$query= $this->db->get('surat');
+		$this->db->where('id_surat', $id); // dimana id_suratnya
+		$query= $this->db->get('surat'); // dari database tabel surat
 		return $query->result();
 	}
-	public function updateById($id)
+	public function updateById($id) // update berdasarkan parameter id
 	{	
 		$object = array('keterangan' => $this->input->post('keterangan'), 
 					  'tanggal_surat' => $this->input->post('tanggal_surat'),
@@ -162,24 +162,25 @@ class List_FilterSurat extends CI_Model {
 	}
 	public function getTampil() //tampil surat perdesa
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
 		$id_desa = $session_data['id_desa'];
 
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa where c.id_desa = $id_desa");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
-	public function getTampilSuratDinsos() //tampil surat perdesa
+	
+	public function getTampilSuratDinsos() //tampil surat 
 	{
 
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa Join kepemilikan_aset AS d ON d.NIK=a.NIK where status_surat = 'Diterima'");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
-	public function getTampilSurat($id)
+	public function getTampilSurat($id)// menampilkan surat berdasarkan id
 	{
 		$id_desa = $this->input->post('id_desa'); //tampil cetak surat ben wong
 	
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa join kepala_desa as d on d.id_desa=c.id_desa join pekerjaan as e on e.id_pekerjaan=b.id_pekerjaan WHERE jabatan_selesai between 2014 and 2020 and id_surat = $id");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 
 	public function delete($id)
@@ -202,15 +203,15 @@ class List_FilterSurat extends CI_Model {
 	}
 	
 	//laporan surat perdesa
-	public function getReportSurat()
+	public function getReportSurat() //menampilkan report surat per desa
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in');  // mengecek session data berdasarkan login
 		$id_desa = $session_data['id_desa'];
 
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa'");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
-	public function konfirmasiStatus($id)
+	public function konfirmasiStatus($id) // berdasarkan id
 	{
 	   
 		$object = array('status_surat' => 'Diterima');
@@ -218,7 +219,7 @@ class List_FilterSurat extends CI_Model {
 		$this->db->update('surat', $object);
 
 	}
-	public function persetujuanStatus($id)
+	public function persetujuanStatus($id) // berdasarkan id
 	{
 	   
 		$object = array('persetujuan' => 'Disetujui');
@@ -226,7 +227,7 @@ class List_FilterSurat extends CI_Model {
 		$this->db->update('surat', $object);
 	}
 
-	public function getHitungNoKK($nokk)
+	public function getHitungNoKK($nokk) // menampilkan hitung no kk dengan parameter nokkk
 	{
 		//menghitung no kk berdasarkan data yang dipilih
 	    $query = $this->db->query("SELECT * FROM penduduk where NO_KK='$nokk'");
@@ -234,7 +235,7 @@ class List_FilterSurat extends CI_Model {
 	    //hitung jml baris
 	}
 
-	public function getDataKK($nokk, $nama)
+	public function getDataKK($nokk, $nama) // menampilkan data kk dengan parameter nokk dan nama
 	{
  	   //select nama
  	    $query = $this->db->query("SELECT NIK FROM penduduk where NO_KK='$nokk' AND nama_penduduk='$nama'");
@@ -292,7 +293,7 @@ class List_FilterSurat extends CI_Model {
 		$query = $this->db->query("Select * from surat AS a Join penduduk AS b ON b.NIK=a.NIK join desa as c on c.id_desa=b.id_desa WHERE b.id_desa='$id_desa ORDER BY id_surat DESC LIMIT 1'");
 		return $query->result_array();
 	}
-	public function getTampilDesa2()
+	public function getTampilDesa2() // menampilkan desa
 	{
 		$query = $this->db->query("Select * from desa");
 		return $query->result();

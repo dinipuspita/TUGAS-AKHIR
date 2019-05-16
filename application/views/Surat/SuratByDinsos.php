@@ -9,9 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Surat</title>
-
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
+  <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -576,16 +574,14 @@
             dataType:"json",
             data:{kriteria_bantuan:kriteria_bantuan},
             success:function(response){
-              // akan melakukan respon dan mengecek data,
-              // jika data pada table dengan id dataPegajuan kosong maka akan menampilakan alert data kosong
               if (response==''){
                 alert('Data Kosong');
                 $('#dataPengajuan').find('tbody').html('');
               }
               else {
-                let ii=1; // untuk no agar  bisa urut
+                let ii=1; // untuk no biar bisa urut
                 for(i=0;i<response.length;i++){
-                  addTable(response[i], ii); // tambahkan ke table, hasil dari setiap response
+                  addTable(response[i], ii); // tambahkan ke table hasil dari setiap response
                   ii++;
                 }
               }
@@ -686,7 +682,7 @@
             dataPengajuan.push($(this).find('td').eq(1).text());
             id_surat.push($(this).find('td').eq(12).text());
         });
-        // Jika masih kosong maka tidak bisa ditambahkan ditambahkan
+        // Jika masih kosong jangan ditambahkan
         if (dataPengajuan.length==0){
           alert('Pilih Data Terlebih Dahulu');
         }
@@ -703,6 +699,7 @@
             },
             success:function(response){
               if (response==1){
+               window.location.assign("http://localhost:81/TUGAS-AKHIR/index.php/ListTransaksiBantuan")
                 location.reload();
                 alert("Data Berhasil Ditambahkan");
               }

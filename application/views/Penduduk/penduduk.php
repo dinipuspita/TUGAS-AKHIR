@@ -9,10 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Penduduk</title>
+  <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -345,7 +344,8 @@
               <h6 class="m-0 font-weight-bold text-primary">Data Penduduk Kurang Mampu Kota Batu</h6>
             </div>
             <div class="card-body">
-                             <div class="table table-responsive">                               
+                             <div class="table table-responsive"> 
+                             <!-- buat datatable -->                              
                                 <table class="table" id="example">
                                     <thead>
                                             <th>No</td>
@@ -361,7 +361,7 @@
                                          <?php if($key['level'] == '2') { ?> 
                                             <?php $no=1; ?>
                                          
-                                               <?php foreach ($penduduk as $key) { //manggil $data penduduk di C
+                                               <?php foreach ($penduduk as $key) {
                                             ?>
                                           <tr>
                                           <td><?php echo $no ?></td>

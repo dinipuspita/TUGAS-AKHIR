@@ -6,7 +6,7 @@ class List_Penduduk extends CI_Model {
 		// $tgl=$this->input->post('tanggal_lahir');
 		// $tglraw=explode('-', $tgl);
 		// $tglfix=$tglraw[2].'-'.$tglraw[1].'-'.$tglraw[0];
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
 		$id_desa = $session_data['id_desa'];
 
 		$object = array(
@@ -59,7 +59,7 @@ class List_Penduduk extends CI_Model {
 		$query= $this->db->get('penduduk');
 		return $query->result();
 	}
-	public function updateById($id)
+	public function updateById($id) //parameter
 	{
 
 		$object = array(
@@ -87,22 +87,22 @@ class List_Penduduk extends CI_Model {
 		$this->db->update('penduduk', $object);
 	}
 
-	public function getTampil() // tampil data di desa
+	public function getTampil() // tampil data di desa pada index di C listpenduduk
 	{
-		$session_data = $this->session->userdata('logged_in');
-		$id_desa = $session_data['id_desa'];
-		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK");
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
+		$id_desa = $session_data['id_desa']; // dengan variabel id_desa dan dicek session berdasarkan id_desa
+		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa group by NO_KK"); 
 		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 
-	public function getTampilDinsos() // tampil data di dinsos
+	public function getTampilDinsos() // tampil data di dinsos pada index di C listpenduduk
 	{
 	
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa group by NO_KK");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 
-	public function delete($id)
+	public function delete($id) // delete NIK dari penduduk
 	{
 		$this->db->where('NIK', $id);
 		$this->db->delete('penduduk');
@@ -130,18 +130,18 @@ class List_Penduduk extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function getTampilSuratPenduduk()
+	public function getTampilSuratPenduduk() //menampilkan surat penduduk
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // untuk mengecek data berdasarkan session
 		$id_desa = $session_data['id_desa'];
 
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa where a.id_desa = $id_desa");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 	
 	public function getUser()
 	{
-		$session_data = $this->session->userdata('logged_in');
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
 		$username = $session_data['username'];
 		$query = $this->db->query("SELECT * from login where username='$username'");
 		// var_dump($query);die();
@@ -151,8 +151,8 @@ class List_Penduduk extends CI_Model {
 	//model
 	function cekNIK(){
 	   $nik = $this->input->post('NIK');
-	   $this->db->select('NIK');
-	   $this->db->where('NIK',$nik);		
+	   $this->db->select('NIK'); // di database nya
+	   $this->db->where('NIK',$nik); // di cocokan NIK		
 	   $query =$this->db->get('penduduk'); //dari tabel penduduk
 	   $row = $query->row();
 	   if ($query->num_rows() > 0){ //jika lebih besar dari 0 maka nik sudah ada
@@ -161,13 +161,13 @@ class List_Penduduk extends CI_Model {
 	         return "";
 	  }
 	}
-	public function getTampilGroup($NO_KK)
+	public function getTampilGroup($NO_KK) //tampil group berdasarkan parameter NO_KK
 	{
-		$session_data = $this->session->userdata('logged_in');
-		$id_desa = $session_data['id_desa'];
+		$session_data = $this->session->userdata('logged_in'); // mengecek session data berdasarkan login
+		$id_desa = $session_data['id_desa']; // dengan variabel id_desa dan dicek session berdasarkan id_desa
 		
 		$query = $this->db->query("Select a.*,b.nama_desa from penduduk AS a Join desa AS b ON b.id_desa=a.id_desa  Join pekerjaan AS c ON c.id_pekerjaan=a.id_pekerjaan where NO_KK = $NO_KK");
-		return $query->result_array();
+		return $query->result_array(); // mengembalikan data yang berulang-ulang dan data nya muncul secara array
 	}
 	
 	public function getTampilGroupDinsos($NO_KK)

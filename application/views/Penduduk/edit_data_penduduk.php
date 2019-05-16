@@ -10,10 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Penduduk</title>
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
+ 
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -401,8 +398,6 @@
             </div>
       <!--   </div>
     </div> -->
-
-    <!-- segment -->
             <div class="card-body">
               <?php echo form_open('ListPenduduk/update/'.$this->uri->segment(3)); 
               ?>

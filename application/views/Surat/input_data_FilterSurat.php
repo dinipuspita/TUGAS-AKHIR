@@ -9,9 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Surat</title>
-
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/satu.png">
+  <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -500,7 +498,7 @@
                                         <font color="red"><i><option value="">*Jumlah Tanggungan Keluarga</option></i></font>
                                         
                                         <input type="text" class="form-control" id="tanggungan_keluarga" name="tanggungan_keluarga" placeholder="Jumlah Tanggungan Keluarga"  readonly required  />
-
+                                        <!-- menyembunyikan NIK tiap penduduk berdasarkan NOKK-->
                                         <input type="hidden" class="form-control" id="NIK" name="NIK" placeholder="NIK" readonly required/>
                                     </div>
                                 </div>

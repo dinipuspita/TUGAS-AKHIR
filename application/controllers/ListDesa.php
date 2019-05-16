@@ -1,34 +1,32 @@
 <?php
 // define('BASEPATH') OR exit ('No direct script access allowed');
 class ListDesa extends CI_Controller {
-
-public function __construct()
-	{
-		parent::__construct();
-		if($this->session->userdata('logged_in')){
-			$session_data = $this->session->userdata('logged_in');
-			$data['username'] = $session_data['username'];
-			$data['level'] = $session_data['level'];
-			$current_controller = $this->router->fetch_class();
-			$this->load->library('acl');
-			if (! $this->acl->is_public($current_controller))
-			{
-				if (! $this->acl->is_allowed($current_controller, $data['level']))
-				{
-					redirect('admin','refresh');
-				}
-			}
-			$this->load->model('list_desa');
-		}
-		else{
-			redirect('logout/out','refresh');
-		}
-	}
-
+	// public function __construct()
+	
+	// {
+	// 	parent::__construct();
+	// 	if($this->session->userdata('logged_in')){
+	// 		$session_data = $this->session->userdata('logged_in');
+	// 		$data['username'] = $session_data['username'];
+	// 		$data['level'] = $session_data['level'];
+	// 		$current_controller = $this->router->fetch_class();
+	// 		$this->load->library('acl');
+	// 		if (! $this->acl->is_public($current_controller))
+	// 		{
+	// 			if (! $this->acl->is_allowed($current_controller, $data['level']))
+	// 			{
+	// 				redirect('login','refresh');
+	// 			}
+	// 		}
+	// 	}
+	// 	else{
+	// 		redirect('logout/out','refresh');
+	// 	}
+	// }
 	public function index()
 	{
 		$this->load->model('list_desa');
-		$data["desa"] = $this->list_desa->getTampil();
+		$data["desa"] = $this->list_desa->getTampil(); //$nama variabel dari array desa yg ditampilkan pada model list_desa
 		$data['user'] = $this->list_desa->getUser();
 		$this->load->view('Desa/desa', $data);	
 	}
@@ -42,7 +40,8 @@ public function __construct()
 		// $this->form_validation->set_rules('id_kepala_desa', 'id_kepala_desa', 'trim|required');
 		$data['user'] = $this->list_desa->getUser();
 		$this->load->model('list_desa');
-		$data["desa"] = $this->list_desa->getTampil();
+		$data["desa"] = $this->list_desa->getTampil();  //$nama variabel dari array desa yg mengambil data desa
+
 
 		// $this->load->model('list_KepalaDesa');
 		// $data["kepala_desa"] = $this->list_KepalaDesa->getTampilKepala();
@@ -51,12 +50,12 @@ public function __construct()
 			$this->load->view('Desa/input_data_desa',$data);
 		}
 		else{
-			$this->list_desa->insertDesa();
+			$this->list_desa->insertDesa(); // dimana pada model list_penduduk melakukan insertDesa
 			echo "<script> alert('Data Desa Berhasil Ditambahkan'); window.location.href='';
 			</script>";
 		}
 	}
-	public function update($id)
+	public function update($id) //parameter id
 	{
 	
 		$this->form_validation->set_rules('nama_desa', 'nama_desa', 'trim|required');
@@ -66,7 +65,7 @@ public function __construct()
 		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 
 		$this->load->model('list_desa');
-		$data['desa'] = $this->list_desa->getDesa($id);
+		$data['desa'] = $this->list_desa->getDesa($id);  //$nama variabel dari array desa yg mengambil data desa
 		$data['user'] = $this->list_desa->getUser();
 
 		// $this->load->model('list_KepalaDesa');
@@ -75,13 +74,13 @@ public function __construct()
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('Desa/edit_data_desa',$data);
 		}else{
-			$this->list_desa->updateById($id);
+			$this->list_desa->updateById($id); // dimana pada model list_desa melakukan updateDesa
 			echo "<script> alert('Data Desa Berhasil Diupdate'); window.location.href='';
 			</script>";
 		}
 	}
 	
-	public function delete($id)
+	public function delete($id) //delete berdasarkan parameter
 	{
 		$this->load->model('list_desa');
 		$this->list_desa->delete($id);
